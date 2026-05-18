@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eternal Warriors v3.0</title>
+<link rel="stylesheet" href="/static/css/theme.css">
+<link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <div class="login-header">
+      <div class="login-alalaia">
+        <img src="/static/assets/ui/alalaia_portrait.jpg" alt="AlalaiA">
+        <span class="login-title-sub">EQUILIBRIO · MEMORIA · LUZ</span>
+      </div>
+      <div class="login-title-center">
+        <h1 class="login-title">ETERNAL WARRIORS</h1>
+        <span class="login-version">v3.0 — Ciclo NG+</span>
+      </div>
+      <div class="login-karlaka">
+        <img src="/static/assets/ui/karlaka_portrait.png" alt="KarlakÁ">
+        <span class="login-title-sub">GUERRA · TIERRA · VOLUNTAD</span>
+      </div>
+    </div>
+    <div class="login-box">
+      <div class="login-field">
+        <label>JUGADOR</label>
+        <input type="text" id="usuario" placeholder="Tu nombre de jugador" autocomplete="off">
+      </div>
+      <div class="login-field">
+        <label>CONTRASEÑA</label>
+        <input type="password" id="password" placeholder="••••••••">
+      </div>
+      <div id="login-msg" class="login-msg"></div>
+      <button class="btn-primary" onclick="doLogin()">ENTRAR AL MUNDO</button>
+    </div>
+    <div class="login-footer">
+      <span>KarlakÁ observa. El ciclo continúa.</span>
+    </div>
+  </div>
+<script>
+async function doLogin() {
+  const usuario  = document.getElementById('usuario').value.trim();
+  const password = document.getElementById('password').value;
+  const msg      = document.getElementById('login-msg');
+  if (!usuario || !password) { msg.textContent = 'Completa todos los campos.'; return; }
+  try {
+    const res  = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({usuario, password})
+    });
+    const data = await res.json();
+    if (data.ok) {
+      sessionStorage.setItem('jugador', data.jugador);
+      sessionStorage.setItem('capital', data.capital);
+      window.location.href = '/game';
+    } else {
+      msg.textContent = data.msg || 'Error de autenticación.';
+    }
+  } catch(e) {
+    msg.textContent = 'Error de conexión con el servidor.';
+  }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+</script>
+</body>
+</html>

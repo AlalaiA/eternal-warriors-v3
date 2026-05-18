@@ -1,0 +1,132 @@
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #0d0d1a 0%, #050508 100%);
+}
+
+.login-container {
+  width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.login-alalaia, .login-karlaka {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 180px;
+}
+
+.login-alalaia img {
+  width: 160px;
+  height: 200px;
+  border-radius: 8px;
+  border: 2px solid rgba(150,200,255,0.6);
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 0 40px rgba(150,200,255,0.3);
+}
+
+.login-karlaka img {
+  width: 160px;
+  height: 200px;
+  border-radius: 8px;
+  border: 2px solid rgba(200,80,20,0.6);
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 0 40px rgba(200,80,20,0.3);
+}
+
+.login-title-sub {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--color-text2);
+  text-align: center;
+}
+
+.login-title-center {
+  text-align: center;
+  flex: 1;
+}
+
+.login-title {
+  font-family: var(--font-title);
+  font-size: 28px;
+  color: var(--color-gold);
+  text-shadow: 0 0 30px rgba(201,168,76,0.5);
+  letter-spacing: 4px;
+}
+
+.login-version {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text2);
+  letter-spacing: 2px;
+}
+
+.login-box {
+  background: linear-gradient(135deg, #0e0e1e, #12121f);
+  border: 1px solid var(--color-border2);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-field label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+}
+
+.login-field input {
+  background: #08080f;
+  border: 1px solid var(--color-border);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-field input:focus {
+  border-color: var(--color-gold);
+}
+
+.login-msg {
+  color: var(--color-red2);
+  font-size: 13px;
+  min-height: 18px;
+  text-align: center;
+}
+
+.login-box .btn-primary { width: 100%; }
+
+.login-footer {
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text2);
+  letter-spacing: 2px;
+}

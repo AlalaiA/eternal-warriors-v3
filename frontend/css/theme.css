@@ -1,0 +1,72 @@
+/* ETERNAL WARRIORS v3.0 — Tema global */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-bg:         #0a0a0f;
+  --color-bg2:        #10101a;
+  --color-panel:      #12121e;
+  --color-border:     #2a2a45;
+  --color-border2:    #3d3d6b;
+  --color-gold:       #c9a84c;
+  --color-gold2:      #e8c96d;
+  --color-blue:       #4a7ab5;
+  --color-blue2:      #6ba3e0;
+  --color-red:        #8b1a1a;
+  --color-red2:       #c44;
+  --color-green:      #2d6a2d;
+  --color-green2:     #4a9e4a;
+  --color-purple:     #5a2d8a;
+  --color-purple2:    #9b6ad6;
+  --color-text:       #d4c9a8;
+  --color-text2:      #9a8f6a;
+  --color-white:      #f0e8d0;
+  --font-title:       'Cinzel Decorative', serif;
+  --font-ui:          'Cinzel', serif;
+  --font-body:        'Rajdhani', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1a1a3e, #2a2a5e);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2a2a5e, #3a3a7e);
+  box-shadow: 0 0 20px rgba(201,168,76,0.3);
+}
+
+.panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  padding: 12px;
+}
+
+.panel-title {
+  font-family: var(--font-ui);
+  color: var(--color-gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}

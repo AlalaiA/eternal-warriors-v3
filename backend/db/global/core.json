@@ -1,0 +1,47 @@
+{
+  "alianzas": {
+    "JIARITO": {
+      "miembros": [
+        "JIARITO",
+        "GINAO"
+      ],
+      "lideres": [
+        "JIARITO",
+        "GINAO"
+      ],
+      "descripcion": "Alianza principal — humanos fundadores",
+      "tipo": "HUMANA"
+    },
+    "VITAMINIZADAS": {
+      "miembros": [
+        "ALALAIA",
+        "ADMIN"
+      ],
+      "lideres": [
+        "ALALAIA"
+      ],
+      "descripcion": "Alianza vitaminizada — cuentas especiales",
+      "tipo": "NPC"
+    },
+    "JUGADORESIA": {
+      "miembros": [
+        "IA001",
+        "IA002",
+        "IA003",
+        "IA004",
+        "IA005",
+        "IA006"
+      ],
+      "lideres": [
+        "IA001"
+      ],
+      "descripcion": "Alianza IA — jugadores automáticos",
+      "tipo": "IA"
+    }
+  },
+  "mensajes": {},
+  "dioses_muertos": 500,
+  "order_speed": 300.0,
+  "ng_plus_global": 10,
+  "save_timestamp": 1778996928.3960674
+}

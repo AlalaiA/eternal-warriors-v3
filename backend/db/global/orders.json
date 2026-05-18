@@ -1,0 +1,164 @@
+{
+  "orders": [
+    {
+      "tipo": "ESPIONAJE",
+      "origen_nombre": "IA001.09",
+      "destino_nombre": "REN8-065",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "carga_mat": {
+        "MADERA": 0,
+        "PIEDRA": 0,
+        "HIERRO": 0,
+        "CARBON": 0,
+        "ORO": 0
+      },
+      "carga_mana": 0,
+      "tiempo_total": 2.569435735720977,
+      "tiempo_restante": 2.569435735720977,
+      "fase": "REGRESO",
+      "costo_oro": 2569,
+      "vel_min": 500.0,
+      "distancia": 128.47178678604885,
+      "resultado": "✅ Espionaje exitoso Nv.5 | Botín obtenido",
+      "reporte_combate": {
+        "tipo": "ESPIONAJE",
+        "nivel_esp": 5,
+        "intel_ciudad": {
+          "nivel": 5,
+          "origen": "IA001.09",
+          "cat": "INACTIVOS",
+          "total_militares": 10090,
+          "total_invocaciones": 0,
+          "materiales": {
+            "MADERA": 0.6690997201949358,
+            "PIEDRA": 0.5990171376615763,
+            "HIERRO": 0.5086923725903034,
+            "CARBON": 0.7908551264554262,
+            "ORO": 0.0472930958494544,
+            "MANA": 774732000.0
+          },
+          "muralla": 16,
+          "torre": 0,
+          "tipos_militares": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          },
+          "tipos_invocaciones": {},
+          "nivel_tropas": {
+            "ALDEANO": 8,
+            "EXPLORADOR": 8,
+            "SACERDOTE": 8,
+            "GUERRERO": 8,
+            "COMANDO": 8,
+            "MERCENARIO": 8,
+            "MARINE": 8,
+            "CYBORG": 8,
+            "MAGO": 8,
+            "METAHUMANO": 8
+          },
+          "stats_reales": {
+            "ALDEANO": {
+              "sigilo": 1,
+              "destreza": 2,
+              "hp": 55.0,
+              "pa": 16.0,
+              "ca": 11.0
+            },
+            "EXPLORADOR": {
+              "sigilo": 16,
+              "destreza": 11,
+              "hp": 125.0,
+              "pa": 23.0,
+              "ca": 11.0
+            },
+            "SACERDOTE": {
+              "sigilo": 1,
+              "destreza": 51,
+              "hp": 592.0,
+              "pa": 46.0,
+              "ca": 11.0
+            },
+            "GUERRERO": {
+              "sigilo": 1,
+              "destreza": 11,
+              "hp": 273.0,
+              "pa": 76.0,
+              "ca": 21.0
+            },
+            "COMANDO": {
+              "sigilo": 1,
+              "destreza": 16,
+              "hp": 155.0,
+              "pa": 351.0,
+              "ca": 46.0
+            },
+            "MERCENARIO": {
+              "sigilo": 1,
+              "destreza": 21,
+              "hp": 194.0,
+              "pa": 451.0,
+              "ca": 81.0
+            },
+            "MARINE": {
+              "sigilo": 1,
+              "destreza": 26,
+              "hp": 243.0,
+              "pa": 1401.0,
+              "ca": 251.0
+            },
+            "CYBORG": {
+              "sigilo": 1,
+              "destreza": 31,
+              "hp": 304.0,
+              "pa": 3501.0,
+              "ca": 901.0
+            },
+            "MAGO": {
+              "sigilo": 1,
+              "destreza": 36,
+              "hp": 380.0,
+              "pa": 6501.0,
+              "ca": 1501.0
+            },
+            "METAHUMANO": {
+              "sigilo": 1,
+              "destreza": 41,
+              "hp": 475.0,
+              "pa": 13801.0,
+              "ca": 56.0
+            }
+          },
+          "escondite": {
+            "nivel": 0,
+            "capacidad": 0,
+            "materiales": {
+              "MADERA": 0.6690997201949358,
+              "PIEDRA": 0.5990171376615763,
+              "HIERRO": 0.5086923725903034,
+              "CARBON": 0.7908551264554262,
+              "ORO": 0.0472930958494544,
+              "MANA": 774732000.0
+            }
+          }
+        },
+        "botin": {
+          "MADERA": 0,
+          "PIEDRA": 0,
+          "HIERRO": 0,
+          "CARBON": 0,
+          "ORO": 0
+        }
+      }
+    }
+  ]
+}

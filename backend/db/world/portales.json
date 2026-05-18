@@ -1,0 +1,184 @@
+{
+  "entities": [
+    {
+      "ID": "Portal-01",
+      "X": 590.0,
+      "Y": 500.0,
+      "NOMBRE": "Portal 01",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-02",
+      "X": 607.0,
+      "Y": 578.0,
+      "NOMBRE": "Portal 02",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-03",
+      "X": 554.0,
+      "Y": 666.0,
+      "NOMBRE": "Portal 03",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-04",
+      "X": 433.0,
+      "Y": 706.0,
+      "NOMBRE": "Portal 04",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-05",
+      "X": 291.0,
+      "Y": 652.0,
+      "NOMBRE": "Portal 05",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-06",
+      "X": 199.0,
+      "Y": 500.0,
+      "NOMBRE": "Portal 06",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-07",
+      "X": 221.0,
+      "Y": 297.0,
+      "NOMBRE": "Portal 07",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-08",
+      "X": 380.0,
+      "Y": 134.0,
+      "NOMBRE": "Portal 08",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-09",
+      "X": 632.0,
+      "Y": 93.0,
+      "NOMBRE": "Portal 09",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    },
+    {
+      "ID": "Portal-10",
+      "X": 880.0,
+      "Y": 224.0,
+      "NOMBRE": "Portal 10",
+      "TIPO": "Portales",
+      "CAT_KEY": "PORTALES",
+      "OBRAS": [],
+      "MIL_QUEUES": {
+        "C1": [],
+        "C2": []
+      },
+      "INV_QUEUES": {
+        "T1": [],
+        "T2": [],
+        "T3": []
+      }
+    }
+  ]
+}

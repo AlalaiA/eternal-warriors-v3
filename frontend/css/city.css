@@ -1,0 +1,100 @@
+.city-screen {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.city-left, .city-right {
+  background: var(--color-panel);
+  border-right: 1px solid var(--color-border);
+  padding: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border2) transparent;
+}
+.city-right { border-right: none; border-left: 1px solid var(--color-border); }
+
+.city-center {
+  display: flex;
+  flex-direction: column;
+  background: #05050f;
+  position: relative;
+  overflow: hidden;
+}
+
+.city-canvas-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#city-canvas {
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.city-name-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-gold);
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(201,168,76,0.8);
+  pointer-events: none;
+}
+
+.building-badge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(10,10,20,0.85);
+  border: 1px solid var(--color-border2);
+  padding: 3px 7px;
+  pointer-events: none;
+  text-align: center;
+}
+.bb-name  { display: block; font-family: var(--font-ui); font-size: 8px; color: var(--color-text2); letter-spacing: 1px; }
+.bb-level { display: block; font-family: var(--font-ui); font-size: 10px; color: var(--color-gold); }
+
+.city-stats-bar {
+  display: flex;
+  background: linear-gradient(90deg, #0a0a18, #0e0e20, #0a0a18);
+  border-top: 1px solid var(--color-border);
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.stat-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--color-border);
+  gap: 1px;
+}
+.stat-bar-item:last-child { border-right: none; }
+.stat-bar-icon  { font-size: 14px; }
+.stat-bar-label { font-size: 8px; color: var(--color-text2); font-family: var(--font-ui); letter-spacing: 1px; }
+.stat-bar-val   { font-size: 11px; color: var(--color-gold); font-family: var(--font-ui); }
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 2px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
+  gap: 4px;
+}
+.stat-label { color: var(--color-text2); white-space: nowrap; }
+.stat-val   { color: var(--color-white); font-weight: 600; text-align: right; }
+
+.panel { margin-bottom: 0; }

@@ -1,0 +1,24 @@
+{
+  "entity": {
+    "ID": "k-01",
+    "X": 500.0,
+    "Y": 500.0,
+    "NOMBRE": "KarlakÁ",
+    "TIPO": "Núcleo",
+    "CAT_KEY": "KARLAKA",
+    "OBRAS": [],
+    "MIL_QUEUES": {
+      "C1": [],
+      "C2": []
+    },
+    "INV_QUEUES": {
+      "T1": [],
+      "T2": [],
+      "T3": []
+    },
+    "HP": 5e+17,
+    "PA": 4.5e+18,
+    "CA": 5e+18,
+    "DESTREZA": 1000
+  }
+}

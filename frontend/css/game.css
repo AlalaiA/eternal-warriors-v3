@@ -1,0 +1,88 @@
+.game-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #0a0a1a, #0e0e20, #0a0a1a);
+  border-bottom: 1px solid var(--color-border2);
+  padding: 8px 20px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.header-left { display: flex; flex-direction: column; }
+.hdr-ciudad { font-family: var(--font-ui); color: var(--color-gold); font-size: 13px; letter-spacing: 2px; }
+.hdr-ciclo  { font-size: 10px; color: var(--color-text2); }
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hdr-alalaia { text-align: right; }
+.hdr-alalaia span { font-family: var(--font-ui); color: var(--color-blue2); font-size: 12px; }
+.hdr-alalaia small { display: block; font-size: 9px; color: var(--color-text2); letter-spacing: 1px; }
+
+.hdr-sep { color: var(--color-border2); font-size: 20px; }
+
+.hdr-karlaka span { font-family: var(--font-ui); color: var(--color-red2); font-size: 12px; }
+.hdr-karlaka small { display: block; font-size: 9px; color: var(--color-text2); letter-spacing: 1px; }
+
+.header-right { text-align: right; }
+.hdr-evento { display: block; font-size: 9px; color: var(--color-text2); letter-spacing: 1px; font-family: var(--font-ui); }
+.hdr-timer  { font-family: var(--font-ui); color: var(--color-gold); font-size: 18px; }
+
+.main-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--font-ui);
+  color: var(--color-text2);
+  letter-spacing: 3px;
+}
+
+.game-nav {
+  display: flex;
+  background: linear-gradient(90deg, #08080f, #0c0c18, #08080f);
+  border-top: 1px solid var(--color-border2);
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text2);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background: linear-gradient(180deg, #1a1a3a, #0e0e20);
+  color: var(--color-gold);
+}
+
+.nav-icon { font-size: 20px; }

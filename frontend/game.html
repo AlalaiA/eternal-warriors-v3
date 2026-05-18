@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eternal Warriors v3.0</title>
+<link rel="stylesheet" href="/static/css/theme.css">
+<link rel="stylesheet" href="/static/css/game.css">
+</head>
+<body class="game-body">
+  <!-- Header global -->
+  <header class="game-header">
+    <div class="header-left">
+      <span id="hdr-ciudad" class="hdr-ciudad">CIUDAD</span>
+      <span id="hdr-ciclo"  class="hdr-ciclo">Ciclo NG+0</span>
+    </div>
+    <div class="header-center">
+      <img src="/static/assets/ui/alalaia_small.png" alt="" onerror="this.style.display='none'">
+      <div class="hdr-alalaia">
+        <span>ALALAIA</span>
+        <small>EQUILIBRIO · MEMORIA · LUZ</small>
+      </div>
+      <div class="hdr-sep">⚔</div>
+      <div class="hdr-karlaka">
+        <span>KARLAKᾹ OBSERVA</span>
+        <small>GUERRA · TIERRA · VOLUNTAD</small>
+      </div>
+      <img src="/static/assets/ui/karlaka_small.png" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="header-right">
+      <span class="hdr-evento">PRÓXIMO EVENTO</span>
+      <span id="hdr-timer" class="hdr-timer">--:--:--</span>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main id="main-content" class="main-content">
+    <div id="screen-loading" class="screen-loading">
+      <span>Cargando mundo...</span>
+    </div>
+  </main>
+
+  <!-- Nav inferior -->
+  <nav class="game-nav">
+    <button class="nav-btn active" onclick="loadScreen('city')" id="nav-city">
+      <span class="nav-icon">🏰</span><span>CIUDAD</span>
+    </button>
+    <button class="nav-btn" onclick="loadScreen('army')" id="nav-army">
+      <span class="nav-icon">⚔</span><span>EJÉRCITO</span>
+    </button>
+    <button class="nav-btn" onclick="loadScreen('invocations')" id="nav-inv">
+      <span class="nav-icon">✨</span><span>INVOCACIONES</span>
+    </button>
+    <button class="nav-btn" onclick="loadScreen('map')" id="nav-map">
+      <span class="nav-icon">🗺</span><span>MAPA IMPERIAL</span>
+    </button>
+    <button class="nav-btn" onclick="loadScreen('reports')" id="nav-rep">
+      <span class="nav-icon">📋</span><span>INFORMES</span>
+    </button>
+    <button class="nav-btn" onclick="loadScreen('settings')" id="nav-set">
+      <span class="nav-icon">⚙</span><span>AJUSTES</span>
+    </button>
+  </nav>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
