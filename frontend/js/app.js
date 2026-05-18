@@ -15,21 +15,20 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadScreen(screen) {
-  // Actualizar nav
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.getElementById('nav-' + (screen === 'city' ? 'city' :
-              screen === 'army' ? 'army' : screen === 'invocations' ? 'inv' :
-              screen === 'map' ? 'map' : screen === 'reports' ? 'rep' : 'set'));
+  const navMap = {city:'city',army:'army',invocations:'inv',map:'map',reports:'rep',settings:'set'};
+  const btn = document.getElementById('nav-' + (navMap[screen]||'city'));
   if (btn) btn.classList.add('active');
 
   const main = document.getElementById('main-content');
   main.innerHTML = '<div class="screen-loading"><span>Cargando...</span></div>';
 
   try {
-    const mod = await import(`/static/js/screens/${screen}.js`);
+    const mod = await import(`/static/js/screens/${screen}.js?v=${Date.now()}`);
     await mod.render(main, JUGADOR, CAPITAL);
   } catch(e) {
-    main.innerHTML = `<div class="screen-loading"><span>Pantalla en construcción: ${screen}</span></div>`;
+    console.error('Error cargando pantalla:', screen, e);
+    main.innerHTML = `<div class="screen-loading"><span>Error: ${e.message}</span></div>`;
   }
 }
 
