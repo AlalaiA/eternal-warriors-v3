@@ -1,0 +1,394 @@
+"""
+backend/systems/queues.py
+Eternal Warriors v3.0 — Sistema de colas de entrenamiento e invocación
+
+Cuarteles (CUARTEL_1, CUARTEL_2, CUARTEL_3):
+  - Entrenan unidades básicas (Explorador, Guerrero, Sacerdote, etc.)
+  - Tiempo = TIEMPO_BASE_MINUTOS × 60 × (1 - reduccion_cuartel/100)
+  - 3 colas independientes simultáneas
+
+Templos (TEMPLO_1, TEMPLO_2, TEMPLO_3):
+  - Invocan criaturas (Demonio, Ánima, etc.)
+  - Tiempo = TIEMPO_INVOCACION_BASE_MINUTOS × 60 × (1 - rebaja_templo/100)
+  - Costo en maná por unidad
+  - Requiere nivel mínimo de sacerdote
+  - 3 colas independientes simultáneas
+
+Retroactividad:
+  - Al procesar colas: calcular unidades completadas desde último tick
+  - Máximo retroactivo: 3 días
+"""
+
+import csv, time
+from pathlib import Path
+
+CSV_DIR = Path(__file__).parent.parent.parent / "csv"
+MAX_RETROACTIVO_SEG = 3 * 24 * 3600
+
+# ── Loaders CSV ───────────────────────────────────────────────────────────────
+
+def _load_tiempo_unidades():
+    """Carga tiempo base (minutos) por unidad. CSV: utf-8-sig, sep=';', Row0=header, Row1+=datos."""
+    import csv as _csv
+    result = {}
+    csv_path = pathlib.Path(__file__).parent.parent.parent / "csv" / "tiempo_base_produccion_unidades_basicas.csv"
+    with open(csv_path, encoding="utf-8-sig", newline="") as f:
+        reader = _csv.reader(f, delimiter=";")
+        rows = list(reader)
+    # Row 0 es header; datos comienzan en Row 1
+    for row in rows[1:]:
+        if len(row) < 2:
+            continue
+        nombre = row[0].strip().upper()   # normalizar a MAYÚSCULAS
+        try:
+            minutos = float(row[1].strip().replace(",", "."))
+            result[nombre] = minutos
+        except ValueError:
+            pass
+    return result
+def _load_invocaciones():
+    """
+    Carga características de invocaciones. CSV: utf-8-sig, sep=';', Row0=header.
+    Columnas: [0]Invocación [1]HP [2]PA [3]CA [4]DESTREZA [5]SIGILO [6]VELOCIDAD
+              [7]NIVEL_MIN_SACERDOTE [8]TIEMPO_BASE_MIN [9]COSTO_MANA
+    """
+    import csv as _csv
+    result = {}
+    csv_path = pathlib.Path(__file__).parent.parent.parent / "csv" / "caracteristicas_invocaciones.csv"
+    with open(csv_path, encoding="utf-8-sig", newline="") as f:
+        reader = _csv.reader(f, delimiter=";")
+        rows = list(reader)
+    for row in rows[1:]:  # Row 0 = header
+        if len(row) < 10:
+            continue
+        nombre = row[0].strip().upper()
+        try:
+            result[nombre] = {
+                "hp":                  float(row[1].strip()),
+                "pa":                  float(row[2].strip()),
+                "ca":                  float(row[3].strip()),
+                "destreza":            float(row[4].strip()),
+                "sigilo":              float(row[5].strip()),
+                "velocidad":           float(row[6].strip()),
+                "nivel_min_sacerdote": int(row[7].strip()),    # índice 7 ← CORRECTO
+                "tiempo_base_min":     float(row[8].strip()),  # índice 8
+                "costo_mana":          float(row[9].strip()),  # índice 9
+            }
+        except (ValueError, IndexError):
+            pass
+    return result
+def _load_reduccion_cuartel() -> dict:
+    """% reducción tiempo por nivel de cuartel."""
+    result = {}
+    path = CSV_DIR / "edificio12_cuartel.csv"
+    if not path.exists():
+        return result
+    with open(path, encoding="utf-8-sig") as f:
+        reader = csv.reader(f, delimiter=";")
+        next(reader)
+        for row in reader:
+            if not row or not row[0].strip().isdigit():
+                continue
+            nivel = int(row[0].strip())
+            try:
+                red = row[5].strip().replace("%", "")
+                result[nivel] = float(red)
+            except (ValueError, IndexError):
+                result[nivel] = 0.0
+    return result
+
+def _load_rebaja_templo() -> dict:
+    """% rebaja tiempo invocación por nivel de templo."""
+    result = {}
+    path = CSV_DIR / "edificio11_templo.csv"
+    if not path.exists():
+        return result
+    with open(path, encoding="utf-8-sig") as f:
+        reader = csv.reader(f, delimiter=";")
+        next(reader)
+        for row in reader:
+            if not row or not row[0].strip().isdigit():
+                continue
+            nivel = int(row[0].strip())
+            try:
+                reb = row[5].strip().replace("%", "")
+                result[nivel] = float(reb)
+            except (ValueError, IndexError):
+                result[nivel] = 0.0
+    return result
+
+# Cache de módulo
+_TIEMPO_UNIDADES = None
+_INVOCACIONES    = None
+_RED_CUARTEL     = None
+_REB_TEMPLO      = None
+
+def get_tiempo_unidades():
+    global _TIEMPO_UNIDADES
+    if _TIEMPO_UNIDADES is None: _TIEMPO_UNIDADES = _load_tiempo_unidades()
+    return _TIEMPO_UNIDADES
+
+def get_invocaciones():
+    global _INVOCACIONES
+    if _INVOCACIONES is None: _INVOCACIONES = _load_invocaciones()
+    return _INVOCACIONES
+
+def get_reduccion_cuartel():
+    global _RED_CUARTEL
+    if _RED_CUARTEL is None: _RED_CUARTEL = _load_reduccion_cuartel()
+    return _RED_CUARTEL
+
+def get_rebaja_templo():
+    global _REB_TEMPLO
+    if _REB_TEMPLO is None: _REB_TEMPLO = _load_rebaja_templo()
+    return _REB_TEMPLO
+
+# ── Cálculo de tiempos ────────────────────────────────────────────────────────
+
+def tiempo_entrenamiento_seg(unidad: str, nivel_cuartel: int) -> float:
+    """Segundos por unidad básica entrenada en un cuartel de nivel dado."""
+    tiempos = get_tiempo_unidades()
+    reducciones = get_reduccion_cuartel()
+    base_min = tiempos.get(unidad.upper(), 300)
+    red = reducciones.get(nivel_cuartel, 0) / 100
+    return base_min * 60 * (1 - red)
+
+def tiempo_invocacion_seg(invocacion: str, nivel_templo: int) -> float:
+    """Segundos por unidad invocada en un templo de nivel dado."""
+    invs = get_invocaciones()
+    rebajas = get_rebaja_templo()
+    inv = invs.get(invocacion.upper(), {})
+    base_min = inv.get("tiempo_min", 9000)
+    reb = rebajas.get(nivel_templo, 0) / 100
+    return base_min * 60 * (1 - reb)
+
+def costo_mana_invocacion(invocacion: str) -> float:
+    """Maná por unidad invocada."""
+    invs = get_invocaciones()
+    return invs.get(invocacion.upper(), {}).get("costo_mana", 0)
+
+def nivel_min_sacerdote(invocacion: str) -> int:
+    """Nivel mínimo de sacerdote requerido."""
+    invs = get_invocaciones()
+    return invs.get(invocacion.upper(), {}).get("nivel_min_sacerdote", 99)
+
+# ── Procesamiento de colas ────────────────────────────────────────────────────
+
+def procesar_colas(city: dict, unit_levels: dict = None) -> dict:
+    """
+    Procesa todas las colas activas de una ciudad.
+    - Completa unidades entrenadas/invocadas según tiempo transcurrido
+    - Aplica retroactividad máxima de 3 días
+    - Devuelve resumen de lo completado
+    """
+    if unit_levels is None:
+        unit_levels = {}
+
+    ahora = time.time()
+    colas = city.get("COLAS", [])
+    completadas = {}
+
+    colas_activas = []
+    for cola in colas:
+        tipo       = cola.get("tipo", "")          # CUARTEL_1, TEMPLO_2, etc.
+        unidad     = cola.get("unidad", "")
+        cant_total = int(cola.get("cantidad_total", 0))
+        cant_hecha = int(cola.get("cantidad_hecha", 0))
+        inicio     = float(cola.get("inicio", ahora))
+        t_por_unit = float(cola.get("tiempo_por_unidad_seg", 3600))
+
+        if cant_hecha >= cant_total:
+            continue  # cola ya terminada
+
+        # Calcular cuántas unidades se han completado desde el inicio
+        # con retroactividad máxima de 3 días
+        inicio_efectivo = max(inicio, ahora - MAX_RETROACTIVO_SEG)
+        seg_transcurridos = max(0.0, ahora - inicio_efectivo)
+        completadas_desde_inicio = min(
+            cant_total,
+            int(seg_transcurridos / t_por_unit)
+        )
+        nuevas = max(0, completadas_desde_inicio - cant_hecha)
+
+        if nuevas > 0:
+            # Añadir unidades a la ciudad
+            campo = unidad.upper()
+            city[campo] = float(city.get(campo, 0) or 0) + nuevas
+            cola["cantidad_hecha"] = completadas_desde_inicio
+            completadas[f"{tipo}:{unidad}"] = nuevas
+
+        # Mantener cola si no terminó
+        if cola["cantidad_hecha"] < cant_total:
+            colas_activas.append(cola)
+        # Si terminó, no la añadimos → desaparece
+
+    city["COLAS"] = colas_activas
+    return completadas
+
+
+def iniciar_cola_cuartel(city: dict, cuartel_key: str, unidad: str,
+                          cantidad: int, unit_levels: dict = None) -> dict:
+    """
+    Inicia una cola de entrenamiento en un cuartel.
+    cuartel_key: 'CUARTEL_1', 'CUARTEL_2', 'CUARTEL_3'
+    unidad: nombre de la unidad básica (GUERRERO, MAGO, etc.)
+    Retorna {"ok": bool, "msg": str, "tiempo_total_seg": float}
+    """
+    if unit_levels is None:
+        unit_levels = {}
+
+    # Verificar que el cuartel existe y tiene nivel > 0
+    nivel_cuartel = int(city.get(cuartel_key, 0) or 0)
+    if nivel_cuartel < 1:
+        return {"ok": False, "msg": f"{cuartel_key} no existe o nivel 0"}
+
+    # Verificar que no hay cola activa en ese cuartel
+    colas = city.get("COLAS", [])
+    for cola in colas:
+        if cola.get("tipo") == cuartel_key and cola.get("cantidad_hecha", 0) < cola.get("cantidad_total", 0):
+            return {"ok": False, "msg": f"{cuartel_key} ya tiene una cola activa"}
+
+    # Tiempo por unidad
+    t_seg = tiempo_entrenamiento_seg(unidad, nivel_cuartel)
+    if t_seg <= 0:
+        return {"ok": False, "msg": f"Unidad {unidad} no reconocida"}
+
+    # Crear cola
+    nueva_cola = {
+        "tipo":               cuartel_key,
+        "unidad":             unidad.upper(),
+        "cantidad_total":     cantidad,
+        "cantidad_hecha":     0,
+        "tiempo_por_unidad_seg": t_seg,
+        "inicio":             time.time(),
+    }
+    city.setdefault("COLAS", []).append(nueva_cola)
+
+    return {
+        "ok": True,
+        "msg": f"Cola iniciada: {cantidad} {unidad} en {cuartel_key}",
+        "tiempo_total_seg": t_seg * cantidad,
+        "tiempo_por_unidad_seg": t_seg,
+    }
+
+
+def iniciar_cola_templo(city: dict, templo_key: str, invocacion: str,
+                         cantidad: int, unit_levels: dict = None) -> dict:
+    """
+    Inicia una cola de invocación en un templo.
+    templo_key: 'TEMPLO_1', 'TEMPLO_2', 'TEMPLO_3'
+    invocacion: nombre de la invocación (DEMONIO, ANIMA, etc.)
+    Retorna {"ok": bool, "msg": str}
+    """
+    if unit_levels is None:
+        unit_levels = {}
+
+    # Verificar templo
+    nivel_templo = int(city.get(templo_key, 0) or 0)
+    if nivel_templo < 1:
+        return {"ok": False, "msg": f"{templo_key} no existe o nivel 0"}
+
+    # Verificar nivel mínimo sacerdote
+    nivel_sac = int(unit_levels.get("SACERDOTE", 1))
+    nivel_min = nivel_min_sacerdote(invocacion)
+    if nivel_sac < nivel_min:
+        return {
+            "ok": False,
+            "msg": f"Se requiere Sacerdote nivel {nivel_min}. Tienes nivel {nivel_sac}."
+        }
+
+    # Verificar cola activa en ese templo
+    colas = city.get("COLAS", [])
+    for cola in colas:
+        if cola.get("tipo") == templo_key and cola.get("cantidad_hecha", 0) < cola.get("cantidad_total", 0):
+            return {"ok": False, "msg": f"{templo_key} ya tiene una cola activa"}
+
+    # Calcular costo maná total
+    mana_por_unit = costo_mana_invocacion(invocacion)
+    mana_total = mana_por_unit * cantidad
+    mana_actual = float(city.get("MANA", 0) or 0)
+
+    if mana_actual < mana_total:
+        return {
+            "ok": False,
+            "msg": f"Maná insuficiente. Necesitas {mana_total:,.0f}, tienes {mana_actual:,.0f}"
+        }
+
+    # Descontar maná
+    city["MANA"] = mana_actual - mana_total
+
+    # Tiempo por unidad
+    t_seg = tiempo_invocacion_seg(invocacion, nivel_templo)
+
+    # Crear cola
+    nueva_cola = {
+        "tipo":               templo_key,
+        "unidad":             invocacion.upper(),
+        "cantidad_total":     cantidad,
+        "cantidad_hecha":     0,
+        "tiempo_por_unidad_seg": t_seg,
+        "inicio":             time.time(),
+        "mana_gastado":       mana_total,
+    }
+    city.setdefault("COLAS", []).append(nueva_cola)
+
+    return {
+        "ok": True,
+        "msg": f"Cola iniciada: {cantidad} {invocacion} en {templo_key}",
+        "tiempo_total_seg": t_seg * cantidad,
+        "tiempo_por_unidad_seg": t_seg,
+        "mana_gastado": mana_total,
+    }
+
+
+def cancelar_cola(city: dict, tipo: str) -> dict:
+    """Cancela la cola activa de un cuartel o templo. Devuelve maná si era templo."""
+    colas = city.get("COLAS", [])
+    for i, cola in enumerate(colas):
+        if cola.get("tipo") == tipo:
+            # Si era templo devolver maná proporcional a lo no invocado
+            if tipo.startswith("TEMPLO"):
+                pendientes = cola["cantidad_total"] - cola["cantidad_hecha"]
+                mana_devuelto = pendientes * costo_mana_invocacion(cola["unidad"])
+                city["MANA"] = float(city.get("MANA", 0) or 0) + mana_devuelto
+            colas.pop(i)
+            city["COLAS"] = colas
+            return {"ok": True, "msg": f"Cola {tipo} cancelada"}
+    return {"ok": False, "msg": f"No hay cola activa en {tipo}"}
+
+
+def info_colas(city: dict) -> list:
+    """
+    Devuelve estado actual de todas las colas con progreso calculado.
+    """
+    ahora = time.time()
+    resultado = []
+    for cola in city.get("COLAS", []):
+        cant_total = int(cola.get("cantidad_total", 0))
+        cant_hecha = int(cola.get("cantidad_hecha", 0))
+        t_por_unit = float(cola.get("tiempo_por_unidad_seg", 3600))
+        inicio     = float(cola.get("inicio", ahora))
+
+        seg_transcurridos = max(0.0, ahora - inicio)
+        completadas_ahora = min(cant_total, int(seg_transcurridos / t_por_unit))
+        pendientes = cant_total - completadas_ahora
+
+        # Tiempo restante para siguiente unidad
+        if pendientes > 0 and t_por_unit > 0:
+            seg_en_unidad_actual = seg_transcurridos % t_por_unit
+            seg_para_siguiente = t_por_unit - seg_en_unidad_actual
+        else:
+            seg_para_siguiente = 0
+
+        resultado.append({
+            "tipo":             cola.get("tipo"),
+            "unidad":           cola.get("unidad"),
+            "cantidad_total":   cant_total,
+            "completadas":      completadas_ahora,
+            "pendientes":       pendientes,
+            "tiempo_por_unidad_seg": t_por_unit,
+            "seg_para_siguiente": seg_para_siguiente,
+            "tiempo_total_restante_seg": pendientes * t_por_unit - (t_por_unit - seg_para_siguiente),
+            "porcentaje": round(completadas_ahora / cant_total * 100, 1) if cant_total > 0 else 100,
+        })
+    return resultado

@@ -141,7 +141,8 @@
       "PATOTAS": 0,
       "SIMURGH": 0,
       "BEHEMOT": 0,
-      "_XXXXXX": "XXXXXX_JIARITO"
+      "_XXXXXX": "XXXXXX_JIARITO",
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -209,7 +210,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.23418452552795088,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -277,7 +279,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.23418452552795088,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -345,7 +348,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.47874773814618266,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -413,7 +417,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -481,7 +486,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -549,7 +555,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -617,7 +624,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -685,7 +693,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -753,7 +762,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -821,7 +831,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -889,7 +900,8 @@
       "STATUS": "COLONIA",
       "_jugador": "JIARITO",
       "_ALDEANO_BUF": 0.8739550808379022,
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -954,7 +966,8 @@
         "T2": [],
         "T3": []
       },
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -1019,7 +1032,8 @@
         "T2": [],
         "T3": []
       },
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "TIPO_JUGADOR": 0.0,
@@ -1084,7 +1098,8 @@
         "T2": [],
         "T3": []
       },
-      "TEMPLO_3": 50.0
+      "TEMPLO_3": 50.0,
+      "LAST_PROD": 1778959605.969573
     }
   ]
 }

@@ -8,20 +8,22 @@ from fastapi.responses import FileResponse
 from backend.ws_handler import router as ws_router
 from backend.api.auth import router as auth_router
 from backend.api.city import router as city_router
-from backend.api.map import router as map_router
+from backend.api.map    import router as map_router
+from backend.api.buildings import router as buildings_router
+from backend.api.queues import router as queues_router
+from backend.api.escondite import router as escondite_router
 import uvicorn
 
 app = FastAPI(title="Eternal Warriors v3.0")
 
-# WebSocket
 app.include_router(ws_router)
+app.include_router(auth_router,    prefix="/api/auth")
+app.include_router(city_router,    prefix="/api/city")
+app.include_router(map_router,     prefix="/api/map")
+app.include_router(queues_router,  prefix="/api/queues")
+app.include_router(buildings_router)
+app.include_router(escondite_router)
 
-# API REST
-app.include_router(auth_router, prefix="/api/auth")
-app.include_router(city_router, prefix="/api/city")
-app.include_router(map_router,  prefix="/api/map")
-
-# Frontend estático
 app.mount("/static", StaticFiles(directory="frontend", html=True), name="static")
 
 @app.get("/")

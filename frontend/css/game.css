@@ -19,11 +19,7 @@
 .hdr-ciudad { font-family: var(--font-ui); color: var(--color-gold); font-size: 13px; letter-spacing: 2px; }
 .hdr-ciclo  { font-size: 10px; color: var(--color-text2); }
 
-.header-center {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+.header-center { display: flex; align-items: center; gap: 16px; }
 
 .hdr-alalaia { text-align: right; }
 .hdr-alalaia span { font-family: var(--font-ui); color: var(--color-blue2); font-size: 12px; }
@@ -42,6 +38,8 @@
   flex: 1;
   overflow: hidden;
   position: relative;
+  min-height: 0;
+  display: grid;
 }
 
 .screen-loading {

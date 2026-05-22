@@ -1,0 +1,11 @@
+portal,minimun_level_all_troops,number_battles_win,caves_defeated,espionage_missions,percentage_resistance_karlaka,minimum_military_top,minimun_child_accounts,minimun_level_child_or_alliance_accounts
+portal1,40,40000,400,60000,10,10,10,20
+portal2,40,80000,450,65000,20,9,10,22
+portal3,40,120000,500,70000,25,8,10,24
+portal4,40,160000,550,75000,30,7,10,26
+portal5,40,200000,600,80000,35,6,10,28
+portal6,40,240000,650,85000,40,5,10,30
+portal7,40,280000,700,90000,45,4,10,32
+portal8,40,320000,750,95000,50,3,10,34
+portal9,40,360000,800,100000,55,2,10,36
+portal10,40,400000,800,105000,60,1,10,38

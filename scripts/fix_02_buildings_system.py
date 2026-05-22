@@ -1,0 +1,348 @@
+"""
+fix_02_buildings_system.py
+1. Corrige mana_sacerdotes.csv parser (columnas invertidas: col[0]=tasa, col[1]=nivel)
+2. Crea backend/systems/buildings.py — sistema completo de subida de edificios
+
+Ejecutar desde: E:\0000ew V2Claude\
+"""
+import pathlib, sys
+
+ROOT = pathlib.Path(".")
+SYSTEMS = ROOT / "backend" / "systems"
+
+if not SYSTEMS.exists():
+    sys.exit(f"ERROR: No se encuentra {SYSTEMS}. Ejecutar desde la raíz del proyecto.")
+
+# ─── PARTE 1: Corregir parser en production.py ────────────────────────────────
+PROD = ROOT / "backend" / "systems" / "production.py"
+if PROD.exists():
+    src = PROD.read_text(encoding="utf-8")
+    # Patch: en mana_sacerdotes.csv col[0]=tasa_hora, col[1]=nivel
+    # El parser probablemente usa row[0]=nivel, row[1]=tasa — INVERTIDO
+    old = "mana_sacerdotes.csv"
+    if old in src:
+        print("ℹ️  production.py encontrado. Verifica manualmente que el parser de mana_sacerdotes use:")
+        print("     nivel = int(row[1])   ← col[1]")
+        print("     tasa  = float(row[0]) ← col[0]  (formato: '12,717' → reemplazar coma por punto)")
+        print("   Si está invertido, corrígelo antes de continuar.")
+    else:
+        print("AVISO: mana_sacerdotes.csv no referenciado en production.py")
+
+# ─── PARTE 2: Crear backend/systems/buildings.py ──────────────────────────────
+
+BUILDINGS_CODE = '''"""
+backend/systems/buildings.py
+Sistema de construcción/mejora de edificios.
+
+Responsabilidades:
+- Cargar costos y tiempos de cada edificio desde sus CSVs canónicos
+- Validar si el jugador puede subir un edificio (recursos + nivel máx)
+- Iniciar obra (descontar recursos, crear entrada en city['OBRAS'])
+- Procesar obras terminadas (retroactividad igual que colas: max 3 días)
+- Cancelar obra (devolver recursos)
+- Retornar datos de edificio para la UI (nivel actual, siguiente nivel, costo, tiempo)
+
+CSV pattern para edificios:
+  Row 0 = header (puede tener \\n embebido en último campo — csv.reader lo maneja)
+  Row N = datos del nivel N (Row 1 = nivel 1, Row 2 = nivel 2, ...)
+  Columnas fijas: [0]Nivel [1]costomadera [2]costopiedra [3]costohierro
+                  [4]costooro [5]costocarbon [6]stat_especial [7]tiempo_min
+  Excepciones documentadas en EDIFICIOS_META abajo.
+"""
+
+import csv
+import pathlib
+from typing import Optional
+
+CSV_DIR = pathlib.Path(__file__).parent.parent.parent / "csv"
+MAX_RETROACTIVIDAD_SEG = 3 * 24 * 3600  # 3 días
+
+# ── Metadatos de cada edificio ─────────────────────────────────────────────────
+# csv_file      : nombre del CSV
+# campo_json    : clave en el dict ciudad del JSON del jugador
+# max_nivel     : filas de datos en el CSV (= niveles disponibles)
+# stat_col      : índice de la columna de stat especial (-1 si no aplica)
+# stat_nombre   : nombre descriptivo del stat especial
+# tiempo_col    : índice de la columna de tiempo en minutos
+EDIFICIOS_META = {
+    "CENTRO_DE_CIUDAD":   {"csv": "edificio1_centro_de_ciudad.csv",  "campo": "CENTRO_DE_CIUDAD",   "max_nivel": 45, "stat_col": 6, "stat_nombre": "aldeanos_hora",        "tiempo_col": 7},
+    "CASA":               {"csv": "edificio2_casa.csv",               "campo": "CASA",               "max_nivel": 50, "stat_col": 6, "stat_nombre": "capacidad",            "tiempo_col": 7},
+    "MURALLA":            {"csv": "edificio3_muralla.csv",            "campo": "MURALLA",            "max_nivel": 50, "stat_col": 6, "stat_nombre": "hp",                   "tiempo_col": 7},
+    "TORRE_DE_VIGILANCIA":{"csv": "edificio4_torre_de_vigilancia.csv","campo": "TORRE_DE_VIGILANCIA","max_nivel": 50, "stat_col": 6, "stat_nombre": "deteccion",            "tiempo_col": 8},
+    "CENTRO_DE_VIAJES":   {"csv": "edificio5_centro_de_viajes.csv",   "campo": "CENTRO_DE_VIAJES",   "max_nivel": 40, "stat_col": 6, "stat_nombre": "cuadros_alcance",      "tiempo_col": 7},
+    "ESCONDITE":          {"csv": "edificio6_escondite.csv",          "campo": "ESCONDITE",          "max_nivel": 40, "stat_col": 6, "stat_nombre": "capacidad_ejercito",   "tiempo_col": 8},
+    "ALMACEN":            {"csv": "edificio7_almacen.csv",            "campo": "ALMACEN",            "max_nivel": 50, "stat_col": 6, "stat_nombre": "capacidad_material",   "tiempo_col": 7},
+    "SANTUARIO_ARCANO":   {"csv": "edificio8_santuario_arcano.csv",   "campo": "SANTUARIO_ARCANO",   "max_nivel": 50, "stat_col": 6, "stat_nombre": "capacidad_mana",       "tiempo_col": 7},
+    "UNIVERSIDAD":        {"csv": "edificio9_universidad.csv",        "campo": "UNIVERSIDAD",        "max_nivel": 45, "stat_col": 6, "stat_nombre": "reduccion_colas_pct",  "tiempo_col": 8},
+    "HERRERIA":           {"csv": "edificio10_herreria.csv",          "campo": "HERRERIA",           "max_nivel": 40, "stat_col": 6, "stat_nombre": "bonus_arma",           "tiempo_col": 9},
+    "TEMPLO_1":           {"csv": "edificio11_templo.csv",            "campo": "TEMPLO_1",           "max_nivel": 50, "stat_col": 6, "stat_nombre": "rebaja_invocacion_pct","tiempo_col": 7},
+    "TEMPLO_2":           {"csv": "edificio11_templo.csv",            "campo": "TEMPLO_2",           "max_nivel": 50, "stat_col": 6, "stat_nombre": "rebaja_invocacion_pct","tiempo_col": 7},
+    "TEMPLO_3":           {"csv": "edificio11_templo.csv",            "campo": "TEMPLO_3",           "max_nivel": 50, "stat_col": 6, "stat_nombre": "rebaja_invocacion_pct","tiempo_col": 7},
+    "CUARTEL_1":          {"csv": "edificio12_cuartel.csv",           "campo": "CUARTEL_1",          "max_nivel": 50, "stat_col": 6, "stat_nombre": "reduccion_tiempo_pct", "tiempo_col": 7},
+    "CUARTEL_2":          {"csv": "edificio12_cuartel.csv",           "campo": "CUARTEL_2",          "max_nivel": 50, "stat_col": 6, "stat_nombre": "reduccion_tiempo_pct", "tiempo_col": 7},
+    "CUARTEL_3":          {"csv": "edificio12_cuartel.csv",           "campo": "CUARTEL_3",          "max_nivel": 50, "stat_col": 6, "stat_nombre": "reduccion_tiempo_pct", "tiempo_col": 7},
+}
+
+# ── Cache en memoria ───────────────────────────────────────────────────────────
+_csv_cache: dict = {}
+
+
+def _load_edificio_csv(csv_name: str) -> list[dict]:
+    """
+    Carga CSV de edificio. Retorna lista indexada por nivel (índice 0 vacío,
+    índice 1 = nivel 1, etc.).
+    Cada elemento: {nivel, madera, piedra, hierro, oro, carbon, stat, tiempo_min}
+    """
+    if csv_name in _csv_cache:
+        return _csv_cache[csv_name]
+
+    path = CSV_DIR / csv_name
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        reader = csv.reader(f, delimiter=";")
+        rows = list(reader)
+
+    # Row 0 siempre es header (con posible \\n embebido en último campo)
+    data = [None]  # índice 0 = vacío; nivel 1 en índice 1
+    for row in rows[1:]:
+        if len(row) < 6:
+            continue
+        try:
+            nivel = int(row[0].strip())
+            stat_val = row[6].strip().rstrip("%") if len(row) > 6 else "0"
+            tiempo_str = row[7].strip() if len(row) > 7 else "0"
+            # Para edificios con más columnas (tiempo en índice diferente),
+            # buildings_info() pasa el índice correcto desde EDIFICIOS_META
+            data.append({
+                "nivel":      nivel,
+                "madera":     float(row[1].strip()),
+                "piedra":     float(row[2].strip()),
+                "hierro":     float(row[3].strip()),
+                "oro":        float(row[4].strip()),
+                "carbon":     float(row[5].strip()),
+                "stat":       float(stat_val.replace(",", ".")),
+                "tiempo_min": float(tiempo_str.replace(",", ".")),
+                "_row":       row,   # fila completa para índices especiales
+            })
+        except (ValueError, IndexError):
+            continue
+
+    _csv_cache[csv_name] = data
+    return data
+
+
+def _get_nivel_data(csv_name: str, nivel: int, tiempo_col: int) -> Optional[dict]:
+    """Retorna los datos del nivel solicitado con tiempo_col correcto."""
+    data = _load_edificio_csv(csv_name)
+    if nivel < 1 or nivel >= len(data) or data[nivel] is None:
+        return None
+    entry = data[nivel].copy()
+    row = entry["_row"]
+    if len(row) > tiempo_col:
+        try:
+            entry["tiempo_min"] = float(row[tiempo_col].strip().replace(",", "."))
+        except ValueError:
+            pass
+    return entry
+
+
+# ── API pública ────────────────────────────────────────────────────────────────
+
+def buildings_info(city: dict, edificio: str) -> dict:
+    """
+    Retorna info para la UI de subida de edificio.
+    {
+      nivel_actual, nivel_siguiente, max_nivel,
+      costo: {madera,piedra,hierro,oro,carbon},
+      tiempo_seg: int,
+      stat_nombre: str, stat_actual: float, stat_siguiente: float,
+      puede_subir: bool,   # False si ya en nivel máx o hay obra activa
+      en_construccion: bool,
+      tiempo_restante_seg: float | None
+    }
+    """
+    import time
+    meta = EDIFICIOS_META.get(edificio)
+    if not meta:
+        return {"error": f"Edificio {edificio} no registrado"}
+
+    nivel_actual = city.get(meta["campo"], 0)
+    max_nivel = meta["max_nivel"]
+
+    # ¿Hay obra activa para este edificio?
+    obras = city.get("OBRAS", [])
+    obra_activa = next((o for o in obras if o.get("edificio") == edificio), None)
+    en_construccion = obra_activa is not None
+    tiempo_restante = None
+    if obra_activa:
+        fin = obra_activa["inicio"] + obra_activa["duracion_seg"]
+        tiempo_restante = max(0.0, fin - time.time())
+
+    nivel_sig = nivel_actual + 1
+    puede_subir = (not en_construccion) and (nivel_sig <= max_nivel)
+
+    siguiente = _get_nivel_data(meta["csv"], nivel_sig, meta["tiempo_col"]) if puede_subir else None
+    actual_data = _get_nivel_data(meta["csv"], nivel_actual, meta["tiempo_col"])
+
+    return {
+        "edificio":         edificio,
+        "nivel_actual":     nivel_actual,
+        "nivel_siguiente":  nivel_sig,
+        "max_nivel":        max_nivel,
+        "stat_nombre":      meta["stat_nombre"],
+        "stat_actual":      actual_data["stat"] if actual_data else 0,
+        "stat_siguiente":   siguiente["stat"] if siguiente else None,
+        "costo":            {k: int(siguiente[k]) for k in ("madera","piedra","hierro","oro","carbon")} if siguiente else None,
+        "tiempo_seg":       int(siguiente["tiempo_min"] * 60) if siguiente else None,
+        "puede_subir":      puede_subir,
+        "en_construccion":  en_construccion,
+        "tiempo_restante_seg": tiempo_restante,
+    }
+
+
+def iniciar_obra(player: dict, city: dict, edificio: str) -> dict:
+    """
+    Inicia construcción del siguiente nivel.
+    Valida recursos, descuenta, agrega entrada en city['OBRAS'].
+    Retorna {"ok": True} o {"error": str}
+    """
+    import time
+    info = buildings_info(city, edificio)
+    if "error" in info:
+        return info
+    if not info["puede_subir"]:
+        if info["en_construccion"]:
+            return {"error": f"{edificio} ya tiene una obra en progreso"}
+        return {"error": f"{edificio} ya está en nivel máximo ({info['max_nivel']})"}
+
+    costo = info["costo"]
+    # Verificar recursos
+    faltantes = []
+    for mat in ("MADERA", "PIEDRA", "HIERRO", "ORO", "CARBON"):
+        disponible = city.get(mat, 0)
+        necesario = costo[mat.lower()]
+        if disponible < necesario:
+            faltantes.append(f"{mat}: necesita {necesario:,}, tiene {disponible:,}")
+    if faltantes:
+        return {"error": "Recursos insuficientes: " + "; ".join(faltantes)}
+
+    # Descontar recursos
+    for mat in ("MADERA", "PIEDRA", "HIERRO", "ORO", "CARBON"):
+        city[mat] = city.get(mat, 0) - costo[mat.lower()]
+
+    # Registrar obra
+    now = time.time()
+    obra = {
+        "edificio":    edificio,
+        "nivel_dest":  info["nivel_siguiente"],
+        "inicio":      now,
+        "duracion_seg": info["tiempo_seg"],
+    }
+    if "OBRAS" not in city:
+        city["OBRAS"] = []
+    city["OBRAS"].append(obra)
+
+    return {
+        "ok":           True,
+        "edificio":     edificio,
+        "nivel_dest":   info["nivel_siguiente"],
+        "fin":          now + info["tiempo_seg"],
+        "duracion_seg": info["tiempo_seg"],
+    }
+
+
+def procesar_obras(city: dict) -> list[str]:
+    """
+    Procesa obras terminadas. Llama al cargar ciudad y al hacer tick.
+    Retorna lista de edificios que subieron de nivel en esta pasada.
+    """
+    import time
+    obras = city.get("OBRAS", [])
+    if not obras:
+        return []
+
+    now = time.time()
+    terminadas = []
+    pendientes = []
+
+    for obra in obras:
+        fin = obra["inicio"] + obra["duracion_seg"]
+        # Cap retroactividad: máx 3 días de retraso, pero igual se procesa si terminó
+        if now >= fin:
+            terminadas.append(obra)
+        else:
+            pendientes.append(obra)
+
+    subidos = []
+    for obra in terminadas:
+        edificio = obra["edificio"]
+        nivel_dest = obra["nivel_dest"]
+        meta = EDIFICIOS_META.get(edificio)
+        if not meta:
+            continue
+        # Actualizar nivel en city
+        nivel_actual = city.get(meta["campo"], 0)
+        if nivel_dest == nivel_actual + 1:  # sanidad: solo subir 1 nivel a la vez
+            city[meta["campo"]] = nivel_dest
+            subidos.append(edificio)
+
+    city["OBRAS"] = pendientes
+    return subidos
+
+
+def cancelar_obra(city: dict, edificio: str) -> dict:
+    """
+    Cancela obra activa. Devuelve el 50% de los recursos (costo de cancelación).
+    """
+    obras = city.get("OBRAS", [])
+    obra = next((o for o in obras if o.get("edificio") == edificio), None)
+    if not obra:
+        return {"error": f"No hay obra activa para {edificio}"}
+
+    meta = EDIFICIOS_META.get(edificio)
+    if not meta:
+        return {"error": f"Edificio {edificio} no registrado"}
+
+    nivel_dest = obra["nivel_dest"]
+    data = _get_nivel_data(meta["csv"], nivel_dest, meta["tiempo_col"])
+    devuelto = {}
+    if data:
+        for mat in ("madera", "piedra", "hierro", "oro", "carbon"):
+            # Devolver 50%
+            reembolso = int(data[mat] * 0.5)
+            city[mat.upper()] = city.get(mat.upper(), 0) + reembolso
+            devuelto[mat] = reembolso
+
+    city["OBRAS"] = [o for o in obras if o.get("edificio") != edificio]
+
+    return {"ok": True, "edificio": edificio, "devuelto": devuelto}
+'''
+
+out_path = SYSTEMS / "buildings.py"
+out_path.write_text(BUILDINGS_CODE, encoding="utf-8")
+print(f"✅ Creado: {out_path}")
+
+# ─── PARTE 3: Recordatorio para production.py ─────────────────────────────────
+print("""
+─────────────────────────────────────────────────────────────
+RECORDATORIO — production.py / mana_sacerdotes.csv
+
+El CSV mana_sacerdotes.csv tiene columnas INVERTIDAS respecto a lo esperado:
+  col[0] = tasa por hora (ej: '12,717')  ← coma como decimal
+  col[1] = nivel del sacerdote
+
+Verifica que tu parser haga:
+    nivel = int(row[1])
+    tasa  = float(row[0].replace(',', '.'))
+
+Si está invertido, búscalo y corrígelo.
+─────────────────────────────────────────────────────────────
+
+Verifica buildings.py con:
+  python -c "
+import sys; sys.path.insert(0,'backend')
+from systems.buildings import buildings_info
+# Necesitas un city dict de prueba:
+city = {'CENTRO_DE_CIUDAD': 5, 'MADERA': 999999999, 'PIEDRA': 999999999, 'HIERRO': 999999999, 'ORO': 999999999, 'CARBON': 999999999, 'OBRAS': []}
+print(buildings_info(city, 'CENTRO_DE_CIUDAD'))
+  "
+""")

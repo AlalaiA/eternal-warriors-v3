@@ -698,7 +698,8 @@
           },
           "ALALAIA": 89999
         }
-      }
+      },
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -815,7 +816,8 @@
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
       "TEMPLO_3": 13.0,
-      "CENTRO_VIAJES": 5.0
+      "CENTRO_VIAJES": 5.0,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -931,7 +933,8 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "TEMPLO_3": 10
+      "TEMPLO_3": 10,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1047,7 +1050,8 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "TEMPLO_3": 10
+      "TEMPLO_3": 10,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1163,7 +1167,8 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "TEMPLO_3": 10
+      "TEMPLO_3": 10,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1279,7 +1284,8 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "TEMPLO_3": 14
+      "TEMPLO_3": 14,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1395,7 +1401,8 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "TEMPLO_3": 11
+      "TEMPLO_3": 11,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1511,7 +1518,8 @@
       },
       "ID": "ginao-col-11",
       "TIPO": "HUMANO",
-      "TEMPLO_3": 6
+      "TEMPLO_3": 6,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1627,7 +1635,8 @@
       },
       "ID": "ginao-col-12",
       "TIPO": "HUMANO",
-      "TEMPLO_3": 6
+      "TEMPLO_3": 6,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1743,7 +1752,8 @@
       },
       "ID": "ginao-col-13",
       "TIPO": "HUMANO",
-      "TEMPLO_3": 9
+      "TEMPLO_3": 9,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1866,7 +1876,8 @@
       "SIMURGH": 45,
       "LEVIATAN": 55,
       "PATOTAS": 52,
-      "BEHEMOT": 59
+      "BEHEMOT": 59,
+      "LAST_PROD": 1778959605.969573
     },
     {
       "JUGADOR": 0.0,
@@ -1982,7 +1993,8 @@
       },
       "ID": "ginao-col-15",
       "TIPO": "HUMANO",
-      "TEMPLO_3": 9
+      "TEMPLO_3": 9,
+      "LAST_PROD": 1778959605.969573
     }
   ]
 }

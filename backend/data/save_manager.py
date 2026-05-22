@@ -2,6 +2,7 @@
 Gestión de lectura/escritura de JSONs de la nueva estructura v3
 """
 import json
+import math
 from pathlib import Path
 
 DB = Path(__file__).parent.parent / "db"
@@ -14,20 +15,41 @@ PLAYER_PATHS = {
     "ADMIN":       DB / "players" / "admin.json",
 }
 
+class _SafeEncoder(json.JSONEncoder):
+    """Convierte valores problemáticos a JSON válido."""
+    def default(self, obj):
+        return super().default(obj)
+    def iterencode(self, o, _one_shot=False):
+        return super().iterencode(self._sanitize(o), _one_shot)
+    def _sanitize(self, obj):
+        if isinstance(obj, float):
+            if math.isnan(obj): return 0.0
+            if math.isinf(obj): return 1e300  # infinito como número grande válido
+            return obj
+        if isinstance(obj, dict):
+            return {k: self._sanitize(v) for k, v in obj.items()}
+        if isinstance(obj, (list, tuple)):
+            return [self._sanitize(v) for v in obj]
+        return obj
+
 def load_json(path: Path) -> dict | list:
     with open(path, encoding="utf-8") as f:
-        return json.load(f)
+        text = f.read()
+    # Parsear solo el primer objeto JSON válido (ignora basura al final)
+    decoder = json.JSONDecoder()
+    obj, _ = decoder.raw_decode(text.strip())
+    return obj
 
 def save_json(path: Path, data):
+    text = json.dumps(data, cls=_SafeEncoder, ensure_ascii=True, indent=2)
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write(text)
 
 class SaveManager:
     def load_player(self, jugador: str) -> dict:
         jugador = jugador.upper()
         path = PLAYER_PATHS.get(jugador)
         if not path:
-            # Buscar en humanos/
             path = DB / "players" / "humanos" / f"{jugador.lower()}.json"
         if path and path.exists():
             return load_json(path)
