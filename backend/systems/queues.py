@@ -219,11 +219,11 @@ def tiempo_entrenamiento_seg(unidad: str, nivel_cuartel: int, nivel_universidad:
     tiempos      = _TIEMPO_UNIDADES
     reducciones  = _RED_CUARTEL
     red_univ     = _RED_UNIVERSIDAD
-    base_min     = tiempos.get(unidad.upper(), 300)
+    base_seg     = tiempos.get(unidad.upper(), 300)
     red_c        = reducciones.get(nivel_cuartel, 0) / 100
     red_u        = red_univ.get(nivel_universidad, 0) / 100
     red_total    = min(red_c + red_u, 0.95)
-    return base_min * (1 - red_total)
+    return base_seg * (1 - red_total)
 
 def tiempo_invocacion_seg(invocacion: str, nivel_templo: int, nivel_universidad: int = 0) -> float:
     """Segundos por unidad invocada. Aplica rebaja de templo + universidad."""
@@ -231,7 +231,7 @@ def tiempo_invocacion_seg(invocacion: str, nivel_templo: int, nivel_universidad:
     rebajas  = get_rebaja_templo()
     red_univ = get_reduccion_universidad()
     inv      = invs.get(invocacion.upper(), {})
-    base_seg = inv.get("tiempo_base_min", 9000)  # campo mal nombrado, son segundos
+    base_seg = inv.get("tiempo_base_min", 9000)  # segundos, desde CSV TIEMPO_INVOCACION_BASE_SEGUNDOS_POR_UNIDAD
     reb_t    = rebajas.get(nivel_templo, 0) / 100
     red_u    = red_univ.get(nivel_universidad, 0) / 100
     red_total = min(reb_t + red_u, 0.95)
