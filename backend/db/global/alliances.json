@@ -1,0 +1,20 @@
+{
+  "alliances": {
+    "AAA_KILLERS": {
+      "nombre": "AAA_KILLERS",
+      "tipo": "normal",
+      "lider": "JOTICALINDO",
+      "miembros": ["JOTICALINDO", "JIARITO", "GINAO"],
+      "solicitudes": [],
+      "creada": 0
+    },
+    "VITAMINIZADOS": {
+      "nombre": "VITAMINIZADOS",
+      "tipo": "vitaminizado",
+      "lider": "ADMIN",
+      "miembros": ["ADMIN", "ALALAIA"],
+      "solicitudes": [],
+      "creada": 0
+    }
+  }
+}

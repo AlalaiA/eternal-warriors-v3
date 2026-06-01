@@ -18,6 +18,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   startTimer();
 });
 
+// ── Listener: ir a Ejército desde el mapa ───────────────────────────────────
+window.addEventListener('ew:irAEjercito', () => {
+  loadScreen('army');
+});
+
 // ── Selector de ciudades ────────────────────────────────────────────────────
 async function initCitySelector() {
   try {
@@ -105,7 +110,7 @@ let _currentMod = null;
 
 async function loadScreen(screen) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  const navMap = {city:'city',army:'army',invocations:'inv',map:'map',reports:'rep',settings:'set'};
+  const navMap = {city:'city',army:'army',invocations:'inv',map:'map',reports:'rep',alliance:'ali',settings:'set'};
   const btn = document.getElementById('nav-' + (navMap[screen]||'city'));
   if (btn) btn.classList.add('active');
 

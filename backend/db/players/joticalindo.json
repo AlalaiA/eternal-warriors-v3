@@ -4,37 +4,37 @@
     "MAGO": 2,
     "SACERDOTE": 10
   },
-  "experiencia": "1390316.0",
+  "experiencia": 10992236.0,
   "ng_plus": 0,
   "dioses_abatidos": [],
-  "batallas_ganadas": 0,
-  "batallas_perdidas": 0,
+  "batallas_ganadas": 7,
+  "batallas_perdidas": 1,
   "cuevas_derrotadas": 0,
-  "misiones_espionaje": 0,
+  "misiones_espionaje": 26,
   "cities": [
     {
       "JUGADOR": 0.0,
       "CIUDADES_MAXIMAS_POR_JUGADOR": 12.0,
       "ESPACIOS_MAXIMOS_POR_CIUDAD": 400.0,
       "NIVEL_DE_TROPAS": 1.0,
-      "ALDEANO": 153011669861.9872,
-      "EXPLORADOR": 100000,
+      "ALDEANO": 153012859368.1293,
+      "EXPLORADOR": 99997,
       "SACERDOTE": 10000000,
       "GUERRERO": 1000,
       "COMANDO": 1000,
       "MERCENARIO": 1000,
       "MARINE": 1000,
       "CYBORG": 0,
-      "MAGO": 205013378,
+      "MAGO": 205013665.0,
       "METAHUMANO": 10000,
       "DEMONIO": 500000,
-      "ANIMA": 500000,
+      "ANIMA": 500127.0,
       "ESPECTRO": 500000,
       "GOLEM": 23500999,
       "CENTAURO": 23500999,
       "KRAKEN": 5000,
       "ALONARDO": 53188769,
-      "MADRESELVA": 999999999999,
+      "MADRESELVA": 0,
       "COLOSO": 0.0,
       "FENIX": 0.0,
       "DRAGON_DE_ORO": 0.0,
@@ -46,7 +46,7 @@
       "HIERRO": 3.82914e+35,
       "CARBON": 3.41298e+35,
       "ORO": 2.736877e+35,
-      "MANA": 17237806677845.172,
+      "MANA": 227985163361545.22,
       "CENTRO_DE_CIUDAD": 38,
       "CASA": 50,
       "MURALLA": 40,
@@ -57,9 +57,9 @@
       "SANTUARIO_ARCANO": 50,
       "UNIVERSIDAD": 9,
       "HERRERIA": 5,
-      "TEMPLO_1": 2,
+      "TEMPLO_1": 3,
       "CUARTEL_1": 7,
-      "TEMPLO_2": 3,
+      "TEMPLO_2": 4,
       "CUARTEL_2": 4,
       "EXPERIENCIA": 0.0,
       "NOMBRE": "jL01",
@@ -96,22 +96,22 @@
           "duracion_seg": 28080000
         },
         {
-          "edificio": "TEMPLO_2",
-          "nivel_dest": 4,
-          "inicio": 1779417133.9019132,
-          "duracion_seg": 14040
-        },
-        {
-          "edificio": "TEMPLO_1",
-          "nivel_dest": 3,
-          "inicio": 1779417139.6981199,
-          "duracion_seg": 9360
-        },
-        {
           "edificio": "CENTRO_DE_CIUDAD",
           "nivel_dest": 39,
           "inicio": 1779417144.5188882,
           "duracion_seg": 243360000
+        },
+        {
+          "edificio": "UNIVERSIDAD",
+          "nivel_dest": 10,
+          "inicio": 1779748281.7475653,
+          "duracion_seg": 21060000
+        },
+        {
+          "edificio": "CUARTEL_1",
+          "nivel_dest": 8,
+          "inicio": 1779748299.7943244,
+          "duracion_seg": 702000
         }
       ],
       "_ALDEANO_BUF": 0.5719554481074605,
@@ -138,57 +138,24 @@
       },
       "_RESTITUCION_TTL": 0.0,
       "TEMPLO_3": 5,
-      "LAST_PROD": 1779417370.4133742,
+      "LAST_PROD": 1780345511.4893403,
       "COLAS": [
         {
-          "tipo": "CUARTEL_2",
-          "unidad": "MAGO",
-          "cantidad_total": 111,
-          "cantidad_hecha": 0,
-          "tiempo_por_unidad_seg": 138240.0,
-          "inicio": 1779325968.7182186
-        },
-        {
-          "tipo": "CUARTEL_1",
-          "unidad": "MAGO",
-          "cantidad_total": 10,
-          "cantidad_hecha": 0,
-          "tiempo_por_unidad_seg": 109440.0,
-          "inicio": 1779330976.6432123
-        },
-        {
-          "tipo": "CUARTEL_2",
-          "unidad": "MAGO",
-          "cantidad_total": 999999999,
-          "cantidad_hecha": 0,
-          "tiempo_por_unidad_seg": 1872.0,
-          "inicio": 1779417206.9812493
-        },
-        {
-          "tipo": "CUARTEL_1",
-          "unidad": "MAGO",
-          "cantidad_total": 9999999999999,
-          "cantidad_hecha": 0,
-          "tiempo_por_unidad_seg": 1800.0,
-          "inicio": 1779417219.4693732
-        },
-        {
-          "tipo": "TEMPLO_2",
+          "tipo": "TEMPLO_3",
           "unidad": "ANIMA",
-          "cantidad_total": 200,
-          "cantidad_hecha": 0,
-          "tiempo_por_unidad_seg": 9480.0,
-          "inicio": 1779417236.4943538,
-          "mana_gastado": 2400000000.0
-        },
+          "cantidad_total": 1000000,
+          "cantidad_hecha": 28,
+          "tiempo_por_unidad_seg": 9240.0,
+          "inicio": 1779855743.198716,
+          "mana_gastado": 12000000000000.0
+        }
+      ],
+      "TROPAS_PRESTADAS": [
         {
-          "tipo": "TEMPLO_2",
-          "unidad": "ANIMA",
-          "cantidad_total": 10000,
-          "cantidad_hecha": 0,
-          "tiempo_por_unidad_seg": 9480.0,
-          "inicio": 1779417242.1621008,
-          "mana_gastado": 120000000000.0
+          "jugador": "JIARITO",
+          "unidad": "EXPLORADOR",
+          "cantidad": 9960,
+          "ciudad_origen": "Bogot\u00e1"
         }
       ]
     },
@@ -197,7 +164,7 @@
       "CIUDADES_MAXIMAS_POR_JUGADOR": 12.0,
       "ESPACIOS_MAXIMOS_POR_CIUDAD": 400.0,
       "NIVEL_DE_TROPAS": 1.0,
-      "ALDEANO": 148096340,
+      "ALDEANO": 148205133.59808138,
       "EXPLORADOR": 1000,
       "SACERDOTE": 1000.0,
       "GUERRERO": 1000.0,
@@ -221,12 +188,12 @@
       "CABALLERO_DE_LUZ": 0.0,
       "ALALAIA": 0.0,
       "EON_SUPREMO": 0.0,
-      "MADERA": 126622373243426.17,
-      "PIEDRA": 121291007129433.69,
-      "HIERRO": 93300694448638.23,
-      "CARBON": 30656019859276.7,
-      "ORO": 18660239413282.645,
-      "MANA": 10000000000,
+      "MADERA": 254175862578807.75,
+      "PIEDRA": 243473823229641.22,
+      "HIERRO": 187287476064182.53,
+      "CARBON": 61537390961526.984,
+      "ORO": 37457595736391.5,
+      "MANA": 16784771246.541729,
       "CENTRO_DE_CIUDAD": 10.0,
       "CASA": 50,
       "MURALLA": 6,
@@ -237,9 +204,9 @@
       "SANTUARIO_ARCANO": 50,
       "UNIVERSIDAD": 0.0,
       "HERRERIA": 0.0,
-      "TEMPLO_1": 0.0,
+      "TEMPLO_1": 1,
       "CUARTEL_1": 2,
-      "TEMPLO_2": 0.0,
+      "TEMPLO_2": 2,
       "CUARTEL_2": 2,
       "EXPERIENCIA": 0.0,
       "NOMBRE": "JL2",
@@ -258,6 +225,30 @@
           "KEY": "SANTUARIO_ARCANO",
           "TIEMPO": 414854.3566050427,
           "TOTAL": 442800.00000000006
+        },
+        {
+          "edificio": "MURALLA",
+          "nivel_dest": 7,
+          "inicio": 1779748407.8845377,
+          "duracion_seg": 36000
+        },
+        {
+          "edificio": "TORRE_DE_VIGILANCIA",
+          "nivel_dest": 7,
+          "inicio": 1779748411.9158857,
+          "duracion_seg": 36000
+        },
+        {
+          "edificio": "CENTRO_DE_CIUDAD",
+          "nivel_dest": 11,
+          "inicio": 1779748419.3924541,
+          "duracion_seg": 360000
+        },
+        {
+          "edificio": "TEMPLO_2",
+          "nivel_dest": 3,
+          "inicio": 1779748445.0985587,
+          "duracion_seg": 12000
         }
       ],
       "_ALDEANO_BUF": 0.4104326478911604,
@@ -272,14 +263,25 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "LAST_PROD": 1779220746.9490623
+      "LAST_PROD": 1779750307.5049932,
+      "COLAS": [
+        {
+          "tipo": "TEMPLO_1",
+          "unidad": "ANIMA",
+          "cantidad_total": 1,
+          "cantidad_hecha": 0,
+          "tiempo_por_unidad_seg": 11880.0,
+          "inicio": 1779748457.6682386,
+          "mana_gastado": 12000000.0
+        }
+      ]
     },
     {
       "JUGADOR": 0.0,
       "CIUDADES_MAXIMAS_POR_JUGADOR": 12.0,
       "ESPACIOS_MAXIMOS_POR_CIUDAD": 400.0,
       "NIVEL_DE_TROPAS": 1.0,
-      "ALDEANO": 1486708387.196311,
+      "ALDEANO": 1486819195.196311,
       "EXPLORADOR": 1000.0,
       "SACERDOTE": 1000.0,
       "GUERRERO": 1000.0,
@@ -303,12 +305,12 @@
       "CABALLERO_DE_LUZ": 0.0,
       "ALALAIA": 0.0,
       "EON_SUPREMO": 0.0,
-      "MADERA": 226800000.0,
-      "PIEDRA": 226800000.0,
-      "HIERRO": 226800000.0,
-      "CARBON": 226800000.0,
-      "ORO": 226800000.0,
-      "MANA": 10000000000,
+      "MADERA": 1418320028185280.8,
+      "PIEDRA": 1364798526246213.5,
+      "HIERRO": 1057049890096577.0,
+      "CARBON": 347889989403936.8,
+      "ORO": 214086234556268.78,
+      "MANA": 16747192000.0,
       "CENTRO_DE_CIUDAD": 11,
       "CASA": 50,
       "MURALLA": 3,
@@ -343,7 +345,7 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "LAST_PROD": 1779338910.919879,
+      "LAST_PROD": 1779753263.4495134,
       "COLAS": []
     },
     {
@@ -1051,6 +1053,452 @@
       "NIVEL_DE_TROPA": 0.0,
       "LAST_PROD": 1779338657.8917482,
       "COLAS": []
+    }
+  ],
+  "informes": [
+    {
+      "id": "e416f686-6212-4106-b760-1541c26346b5",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "ciudadinac24-1",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "inicio": 1780339769.2590952,
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-024": {}
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-024": {}
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-024": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {}
+    },
+    {
+      "id": "89b0b994-97c0-40f3-a3b5-325d2455d393",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "ciudadinac6-8",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 500.0,
+      "inicio": 1780322277.3838058,
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-006": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {}
+    },
+    {
+      "id": "d3cc98f6-b0b5-4952-ad59-27fe5a11b45e",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "ciudadinac24-1",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "inicio": 1780318634.9747546,
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-024": {}
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-024": {}
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-024": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {}
+    },
+    {
+      "id": "5fe16394-bf98-4c2d-aba2-487803c3f9d0",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Zaragoza",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 100.0,
+      "y_dest": 500.0,
+      "inicio": 1780288152.726249,
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv50 HP=1.2210e+12 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "JIARITO": {
+              "ALDEANO": 215355483,
+              "MAGO": 167445,
+              "METAHUMANO": 99999,
+              "GOLEM": 333333,
+              "CENTAURO": 333333
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "JIARITO": {
+              "ALDEANO": 215355483,
+              "MAGO": 167445,
+              "METAHUMANO": 99999,
+              "GOLEM": 333333,
+              "CENTAURO": 333333
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "JIARITO": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {}
+    },
+    {
+      "id": "b800973d-2304-4bdb-af90-e14bda66be55",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "ciudadinac24-1",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "inicio": 1780288180.160474,
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "JIARITO": {}
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "JIARITO": {}
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "JIARITO": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {}
     }
   ]
 }

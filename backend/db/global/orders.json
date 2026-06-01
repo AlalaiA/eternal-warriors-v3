@@ -1,47 +1,349 @@
 {
   "orders": [
     {
+      "id": "30cb2bd1-c520-497f-bcb7-8667f6bbb652",
       "tipo": "ESPIONAJE",
-      "origen_nombre": "IA001.09",
-      "destino_nombre": "REN8-065",
-      "unidades": {
-        "EXPLORADOR": 1
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 3
+        }
       },
-      "carga_mat": {
-        "MADERA": 0,
-        "PIEDRA": 0,
-        "HIERRO": 0,
-        "CARBON": 0,
-        "ORO": 0
-      },
-      "carga_mana": 0,
-      "tiempo_total": 2.569435735720977,
-      "tiempo_restante": 2.569435735720977,
-      "fase": "REGRESO",
-      "costo_oro": 2569,
-      "vel_min": 500.0,
-      "distancia": 128.47178678604885,
-      "resultado": "✅ Espionaje exitoso Nv.5 | Botín obtenido",
-      "reporte_combate": {
-        "tipo": "ESPIONAJE",
-        "nivel_esp": 5,
-        "intel_ciudad": {
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780345511.4311492,
+      "t_llegada": 1780345513.8332317,
+      "t_fundar": 0.0,
+      "t_retorno": 1780345519.485074,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 96.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
           "nivel": 5,
-          "origen": "IA001.09",
-          "cat": "INACTIVOS",
-          "total_militares": 10090,
-          "total_invocaciones": 0,
-          "materiales": {
-            "MADERA": 0.6690997201949358,
-            "PIEDRA": 0.5990171376615763,
-            "HIERRO": 0.5086923725903034,
-            "CARBON": 0.7908551264554262,
-            "ORO": 0.0472930958494544,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8,
+          "recursos": {
+            "MADERA": 0.6017057839781046,
+            "PIEDRA": 0.6886339476332068,
+            "HIERRO": 0.9390952996909618,
+            "CARBON": 0.9343319525942206,
+            "ORO": 0.7877994095906615,
             "MANA": 774732000.0
           },
-          "muralla": 16,
-          "torre": 0,
-          "tipos_militares": {
+          "ejercito": {
+            "ALDEANO": 0,
+            "EXPLORADOR": 0,
+            "SACERDOTE": 0,
+            "GUERRERO": 0,
+            "COMANDO": 0,
+            "MERCENARIO": 0,
+            "MARINE": 0,
+            "CYBORG": 0,
+            "MAGO": 0,
+            "METAHUMANO": 0
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 17,
+            "CASA": 14,
+            "MURALLA": 8,
+            "TORRE_DE_VIGILANCIA": 0,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 40,
+            "SANTUARIO_ARCANO": 40,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "2d7f8675-14c2-473f-98b5-cde9bb2f2d5c",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780345506.883693,
+      "t_llegada": 1780345509.2857754,
+      "t_fundar": 0.0,
+      "t_retorno": 1780345513.7835035,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8,
+          "recursos": {
+            "MADERA": 0.6017057839781046,
+            "PIEDRA": 0.6886339476332068,
+            "HIERRO": 0.9390952996909618,
+            "CARBON": 0.9343319525942206,
+            "ORO": 0.7877994095906615,
+            "MANA": 774732000.0
+          },
+          "ejercito": {
+            "ALDEANO": 0,
+            "EXPLORADOR": 0,
+            "SACERDOTE": 0,
+            "GUERRERO": 0,
+            "COMANDO": 0,
+            "MERCENARIO": 0,
+            "MARINE": 0,
+            "CYBORG": 0,
+            "MAGO": 0,
+            "METAHUMANO": 0
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 17,
+            "CASA": 14,
+            "MURALLA": 8,
+            "TORRE_DE_VIGILANCIA": 0,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 40,
+            "SANTUARIO_ARCANO": 40,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "5c7be007-d3f8-4afa-a549-339a5d0167d8",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 2
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780345499.15563,
+      "t_llegada": 1780345501.5577126,
+      "t_fundar": 0.0,
+      "t_retorno": 1780345508.5387633,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 97.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8,
+          "recursos": {
+            "MADERA": 0.6017057839781046,
+            "PIEDRA": 0.6886339476332068,
+            "HIERRO": 0.9390952996909618,
+            "CARBON": 0.9343319525942206,
+            "ORO": 0.7877994095906615,
+            "MANA": 774732000.0
+          },
+          "ejercito": {
+            "ALDEANO": 0,
+            "EXPLORADOR": 0,
+            "SACERDOTE": 0,
+            "GUERRERO": 0,
+            "COMANDO": 0,
+            "MERCENARIO": 0,
+            "MARINE": 0,
+            "CYBORG": 0,
+            "MAGO": 0,
+            "METAHUMANO": 0
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 17,
+            "CASA": 14,
+            "MURALLA": 8,
+            "TORRE_DE_VIGILANCIA": 0,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 40,
+            "SANTUARIO_ARCANO": 40,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "633205d7-b685-41f0-865c-45d1d018ed0f",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac6-8",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 26.63,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780343604.012349,
+      "t_llegada": 1780343606.6750543,
+      "t_fundar": 0.0,
+      "t_retorno": 1780343614.2774441,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 4,
+        "inteligencia": {
+          "nivel": 4,
+          "nombre": "ciudadinac6-8",
+          "jugador": 0.0,
+          "x": 227.0,
+          "y": 500.0,
+          "muralla": 20.0,
+          "recursos": {
+            "MADERA": 50000.0,
+            "PIEDRA": 50000.0,
+            "HIERRO": 50000.0,
+            "CARBON": 50000.0,
+            "ORO": 50000.0,
+            "MANA": 0.0
+          },
+          "ejercito": {
             "ALDEANO": 10000,
             "EXPLORADOR": 10,
             "SACERDOTE": 10,
@@ -53,111 +355,3919 @@
             "MAGO": 10,
             "METAHUMANO": 10
           },
-          "tipos_invocaciones": {},
-          "nivel_tropas": {
-            "ALDEANO": 8,
-            "EXPLORADOR": 8,
-            "SACERDOTE": 8,
-            "GUERRERO": 8,
-            "COMANDO": 8,
-            "MERCENARIO": 8,
-            "MARINE": 8,
-            "CYBORG": 8,
-            "MAGO": 8,
-            "METAHUMANO": 8
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
           },
-          "stats_reales": {
-            "ALDEANO": {
-              "sigilo": 1,
-              "destreza": 2,
-              "hp": 55.0,
-              "pa": 16.0,
-              "ca": 11.0
-            },
-            "EXPLORADOR": {
-              "sigilo": 16,
-              "destreza": 11,
-              "hp": 125.0,
-              "pa": 23.0,
-              "ca": 11.0
-            },
-            "SACERDOTE": {
-              "sigilo": 1,
-              "destreza": 51,
-              "hp": 592.0,
-              "pa": 46.0,
-              "ca": 11.0
-            },
-            "GUERRERO": {
-              "sigilo": 1,
-              "destreza": 11,
-              "hp": 273.0,
-              "pa": 76.0,
-              "ca": 21.0
-            },
-            "COMANDO": {
-              "sigilo": 1,
-              "destreza": 16,
-              "hp": 155.0,
-              "pa": 351.0,
-              "ca": 46.0
-            },
-            "MERCENARIO": {
-              "sigilo": 1,
-              "destreza": 21,
-              "hp": 194.0,
-              "pa": 451.0,
-              "ca": 81.0
-            },
-            "MARINE": {
-              "sigilo": 1,
-              "destreza": 26,
-              "hp": 243.0,
-              "pa": 1401.0,
-              "ca": 251.0
-            },
-            "CYBORG": {
-              "sigilo": 1,
-              "destreza": 31,
-              "hp": 304.0,
-              "pa": 3501.0,
-              "ca": 901.0
-            },
-            "MAGO": {
-              "sigilo": 1,
-              "destreza": 36,
-              "hp": 380.0,
-              "pa": 6501.0,
-              "ca": 1501.0
-            },
-            "METAHUMANO": {
-              "sigilo": 1,
-              "destreza": 41,
-              "hp": 475.0,
-              "pa": 13801.0,
-              "ca": 56.0
-            }
-          },
-          "escondite": {
-            "nivel": 0,
-            "capacidad": 0,
-            "materiales": {
-              "MADERA": 0.6690997201949358,
-              "PIEDRA": 0.5990171376615763,
-              "HIERRO": 0.5086923725903034,
-              "CARBON": 0.7908551264554262,
-              "ORO": 0.0472930958494544,
-              "MANA": 774732000.0
-            }
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 3,
+            "CASA": 40,
+            "MURALLA": 20,
+            "TORRE_DE_VIGILANCIA": 20,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 0,
+            "SANTUARIO_ARCANO": 0,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
           }
         },
-        "botin": {
-          "MADERA": 0,
-          "PIEDRA": 0,
-          "HIERRO": 0,
-          "CARBON": 0,
-          "ORO": 0
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "bf3ba51b-cf21-49af-ad29-e89cfa7c810b",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 225.0,
+      "y_dest": 499.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN5-072",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
         }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.6,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780343594.1238825,
+      "t_llegada": 1780343596.9839525,
+      "t_fundar": 0.0,
+      "t_retorno": 1780343604.2875674,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "REN5-072",
+          "jugador": 0.0,
+          "x": 225.0,
+          "y": 499.0,
+          "muralla": 10,
+          "recursos": {
+            "MADERA": 0.29673608113080263,
+            "PIEDRA": 0.0626945411786437,
+            "HIERRO": 0.8461119215935469,
+            "CARBON": 0.9938900228589773,
+            "ORO": 0.3421274023130536,
+            "MANA": 774732000.0
+          },
+          "ejercito": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 21,
+            "CASA": 17,
+            "MURALLA": 10,
+            "TORRE_DE_VIGILANCIA": 0,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 40,
+            "SANTUARIO_ARCANO": 40,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "efaac011-fca2-4b7e-af32-765df0cdb101",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 270.0,
+      "y_dest": 517.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN3-069",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.44,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780343582.4666584,
+      "t_llegada": 1780343585.310951,
+      "t_fundar": 0.0,
+      "t_retorno": 1780343588.9675214,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "REN3-069",
+          "jugador": 0.0,
+          "x": 270.0,
+          "y": 517.0,
+          "muralla": 6,
+          "recursos": {
+            "MADERA": 0.9283871818333864,
+            "PIEDRA": 0.6078421650454402,
+            "HIERRO": 0.5479944813996553,
+            "CARBON": 0.5159619022160769,
+            "ORO": 0.282543390057981,
+            "MANA": 774732000.0
+          },
+          "ejercito": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 13,
+            "CASA": 11,
+            "MURALLA": 6,
+            "TORRE_DE_VIGILANCIA": 0,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 40,
+            "SANTUARIO_ARCANO": 40,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "dd20f8aa-7ea0-4ed5-8a11-97d8cb06f793",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 29.0,
+      "y_dest": 219.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac11-11",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 370.38,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780341696.260597,
+      "t_llegada": 1780341733.2981455,
+      "t_fundar": 0.0,
+      "t_retorno": 1780341771.8720965,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 4,
+        "inteligencia": {
+          "nivel": 4,
+          "nombre": "ciudadinac11-11",
+          "jugador": 0.0,
+          "x": 29.0,
+          "y": 219.0,
+          "muralla": 20.0,
+          "recursos": {
+            "MADERA": 0.0,
+            "PIEDRA": 0.0,
+            "HIERRO": 0.0,
+            "CARBON": 0.0,
+            "ORO": 0.0,
+            "MANA": 0.0
+          },
+          "ejercito": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 3,
+            "CASA": 40,
+            "MURALLA": 20,
+            "TORRE_DE_VIGILANCIA": 20,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 0,
+            "SANTUARIO_ARCANO": 0,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          }
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "5ec8ac3d-2ea0-484c-b845-b43a11b71e30",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 161.0,
+      "y_dest": 464.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN2-003",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 99.62,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780341658.6630898,
+      "t_llegada": 1780341668.6255193,
+      "t_fundar": 0.0,
+      "t_retorno": 1780341679.2781563,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "REN2-003",
+          "jugador": 0.0,
+          "x": 161.0,
+          "y": 464.0,
+          "muralla": 4,
+          "recursos": {
+            "MADERA": 0.4502895837649703,
+            "PIEDRA": 0.9938900228589773,
+            "HIERRO": 0.43989051319658756,
+            "CARBON": 0.14654171839356422,
+            "ORO": 0.23365439847111702,
+            "MANA": 774732000.0
+          },
+          "ejercito": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 9,
+            "CASA": 8,
+            "MURALLA": 4,
+            "TORRE_DE_VIGILANCIA": 0,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 40,
+            "SANTUARIO_ARCANO": 40,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "e85a1a87-20c8-4e1e-9d75-36aed9a3da8d",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 160.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac23-8",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 84.9,
+      "oro_costo": 0.0,
+      "velocidad_min": 500.0,
+      "inicio": 1780341641.7459867,
+      "t_llegada": 1780341650.2359807,
+      "t_fundar": 0.0,
+      "t_retorno": 1780341662.537423,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 4,
+        "inteligencia": {
+          "nivel": 4,
+          "nombre": "ciudadinac23-8",
+          "jugador": 0.0,
+          "x": 160.0,
+          "y": 500.0,
+          "muralla": 20.0,
+          "recursos": {
+            "MADERA": 50000.0,
+            "PIEDRA": 50000.0,
+            "HIERRO": 50000.0,
+            "CARBON": 50000.0,
+            "ORO": 50000.0,
+            "MANA": 0.0
+          },
+          "ejercito": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 3,
+            "CASA": 40,
+            "MURALLA": 20,
+            "TORRE_DE_VIGILANCIA": 20,
+            "CENTRO_DE_VIAJES": 4,
+            "ESCONDITE": 0,
+            "ALMACEN": 0,
+            "SANTUARIO_ARCANO": 0,
+            "UNIVERSIDAD": 0,
+            "HERRERIA": 0,
+            "TEMPLO_1": 0,
+            "TEMPLO_2": 0,
+            "TEMPLO_3": 0,
+            "CUARTEL_1": 0,
+            "CUARTEL_2": 0
+          }
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "e416f686-6212-4106-b760-1541c26346b5",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac24-1",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.66,
+      "oro_costo": 0.0,
+      "velocidad_min": 18.0,
+      "inicio": 1780339769.2590952,
+      "t_llegada": 1780339873.8600419,
+      "t_fundar": 0.0,
+      "t_retorno": 1780339981.487377,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-024": {}
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-024": {}
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-024": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "63ece6e2-ef53-4c12-a97b-28816e031512",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 250.0,
+      "y_dest": 486.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-099",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 36.88,
+      "oro_costo": 0.0,
+      "velocidad_min": 18.0,
+      "inicio": 1780339756.4576755,
+      "t_llegada": 1780339858.8970582,
+      "t_fundar": 0.0,
+      "t_retorno": 1780339964.1878676,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN4-099",
+          "jugador": 0.0,
+          "x": 250.0,
+          "y": 486.0,
+          "muralla": 8
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "f04ed856-c7cf-48b7-b27f-07173ed9af93",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 177.0,
+      "y_dest": 565.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN7-054",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 77.94,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780322299.2957811,
+      "t_llegada": 1780322688.9751365,
+      "t_fundar": 0.0,
+      "t_retorno": 1780333702.2664053,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN7-054",
+          "jugador": 0.0,
+          "x": 177.0,
+          "y": 565.0,
+          "muralla": 14
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "a9bddf36-2d67-42d7-ae23-543b697a01af",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780322288.170806,
+      "t_llegada": 1780322408.2749274,
+      "t_fundar": 0.0,
+      "t_retorno": 1780333427.4466588,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "89b0b994-97c0-40f3-a3b5-325d2455d393",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac6-8",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 26.63,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780322277.3838058,
+      "t_llegada": 1780322410.5190754,
+      "t_fundar": 0.0,
+      "t_retorno": 1780333445.6100001,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-006": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "06c68aed-105a-47cb-8b6a-9ddf8e26154e",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780321776.2737713,
+      "t_llegada": 1780321896.3778927,
+      "t_fundar": 0.0,
+      "t_retorno": 1780322019.0629814,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "152a6133-970d-4e21-9123-d6bd1fcd31a5",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 219.0,
+      "y_dest": 552.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN2-061",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.8,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780321766.4366663,
+      "t_llegada": 1780321955.447248,
+      "t_fundar": 0.0,
+      "t_retorno": 1780322148.4587069,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN2-061",
+          "jugador": 0.0,
+          "x": 219.0,
+          "y": 552.0,
+          "muralla": 4
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "085bdcaa-9fba-4ee8-9408-94d8c4499fdd",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 250.0,
+      "y_dest": 543.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN9-030",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 22.47,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780321751.9231865,
+      "t_llegada": 1780321864.2842119,
+      "t_fundar": 0.0,
+      "t_retorno": 1780321981.0717573,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN9-030",
+          "jugador": 0.0,
+          "x": 250.0,
+          "y": 543.0,
+          "muralla": 18
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "ba65b4f0-f69f-433f-a805-9d6032ca2e93",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 250.0,
+      "y_dest": 486.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-099",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 36.88,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780321737.0082219,
+      "t_llegada": 1780321921.399111,
+      "t_fundar": 0.0,
+      "t_retorno": 1780322108.5131109,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN4-099",
+          "jugador": 0.0,
+          "x": 250.0,
+          "y": 486.0,
+          "muralla": 8
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "7bce1848-4fbf-4ca4-a7ef-117d4c4790e7",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 237.0,
+      "y_dest": 472.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN9-040",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 50.25,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780321729.3902078,
+      "t_llegada": 1780321980.6370983,
+      "t_fundar": 0.0,
+      "t_retorno": 1780322236.047534,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN9-040",
+          "jugador": 0.0,
+          "x": 237.0,
+          "y": 472.0,
+          "muralla": 18
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "2e5e8edd-3702-47be-8bce-713b1a9b2215",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 223.0,
+      "y_dest": 476.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN6-013",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 49.77,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780321718.1615908,
+      "t_llegada": 1780321967.0089335,
+      "t_fundar": 0.0,
+      "t_retorno": 1780322218.44414,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN6-013",
+          "jugador": 0.0,
+          "x": 223.0,
+          "y": 476.0,
+          "muralla": 12
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "749062ea-3e97-4727-9fe6-807eba8b0fb2",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 225.0,
+      "y_dest": 499.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN5-072",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.6,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780321708.1080287,
+      "t_llegada": 1780321851.111525,
+      "t_fundar": 0.0,
+      "t_retorno": 1780321996.5975544,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN5-072",
+          "jugador": 0.0,
+          "x": 225.0,
+          "y": 499.0,
+          "muralla": 10
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "bd4403f0-9206-42c2-9bcf-538a4f114a46",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 270.0,
+      "y_dest": 517.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN3-069",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.44,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780318652.7396986,
+      "t_llegada": 1780318794.9543252,
+      "t_fundar": 0.0,
+      "t_retorno": 1780321774.257761,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN3-069",
+          "jugador": 0.0,
+          "x": 270.0,
+          "y": 517.0,
+          "muralla": 6
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "d3cc98f6-b0b5-4952-ad59-27fe5a11b45e",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac24-1",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.66,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780318634.9747546,
+      "t_llegada": 1780318823.2564585,
+      "t_fundar": 0.0,
+      "t_retorno": 1780321820.0529919,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-024": {}
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-024": {}
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-024": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "b800973d-2304-4bdb-af90-e14bda66be55",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "jugador_dest": "JIARITO",
+      "ciudad_dest": "ciudadinac24-1",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.66,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780288180.160474,
+      "t_llegada": 1780288368.442178,
+      "t_fundar": 0.0,
+      "t_retorno": 1780288558.7615738,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "JIARITO": {}
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "JIARITO": {}
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "JIARITO": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "a4898115-6b85-4cc9-a238-491907591ac4",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 165.0,
+      "y_dest": 552.0,
+      "jugador_dest": "JIARITO",
+      "ciudad_dest": "REN2-016",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 82.64,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780288169.3505738,
+      "t_llegada": 1780288582.5393927,
+      "t_fundar": 0.0,
+      "t_retorno": 1780289000.7217994,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN2-016",
+          "jugador": 0.0,
+          "x": 165.0,
+          "y": 552.0,
+          "muralla": 4
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "5fe16394-bf98-4c2d-aba2-487803c3f9d0",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 100.0,
+      "y_dest": 500.0,
+      "jugador_dest": "JIARITO",
+      "ciudad_dest": "Zaragoza",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 143.69,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780288152.726249,
+      "t_llegada": 1780288871.196847,
+      "t_fundar": 0.0,
+      "t_retorno": 1780289593.5937338,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv50 HP=1.2210e+12 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "JIARITO": {
+              "ALDEANO": 215355483,
+              "MAGO": 167445,
+              "METAHUMANO": 99999,
+              "GOLEM": 333333,
+              "CENTAURO": 333333
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "JIARITO": {
+              "ALDEANO": 215355483,
+              "MAGO": 167445,
+              "METAHUMANO": 99999,
+              "GOLEM": 333333,
+              "CENTAURO": 333333
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "JIARITO": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "7e5b0e3e-4b9e-44c2-a93b-4a96534b3654",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 70.0,
+      "y_dest": 518.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN6-039",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 172.05,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780288137.421495,
+      "t_llegada": 1780288997.6540217,
+      "t_fundar": 0.0,
+      "t_retorno": 1780289861.4593337,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN6-039",
+          "jugador": 0.0,
+          "x": 70.0,
+          "y": 518.0,
+          "muralla": 12
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "13f3eef2-ae4f-4dcb-936e-c1ae71ce7468",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac24-1",
+      "unidades": {},
+      "unidades_prestadas": {
+        "JIARITO": {
+          "EXPLORADOR": 1
+        }
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.66,
+      "oro_costo": 0.0,
+      "velocidad_min": 10.0,
+      "inicio": 1780286991.8845735,
+      "t_llegada": 1780287180.1662774,
+      "t_fundar": 0.0,
+      "t_retorno": 1780287370.6168869,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-024": {}
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-024": {}
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-024": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "bd328537-6fc5-4628-9e78-3571e31a3bea",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 237.0,
+      "y_dest": 472.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN9-040",
+      "unidades": {
+        "MADRESELVA": 100000000000000000000,
+        "ALONARDO": 53188769999990,
+        "KRAKEN": 5000999009909,
+        "CENTAURO": 235009999999,
+        "GOLEM": 235009999990,
+        "ESPECTRO": 5000000000990,
+        "ANIMA": 50010499990030000,
+        "DEMONIO": 50000000000009995026432
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 50.25,
+      "oro_costo": 0.0,
+      "velocidad_min": 3000.0,
+      "inicio": 1779929959.7622848,
+      "t_llegada": 1779929960.5997744,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929962.2185783,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 0.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "Victoria del atacante",
+        "combate_completo": {
+          "victoria_atacante": true,
+          "mensaje": "Victoria del atacante",
+          "rondas": 1,
+          "log": [
+            "Muralla Nv18 HP=1.4460e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=600 \u00d7 100,000,000,000,000,000,000 unidades):",
+            "    MADRESELVA(jug=JOTICALINDO dst=600 \u00d7100,000,000,000,000,000,000) \u2192 -1\u00d7MURALLA(dst=inf) [PA=1.220e+04 CA=0.000e+00 HP=1.446e+06]",
+            "Victoria del atacante"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "MADRESELVA": 100000000000000000000,
+              "ALONARDO": 53188769999990,
+              "KRAKEN": 5000999009909,
+              "CENTAURO": 235009999999,
+              "GOLEM": 235009999990,
+              "ESPECTRO": 5000000000990,
+              "ANIMA": 50010499990030000,
+              "DEMONIO": 50000000000009995026432
+            }
+          },
+          "iniciales_def": {
+            "RENOVABLE_9_040": {}
+          },
+          "sobrevivientes_atk": {
+            "JOTICALINDO": {
+              "MADRESELVA": 100000000000000000000,
+              "ALONARDO": 53188769999990,
+              "KRAKEN": 5000999009909,
+              "CENTAURO": 235009999999,
+              "GOLEM": 235009999990,
+              "ESPECTRO": 5000000000990,
+              "ANIMA": 50010499990030000,
+              "DEMONIO": 50000000000009995026432
+            }
+          },
+          "sobrevivientes_def": {},
+          "bajas_atk": {
+            "JOTICALINDO": {}
+          },
+          "bajas_def": {
+            "RENOVABLE_9_040": {}
+          },
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "RENOVABLE_9_040": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": true,
+          "tipo_victoria": "combate",
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 100000000000000000000,
+        "ALONARDO": 53188769999990,
+        "KRAKEN": 5000999009909,
+        "CENTAURO": 235009999999,
+        "GOLEM": 235009999990,
+        "ESPECTRO": 5000000000990,
+        "ANIMA": 50010499990030000,
+        "DEMONIO": 50000000000009995026432
+      }
+    },
+    {
+      "id": "4eddece1-65ed-4f94-a9f3-2be55f844cb2",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 250.0,
+      "y_dest": 486.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-099",
+      "unidades": {
+        "MADRESELVA": 100000000000000000000,
+        "ALONARDO": 53188769999990,
+        "KRAKEN": 5000999009909,
+        "CENTAURO": 235009999999,
+        "GOLEM": 235009999990,
+        "ESPECTRO": 5000000000990,
+        "ANIMA": 50010499990030000,
+        "DEMONIO": 50000000000009995026432
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 36.88,
+      "oro_costo": 0.0,
+      "velocidad_min": 3000.0,
+      "inicio": 1779929884.0264173,
+      "t_llegada": 1779929884.6410534,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929886.5490465,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "RENOVABLE_4_099": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 640360.0
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 640360.0
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 100000000000000000000,
+        "ALONARDO": 53188769999990,
+        "KRAKEN": 5000999009909,
+        "CENTAURO": 235009999999,
+        "GOLEM": 235009999990,
+        "ESPECTRO": 5000000000990,
+        "ANIMA": 50010499990030000,
+        "DEMONIO": 50000000000009995026432
+      }
+    },
+    {
+      "id": "6579e3ec-6eaf-4534-b4f8-db14ea38f0b6",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 158.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "Dios-245",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 86.83,
+      "oro_costo": 869,
+      "velocidad_min": 18.0,
+      "inicio": 1779929101.0629916,
+      "t_llegada": 1779929342.266251,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929588.0705504,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "Dios 245",
+          "tipo": "DIOSES",
+          "x": 158.0,
+          "y": 500.0,
+          "hp": 75700384.0,
+          "pa": 55813322.0,
+          "ca": 22817018.0,
+          "destreza": 700.0
+        },
+        "botin": {},
+        "combate": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "0277ff28-42df-4c3c-913e-c52bfa1f2b56",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 250.0,
+      "y_dest": 543.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN9-030",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 22.47,
+      "oro_costo": 225,
+      "velocidad_min": 18.0,
+      "inicio": 1779929088.406998,
+      "t_llegada": 1779929150.8297896,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929217.3769088,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN9-030",
+          "jugador": 0.0,
+          "x": 250.0,
+          "y": 543.0,
+          "muralla": 18
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "9f8bc59c-8d94-41da-a19c-c18f24e65905",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 245.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "Dios-167",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 22.2,
+      "oro_costo": 223,
+      "velocidad_min": 18.0,
+      "inicio": 1779929079.7697425,
+      "t_llegada": 1779929141.4464183,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929206.5576456,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "Dios 167",
+          "tipo": "DIOSES",
+          "x": 245.0,
+          "y": 500.0,
+          "hp": 34836212.0,
+          "pa": 25684476.0,
+          "ca": 10500059.0,
+          "destreza": 600.0
+        },
+        "botin": {},
+        "combate": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "3a3fa85b-7fcc-42d8-94f1-0eae0fb8839e",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 241,
+      "velocidad_min": 18.0,
+      "inicio": 1779929069.8785193,
+      "t_llegada": 1779929136.6030312,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929206.3590395,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "9a94d1c2-b07d-4c56-84d0-b29348d4494e",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 225.0,
+      "y_dest": 499.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN5-072",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.6,
+      "oro_costo": 287,
+      "velocidad_min": 18.0,
+      "inicio": 1779929062.0016737,
+      "t_llegada": 1779929141.4480605,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929224.2452528,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN5-072",
+          "jugador": 0.0,
+          "x": 225.0,
+          "y": 499.0,
+          "muralla": 10
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "aecec2f2-510f-444f-8bf3-17306312fa4a",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac6-8",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 26.63,
+      "oro_costo": 267,
+      "velocidad_min": 18.0,
+      "inicio": 1779929049.7578535,
+      "t_llegada": 1779929123.721892,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929198.4986055,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=10 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-006": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "43b0568b-414b-416a-aa14-b07199df047a",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 223.0,
+      "y_dest": 476.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN6-013",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 49.77,
+      "oro_costo": 498,
+      "velocidad_min": 18.0,
+      "inicio": 1779929035.9513345,
+      "t_llegada": 1779929174.1998582,
+      "t_fundar": 0.0,
+      "t_retorno": 1779929313.9261072,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN6-013",
+          "jugador": 0.0,
+          "x": 223.0,
+          "y": 476.0,
+          "muralla": 12
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "10c8754a-b086-4b13-9b68-a13605477991",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {
+        "MADRESELVA": 99999999999999,
+        "ALONARDO": 53188769990,
+        "KRAKEN": 5000999000,
+        "CENTAURO": 23500999,
+        "GOLEM": 235009990
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.66,
+      "oro_costo": 0.0,
+      "velocidad_min": 12000.0,
+      "inicio": 1779920578.0457656,
+      "t_llegada": 1779920578.202667,
+      "t_fundar": 0.0,
+      "t_retorno": 1779920582.4798784,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 0.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "Victoria del atacante",
+        "combate_completo": {
+          "victoria_atacante": true,
+          "mensaje": "Victoria del atacante",
+          "rondas": 1,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=600 \u00d7 99,999,999,999,999 unidades):",
+            "    MADRESELVA(jug=JOTICALINDO dst=600 \u00d799,999,999,999,999) \u2192 -1\u00d7MURALLA(dst=inf) [PA=1.220e+04 CA=0.000e+00 HP=1.776e+06]",
+            "Victoria del atacante"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "MADRESELVA": 99999999999999,
+              "ALONARDO": 53188769990,
+              "KRAKEN": 5000999000,
+              "CENTAURO": 23500999,
+              "GOLEM": 235009990
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-024": {}
+          },
+          "sobrevivientes_atk": {
+            "JOTICALINDO": {
+              "MADRESELVA": 99999999999999,
+              "ALONARDO": 53188769990,
+              "KRAKEN": 5000999000,
+              "CENTAURO": 23500999,
+              "GOLEM": 235009990
+            }
+          },
+          "sobrevivientes_def": {},
+          "bajas_atk": {
+            "JOTICALINDO": {}
+          },
+          "bajas_def": {
+            "Inactivo-024": {}
+          },
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-024": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": true,
+          "tipo_victoria": "combate",
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 99999999999999,
+        "ALONARDO": 53188769990,
+        "KRAKEN": 5000999000,
+        "CENTAURO": 23500999,
+        "GOLEM": 235009990
+      }
+    },
+    {
+      "id": "97644f2a-0a91-4dc1-b6f4-b01ead28e3f6",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "REN4-084",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 241,
+      "velocidad_min": 18.0,
+      "inicio": 1779920555.9151702,
+      "t_llegada": 1779920622.639682,
+      "t_fundar": 0.0,
+      "t_retorno": 1779920694.3927643,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "d06f0506-60ac-4524-98f5-f7826eda42e2",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 520.0,
+      "y_dest": 633.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac6-8",
+      "unidades": {
+        "MADRESELVA": 999999948798
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 299.34,
+      "oro_costo": 0.0,
+      "velocidad_min": 40000.0,
+      "inicio": 1779904068.3875716,
+      "t_llegada": 1779904068.7617478,
+      "t_fundar": 0.0,
+      "t_retorno": 1779904069.4153423,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 0.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "MADRESELVA": 999999948798
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-005": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-005": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "MADRESELVA": 999999948798
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-005": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "0621c11a-217e-4f69-b61e-0b68f8cc8d8d",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac6-8",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 241,
+      "velocidad_min": 18.0,
+      "inicio": 1779904024.792362,
+      "t_llegada": 1779904091.5168738,
+      "t_fundar": 0.0,
+      "t_retorno": 1779904160.8654397,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": {
+          "nivel": 0,
+          "nombre": "REN4-084",
+          "jugador": 0.0,
+          "x": 218.0,
+          "y": 523.0,
+          "muralla": 8
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "12643d78-a35d-454b-a20b-35e871785801",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 245.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac6-8",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 22.2,
+      "oro_costo": 223,
+      "velocidad_min": 18.0,
+      "inicio": 1779904005.096957,
+      "t_llegada": 1779904066.7736328,
+      "t_fundar": 0.0,
+      "t_retorno": 1779904130.6794186,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "Dios 167",
+          "tipo": "DIOSES",
+          "x": 245.0,
+          "y": 500.0,
+          "hp": 34836212.0,
+          "pa": 25684476.0,
+          "ca": 10500059.0,
+          "destreza": 600.0
+        },
+        "botin": {},
+        "combate": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "0a5576ad-6980-4d69-90dc-16acb8ce45f6",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac6-8",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 26.63,
+      "oro_costo": 267,
+      "velocidad_min": 18.0,
+      "inicio": 1779903975.6232388,
+      "t_llegada": 1779904049.5872774,
+      "t_fundar": 0.0,
+      "t_retorno": 1779904127.823185,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 8.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv20 HP=1.7760e+06 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "Inactivo-006": {
+              "ALDEANO": 10000,
+              "EXPLORADOR": 10,
+              "SACERDOTE": 10,
+              "GUERRERO": 10,
+              "COMANDO": 10,
+              "MERCENARIO": 10,
+              "MARINE": 10,
+              "CYBORG": 10,
+              "MAGO": 10,
+              "METAHUMANO": 10
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "Inactivo-006": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "d7c37b4c-f6dc-4ab7-81d6-683f35ea6041",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 218.0,
+      "y_dest": 523.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "MADRESELVA": 999999948798,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 24.02,
+      "oro_costo": 0.0,
+      "velocidad_min": 25000.0,
+      "inicio": 1779765700.5707324,
+      "t_llegada": 1779765700.618774,
+      "t_fundar": 0.0,
+      "t_retorno": 1779765703.2915564,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "RENOVABLE_4_084": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 640360.0
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999948798,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000
+      }
+    },
+    {
+      "id": "85287339-5419-4dd2-8c39-c39a71f8f39e",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 245.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "GOLEM": 23500999
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 22.2,
+      "oro_costo": 0.0,
+      "velocidad_min": 12000.0,
+      "inicio": 1779764885.200317,
+      "t_llegada": 1779764885.292832,
+      "t_fundar": 0.0,
+      "t_retorno": 1779764886.501205,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": false,
+        "mensaje": "Derrota contra Dios 167",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MADRESELVA": 51201
+          }
+        },
+        "bajas_def": {
+          "Dios 167": 0
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 0.0
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999948798,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "GOLEM": 23500999
+      }
+    },
+    {
+      "id": "e5f59fec-5888-4369-9d1f-c749816014b7",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 270.0,
+      "y_dest": 517.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.44,
+      "oro_costo": 285,
+      "velocidad_min": 18.0,
+      "inicio": 1779764733.4754176,
+      "t_llegada": 1779764812.4835434,
+      "t_fundar": 0.0,
+      "t_retorno": 1779764894.8545048,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN3-069",
+          "jugador": 0.0,
+          "x": 270.0,
+          "y": 517.0,
+          "muralla": 6
+        },
+        "botin": {},
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "e57e3da7-e906-4e78-935b-e563dfa850df",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 245.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 22.2,
+      "oro_costo": 223,
+      "velocidad_min": 18.0,
+      "inicio": 1779764706.5473924,
+      "t_llegada": 1779764768.2240682,
+      "t_fundar": 0.0,
+      "t_retorno": 1779764832.201122,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "botin": {},
+        "combate": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "b1bdd3b0-1884-4571-998b-305ee847fcf1",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 270.0,
+      "y_dest": 517.0,
+      "jugador_dest": null,
+      "ciudad_dest": "Dios-323",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.44,
+      "oro_costo": 285,
+      "velocidad_min": 18.0,
+      "inicio": 1779763989.9707193,
+      "t_llegada": 1779764068.9788451,
+      "t_fundar": 0.0,
+      "t_retorno": 1779764151.7736037,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN3-069",
+          "jugador": 0.0,
+          "x": 270.0,
+          "y": 517.0,
+          "muralla": 6
+        },
+        "botin": {},
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "738b34b7-3941-421b-87d0-b3d0e08c2c6f",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 245.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "Dios-323",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 22.2,
+      "oro_costo": 223,
+      "velocidad_min": 18.0,
+      "inicio": 1779763976.8170266,
+      "t_llegada": 1779764038.4937024,
+      "t_fundar": 0.0,
+      "t_retorno": 1779764104.2169962,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "botin": {},
+        "combate": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "4cc7b049-91ed-4b5a-b9bf-611c8b4e23a8",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 71.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "Dios-323",
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 172.41,
+      "oro_costo": 1725,
+      "velocidad_min": 18.0,
+      "inicio": 1779763861.733256,
+      "t_llegada": 1779764340.6482463,
+      "t_fundar": 0.0,
+      "t_retorno": 1779765032.5123224,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "botin": {},
+        "combate": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "2728be65-bb85-40de-be8b-b26206a29f7a",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 129.0,
+      "y_dest": 514.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "MAGO": 205013663
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 113.28,
+      "oro_costo": 232245283199,
+      "velocidad_min": 150.0,
+      "inicio": 1779763840.833275,
+      "t_llegada": 1779763878.594219,
+      "t_fundar": 0.0,
+      "t_retorno": 1779763919.243443,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "RENOVABLE_8_090": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {
+          "ORO": 0.0472930958494544,
+          "HIERRO": 0.5086923725903034,
+          "CARBON": 0.7908551264554262,
+          "PIEDRA": 0.5990171376615763,
+          "MADERA": 0.6690997201949358,
+          "MANA": 774732000.0
+        },
+        "xp": {
+          "JOTICALINDO": 1280300.0
+        }
+      },
+      "botin": {
+        "ORO": 0.0472930958494544,
+        "HIERRO": 0.5086923725903034,
+        "CARBON": 0.7908551264554262,
+        "PIEDRA": 0.5990171376615763,
+        "MADERA": 0.6690997201949358,
+        "MANA": 774732000.0
+      },
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "MAGO": 205013663
+      }
+    },
+    {
+      "id": "fc246804-3c70-4337-8526-96b03fdc2b37",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 237.0,
+      "y_dest": 472.0,
+      "jugador_dest": null,
+      "ciudad_dest": "Dios-284",
+      "unidades": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 50.25,
+      "oro_costo": 0.0,
+      "velocidad_min": 33333.0,
+      "inicio": 1779762931.198828,
+      "t_llegada": 1779762931.2742028,
+      "t_fundar": 0.0,
+      "t_retorno": 1779762932.615202,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "RENOVABLE_9_040": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1440270.0
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769
+      }
+    },
+    {
+      "id": "a596b00c-2fd3-4f5a-ba1a-6e085865cb03",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 114.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": "Dios-284",
+      "unidades": {
+        "MADRESELVA": 999999999999
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 129.88,
+      "oro_costo": 0.0,
+      "velocidad_min": 40000.0,
+      "inicio": 1779762856.4814713,
+      "t_llegada": 1779762856.6438174,
+      "t_fundar": 0.0,
+      "t_retorno": 1779762861.0292742,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Sin defensor \u2014 victoria autom\u00e1tica",
+        "rondas": 0
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999
+      }
+    },
+    {
+      "id": "f9ab1104-c72c-4428-bc6d-d94491178441",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "MAGO": 205013663,
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 26.63,
+      "oro_costo": 54589098573,
+      "velocidad_min": 150.0,
+      "inicio": 1779761713.645621,
+      "t_llegada": 1779761722.5213058,
+      "t_fundar": 0.0,
+      "t_retorno": 1779761734.8175483,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": true,
+        "sigilo": 0.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "botin": {},
+        "combate": "Victoria del atacante"
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769,
+        "MAGO": 205013663
+      }
+    },
+    {
+      "id": "e6da96fb-32aa-457b-9a28-687ed4f56a1a",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 543.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "GOLEM": 23500999
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 25.81,
+      "oro_costo": 0.0,
+      "velocidad_min": 12000.0,
+      "inicio": 1779761202.8601186,
+      "t_llegada": 1779761202.9676478,
+      "t_fundar": 0.0,
+      "t_retorno": 1779761205.4116385,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Sin defensor \u2014 victoria autom\u00e1tica",
+        "rondas": 0
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "GOLEM": 23500999
+      }
+    },
+    {
+      "id": "c4c106e5-230d-4d76-8b3b-c51c5cf2f7c0",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 270.0,
+      "y_dest": 517.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 28.44,
+      "oro_costo": 285,
+      "velocidad_min": 18.0,
+      "inicio": 1779761182.449169,
+      "t_llegada": 1779761261.4572947,
+      "t_fundar": 0.0,
+      "t_retorno": 1779761345.4557285,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "detectado": false,
+        "sigilo": 8.0,
+        "nivel_espionaje": 1,
+        "inteligencia": {
+          "nivel": 1,
+          "nombre": "REN3-069",
+          "jugador": 0.0,
+          "x": 270.0,
+          "y": 517.0,
+          "muralla": 6
+        },
+        "botin": {},
+        "combate": null
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "0b50ad73-d5cb-47d0-a56a-e2f40af2755e",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 543.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 25.81,
+      "oro_costo": 259,
+      "velocidad_min": 18.0,
+      "inicio": 1779761155.2822082,
+      "t_llegada": 1779761226.9682522,
+      "t_fundar": 0.0,
+      "t_retorno": 1779761302.312614,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Sin defensor \u2014 victoria autom\u00e1tica",
+        "rondas": 0
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "3abae0aa-0e90-471c-801a-7504934a6ce9",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 543.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 25.81,
+      "oro_costo": 259,
+      "velocidad_min": 18.0,
+      "inicio": 1779761142.6349661,
+      "t_llegada": 1779761214.32101,
+      "t_fundar": 0.0,
+      "t_retorno": 1779761287.1415296,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Sin defensor \u2014 victoria autom\u00e1tica",
+        "rondas": 0
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {
+        "EXPLORADOR": 1
+      }
+    },
+    {
+      "id": "4bf4ff99-7b5e-4353-9438-4f9aed52f310",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.66,
+      "oro_costo": 377,
+      "velocidad_min": 18.0,
+      "inicio": 1779761128.101453,
+      "t_llegada": 1779761232.7023997,
+      "t_fundar": 0.0,
+      "t_retorno": 1779761340.6786084,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": false,
+        "mensaje": "Muralla resisti\u00f3 \u2014 derrota instant\u00e1nea",
+        "rondas": 0,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "EXPLORADOR": 1
+          }
+        },
+        "bajas_def": {},
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 0.0
+        }
+      },
+      "botin": {},
+      "unidades_sobrevivientes": {}
+    },
+    {
+      "id": "ce2b6b48-bf1e-4ed3-bdc8-f6eeb7983405",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 500.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "MAGO": 205013663,
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 26.63,
+      "oro_costo": 54589098573,
+      "velocidad_min": 150.0,
+      "inicio": 1779760622.1532402,
+      "t_llegada": 1779760631.028925,
+      "t_fundar": 0.0,
+      "t_retorno": 1779760639.9046097,
+      "estado": "COMPLETADA",
+      "resultado": null,
+      "botin": {}
+    },
+    {
+      "id": "013efbe7-cd98-489f-a904-27cb1073ff7a",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 250.0,
+      "y_dest": 486.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 36.88,
+      "oro_costo": 369,
+      "velocidad_min": 18.0,
+      "inicio": 1779760563.3878703,
+      "t_llegada": 1779760665.827253,
+      "t_fundar": 0.0,
+      "t_retorno": 1779760768.266636,
+      "estado": "COMPLETADA",
+      "resultado": null,
+      "botin": {}
+    },
+    {
+      "id": "3b33f266-dce6-4703-99f1-13a8cac7e192",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 271.0,
+      "y_dest": 657.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "MADRESELVA": 999999999999,
+        "MAGO": 205013663
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 138.08,
+      "oro_costo": 283082224460,
+      "velocidad_min": 150.0,
+      "inicio": 1779759312.4438925,
+      "t_llegada": 1779759358.470455,
+      "t_fundar": 0.0,
+      "t_retorno": 1779759408.1659474,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "Inactivo-025": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {
+          "ORO": 50000.0,
+          "HIERRO": 50000.0,
+          "CARBON": 50000.0,
+          "PIEDRA": 50000.0,
+          "MADERA": 50000.0
+        },
+        "xp": {
+          "JOTICALINDO": 800340.0
+        }
+      },
+      "botin": {
+        "ORO": 50000.0,
+        "HIERRO": 50000.0,
+        "CARBON": 50000.0,
+        "PIEDRA": 50000.0,
+        "MADERA": 50000.0
+      },
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999,
+        "MAGO": 205013663
+      }
+    },
+    {
+      "id": "f7830fda-9ca8-4340-91e2-524c5eb7861d",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 49.0,
+      "y_dest": 588.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "METAHUMANO": 10000,
+        "MADRESELVA": 999999999999
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 203.97,
+      "oro_costo": 2040,
+      "velocidad_min": 300.0,
+      "inicio": 1779757786.199237,
+      "t_llegada": 1779757820.1947434,
+      "t_fundar": 0.0,
+      "t_retorno": 1779757858.8442883,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "Inactivo-014": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {
+          "ORO": 50000.0,
+          "HIERRO": 50000.0,
+          "CARBON": 50000.0,
+          "PIEDRA": 50000.0,
+          "MADERA": 50000.0
+        },
+        "xp": {
+          "JOTICALINDO": 3200040.0
+        }
+      },
+      "botin": {
+        "ORO": 50000.0,
+        "HIERRO": 50000.0,
+        "CARBON": 50000.0,
+        "PIEDRA": 50000.0,
+        "MADERA": 50000.0
+      },
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999,
+        "METAHUMANO": 10000
+      }
+    },
+    {
+      "id": "f643ab07-1c2d-4038-9624-2685deef6540",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 325.0,
+      "y_dest": 535.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac18-8",
+      "unidades": {
+        "KRAKEN": 5000,
+        "DEMONIO": 500000,
+        "MAGO": 205013663
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 84.01,
+      "oro_costo": 841,
+      "velocidad_min": 150.0,
+      "inicio": 1779755602.9760554,
+      "t_llegada": 1779755630.9800234,
+      "t_fundar": 0.0,
+      "t_retorno": 1779755658.9839914,
+      "estado": "COMPLETADA",
+      "resultado": null,
+      "botin": {}
+    },
+    {
+      "id": "a40ffc9b-1a35-40bb-bbca-fd6020d5e225",
+      "tipo": "ESPIONAJE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 325.0,
+      "y_dest": 535.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac18-8",
+      "unidades": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 84.01,
+      "oro_costo": 0.0,
+      "velocidad_min": 33333.0,
+      "inicio": 1779755572.9225655,
+      "t_llegada": 1779755573.0485845,
+      "t_fundar": 0.0,
+      "t_retorno": 1779755573.1746035,
+      "estado": "COMPLETADA",
+      "resultado": null,
+      "botin": {}
+    },
+    {
+      "id": "a7d3f56e-1345-4d33-a778-6979d7aa229c",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 325.0,
+      "y_dest": 535.0,
+      "jugador_dest": null,
+      "ciudad_dest": null,
+      "unidades": {
+        "MAGO": 205013663,
+        "METAHUMANO": 10000,
+        "MARINE": 1000,
+        "MERCENARIO": 1000,
+        "COMANDO": 1000,
+        "DEMONIO": 500000,
+        "ANIMA": 500054,
+        "ESPECTRO": 500000,
+        "GOLEM": 23500999,
+        "CENTAURO": 23500999,
+        "KRAKEN": 5000,
+        "ALONARDO": 53188769,
+        "MADRESELVA": 999999999999
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 84.01,
+      "oro_costo": 841,
+      "velocidad_min": 12.0,
+      "inicio": 1779754518.9183404,
+      "t_llegada": 1779754868.96794,
+      "t_fundar": 0.0,
+      "t_retorno": 1779755219.8096302,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "Inactivo-018": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {
+          "ORO": 50000.0,
+          "HIERRO": 50000.0,
+          "CARBON": 50000.0,
+          "PIEDRA": 50000.0,
+          "MADERA": 50000.0
+        },
+        "xp": {
+          "JOTICALINDO": 160420.0
+        }
+      },
+      "botin": {
+        "ORO": 50000.0,
+        "HIERRO": 50000.0,
+        "CARBON": 50000.0,
+        "PIEDRA": 50000.0,
+        "MADERA": 50000.0
+      },
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "GOLEM": 23500999,
+        "ESPECTRO": 500000,
+        "ANIMA": 500054,
+        "DEMONIO": 500000,
+        "METAHUMANO": 10000,
+        "MAGO": 205013663,
+        "MARINE": 1000,
+        "MERCENARIO": 1000,
+        "COMANDO": 1000
+      }
+    },
+    {
+      "id": "7f65db6f-1ea5-4c36-a0f3-2de8e1c8ea14",
+      "tipo": "ATAQUE",
+      "jugador": "JOTICALINDO",
+      "ciudad_origen": "jL01",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 205.0,
+      "y_dest": 529.0,
+      "jugador_dest": null,
+      "ciudad_dest": "ciudadinac24-1",
+      "unidades": {
+        "MAGO": 205013663,
+        "DEMONIO": 500000,
+        "ANIMA": 500054,
+        "ESPECTRO": 500000,
+        "GOLEM": 23500999,
+        "CENTAURO": 23500999,
+        "KRAKEN": 5000,
+        "ALONARDO": 53188769,
+        "MADRESELVA": 999999999999,
+        "SACERDOTE": 9999990
+      },
+      "recursos": {},
+      "nivel_tropas": 1,
+      "distancia": 37.66,
+      "oro_costo": 377,
+      "velocidad_min": 52.0,
+      "inicio": 1779752624.6333585,
+      "t_llegada": 1779752660.8413785,
+      "t_fundar": 0.0,
+      "t_retorno": 1779753830.0200584,
+      "estado": "COMPLETADA",
+      "resultado": {
+        "victoria": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {}
+        },
+        "bajas_def": {
+          "Inactivo-024": {
+            "ALDEANO": 10000,
+            "EXPLORADOR": 10,
+            "SACERDOTE": 10,
+            "GUERRERO": 10,
+            "COMANDO": 10,
+            "MERCENARIO": 10,
+            "MARINE": 10,
+            "CYBORG": 10,
+            "MAGO": 10,
+            "METAHUMANO": 10
+          }
+        },
+        "saqueo": {
+          "ORO": 50000.0,
+          "HIERRO": 50000.0,
+          "CARBON": 50000.0,
+          "PIEDRA": 50000.0,
+          "MADERA": 50000.0
+        },
+        "xp": {
+          "JOTICALINDO": 2080190.0
+        }
+      },
+      "botin": {
+        "ORO": 50000.0,
+        "HIERRO": 50000.0,
+        "CARBON": 50000.0,
+        "PIEDRA": 50000.0,
+        "MADERA": 50000.0
+      },
+      "unidades_sobrevivientes": {
+        "MADRESELVA": 999999999999,
+        "ALONARDO": 53188769,
+        "KRAKEN": 5000,
+        "CENTAURO": 23500999,
+        "GOLEM": 23500999,
+        "ESPECTRO": 500000,
+        "ANIMA": 500054,
+        "DEMONIO": 500000,
+        "SACERDOTE": 9999990,
+        "MAGO": 205013663
       }
     }
   ]

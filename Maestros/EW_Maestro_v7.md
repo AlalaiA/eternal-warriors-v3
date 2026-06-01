@@ -5,7 +5,7 @@
 
 ## REGLAS DE TRABAJO — NO NEGOCIABLES
 
-1. **Scripts descargables** — todo fix va en archivo descargable, nunca inline.
+1. **Scripts de patch** — nunca generar archivos completos. Generar scripts Python que modifiquen el archivo en disco con `str.replace()` o `re.sub()`. Ejemplo: `patch_queues.py` que abre `queues.py`, reemplaza el ancla exacta y guarda.
 2. **Auditar antes de escribir** — pedir archivo actual, leer ancla exacta.
 3. **Un problema a la vez** — diagnosticar completamente, luego un solo fix.
 4. **No especular** — si falta info, parar y pedirla.
@@ -112,7 +112,8 @@ E:\0000ew V2Claude\
 ### Escondite (`escondite.py` + `api/escondite.py`)
 - Manual: jugador decide qué y cuánto esconder
 - Capacidades: cap_ejercito (tropas) y cap_material (por cada material)
-- **NO guarda Maná ni Invocaciones**
+- **NO guarda Maná**
+- **SÍ guarda Invocaciones** — no ocupan espacio (capacidad ilimitada)
 - Protege contra ataques normales
 - **NO protege** contra nivel 40 + AlalaiA/Éon Supremo
 - Reincorporación manual
@@ -254,7 +255,8 @@ E:\0000ew V2Claude\
 ## BUGS CONOCIDOS / PENDIENTES PRÓXIMA SESIÓN
 
 ### Pendientes Prioridad ALTA
-1. **Escondite** — subir nivel desde 0 en jL01 para poder usarlo
+1. **Escondite invocaciones** — implementar meter/sacar invocaciones (sin ocupar espacio de cap_ejercito ni cap_material)
+2. **Escondite** — subir nivel desde 0 en jL01 para poder usarlo
 2. **Pantalla Ejército** — ver y gestionar tropas por ciudad
 3. **Pantalla Invocaciones** — ver invocaciones disponibles
 4. **Sistema de órdenes** — TRANSPORTE, DESPLAZAMIENTO, ATAQUE, ESPIONAJE
@@ -346,4 +348,4 @@ taskkill /F /PID [PID]
 7. **2 colas simultáneas** por cuartel Y por templo (independientes)
 8. **4 obras simultáneas** máximo por ciudad (universidad 1 sola por jugador)
 9. **Herrería acumulativa** de TODAS las ciudades del jugador
-10. **Escondite NO guarda** Maná ni Invocaciones
+10. **Escondite NO guarda** Maná. Sí guarda Invocaciones (sin ocupar espacio). Pendiente: implementar invocaciones en escondite.
