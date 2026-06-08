@@ -107,6 +107,27 @@ def aceptar_solicitud(nombre: str, solicitante: str, lider: str, alianzas: dict)
     return {"ok": True, "msg": f"{solicitante} se unió a {nombre}"}
 
 
+
+def transferir_liderazgo(nombre: str, lider_actual: str, nuevo_lider: str, alianzas: dict) -> dict:
+    """El líder transfiere su rol a otro miembro de la alianza."""
+    lider_actual = lider_actual.upper()
+    nuevo_lider  = nuevo_lider.upper()
+    nombre       = nombre.upper().replace(" ", "_")
+
+    if nombre not in alianzas:
+        return {"ok": False, "msg": "Alianza no encontrada"}
+    alianza = alianzas[nombre]
+    if alianza["lider"] != lider_actual:
+        return {"ok": False, "msg": "Solo el líder actual puede transferir el liderazgo"}
+    if nuevo_lider not in alianza["miembros"]:
+        return {"ok": False, "msg": f"{nuevo_lider} no es miembro de la alianza"}
+    if nuevo_lider == lider_actual:
+        return {"ok": False, "msg": "Ya eres el líder"}
+
+    alianza["lider"] = nuevo_lider
+    return {"ok": True, "msg": f"Liderazgo transferido a {nuevo_lider}"}
+
+
 def expulsar_o_salir(nombre: str, jugador: str, ejecutor: str, alianzas: dict, sm) -> dict:
     """
     Expulsa a un miembro (solo el líder) o el jugador sale voluntariamente.
@@ -358,23 +379,38 @@ def retornar_tropas_prestadas_post_orden(
                     if entrada["cantidad"] <= 0:
                         prestadas.remove(entrada)
         else:
-            # ATAQUE/ESPIONAJE/TRANSPORTE → regresar a ciudad_origen del dueño
+            # ATAQUE/ESPIONAJE/TRANSPORTE → regresar a ciudad_origen de cada entrada
             player_dueño = sm.load_player(prop)
-            ciudad_origen = next(
-                (p["ciudad_origen"] for p in prestadas
-                 if p["jugador"] == prop),
-                None
-            )
-            if not ciudad_origen:
-                ciudades = player_dueño.get("cities", [])
-                ciudad_origen = ciudades[0]["NOMBRE"] if ciudades else None
 
-            if ciudad_origen:
-                city_ret = _buscar_ciudad(player_dueño, ciudad_origen)
+            # Obtener todas las entradas de este dueño con sus ciudades origen
+            entradas_prop = [p for p in prestadas if p["jugador"] == prop]
+
+            # Calcular total prestado por unidad para distribuir proporcionalmente
+            total_prestado = {}
+            for ep in entradas_prop:
+                u = ep["unidad"]
+                total_prestado[u] = total_prestado.get(u, 0) + ep["cantidad"]
+
+            # Devolver a cada ciudad_origen su proporción de sobrevivientes
+            for ep in entradas_prop:
+                u = ep["unidad"]
+                cant_sobrev_total = sobrev.get(u, 0)
+                if cant_sobrev_total <= 0 or total_prestado.get(u, 0) <= 0:
+                    continue
+                # Proporción: cuánto vuelve a esta ciudad_origen específica
+                proporcion = ep["cantidad"] / total_prestado[u]
+                cant_retorno = round(cant_sobrev_total * proporcion)
+                if cant_retorno <= 0:
+                    continue
+                city_ret = _buscar_ciudad(player_dueño, ep["ciudad_origen"])
+                if not city_ret:
+                    # Fallback a primera ciudad
+                    ciudades = player_dueño.get("cities", [])
+                    city_ret = ciudades[0] if ciudades else None
                 if city_ret:
-                    for unidad, cant in sobrev.items():
-                        city_ret[unidad] = int(city_ret.get(unidad, 0) or 0) + cant
-                    sm.save_player(prop, player_dueño)
+                    city_ret[u] = int(city_ret.get(u, 0) or 0) + cant_retorno
+
+            sm.save_player(prop, player_dueño)
 
             # Quitar de TROPAS_PRESTADAS del huésped
             for unidad, cant in sobrev.items():

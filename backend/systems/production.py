@@ -19,6 +19,7 @@ Retroactividad:
 
 import csv, time
 from pathlib import Path
+from backend.data.save_manager import safe_resource_float
 
 CSV_DIR = Path(__file__).parent.parent.parent  # raíz del proyecto
 # En producción real apunta a los CSVs del proyecto
@@ -276,14 +277,23 @@ def aplicar_produccion(city: dict, unit_levels: dict = None) -> dict:
 
     # Aplicar producción a cada recurso con cap de almacén
     for recurso in ["MADERA", "PIEDRA", "HIERRO", "ORO", "CARBON"]:
-        ganado = tasas[recurso] * segundos
-        actual = float(city.get(recurso, 0) or 0)
-        city[recurso] = actual + ganado if cap_material >= 1e50 else min(actual + ganado, cap_material)
+        if cap_material >= 1e50:
+            # Almacén nv50 = infinito — recurso pasa a __INF__ directamente
+            city[recurso] = "__INF__"
+        else:
+            ganado = tasas[recurso] * segundos
+            actual = safe_resource_float(city.get(recurso, 0))
+            if actual < 1e50:
+                city[recurso] = min(actual + ganado, cap_material)
 
     # Maná con cap de santuario
-    actual_mana = float(city.get("MANA", 0) or 0)
+    actual_mana = safe_resource_float(city.get("MANA", 0))
     ganado_mana = tasas["MANA"] * segundos
-    city["MANA"] = actual_mana + ganado_mana if cap_mana >= 1e50 else min(actual_mana + ganado_mana, cap_mana)
+    if cap_mana >= 1e50:
+        # Santuario nv50 = infinito — maná pasa a __INF__ directamente
+        city["MANA"] = "__INF__"
+    elif actual_mana < 1e50:
+        city["MANA"] = min(actual_mana + ganado_mana, cap_mana)
 
     # Aldeanos — CC produce X aldeanos/hora, cap = capacidad de la Casa
     nivel_casa  = int(city.get("CASA", 1) or 1)

@@ -16,7 +16,7 @@ let _ciudades   = [];     // ciudades de jugadores activos
 let _ordenes    = [];     // trayectorias activas
 
 // Viewport
-let _scale    = 0.7;      // zoom actual (tiles → px)
+let _scale    = 0.85;     // zoom actual (tiles → px)
 let _offsetX  = 0;        // pan X en px
 let _offsetY  = 0;        // pan Y en px
 const MAPA_W  = 1000;
@@ -36,22 +36,46 @@ let _animFrame = 0;
 
 // Colores por categoría
 const CAT_COLOR = {
-  CIUDAD_JUGADOR:  '#c9a84c',
-  CIUDAD_PROPIA:   '#4caf50',
-  INACTIVOS:       '#6ba3e0',
-  DIOSES:          '#9b6ad6',
-  CUEVAS:          '#e07050',
-  PORTALES:        '#50d0d0',
-  KARLAKA:         '#e03030',
+  CIUDAD_JUGADOR:      '#c9a84c',
+  CIUDAD_PROPIA:       '#4caf50',
+  CIUDAD_ALIADA:       '#5bbfff',
+  CIUDAD_VITAMINIZADA: '#ff80ff',
+  INACTIVOS:           '#6ba3e0',
+  INACTIVOS_REN:       '#a0c8f0',
+  DIOSES:              '#9b6ad6',
+  CUEVAS:              '#e07050',
+  PORTALES:            '#50d0d0',
+  KARLAKA:             '#e03030',
 };
 
 const CAT_LABEL = {
-  CIUDAD_JUGADOR: 'Ciudad',
-  INACTIVOS:      'Ciudad inactiva',
-  DIOSES:         'Dios',
-  CUEVAS:         'Cueva',
-  PORTALES:       'Portal',
-  KARLAKA:        'KarlakÁ',
+  CIUDAD_JUGADOR:      'Ciudad rival',
+  CIUDAD_PROPIA:       'Mi ciudad',
+  CIUDAD_ALIADA:       'Ciudad aliada',
+  CIUDAD_VITAMINIZADA: 'Vitaminizada',
+  INACTIVOS:           'Ciudad inactiva',
+  INACTIVOS_REN:       'Inactivo (ren.)',
+  DIOSES:              'Dios',
+  CUEVAS:              'Cueva',
+  PORTALES:            'Portal',
+  KARLAKA:             'KarlakÁ',
+};
+
+// Alianza de Joticalindo y vitaminizados
+let _alianzaSet = new Set(); // cargado dinámicamente desde /api/alliances/{jugador}
+const VITAMINIZADOS_SET    = new Set(['ALALAIA','ADMIN']);
+
+// Estado de capas visibles
+let _capas = {
+  humanos:       true,
+  alianza:       true,
+  vitaminizados: true,
+  inactivos:     true,
+  inactivos_ren: false,
+  dioses:        true,
+  cuevas:        true,
+  portales:      true,
+  karlaka:       true,
 };
 
 // ── Coordenadas ───────────────────────────────────────────────────────────────
@@ -98,13 +122,13 @@ function _render() {
   // Trayectorias de órdenes
   _drawOrdenes();
 
-  // Entidades
+  // Entidades filtradas por capa
   if (_entities) {
-    _drawLayer(_entities.inactivos || [], 2.5, CAT_COLOR.INACTIVOS,   false);
-    _drawLayer(_entities.dioses    || [], 4,   CAT_COLOR.DIOSES,      true);
-    _drawLayer(_entities.cuevas    || [], 3,   CAT_COLOR.CUEVAS,      true);
-    _drawLayer(_entities.portales  || [], 5,   CAT_COLOR.PORTALES,    true);
-    if (_entities.karlaka) _drawKarlaka();
+    if (_capas.inactivos)    _drawLayer(_entities.inactivos || [], 2.5, CAT_COLOR.INACTIVOS,  false);
+    if (_capas.dioses)       _drawLayer(_entities.dioses    || [], 4,   CAT_COLOR.DIOSES,     true);
+    if (_capas.cuevas)       _drawLayer(_entities.cuevas    || [], 3,   CAT_COLOR.CUEVAS,     true);
+    if (_capas.portales)     _drawLayer(_entities.portales  || [], 5,   CAT_COLOR.PORTALES,   true);
+    if (_capas.karlaka && _entities.karlaka) _drawKarlaka();
   }
 
   // Ciudades de jugadores
@@ -310,7 +334,7 @@ function _drawCiudades() {
   const W = _canvas.width, H = _canvas.height;
 
   // En zoom muy bajo (< 2), agrupar ciudades cercanas en clusters
-  if (_scale < 2) {
+  if (_scale < 0.3) {
     // Agrupar por jugador — mostrar un solo indicador por jugador
     const porJugador = {};
     _ciudades.forEach(c => {
@@ -318,8 +342,17 @@ function _drawCiudades() {
       porJugador[c.jugador].push(c);
     });
     Object.entries(porJugador).forEach(([jug, ciudades]) => {
-      const esPropia = jug === _jugador.toUpperCase();
-      const col = esPropia ? CAT_COLOR.CIUDAD_PROPIA : CAT_COLOR.CIUDAD_JUGADOR;
+      const esPropia  = jug === _jugador.toUpperCase();
+      const esVitam   = VITAMINIZADOS_SET.has(jug);
+      const esAliada  = !esPropia && _alianzaSet.has(jug);
+      const esRival   = !esPropia && !esVitam && !esAliada;
+      if (esVitam  && !_capas.vitaminizados) return;
+      if (esAliada && !_capas.alianza)       return;
+      if (esRival  && !_capas.humanos)       return;
+      const col = esPropia  ? CAT_COLOR.CIUDAD_PROPIA
+                : esVitam   ? CAT_COLOR.CIUDAD_VITAMINIZADA
+                : esAliada  ? CAT_COLOR.CIUDAD_ALIADA
+                :             CAT_COLOR.CIUDAD_JUGADOR;
       // Centroide
       const cx = ciudades.reduce((s, c) => s + c.x, 0) / ciudades.length;
       const cy = ciudades.reduce((s, c) => s + c.y, 0) / ciudades.length;
@@ -349,8 +382,17 @@ function _drawCiudades() {
     const {sx, sy} = _worldToScreen(c.x, c.y);
     if (sx < -20 || sx > W + 20 || sy < -20 || sy > H + 20) return;
 
-    const esPropia = c.jugador === _jugador.toUpperCase();
-    const col      = esPropia ? CAT_COLOR.CIUDAD_PROPIA : CAT_COLOR.CIUDAD_JUGADOR;
+    const esPropia  = c.jugador === _jugador.toUpperCase();
+    const esVitam   = VITAMINIZADOS_SET.has(c.jugador);
+    const esAliada  = !esPropia && _alianzaSet.has(c.jugador);
+    const esRival   = !esPropia && !esVitam && !esAliada;
+    if (esVitam  && !_capas.vitaminizados) return;
+    if (esAliada && !_capas.alianza)       return;
+    if (esRival  && !_capas.humanos)       return;
+    const col = esPropia  ? CAT_COLOR.CIUDAD_PROPIA
+              : esVitam   ? CAT_COLOR.CIUDAD_VITAMINIZADA
+              : esAliada  ? CAT_COLOR.CIUDAD_ALIADA
+              :             CAT_COLOR.CIUDAD_JUGADOR;
     const isHov    = _hovered && _hovered.id === `ciudad-${c.jugador}-${c.nombre}`;
     const isSel    = _selected && _selected.id === `ciudad-${c.jugador}-${c.nombre}`;
     const lado     = isSel ? LADO * 1.6 : isHov ? LADO * 1.3 : LADO;
@@ -424,7 +466,7 @@ function _tooltipLines(e) {
 function _drawCoordsHUD() {
   if (!_lastMX) return;
   const {wx, wy} = _screenToWorld(_lastMX, _lastMY);
-  const txt = `(${wx.toFixed(1)}, ${wy.toFixed(1)})  ×${_scale.toFixed(2)}`;
+  const txt = `(${Math.round(wx)}, ${Math.round(wy)})  ×${_scale.toFixed(2)}`;
   _ctx.font      = "10px 'Cinzel',serif";
   _ctx.fillStyle = 'rgba(201,168,76,0.5)';
   _ctx.textAlign = 'right';
@@ -433,13 +475,15 @@ function _drawCoordsHUD() {
 
 function _drawLeyenda() {
   const items = [
-    ['■', CAT_COLOR.CIUDAD_PROPIA,   'Mi ciudad'],
-    ['◆', CAT_COLOR.CIUDAD_JUGADOR,  'Ciudad rival'],
-    ['●', CAT_COLOR.INACTIVOS,       'Inactivo'],
-    ['●', CAT_COLOR.DIOSES,          'Dios'],
-    ['●', CAT_COLOR.CUEVAS,          'Cueva'],
-    ['●', CAT_COLOR.PORTALES,        'Portal'],
-    ['☠', CAT_COLOR.KARLAKA,         'KarlakÁ'],
+    ['■', CAT_COLOR.CIUDAD_PROPIA,       'Mi ciudad'],
+    ['◆', CAT_COLOR.CIUDAD_ALIADA,       'Aliado'],
+    ['◆', CAT_COLOR.CIUDAD_JUGADOR,      'Rival'],
+    ['◆', CAT_COLOR.CIUDAD_VITAMINIZADA, 'Vitaminizado'],
+    ['●', CAT_COLOR.INACTIVOS,           'Inactivo'],
+    ['●', CAT_COLOR.DIOSES,              'Dios'],
+    ['●', CAT_COLOR.CUEVAS,              'Cueva'],
+    ['●', CAT_COLOR.PORTALES,            'Portal'],
+    ['☠', CAT_COLOR.KARLAKA,             'KarlakÁ'],
   ];
   const x = 10, y0 = _canvas.height - items.length * 16 - 10;
   _ctx.font = "10px 'Cinzel',serif";
@@ -494,11 +538,11 @@ function _hitTest(sx, sy) {
   };
 
   if (_entities) {
-    check(_entities.inactivos || [], () => 'INACTIVOS');
-    check(_entities.dioses    || [], () => 'DIOSES');
-    check(_entities.cuevas    || [], () => 'CUEVAS');
-    check(_entities.portales  || [], () => 'PORTALES');
-    if (_entities.karlaka) {
+    if (_capas.inactivos) check(_entities.inactivos || [], () => 'INACTIVOS');
+    if (_capas.dioses)    check(_entities.dioses    || [], () => 'DIOSES');
+    if (_capas.cuevas)    check(_entities.cuevas    || [], () => 'CUEVAS');
+    if (_capas.portales)  check(_entities.portales  || [], () => 'PORTALES');
+    if (_capas.karlaka && _entities.karlaka) {
       const k = _entities.karlaka;
       const dx = k.x - wx, dy = k.y - wy;
       const d  = Math.sqrt(dx * dx + dy * dy);
@@ -507,11 +551,25 @@ function _hitTest(sx, sy) {
   }
 
   _ciudades.forEach(c => {
+    // Respetar filtros de capa
+    const esP  = c.jugador === _jugador.toUpperCase();
+    const esV  = VITAMINIZADOS_SET.has(c.jugador);
+    const esA  = !esP && _alianzaSet.has(c.jugador);
+    const esR  = !esP && !esV && !esA;
+    if (esV && !_capas.vitaminizados) return;
+    if (esA && !_capas.alianza)       return;
+    if (esR && !_capas.humanos)       return;
+
     const dx = c.x - wx, dy = c.y - wy;
     const d  = Math.sqrt(dx * dx + dy * dy);
     if (d < bestD) {
       bestD = d;
-      best  = { ...c, id: `ciudad-${c.jugador}-${c.nombre}`, cat: 'CIUDAD_JUGADOR' };
+      // Asignar cat correcto para que _renderInfoPanel detecte esPropia
+      const cat = esP ? 'CIUDAD_PROPIA'
+                : esV ? 'CIUDAD_VITAMINIZADA'
+                : esA ? 'CIUDAD_ALIADA'
+                :       'CIUDAD_JUGADOR';
+      best = { ...c, id: `ciudad-${c.jugador}-${c.nombre}`, cat };
     }
   });
 
@@ -527,8 +585,15 @@ function _renderInfoPanel(e) {
 
   const col     = CAT_COLOR[e.cat] || '#888';
   const nombre  = e.nombre || e.clase || `(${Math.round(e.x)}, ${Math.round(e.y)})`;
-  const esPropia = e.cat === 'CIUDAD_JUGADOR' && e.jugador === _jugador.toUpperCase();
-  const esEnemigo = e.cat === 'CIUDAD_JUGADOR' && !esPropia;
+  // Sobrescribir cat label para tipos derivados
+  const catLabel = e.cat === 'CIUDAD_PROPIA'       ? 'Mi ciudad'
+                 : e.cat === 'CIUDAD_ALIADA'        ? 'Ciudad aliada'
+                 : e.cat === 'CIUDAD_VITAMINIZADA'  ? 'Vitaminizada'
+                 : CAT_LABEL[e.cat] || e.cat;
+  const esCiudad  = ['CIUDAD_JUGADOR','CIUDAD_VITAMINIZADA','CIUDAD_ALIADA','CIUDAD_PROPIA'].includes(e.cat);
+  const esPropia  = e.cat === 'CIUDAD_PROPIA' || (esCiudad && e.jugador === _jugador.toUpperCase());
+  const esAliado  = e.cat === 'CIUDAD_ALIADA' && !esPropia;
+  const esEnemigo = esCiudad && !esPropia && !esAliado;
   const esInactivo = e.cat === 'INACTIVOS';
   const esCueva   = e.cat === 'CUEVAS';
   const esDios    = e.cat === 'DIOSES';
@@ -536,7 +601,7 @@ function _renderInfoPanel(e) {
 
   // Botones de acción según tipo
   let acciones = '';
-  const coords = `${e.x.toFixed(1)},${e.y.toFixed(1)}`;
+  const coords = `${Math.round(e.x)},${Math.round(e.y)}`;
   const jugDest = e.jugador || '';
 
   if (esEnemigo || esInactivo) {
@@ -545,6 +610,13 @@ function _renderInfoPanel(e) {
         style="${_btnStyle('#2a0a0a','#e05050')}">⚔ Atacar</button>
       <button onclick="window._mapOrden('ESPIONAJE','${coords}','${jugDest}','${e.nombre||''}')"
         style="${_btnStyle('#1a1a0a','#c9a84c')}">🕵 Espiar</button>`;
+  }
+  if (esAliado) {
+    acciones = `
+      <button onclick="window._mapOrden('ESPIONAJE','${coords}','${jugDest}','${e.nombre||''}')"
+        style="${_btnStyle('#1a1a0a','#5bbfff')}">🕵 Espiar (aliado)</button>
+      <button onclick="window._mapOrden('DESPLAZAMIENTO','${coords}','${jugDest}','${e.nombre||''}')"
+        style="${_btnStyle('#0a1a2a','#6ba3e0')}">🚶 Desplazar tropas</button>`;
   }
   if (esCueva || esDios) {
     acciones = `
@@ -567,7 +639,7 @@ function _renderInfoPanel(e) {
   panel.innerHTML = `
     <div style="border-bottom:1px solid ${col}44;padding-bottom:8px;margin-bottom:10px;">
       <div style="color:${col};font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;">
-        ${CAT_LABEL[e.cat] || e.cat}
+        ${catLabel}
       </div>
       <div style="color:#e8e0d0;font-size:14px;font-family:'Cinzel',serif;margin-top:2px;font-weight:600;">
         ${nombre}
@@ -588,7 +660,7 @@ function _renderInfoPanel(e) {
 
     <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px;">
       ${acciones}
-      <button onclick="window._mapUsarCoordsEnOrden(${e.x.toFixed(1)},${e.y.toFixed(1)})"
+      <button onclick="window._mapUsarCoordsEnOrden(${Math.round(e.x)},${Math.round(e.y)})"
         style="${_btnStyle('#0a0a1a','#6ba3e0')}">
         📌 Usar coordenadas en Ejército
       </button>
@@ -629,7 +701,7 @@ function _centerOn(wx, wy) {
 
 function _fitAll() {
   const W = _canvas.width, H = _canvas.height;
-  _scale   = Math.min(W / MAPA_W, H / MAPA_H) * 0.9;
+  _scale   = Math.min(W / MAPA_W, H / MAPA_H) * 0.85;
   _offsetX = (W - MAPA_W * _scale) / 2;
   _offsetY = (H - MAPA_H * _scale) / 2;
   _render();
@@ -688,7 +760,7 @@ function _onClick(e) {
   } else {
     // Click en vacío — seleccionar coordenadas del mapa
     const {wx, wy} = _screenToWorld(sx, sy);
-    const coord = { x: Math.round(wx * 10) / 10, y: Math.round(wy * 10) / 10, cat: 'COORD' };
+    const coord = { x: Math.round(wx), y: Math.round(wy), cat: 'COORD' };
     _selected = { ...coord, id: 'coord', nombre: `(${coord.x}, ${coord.y})` };
     _renderInfoPanel({ ...coord, cat: 'COORD', nombre: `(${coord.x}, ${coord.y})` });
     window._mapUsarCoordsEnOrden(coord.x, coord.y);
@@ -749,7 +821,7 @@ function _onKeyDown(e) {
 async function _loadData() {
   try {
     const [r1, r2, r3] = await Promise.all([
-      fetch('/api/map/entities'),
+      fetch(`/api/map/entities?jugador=${_jugador}`),
       fetch('/api/map/players'),
       fetch(`/api/map/orders/${_jugador}`),
     ]);
@@ -769,15 +841,15 @@ async function _loadData() {
 
 function _renderControls() {
   return `
-    <div style="
-      position:absolute;top:10px;right:300px;
-      display:flex;gap:6px;z-index:10;
-    ">
+    <div style="position:absolute;top:10px;left:10px;display:flex;gap:6px;z-index:10;">
       <button onclick="window._mapFit()" title="Ver todo el mapa" style="${_ctrlBtn()}">⊡</button>
       <button onclick="window._mapZoomIn()" title="Zoom +" style="${_ctrlBtn()}">+</button>
       <button onclick="window._mapZoomOut()" title="Zoom -" style="${_ctrlBtn()}">−</button>
       <button onclick="window._mapGoHome()" title="Ir a mi ciudad" style="${_ctrlBtn('#2a1a08','#c9a84c')}">🏠</button>
       <button onclick="window._mapGoKarlaka()" title="Ver KarlakÁ" style="${_ctrlBtn('#2a0808','#e05050')}">☠</button>
+    </div>
+    <div style="position:absolute;top:52px;left:10px;display:flex;flex-wrap:wrap;gap:4px;z-index:10;max-width:500px;">
+      ${_renderCapas()}
     </div>
     <div id="map-coord-feedback" style="
       position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
@@ -794,11 +866,48 @@ function _ctrlBtn(bg = '#0d0d1a', col = '#c9a84c') {
     font-size:16px;font-family:monospace;`;
 }
 
+window._toggleCapa = function(capa) {
+  _capas[capa] = !_capas[capa];
+  const btn = document.getElementById('capa-btn-' + capa);
+  if (btn) btn.style.opacity = _capas[capa] ? '1' : '0.3';
+  _render();
+};
+
+function _renderCapas() {
+  const defs = [
+    ['humanos',       '👤','Humanos',      CAT_COLOR.CIUDAD_JUGADOR],
+    ['alianza',       '🤝','Alianza',       CAT_COLOR.CIUDAD_ALIADA],
+    ['vitaminizados', '💊','Vitaminizados', CAT_COLOR.CIUDAD_VITAMINIZADA],
+    ['inactivos',     '🏚','Inactivos',     CAT_COLOR.INACTIVOS],
+    ['dioses',        '🌩','Dioses',        CAT_COLOR.DIOSES],
+    ['cuevas',        '🦎','Cuevas',        CAT_COLOR.CUEVAS],
+    ['portales',      '🌀','Portales',      CAT_COLOR.PORTALES],
+    ['karlaka',       '☠','KarlakÁ',       CAT_COLOR.KARLAKA],
+  ];
+  return defs.map(([k,ico,lbl,col]) => {
+    const on = _capas[k];
+    return `<button id="capa-btn-${k}" onclick="window._toggleCapa('${k}')" title="${lbl}"
+      style="background:#0d0d1a;border:1px solid ${col}99;color:${col};
+        padding:2px 8px;border-radius:4px;cursor:pointer;font-size:10px;
+        font-family:'Cinzel',serif;white-space:nowrap;opacity:${on?'1':'0.3'};"
+    >${ico} ${lbl}</button>`;
+  }).join('');
+}
+
 // ── Render principal ──────────────────────────────────────────────────────────
 
 export async function render(container, jugador, ciudad) {
   _jugador = jugador;
   _ciudad  = ciudad;
+
+  // Cargar alianza dinámica del jugador actual
+  _alianzaSet = new Set([jugador.toUpperCase()]);
+  try {
+    const ra = await fetch(`/api/alliances/${jugador}`).then(r => r.json());
+    if (ra.alianza && ra.miembros) {
+      _alianzaSet = new Set(ra.miembros.map(m => m.toUpperCase()));
+    }
+  } catch {}
   _selected = null;
   _hovered  = null;
 
@@ -874,8 +983,9 @@ export async function render(container, jugador, ciudad) {
   window._mapZoomIn   = () => _zoom(1.3, _canvas.width/2, _canvas.height/2);
   window._mapZoomOut  = () => _zoom(0.77, _canvas.width/2, _canvas.height/2);
   window._mapGoHome   = () => {
-    const c = _ciudades.find(c => c.jugador === jugador.toUpperCase() && c.nombre === ciudad);
-    if (c) { _scale = 6; _centerOn(c.x, c.y); }
+    // Centrar en la primera ciudad propia (capital)
+    const c = _ciudades.find(c => c.jugador === jugador.toUpperCase());
+    if (c) { _scale = 6; _centerOn(c.x, c.y); _render(); }
   };
   window._mapGoKarlaka = () => { _scale = 2; _centerOn(500, 500); };
 
@@ -899,7 +1009,7 @@ export async function render(container, jugador, ciudad) {
   setInterval(async () => {
     try {
       const [r1, r2] = await Promise.all([
-        fetch('/api/map/entities'),
+        fetch(`/api/map/entities?jugador=${_jugador}`),
         fetch('/api/map/players'),
       ]);
       const d1 = await r1.json();

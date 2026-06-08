@@ -27,6 +27,7 @@ Fundar Ciudad:
 
 import math
 import time
+from backend.data.save_manager import safe_resource_float as _srf
 import uuid
 from pathlib import Path
 
@@ -211,7 +212,7 @@ def crear_orden(
         if _cnorm(k) not in INV_KEYS and int(v or 0) > 0
     )
     oro_costo = costo_oro(distancia, cantidad_basicas) if cantidad_basicas > 0 else 0.0
-    oro_actual = float(ciudad_origen.get("ORO", 0) or 0)
+    oro_actual = _srf(ciudad_origen.get("ORO", 0))
     if oro_actual < oro_costo:
         return {"ok": False, "msg": f"Oro insuficiente: necesitas {oro_costo:,.0f}, tienes {oro_actual:,.0f}"}
 
@@ -226,12 +227,33 @@ def crear_orden(
         if total_u + total_p <= 0:
             return {"ok": False, "msg": "Debes enviar al menos una unidad"}
 
+    # ── Validar ataque a dios ya derrotado (temprano, antes del viaje) ──────────
+    if tipo == "ATAQUE" and not jugador_dest and sm:
+        try:
+            mundo_dioses = sm.load_world("dioses")
+            for e in mundo_dioses.get("entities", []):
+                ex, ey = float(e.get("X", -1)), float(e.get("Y", -1))
+                if abs(ex - x_dest) <= 1.0 and abs(ey - y_dest) <= 1.0:
+                    # Es un dios — verificar si ya fue derrotado por este jugador
+                    if e.get("_derrotado") or int(e.get("HP", 1)) <= 0:
+                        return {"ok": False, "msg": f"{e.get('NOMBRE','Este dios')} ya fue derrotado y no puede ser atacado de nuevo"}
+                    # Verificar si este jugador específicamente ya lo venció
+                    jugador_data = sm.load_player(jugador)
+                    da = jugador_data.get("dioses_abatidos", [])
+                    if isinstance(da, int): da = []
+                    eid = str(e.get("ID", ""))
+                    if eid and eid in da:
+                        return {"ok": False, "msg": f"Ya derrotaste a {e.get('NOMBRE','este dios')} — un dios solo puede ser vencido una vez por jugador"}
+                    break
+        except Exception:
+            pass  # Si falla la consulta, no bloquear
+
     if tipo == "TRANSPORTE":
-        if not any(float(v or 0) > 0 for v in recursos.values()):
+        if not any(_srf(v) > 0 for v in recursos.values()):
             return {"ok": False, "msg": "Debes enviar al menos un recurso"}
         # Verificar que la ciudad tiene esos recursos
         for rec, cant in recursos.items():
-            disponible = float(ciudad_origen.get(rec, 0) or 0)
+            disponible = _srf(ciudad_origen.get(rec, 0))
             if disponible < float(cant or 0):
                 return {"ok": False, "msg": f"No tienes suficiente {rec}: necesitas {cant:,.0f}, tienes {disponible:,.0f}"}
 
@@ -293,7 +315,26 @@ def crear_orden(
             cant = int(cant or 0)
             if cant > 0:
                 ciudad_origen[nombre] = max(0, int(ciudad_origen.get(nombre, 0) or 0) - cant)
-        # Descontar tropas prestadas de TROPAS_PRESTADAS
+        # Validar que ataque a entidad del mundo no tenga tropas prestadas
+    if tipo == "ATAQUE" and unidades_prestadas:
+        # Comprobar si el destino es dios o cueva
+        _es_entidad = False
+        for _wk in ["dioses", "cuevas"]:
+            try:
+                _mundo = sm.load_world(_wk)
+                for _e in _mundo.get("entities", []):
+                    if (abs(float(_e.get("X", -999)) - x_dest) <= 1.0 and
+                            abs(float(_e.get("Y", -999)) - y_dest) <= 1.0):
+                        _es_entidad = True
+                        break
+            except Exception:
+                pass
+            if _es_entidad:
+                break
+        if _es_entidad:
+            return {"ok": False, "msg": "El combate contra dioses y cuevas debe ser individual — retira las tropas prestadas"}
+
+    # Descontar tropas prestadas de TROPAS_PRESTADAS
         prestadas = ciudad_origen.setdefault("TROPAS_PRESTADAS", [])
         for dueño, unids in unidades_prestadas.items():
             for unidad, cant in unids.items():
@@ -327,7 +368,7 @@ def crear_orden(
             for dueño, unids in unidades_prestadas.items()
             if any(int(v or 0) > 0 for v in unids.values())
         },
-        "recursos":            {k: float(v) for k, v in recursos.items() if float(v or 0) > 0},
+        "recursos":            {k: _srf(v) for k, v in recursos.items() if _srf(v) > 0},
         "nivel_tropas":        nivel_tropas,
         "distancia":           round(distancia, 2),
         "oro_costo":           oro_costo,
@@ -345,6 +386,134 @@ def crear_orden(
 
 
 # ── Procesar órdenes activas ──────────────────────────────────────────────────
+
+def _evaluar_y_registrar_deteccion(orden: dict, sm, ahora: float) -> None:
+    """
+    Si la orden está dentro del radio de la torre defensora y es detectable,
+    escribe o actualiza la alerta en player["alertas"] del defensor.
+    Solo se dispara una vez por orden (si ya existe la alerta, no la duplica).
+    Nota: si el radio >= distancia total, se detecta desde el primer tick.
+    """
+    jugador_def = orden.get("jugador_dest")
+    ciudad_dest = orden.get("ciudad_dest")
+    x_d = orden.get("x_dest", -1)
+    y_d = orden.get("y_dest", -1)
+
+    # Si no hay jugador_dest, buscar qué jugador tiene una ciudad en las coords destino
+    if not jugador_def:
+        try:
+            from backend.data.save_manager import PLAYER_PATHS
+            for jug in PLAYER_PATHS:
+                try:
+                    p_tmp = sm.load_player(jug)
+                    for c in p_tmp.get("cities", []):
+                        cx = float(c.get("X", c.get("x", -999)))
+                        cy = float(c.get("Y", c.get("y", -999)))
+                        if abs(cx - x_d) <= 1.0 and abs(cy - y_d) <= 1.0:
+                            jugador_def = jug
+                            ciudad_dest = c.get("NOMBRE")
+                            orden["jugador_dest"] = jugador_def
+                            orden["ciudad_dest"]  = ciudad_dest
+                            break
+                except Exception:
+                    continue
+                if jugador_def:
+                    break
+        except Exception:
+            pass
+
+    if not jugador_def:
+        return  # destino no es ciudad de jugador conocido
+
+    # Si tenemos jugador pero no ciudad, buscar por coords
+    if not ciudad_dest:
+        try:
+            player_def_tmp = sm.load_player(jugador_def)
+            for c in player_def_tmp.get("cities", []):
+                cx = float(c.get("X", c.get("x", -999)))
+                cy = float(c.get("Y", c.get("y", -999)))
+                if abs(cx - x_d) <= 1.0 and abs(cy - y_d) <= 1.0:
+                    ciudad_dest = c.get("NOMBRE")
+                    orden["ciudad_dest"] = ciudad_dest
+                    break
+        except Exception:
+            pass
+
+    if not ciudad_dest:
+        return
+
+    try:
+        from backend.systems.detection import evaluar_deteccion
+        player_def = sm.load_player(jugador_def)
+        city_def   = next(
+            (c for c in player_def.get("cities", []) if c.get("NOMBRE") == ciudad_dest),
+            None
+        )
+        if not city_def:
+            return
+
+        resultado = evaluar_deteccion(orden, city_def, ahora)
+        if not resultado:
+            return
+
+        alerta_id = f"alerta_{orden['id']}"
+        alertas   = player_def.setdefault("alertas", [])
+
+        # No duplicar — si ya existe esta alerta, actualizar nivel si subió
+        existente = next((a for a in alertas if a["id"] == alerta_id), None)
+        if existente:
+            if resultado["nivel"] > existente.get("nivel", 0):
+                existente["nivel"] = resultado["nivel"]
+                existente["info"]  = resultado["info"]
+                sm.save_player(jugador_def, player_def)
+            return
+
+        # Nueva alerta
+        import time as _time
+        alertas.append({
+            "id":         alerta_id,
+            "orden_id":   orden["id"],
+            "ciudad":     ciudad_dest,
+            "nivel":      resultado["nivel"],
+            "tipo_orden": resultado["tipo_orden"],
+            "info":       resultado["info"],
+            "ts":         _time.time(),
+            "activa":     True,
+            "vista":      False,
+        })
+        sm.save_player(jugador_def, player_def)
+
+    except Exception as e:
+        import traceback
+        print(f"[deteccion] Error evaluando orden {orden.get('id','?')[:8]}: {e}")
+        traceback.print_exc()
+
+
+def _desactivar_alerta(orden: dict, sm) -> None:
+    """
+    Marca la alerta como inactiva al llegar al destino.
+    Si aún no fue vista por el frontend (vista=False), espera a que sea vista
+    marcándola como pendiente — el endpoint /api/alerts la desactiva al hacer dismiss.
+    """
+    jugador_def = orden.get("jugador_dest")
+    if not jugador_def:
+        return
+    alerta_id = f"alerta_{orden['id']}"
+    try:
+        def _fn(player):
+            for a in player.get("alertas", []):
+                if a["id"] == alerta_id:
+                    if a.get("vista", False):
+                        a["activa"] = False
+                    else:
+                        # Aún no vista — dejar activa para que el frontend la vea
+                        # Se desactivará al hacer dismiss desde el frontend
+                        a["pendiente_desactivar"] = True
+                    break
+        sm.update_player(jugador_def, _fn)
+    except Exception:
+        pass
+
 
 def procesar_ordenes(
     orders: list,
@@ -364,6 +533,10 @@ def procesar_ordenes(
         if orden.get("estado", "COMPLETADA") == "COMPLETADA":
             continue
 
+        if orden.get("estado") == "EN_VIAJE":
+            # Evaluar detección por Torre de Vigilancia del defensor
+            _evaluar_y_registrar_deteccion(orden, save_manager, ahora)
+
         if orden.get("estado") == "EN_VIAJE" and ahora >= orden.get("t_llegada", ahora + 1):
             evento = _ejecutar_llegada(orden, save_manager)
             eventos.append(evento)
@@ -378,6 +551,8 @@ def procesar_ordenes(
 
 def _ejecutar_llegada(orden: dict, sm) -> dict:
     """Ejecuta la lógica al llegar al destino."""
+    # Marcar alerta como inactiva — la orden llegó, ya no hay amenaza en tránsito
+    _desactivar_alerta(orden, sm)
     tipo = orden["tipo"]
 
     if tipo == "ATAQUE":
@@ -449,8 +624,26 @@ def _resolver_ataque(orden: dict, sm) -> dict:
             if entidad_mundo:
                 break
 
-    # Si es entidad del mundo (dios/cueva) → combate de entidad
+    # Si es entidad del mundo (dios/cueva) → combate INDIVIDUAL — sin tropas prestadas
     if entidad_mundo:
+        if orden.get("unidades_prestadas"):
+            nombre_ent = entidad_mundo.get("NOMBRE", "la entidad")
+            return {
+                "orden_id": orden["id"], "tipo": "ATAQUE", "ok": False,
+                "msg": f"El combate contra {nombre_ent} debe ser individual — retira las tropas prestadas",
+            }
+        # Verificar que no sea un dios ya derrotado por este jugador
+        es_dios_check = "DIOS" in str(entidad_mundo.get("CAT_KEY", entidad_mundo.get("TIPO",""))).upper()
+        if es_dios_check:
+            eid = str(entidad_mundo.get("ID", ""))
+            da = jugador_atk.get("dioses_abatidos", [])
+            if isinstance(da, int): da = []
+            if eid and eid in da:
+                nombre_ent = entidad_mundo.get("NOMBRE", "este dios")
+                return {
+                    "orden_id": orden["id"], "tipo": "ATAQUE", "ok": False,
+                    "msg": f"Ya derrotaste a {nombre_ent} — un dios solo puede ser vencido una vez por jugador",
+                }
         return _resolver_ataque_entidad(orden, sm, jugador_atk, entidad_mundo)
 
     if not ciudad_def:
@@ -508,6 +701,9 @@ def _resolver_ataque(orden: dict, sm) -> dict:
         jugadores_def = {jugador_def_nombre: jugador_def} if jugador_def else {},
     )
 
+    # Reposición automática de tropas para cuentas vitaminizadas
+    _reponer_vitaminizadas(jugador_def_nombre, ciudad_def, sm)
+
     # Persistir defensor — si es inactivo, guardar en world
     if es_inactivo:
         try:
@@ -538,13 +734,13 @@ def _resolver_ataque(orden: dict, sm) -> dict:
         "xp_por_jugador_atk": resultado["xp_por_jugador_atk"],
     }
     orden["botin"]                   = resultado["saqueo"]
-    orden["unidades_sobrevivientes"] = resultado["sobrevivientes_atk"].get(orden["jugador"], {})
+    orden["unidades_sobrevivientes"] = resultado["sobrevivientes_atk"]  # todos los propietarios
     orden["estado"]                  = "REGRESANDO"
     orden["t_retorno"]               = time.time() + (orden["t_llegada"] - orden["inicio"])
 
     # Guardar atacante atómicamente — aplicar bajas + XP
     xp_ganada = resultado["xp_por_jugador_atk"].get(orden["jugador"], 0)
-    bajas_atk  = resultado["bajas_atk"].get(orden["jugador"], {})
+
 
     def _aplicar_combate_atk(player):
         player["experiencia"] = float(player.get("experiencia", 0) or 0) + xp_ganada
@@ -552,6 +748,10 @@ def _resolver_ataque(orden: dict, sm) -> dict:
             int(player.get("batallas_ganadas" if resultado["victoria_atacante"] else "batallas_perdidas", 0) or 0) + 1
 
     sm.update_player(orden["jugador"], _aplicar_combate_atk)
+
+    # Guardar informe inmediatamente al llegar — no esperar al retorno
+    propietarios_extra = list(orden.get("unidades_prestadas", {}).keys())
+    _guardar_informe(orden, sm, propietarios_extra)
 
     # Si t_retorno ya pasó, ejecutar retorno inmediatamente
     if time.time() >= orden["t_retorno"]:
@@ -582,7 +782,12 @@ def _verificar_valor(orden: dict, jugador: dict, entidad: dict) -> dict:
     for city in jugador.get("cities", []):
         for k, v in city.items():
             ku = k.upper()
-            v  = int(float(v or 0))
+            if ku not in BASICAS and ku not in INVOCS:
+                continue  # ignorar campos no numéricos (NOMBRE, STATUS, etc.)
+            try:
+                v = int(float(v or 0))
+            except (TypeError, ValueError):
+                continue
             if ku == "ALDEANO":       total_ald += v
             elif ku in MIL:           total_mil += v
             elif ku in INVOCS:        total_inv += v
@@ -688,12 +893,42 @@ def _resolver_ataque_entidad(orden: dict, sm, jugador_atk: dict, entidad: dict) 
                 mensaje = f"Victoria por valor — {nombre_ent} honra el coraje del ejército"
         try:
             mundo = sm.load_world(world_key)
+            clase_criatura = None
             for i, e in enumerate(mundo.get("entities", [])):
                 if e.get("ID") == entidad.get("ID"):
                     mundo["entities"][i]["_derrotado"] = True
                     mundo["entities"][i]["HP"] = 0
+                    if not es_dios:
+                        # Guardar clase para capturar la criatura
+                        clase_criatura = e.get("CLASE", e.get("NOMBRE", "")).upper()
                     break
             save_json(DB / "world" / f"{world_key}.json", mundo)
+
+            # Capturar criatura de cueva → añadir al ejército del atacante
+            if not es_dios and clase_criatura:
+                # Mapeo de clase de cueva → clave de invocación en el JSON del jugador
+                # 6 tipos de criaturas de cueva (del CSV cuevas.csv)
+                CLASE_A_UNIDAD = {
+                    "BEHEMOT":    "BEHEMOT",
+                    "CHUPACABRAS":"CHUPACABRAS",
+                    "DRAGÓN":     "DRAGON",
+                    "DRAGON":     "DRAGON",
+                    "LEVIATÁN":   "LEVIATAN",
+                    "LEVIATAN":   "LEVIATAN",
+                    "PATOTAS":    "PATOTAS",
+                    "SIMURGH":    "SIMURGH",
+                }
+                unidad_key = CLASE_A_UNIDAD.get(clase_criatura.replace(" ", "_"), clase_criatura)
+                ciudad_origen_nombre = orden.get("ciudad_origen")
+
+                def _capturar_criatura(player):
+                    for city in player.get("cities", []):
+                        if city.get("NOMBRE") == ciudad_origen_nombre:
+                            city[unidad_key] = int(city.get(unidad_key, 0) or 0) + 1
+                            break
+                sm.update_player(orden["jugador"], _capturar_criatura)
+                orden["resultado"]["criatura_capturada"] = unidad_key
+
         except Exception as e:
             print(f"[orders] Error actualizando entidad: {e}")
     else:
@@ -718,19 +953,32 @@ def _resolver_ataque_entidad(orden: dict, sm, jugador_atk: dict, entidad: dict) 
         "valor_razon":       valor["razon"],
     }
     orden["botin"]                   = {}
-    orden["unidades_sobrevivientes"] = resultado["sobrevivientes_atk"].get(orden["jugador"], {})
+    orden["unidades_sobrevivientes"] = resultado["sobrevivientes_atk"]  # todos los propietarios
     orden["estado"]                  = "REGRESANDO"
     orden["t_retorno"]               = time.time() + (orden["t_llegada"] - orden["inicio"])
+
+    entidad_id = str(entidad.get("ID", ""))
 
     def _aplicar_xp(player):
         player["experiencia"] = float(player.get("experiencia", 0) or 0) + xp_ganada
         if victoria_final:
             if es_dios:
-                player["dioses_abatidos"] = int(player.get("dioses_abatidos", 0) or 0) + 1
+                # Guardar ID del dios derrotado (lista de IDs)
+                da = player.get("dioses_abatidos", [])
+                if isinstance(da, int):
+                    # Migrar formato viejo (int) a lista
+                    da = []
+                if entidad_id and entidad_id not in da:
+                    da.append(entidad_id)
+                player["dioses_abatidos"] = da
             else:
                 player["cuevas_derrotadas"] = int(player.get("cuevas_derrotadas", 0) or 0) + 1
 
     sm.update_player(orden["jugador"], _aplicar_xp)
+
+    # Guardar informe inmediatamente al llegar — no esperar al retorno
+    propietarios_extra = list(orden.get("unidades_prestadas", {}).keys())
+    _guardar_informe(orden, sm, propietarios_extra)
 
     if time.time() >= orden["t_retorno"]:
         _ejecutar_retorno(orden, sm)
@@ -841,15 +1089,14 @@ def _resolver_espionaje(orden: dict, sm) -> dict:
         "nivel_espionaje": resultado.get("nivel_espionaje", 0),
         "inteligencia":    resultado.get("inteligencia"),
         "combate":         resultado["combate"]["mensaje"] if resultado["combate"] else None,
-        # Si detectado, guardar resultado completo del combate para el informe
         "combate_completo": resultado["combate"] if resultado["detectado"] and resultado["combate"] else None,
     }
     orden["botin"]  = {}
-    orden["unidades_sobrevivientes"] = (
-        resultado["combate"]["sobrevivientes_atk"].get(orden["jugador"], {})
-        if resultado["detectado"] and resultado["combate"]
-        else orden["unidades"].copy()
-    )
+    if resultado["detectado"] and resultado["combate"]:
+        orden["unidades_sobrevivientes"] = resultado["combate"]["sobrevivientes_atk"]  # todos los propietarios
+    else:
+        # Exitoso: tropas propias regresan intactas; prestadas las maneja retornar_tropas_prestadas_post_orden
+        orden["unidades_sobrevivientes"] = {k: int(v or 0) for k, v in orden["unidades"].items() if int(v or 0) > 0}
     orden["estado"]    = "REGRESANDO"
     orden["t_retorno"] = time.time() + (orden["t_llegada"] - orden["inicio"])
 
@@ -862,10 +1109,9 @@ def _resolver_espionaje(orden: dict, sm) -> dict:
     if jugador_def_nombre and jugador_def:
         sm.save_player(jugador_def_nombre, jugador_def)
 
-    # Guardar informe inmediatamente si detectado (queda COMPLETADA directo)
-    if resultado["detectado"]:
-        propietarios_extra = list(orden.get("unidades_prestadas", {}).keys())
-        _guardar_informe(orden, sm, propietarios_extra)
+    # Guardar informe siempre — detectado O exitoso
+    propietarios_extra = list(orden.get("unidades_prestadas", {}).keys())
+    _guardar_informe(orden, sm, propietarios_extra)
 
     if time.time() >= orden["t_retorno"]:
         _ejecutar_retorno(orden, sm)
@@ -1072,6 +1318,49 @@ def _resolver_fundar(orden: dict, sm) -> dict:
             "ciudad": nueva_ciudad["NOMBRE"]}
 
 
+
+_VITAMINIZADOS = {"ALALAIA", "ADMIN"}
+
+_TROPAS_REPO = [
+    "ALDEANO","EXPLORADOR","SACERDOTE","GUERRERO","COMANDO",
+    "MERCENARIO","MARINE","CYBORG","MAGO","METAHUMANO",
+    "DEMONIO","ANIMA","ESPECTRO","GOLEM","CENTAURO","KRAKEN",
+    "ALONARDO","MADRESELVA","COLOSO","FENIX","DRAGON_DE_ORO",
+    "CABALLERO_DE_LUZ","ALALAIA","EON_SUPREMO",
+]
+
+_REPO_BASICAS  = 3_000_000
+_REPO_INVOC    = 3_000_000
+_REPO_ALALAIA  = 18
+_REPO_EON      = 3
+
+def _reponer_vitaminizadas(jugador: str, city: dict, sm) -> None:
+    """
+    Si el jugador es vitaminizado, repone sus tropas a los valores base
+    después de un combate. Esto simula recursos infinitos.
+    """
+    if not jugador or jugador.upper() not in _VITAMINIZADOS:
+        return
+
+    _INVOC = {"DEMONIO","ANIMA","ESPECTRO","GOLEM","CENTAURO","KRAKEN",
+              "ALONARDO","MADRESELVA","COLOSO","FENIX","DRAGON_DE_ORO",
+              "CABALLERO_DE_LUZ","EON_SUPREMO"}
+    _BASICAS = {"ALDEANO","EXPLORADOR","SACERDOTE","GUERRERO","COMANDO",
+                "MERCENARIO","MARINE","CYBORG","MAGO","METAHUMANO"}
+
+    for t in _TROPAS_REPO:
+        if t == "ALALAIA":
+            city[t] = _REPO_ALALAIA
+        elif t == "EON_SUPREMO":
+            city[t] = _REPO_EON
+        elif t in _INVOC:
+            city[t] = _REPO_INVOC
+        else:
+            city[t] = _REPO_BASICAS
+
+    # Reponer aldeanos limpiamente (sin buffer fraccionario)
+    city["ALDEANO"] = float(_REPO_BASICAS)
+
 def _guardar_informe(orden: dict, sm, jugadores_extra: list = None) -> None:
     """
     Guarda copia del informe en el JSON de cada jugador participante.
@@ -1082,6 +1371,8 @@ def _guardar_informe(orden: dict, sm, jugadores_extra: list = None) -> None:
     informe = {
         "id":            orden["id"],
         "tipo":          orden["tipo"],
+        "jugador_atk":   orden.get("jugador"),
+        "jugador_def":   orden.get("jugador_dest"),
         "ciudad_origen": orden.get("ciudad_origen"),
         "ciudad_dest":   orden.get("ciudad_dest"),
         "x_orig":        orden.get("x_orig"),
@@ -1091,12 +1382,39 @@ def _guardar_informe(orden: dict, sm, jugadores_extra: list = None) -> None:
         "inicio":        orden.get("inicio"),
         "resultado":     orden.get("resultado"),
         "botin":         orden.get("botin", {}),
+        "unidades":      orden.get("unidades", {}),
+        "bajas_atk":     orden.get("resultado", {}).get("bajas_atacante", {}) if orden.get("resultado") else {},
+        "bajas_def":     orden.get("resultado", {}).get("bajas_defensor", {}) if orden.get("resultado") else {},
     }
-    destinatarios = [orden["jugador"]] + (jugadores_extra or [])
+    jugador_atk = orden["jugador"]
+    jugador_def = orden.get("jugador_dest")
+    victoria_atk = (orden.get("resultado") or {}).get("victoria_atacante", True)
+
+    destinatarios = [jugador_atk] + (jugadores_extra or [])
+    if jugador_def and jugador_def not in destinatarios:
+        destinatarios.append(jugador_def)
     destinatarios = list(dict.fromkeys(destinatarios))  # deduplicar
 
     for jug in destinatarios:
-        def _fn(player, inf=informe):
+        # Perspectiva del informe según el rol del jugador
+        es_def = (jug == jugador_def) and (jug != jugador_atk)
+        if es_def:
+            # El defensor ve: victoria = NOT victoria_atacante, mensaje adaptado
+            res_def = dict(orden.get("resultado") or {})
+            res_def["victoria_atacante"] = not victoria_atk
+            res_def["mensaje"] = (
+                "Defensa exitosa — repeliste el ataque"
+                if not victoria_atk
+                else "Tu ciudad fue atacada — el atacante venció"
+            )
+            inf_jug = dict(informe)
+            inf_jug["resultado"] = res_def
+            inf_jug["rol"] = "DEFENSOR"
+        else:
+            inf_jug = dict(informe)
+            inf_jug["rol"] = "ATACANTE"
+
+        def _fn(player, inf=inf_jug):
             informes = player.setdefault("informes", [])
             informes.insert(0, inf)
             if len(informes) > 200:
@@ -1111,7 +1429,9 @@ def _ejecutar_retorno(orden: dict, sm, jugador_atk: dict = None) -> dict:
     """Acredita tropas y botín atómicamente usando update_player.
     Las tropas prestadas regresan a sus ciudades de origen.
     """
-    sobrevivientes = orden.get("unidades_sobrevivientes", {})
+    _sobrev_raw = orden.get("unidades_sobrevivientes", {})
+    _es_fmt_nuevo = bool(_sobrev_raw) and isinstance(next(iter(_sobrev_raw.values()), None), dict)
+    sobrevivientes = _sobrev_raw.get(orden["jugador"], {}) if _es_fmt_nuevo else _sobrev_raw
     botin          = orden.get("botin", {})
     ciudad_nombre  = orden["ciudad_origen"]
     tipo_orden     = orden.get("tipo", "")
@@ -1127,7 +1447,7 @@ def _ejecutar_retorno(orden: dict, sm, jugador_atk: dict = None) -> dict:
         # Si no (espionaje exitoso sin combate), devolver cantidad original completa
         sobrev_prestados = {}
         for dueño in propietarios:
-            sobrev_dueño = sobrevivientes.get(dueño, {})
+            sobrev_dueño = _sobrev_raw.get(dueño, {}) if _es_fmt_nuevo else {}
             if not sobrev_dueño:
                 # Sin registro de bajas → todas sobreviven (espionaje exitoso)
                 sobrev_dueño = {k: int(v or 0) for k, v in prestadas[dueño].items()}
@@ -1153,17 +1473,18 @@ def _ejecutar_retorno(orden: dict, sm, jugador_atk: dict = None) -> dict:
         )
 
     # ── XP distribuida por igual entre propietarios participantes ─────────────
-    todos_propietarios = [orden["jugador"]] + list(prestadas.keys())
-    xp_total = sum(
-        orden.get("resultado", {}).get("xp", {}).get(p, 0)
-        for p in todos_propietarios
-    ) if orden.get("resultado") else 0
-    xp_por_prop = xp_total / len(todos_propietarios) if todos_propietarios else 0
+    # El despachador ya recibió su parte al resolver la orden (en _resolver_ataque
+    # / _resolver_ataque_entidad). Los prestadores reciben la misma fracción:
+    # xp_por_jugador_atk ya viene dividida por número de jugadores desde combat.py.
+    # Usamos la XP del despachador como referencia de "parte igual".
+    resultado_orden = orden.get("resultado") or {}
+    xp_dict = resultado_orden.get("xp") or resultado_orden.get("xp_por_jugador_atk") or {}
+    xp_referencia = xp_dict.get(orden["jugador"], 0)
 
-    # Acreditar XP a los dueños de tropas prestadas
+    # Acreditar la misma fracción de XP a cada dueño de tropas prestadas
     for dueño in prestadas:
-        if xp_por_prop > 0:
-            def _fn_xp(player, xp=xp_por_prop):
+        if xp_referencia > 0:
+            def _fn_xp(player, xp=xp_referencia):
                 player["experiencia"] = float(player.get("experiencia", 0) or 0) + xp
             sm.update_player(dueño, _fn_xp)
 
@@ -1220,15 +1541,25 @@ def _buscar_ciudad_nombre(jugador: dict, nombre: str) -> dict | None:
 
 
 def _unidades_ciudad(city: dict) -> dict:
-    """Extrae todas las unidades de una ciudad en un dict {NOMBRE: cantidad}."""
+    """
+    Extrae todas las unidades de una ciudad en un dict {NOMBRE: cantidad}.
+    Soporta claves con espacios (DRAGON DE ORO) y con guiones bajos (DRAGON_DE_ORO).
+    """
     TODAS = [
         "ALDEANO","EXPLORADOR","SACERDOTE","GUERRERO","COMANDO",
         "MERCENARIO","MARINE","CYBORG","MAGO","METAHUMANO",
         "DEMONIO","ANIMA","ESPECTRO","GOLEM","CENTAURO","KRAKEN",
-        "ALONARDO","MADRESELVA","COLOSO","FENIX","DRAGON DE ORO",
-        "CABALLERO DE LUZ","ALALAIA","EON SUPREMO",
+        "ALONARDO","MADRESELVA","COLOSO","FENIX","DRAGON_DE_ORO",
+        "CABALLERO_DE_LUZ","ALALAIA","EON_SUPREMO",
     ]
-    return {u: int(city.get(u, 0) or 0) for u in TODAS if int(city.get(u, 0) or 0) > 0}
+    resultado = {}
+    for u in TODAS:
+        # Intentar con guión bajo primero, luego con espacio
+        val = city.get(u, city.get(u.replace("_", " "), 0))
+        cant = int(float(val or 0))
+        if cant > 0:
+            resultado[u] = cant
+    return resultado
 
 
 def _ciudad_inicial(jugador: str, x: float, y: float,

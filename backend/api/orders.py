@@ -20,6 +20,7 @@ from backend.systems.orders import (
     info_orden,
     _buscar_ciudad_nombre,
     _unidades_ciudad,
+    _nivel_tropas_player,
 )
 from backend.systems.herreria import calcular_bonus_herreria
 
@@ -119,7 +120,28 @@ def post_crear_orden(jugador: str, req: OrdenRequest):
     if not ciudad_orig:
         return {"ok": False, "msg": f"Ciudad origen '{req.ciudad_origen}' no encontrada"}
 
-    nivel_tropas = int(player.get("unit_levels", {}).get("NIVEL_DE_TROPAS", 1) or 1)
+    # Leer nivel de tropas respetando ambos formatos (global y por tipo)
+    nivel_tropas = _nivel_tropas_player(player, req.unidades or {})
+
+    # ── Validar que no se ataque ni espíe a un aliado ────────────────────────
+    if req.tipo in ("ATAQUE", "ESPIONAJE") and req.jugador_dest:
+        jugador_dest_up = req.jugador_dest.upper()
+        if jugador_dest_up != jugador:  # no es ciudad propia
+            try:
+                alianzas = sm.load_alliances()
+                # Buscar en qué alianza está el atacante
+                mi_alianza = None
+                for nombre_al, al in alianzas.items():
+                    miembros = al.get("miembros", [])
+                    if jugador in miembros:
+                        mi_alianza = nombre_al
+                        break
+                if mi_alianza:
+                    miembros_al = alianzas[mi_alianza].get("miembros", [])
+                    if jugador_dest_up in miembros_al:
+                        return {"ok": False, "msg": f"No puedes atacar ni espiar a {jugador_dest_up} — es tu aliado en {mi_alianza}"}
+            except Exception:
+                pass  # Si falla la carga de alianzas, no bloquear
 
     resultado = crear_orden(
         tipo                = req.tipo,

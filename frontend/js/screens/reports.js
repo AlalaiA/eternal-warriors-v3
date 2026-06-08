@@ -76,25 +76,20 @@ export async function render(container, jugador, ciudad) {
 
   await _cargar();
   _renderContent();
-  _syncTimer = setInterval(_cargar, 15000);
+  _syncTimer = setInterval(_cargar, 2000);
 }
 
 async function _cargar() {
   try {
-    // Cargar activas
-    const r1 = await fetch(`/api/orders/${_jugador}`);
-    const d1 = await r1.json();
-    let todas = d1.ordenes || [];
+    // Cargar activas e historial en paralelo
+    const [r1, r2] = await Promise.all([
+      fetch(`/api/orders/${_jugador}`).then(r => r.json()).catch(() => ({ordenes:[]})),
+      fetch(`/api/orders/historial/${_jugador}`).then(r => r.json()).catch(() => ({ordenes:[]})),
+    ]);
 
-    // Cargar historial (completadas con resultado)
-    try {
-      const r2 = await fetch(`/api/orders/historial/${_jugador}`);
-      if (r2.ok) {
-        const d2 = await r2.json();
-        const ids = new Set(todas.map(o => o.id));
-        (d2.ordenes || []).forEach(o => { if (!ids.has(o.id)) todas.push(o); });
-      }
-    } catch (_) {}
+    const ids = new Set((r1.ordenes || []).map(o => o.id));
+    let todas = [...(r1.ordenes || [])];
+    (r2.ordenes || []).forEach(o => { if (!ids.has(o.id)) { ids.add(o.id); todas.push(o); } });
 
     _ordenes = todas;
   } catch (e) {
@@ -212,21 +207,41 @@ function _cardBatalla(o) {
 
       <div style="${CSS.title}">Ejército enviado</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-        ${Object.entries(o.unidades||{}).map(([k,v]) =>
-          `<span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
-            padding:2px 8px;border-radius:4px;font-size:10px;font-family:'Cinzel',serif;color:#b0a080;">
-            ${k}: ${_fmt(v)}</span>`
-        ).join('') || '<span style="color:#555;font-size:10px;">—</span>'}
+        ${(() => {
+          // Tropas propias del despachador
+          const propias = Object.entries(o.unidades||{})
+            .filter(([,v]) => v > 0)
+            .map(([k,v]) =>
+              `<span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+                padding:2px 8px;border-radius:4px;font-size:10px;font-family:'Cinzel',serif;color:#b0a080;">
+                ${k}: ${_fmt(v)}</span>`);
+          // Tropas prestadas agrupadas por dueño
+          const prestadas = Object.entries(o.unidades_prestadas||{}).flatMap(([dueño, uds]) =>
+            Object.entries(uds||{}).filter(([,v]) => v > 0).map(([k,v]) =>
+              `<span style="background:rgba(91,191,255,0.06);border:1px solid rgba(91,191,255,0.2);
+                padding:2px 8px;border-radius:4px;font-size:10px;font-family:'Cinzel',serif;color:#5bbfff;"
+                title="De ${dueño}">
+                🤝 ${k}: ${_fmt(v)}</span>`));
+          const all = [...propias, ...prestadas];
+          return all.length ? all.join('') : '<span style="color:#555;font-size:10px;">—</span>';
+        })()}
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
         <div>
           <div style="${CSS.title}">Bajas propias</div>
-          ${Object.keys(bajas_atk).length === 0
-            ? '<div style="color:#4caf50;font-size:10px;">Sin bajas</div>'
-            : Object.entries(bajas_atk).filter(([,v])=>v>0).map(([k,v])=>
-                `<div style="${CSS.row}"><span style="color:#e08080">${k}</span><span style="color:#e8e0d0">-${_fmt(v)}</span></div>`
-              ).join('')}
+          ${(() => {
+            // Bajas propias del despachador
+            const bp = Object.entries(bajas_atk).filter(([,v])=>v>0)
+              .map(([k,v])=>`<div style="${CSS.row}"><span style="color:#e08080">${k}</span><span style="color:#e8e0d0">-${_fmt(v)}</span></div>`);
+            // Bajas de tropas prestadas
+            const bprest = Object.entries(combate.bajas_atk||{})
+              .filter(([j]) => j !== _jugador.toUpperCase())
+              .flatMap(([j,uds]) => Object.entries(uds||{}).filter(([,v])=>v>0)
+                .map(([k,v])=>`<div style="${CSS.row}"><span style="color:#e09060">🤝 ${k} (${j})</span><span style="color:#e8e0d0">-${_fmt(v)}</span></div>`));
+            const all = [...bp, ...bprest];
+            return all.length ? all.join('') : '<div style="color:#4caf50;font-size:10px;">Sin bajas</div>';
+          })()}
         </div>
         <div>
           <div style="${CSS.title}">Bajas enemigas</div>
@@ -297,7 +312,7 @@ function _cardEspionaje(o) {
 
       <!-- Sigilo -->
       <div style="color:#666;font-size:10px;font-family:'Cinzel',serif;margin-bottom:8px;">
-        Sigilo efectivo: <b style="color:#e8e0d0">${r.sigilo?.toFixed(0) ?? '?'}</b>
+        Sigilo efectivo: <b style="color:#e8e0d0">${(r.sigilo ?? r.sigilo_efectivo) != null ? Number(r.sigilo ?? r.sigilo_efectivo).toFixed(0) : '?'}</b>
       </div>
 
       ${detectado ? `
@@ -362,6 +377,22 @@ function _cardEspionaje(o) {
             `<div style="${CSS.row}"><span style="color:#8080b0">${k.replace(/_/g,' ')}</span><span style="color:#e8e0d0">Nv.${v}</span></div>`
           ).join('')}
         </div>` : ''}
+
+      ${!detectado && nivel >= 5 && intel.tropas_prestadas?.length ? `
+        <!-- Tropas prestadas -->
+        <div style="${CSS.title} margin-top:10px;">🤝 Tropas Aliadas en la Ciudad</div>
+        ${intel.tropas_prestadas.map(p => `
+          <div style="${CSS.row}">
+            <span style="color:#7899cc">${p.jugador} · ${p.unidad}</span>
+            <span style="color:#e8e0d0">${_fmt(p.cantidad)}</span>
+          </div>`).join('')}` : ''}
+
+      ${!detectado && nivel >= 5 && intel.criaturas_cueva && Object.keys(intel.criaturas_cueva).length ? `
+        <!-- Criaturas de cueva -->
+        <div style="${CSS.title} margin-top:10px;">🦎 Criaturas de Cueva</div>
+        ${Object.entries(intel.criaturas_cueva).map(([k,v]) =>
+          `<div style="${CSS.row}"><span style="color:#e08840">${k}</span><span style="color:#e8e0d0">${_fmt(v)}</span></div>`
+        ).join('')}` : ''}
 
       ${!detectado && nivel >= 5 && intel.escondite ? `
         <!-- Escondite -->

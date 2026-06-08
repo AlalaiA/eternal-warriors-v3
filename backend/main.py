@@ -18,6 +18,9 @@ from backend.api.queues import router as queues_router
 from backend.api.escondite import router as escondite_router
 from backend.api.orders import router as orders_router
 from backend.api.alliances import router as alliances_router
+from backend.api.leveling import router as leveling_router
+from backend.api.messages import router as messages_router
+from backend.api.alerts  import router as alerts_router
 
 # ── Ticker de órdenes ─────────────────────────────────────────────────────────
 
@@ -41,7 +44,9 @@ async def _orders_ticker():
             )[:200]
             sm.save_orders(activas + completadas)
         except Exception as e:
+            import traceback
             print(f"[orders_ticker] Error: {e}")
+            traceback.print_exc()
         await asyncio.sleep(ORDERS_TICK_SEG)
 
 
@@ -70,6 +75,9 @@ app.include_router(buildings_router)
 app.include_router(escondite_router)
 app.include_router(orders_router,   prefix="/api/orders")
 app.include_router(alliances_router, prefix="/api/alliances")
+app.include_router(leveling_router,  prefix="/api/leveling")
+app.include_router(messages_router,  prefix="/api/messages")
+app.include_router(alerts_router,    prefix="/api/alerts")
 
 app.mount("/static", StaticFiles(directory="frontend", html=True), name="static")
 

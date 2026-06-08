@@ -3,18 +3,31 @@
     "AAA_KILLERS": {
       "nombre": "AAA_KILLERS",
       "tipo": "normal",
-      "lider": "JOTICALINDO",
-      "miembros": ["JOTICALINDO", "JIARITO", "GINAO"],
+      "miembros": [
+        "JOTICALINDO",
+        "JIARITO",
+        "GINAO"
+      ],
       "solicitudes": [],
-      "creada": 0
+      "creada": 0,
+      "lideres": [
+        "JOTICALINDO",
+        "JIARITO",
+        "GINAO"
+      ]
     },
     "VITAMINIZADOS": {
       "nombre": "VITAMINIZADOS",
       "tipo": "vitaminizado",
-      "lider": "ADMIN",
-      "miembros": ["ADMIN", "ALALAIA"],
+      "miembros": [
+        "ADMIN",
+        "ALALAIA"
+      ],
       "solicitudes": [],
-      "creada": 0
+      "creada": 0,
+      "lideres": [
+        "ADMIN"
+      ]
     }
   }
 }

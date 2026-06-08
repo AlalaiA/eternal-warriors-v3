@@ -38,7 +38,7 @@ class _SafeEncoder(json.JSONEncoder):
     def _sanitize(self, obj):
         if isinstance(obj, float):
             if math.isnan(obj): return 0.0
-            if math.isinf(obj): return 1e300
+            if math.isinf(obj): return "__INF__"   # preservar sentinel legible en disco
             return obj
         if isinstance(obj, dict):
             return {k: self._sanitize(v) for k, v in obj.items()}
@@ -47,12 +47,30 @@ class _SafeEncoder(json.JSONEncoder):
         return obj
 
 
+_INF_SENTINEL = "__INF__"
+_INF_NUMERIC  = 1e300   # valor numérico seguro para JSON al serializar via API
+
+
+def safe_resource_float(v) -> float:
+    """
+    Convierte un valor de recurso a float, manejando el sentinel __INF__.
+    Usar en lugar de float() cuando el valor puede ser '__INF__'.
+    Retorna 1e300 (prácticamente infinito) para __INF__.
+    """
+    if isinstance(v, str) and v == _INF_SENTINEL:
+        return _INF_NUMERIC
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return 0.0
+
+
 def load_json(path: Path) -> dict | list:
     with open(path, encoding="utf-8") as f:
         text = f.read()
     decoder = json.JSONDecoder()
     obj, _ = decoder.raw_decode(text.strip())
-    return obj
+    return obj   # __INF__ permanece como string — JSON-safe para FastAPI
 
 
 def save_json(path: Path, data):

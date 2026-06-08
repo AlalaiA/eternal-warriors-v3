@@ -21,6 +21,7 @@ CSV pattern para edificios:
 import csv
 import pathlib
 from typing import Optional
+from backend.data.save_manager import safe_resource_float as _srf
 
 CSV_DIR = pathlib.Path(__file__).parent.parent.parent / "csv"
 MAX_RETROACTIVIDAD_SEG = 3 * 24 * 3600  # 3 días
@@ -247,18 +248,18 @@ def iniciar_obra(player: dict, city: dict, edificio: str) -> dict:
     # Verificar recursos
     faltantes = []
     for mat in ("MADERA", "PIEDRA", "HIERRO", "ORO", "CARBON"):
-        disponible = city.get(mat, 0)
-        necesario = costo[mat.lower()]
-        if disponible < necesario:
-            faltantes.append(f"{mat}: necesita {necesario:,}, tiene {disponible:,}")
+        disponible = _srf(city.get(mat, 0))
+        necesario  = costo[mat.lower()]
+        if disponible < 1e50 and disponible < necesario:
+            faltantes.append(f"{mat}: necesita {necesario:,}, tiene {int(disponible):,}")
     if faltantes:
         return {"error": "Recursos insuficientes: " + "; ".join(faltantes)}
 
-    # Descontar recursos (si almacén es nivel 50, son infinitos — no descontar)
-    almacen_nivel = int(city.get("ALMACEN", 0) or 0)
-    if almacen_nivel < 50:
-        for mat in ("MADERA", "PIEDRA", "HIERRO", "ORO", "CARBON"):
-            city[mat] = city.get(mat, 0) - costo[mat.lower()]
+    # Descontar recursos solo si no son __INF__
+    for mat in ("MADERA", "PIEDRA", "HIERRO", "ORO", "CARBON"):
+        actual = _srf(city.get(mat, 0))
+        if actual < 1e50:
+            city[mat] = actual - costo[mat.lower()]
 
     # Registrar obra
     now = time.time()

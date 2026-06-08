@@ -1,0 +1,53 @@
+{
+  "mensajes": [
+    {
+      "id": "msg_1780708588_02a056",
+      "tipo": "DIRECTO",
+      "de": "ALALAIA",
+      "para": "JOTICALINDO",
+      "asunto": "Re: Prueba",
+      "cuerpo": "De regreso",
+      "ts": 1780708588,
+      "leido_por": [
+        "ALALAIA"
+      ]
+    },
+    {
+      "id": "msg_1780708553_d65040",
+      "tipo": "DIRECTO",
+      "de": "JOTICALINDO",
+      "para": "ALALAIA",
+      "asunto": "Prueba",
+      "cuerpo": "A ver qu\u00e9 pasa.",
+      "ts": 1780708553,
+      "leido_por": [
+        "JOTICALINDO",
+        "ALALAIA"
+      ]
+    },
+    {
+      "id": "msg_1780634580_86e063",
+      "tipo": "DIRECTO",
+      "de": "JOTICALINDO",
+      "para": "JIARITO",
+      "asunto": "Prueba",
+      "cuerpo": "A ver si llega el mensaje...",
+      "ts": 1780634580,
+      "leido_por": [
+        "JOTICALINDO"
+      ]
+    },
+    {
+      "id": "msg_1780634498_153197",
+      "tipo": "ALIANZA",
+      "de": "JOTICALINDO",
+      "alianza": "AAA_KILLERS",
+      "asunto": "Del primer mensaje...",
+      "cuerpo": "Se recuerda a todos los integrantes de la alianza tener llenos los almacenes de los m\u00e1s peque\u00f1os, siempre y reforzar sus ciudades.",
+      "ts": 1780634498,
+      "leido_por": [
+        "JOTICALINDO"
+      ]
+    }
+  ]
+}

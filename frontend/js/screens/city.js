@@ -389,6 +389,16 @@ function _onClick(e){
   else{selK=null;_render();}
 }
 
+function _fmtSeg(seg) {
+  if (!seg || seg <= 0) return '—';
+  seg = Math.round(seg);
+  const d = Math.floor(seg/86400), h = Math.floor((seg%86400)/3600);
+  const m = Math.floor((seg%3600)/60), s = seg%60;
+  if (d > 0) return d+'d '+h+'h '+m+'m';
+  if (h > 0) return h+'h '+m+'m '+s+'s';
+  if (m > 0) return m+'m '+s+'s';
+  return s+'s';
+}
 function _fmt(n){
   if(n==null||n===undefined)return'—';
   n=Number(n); if(isNaN(n))return'—';
@@ -453,6 +463,85 @@ function _updateLeft(offset){
     ['Universidad Nv.',c.UNIVERSIDAD],
   ].map(([lbl,v])=>`<div class="stat-row"><span class="stat-label">${lbl}</span><span class="stat-val">${v||0}</span></div>`).join('');
 
+  // ── Panel de Obras en curso ──────────────────────────────────────────────
+  const _nowSecObras = Date.now() / 1000;
+  const obrasData = (cityData.OBRAS || []).filter(o => {
+    if (o.inicio && o.duracion_seg) return (_nowSecObras - o.inicio) < o.duracion_seg;
+    if (o.TIEMPO != null) return o.TIEMPO > 0;
+    return true;
+  });
+  const NOMBRES_EDIF = {
+    CENTRO_DE_CIUDAD:'Centro de Ciudad', CASA:'Casa', MURALLA:'Muralla',
+    TORRE_DE_VIGILANCIA:'Torre de Vigilancia', CENTRO_DE_VIAJES:'Centro de Viajes',
+    ESCONDITE:'Escondite', ALMACEN:'Almacén', SANTUARIO_ARCANO:'Santuario Arcano',
+    UNIVERSIDAD:'Universidad', HERRERIA:'Herrería',
+    TEMPLO_1:'Templo 1', TEMPLO_2:'Templo 2', TEMPLO_3:'Templo 3',
+    CUARTEL_1:'Cuartel 1', CUARTEL_2:'Cuartel 2',
+  };
+  const _nowSec = Date.now() / 1000;
+
+  const obrasRows = obrasData.map(o => {
+    // Soportar ambos formatos
+    const key      = o.edificio || o.KEY || '?';
+    const nombre   = NOMBRES_EDIF[key] || key.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+    const nivelDst = o.nivel_dest ?? '?';
+    let pct = 0, restSeg = 0;
+
+    if (o.inicio && o.duracion_seg) {
+      // Formato nuevo
+      const transcurrido = Math.max(0, _nowSec - o.inicio);
+      pct    = Math.min(1, transcurrido / o.duracion_seg);
+      restSeg = Math.max(0, o.duracion_seg - transcurrido);
+    } else if (o.TIEMPO != null && o.TOTAL != null) {
+      // Formato viejo
+      pct    = Math.min(1, 1 - o.TIEMPO / o.TOTAL);
+      restSeg = o.TIEMPO;
+    }
+
+    const pctPct = (pct * 100).toFixed(0);
+    const fmtRest = _fmtSeg(restSeg);
+
+    const _inicio = o.inicio || 0;
+    const _dur = o.duracion_seg || 1;
+    return `<div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:2px;">
+        <span style="color:#c9a84c;font-family:'Cinzel',serif;">${nombre}${nivelDst!=='?'?' → Nv.'+nivelDst:''}</span>
+        <span data-obra-info style="color:#666;">${pctPct}% · ${fmtRest}</span>
+      </div>
+      <div style="background:#111;border-radius:2px;height:5px;">
+        <div data-obra-inicio="${_inicio}" data-obra-dur="${_dur}"
+          style="background:linear-gradient(90deg,#c9a84c,#e8d080);width:${pctPct}%;height:100%;border-radius:2px;"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const obrasPanel = obrasData.length ? `
+    <div class="panel" style="margin-top:6px">
+      <div class="panel-title">▼ Construcciones (${obrasData.length})</div>
+      ${obrasRows}
+    </div>` : '';
+
+  // Panel de progreso del jugador
+  const xpVal = window._playerXP;
+  const bat   = window._playerBatallas||{};
+  const xpPanel = xpVal!==null&&xpVal!==undefined ? `
+    <div class="panel" style="margin-top:6px">
+      <div class="panel-title">▼ Progreso</div>
+      <div class="stat-row"><span class="stat-label">⭐ Experiencia</span><span class="stat-val">${_fmt(xpVal)}</span></div>
+      <div class="stat-row"><span class="stat-label">⚔ Batallas ganadas</span><span class="stat-val">${_fmt(bat.ganadas||0)}</span></div>
+      <div class="stat-row"><span class="stat-label">💀 Batallas perdidas</span><span class="stat-val">${_fmt(bat.perdidas||0)}</span></div>
+      <div class="stat-row"><span class="stat-label">🌩 Dioses abatidos</span><span class="stat-val">${_fmt(bat.dioses||0)}</span></div>
+      <div class="stat-row"><span class="stat-label">🦎 Cuevas derrotadas</span><span class="stat-val">${_fmt(bat.cuevas||0)}</span></div>
+      <div style="margin-top:8px;">
+        <button onclick="window._abrirLeveling()" style="
+          width:100%;padding:6px;background:rgba(201,168,76,0.12);
+          border:1px solid #c9a84c88;color:#c9a84c;border-radius:4px;
+          cursor:pointer;font-family:'Cinzel',serif;font-size:11px;">
+          ⬆ Subir nivel de tropas
+        </button>
+      </div>
+    </div>` : '';
+
   el.innerHTML=`
     <div class="panel">
       <div class="panel-title">▼ Recursos</div>${resRows}
@@ -462,7 +551,9 @@ function _updateLeft(offset){
     </div>
     <div class="panel" style="margin-top:6px">
       <div class="panel-title">▼ Logística</div>${logRows}
-    </div>`;
+    </div>
+    ${obrasPanel}
+    ${xpPanel}`;
 }
 
 function _updateRight(){
@@ -479,6 +570,8 @@ function _updateRight(){
     ['AlalaiA','ALALAIA'],['Éon Supremo','EON_SUPREMO']];
   const ar=ARMY.map(([l,k])=>`<div class="stat-row"><span class="stat-label">${l}</span><span class="stat-val">${_fmt(cd[k]||0)}</span></div>`).join('');
   const ir=INV.map(([l,k])=>`<div class="stat-row"><span class="stat-label">${l}</span><span class="stat-val">${_fmt(cd[k]||0)}</span></div>`).join('');
+  const CUEVAS_CITY=[['Behemot','BEHEMOT'],['Chupacabras','CHUPACABRAS'],['Dragón','DRAGON'],['Leviatán','LEVIATAN'],['Patotas','PATOTAS'],['Simurgh','SIMURGH']];
+  const cr=CUEVAS_CITY.filter(([,k])=>(cd[k]||0)>0).map(([l,k])=>`<div class="stat-row"><span class="stat-label" style="color:#e07050">${l}</span><span class="stat-val">${_fmt(cd[k]||0)}</span></div>`).join('');
   const bh=window._bonusHerreria;
   const herrHTML=bh?`
     <div class="panel" style="margin-top:6px">
@@ -493,6 +586,7 @@ function _updateRight(){
   el.innerHTML=`
     <div class="panel"><div class="panel-title">▼ Ejército</div>${ar}</div>
     <div class="panel" style="margin-top:6px"><div class="panel-title">▼ Invocaciones</div>${ir}</div>
+    ${cr?`<div class="panel" style="margin-top:6px"><div class="panel-title" style="color:#e07050">▼ Criaturas de Cueva</div>${cr}</div>`:''}
     ${herrHTML}`;
 }
 
@@ -526,8 +620,106 @@ function _startTick(){
     });
     if(tasas.aldeanos_hora)_off['ALDEANO']=(_off['ALDEANO']||0)+tasas.aldeanos_hora/3600;
     _updateLeft(_off);_updateBar();
+    // Actualizar barras de obras cada segundo
+    const _nowTick = Date.now()/1000;
+    document.querySelectorAll('[data-obra-inicio]').forEach(bar => {
+      const inicio = parseFloat(bar.dataset.obraInicio);
+      const dur = parseFloat(bar.dataset.obraDur);
+      const pct = Math.min(1, (_nowTick - inicio) / dur);
+      bar.style.width = (pct*100).toFixed(1) + '%';
+      const info = bar.parentElement?.parentElement?.querySelector('[data-obra-info]');
+      if (info) {
+        const rest = Math.max(0, dur - (_nowTick - inicio));
+        info.textContent = (pct*100).toFixed(0) + '% · ' + _fmtSeg(rest);
+      }
+    });
   },1000);
 }
+
+// ── Modal de Leveling ────────────────────────────────────────────────────────
+let _levelingModal = null;
+
+window._abrirLeveling = async function() {
+  if (_levelingModal) { _levelingModal.remove(); _levelingModal = null; }
+
+  const resp = await fetch(`/api/leveling/${jugador}`);
+  const data = await resp.json();
+  if (!data.ok) return;
+
+  const LABELS = {
+    ALDEANO:'Aldeano', EXPLORADOR:'Explorador', SACERDOTE:'Sacerdote',
+    GUERRERO:'Guerrero', COMANDO:'Comando', MERCENARIO:'Mercenario',
+    MARINE:'Marine', CYBORG:'Cyborg', MAGO:'Mago', METAHUMANO:'Metahumano',
+    DEMONIO:'Demonio', ANIMA:'Ánima', ESPECTRO:'Espectro', GOLEM:'Gólem',
+    CENTAURO:'Centauro', KRAKEN:'Kraken', ALONARDO:'Alonardo',
+    MADRESELVA:'Madreselva', COLOSO:'Coloso', FENIX:'Fénix',
+    DRAGON_DE_ORO:'Dragón de Oro', CABALLERO_DE_LUZ:'Cab. de Luz',
+    ALALAIA:'AlalaiA', EON_SUPREMO:'Éon Supremo',
+  };
+
+  const filas = data.tropas.map(t => {
+    const lbl   = LABELS[t.tipo] || t.tipo;
+    const costo = t.xp_costo != null ? _fmt(t.xp_costo) : '—';
+    const btn   = t.puede_subir
+      ? `<button onclick="window._subirNivel('${t.tipo}')"
+           style="padding:2px 10px;background:rgba(201,168,76,0.15);
+             border:1px solid #c9a84c99;color:#c9a84c;border-radius:3px;
+             cursor:pointer;font-size:10px;font-family:'Cinzel',serif;">
+           ⬆ Subir
+         </button>`
+      : `<span style="color:#444;font-size:10px;">${t.nivel >= t.nivel_max ? 'MAX' : 'Sin XP'}</span>`;
+    return `<div style="display:grid;grid-template-columns:120px 50px 1fr auto;
+        gap:6px;align-items:center;padding:4px 0;
+        border-bottom:1px solid rgba(255,255,255,0.04);">
+      <span style="font-size:11px;color:#b0a080;font-family:'Cinzel',serif;">${lbl}</span>
+      <span style="font-size:11px;color:#e8e0d0;text-align:center;">Nv.${t.nivel}</span>
+      <span style="font-size:10px;color:#666;">Costo: ${costo}</span>
+      ${btn}
+    </div>`;
+  }).join('');
+
+  const modal = document.createElement('div');
+  modal.id = 'leveling-modal';
+  modal.style.cssText = `position:fixed;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.75);z-index:1000;display:flex;
+    align-items:center;justify-content:center;`;
+  modal.innerHTML = `
+    <div style="background:#0a0c14;border:1px solid #c9a84c44;border-radius:8px;
+      padding:20px;width:500px;max-height:80vh;overflow-y:auto;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <span style="font-family:'Cinzel',serif;color:#c9a84c;font-size:14px;">⬆ Subir nivel de tropas</span>
+        <button onclick="window._cerrarLeveling()"
+          style="background:none;border:none;color:#666;cursor:pointer;font-size:18px;">✕</button>
+      </div>
+      <div style="color:#888;font-size:11px;font-family:'Cinzel',serif;margin-bottom:12px;">
+        ⭐ XP disponible: <b style="color:#c9a84c;">${_fmt(data.xp_pool)}</b>
+      </div>
+      <div id="leveling-filas">${filas}</div>
+    </div>`;
+  document.body.appendChild(modal);
+  _levelingModal = modal;
+  modal.addEventListener('click', e => { if (e.target === modal) window._cerrarLeveling(); });
+};
+
+window._cerrarLeveling = function() {
+  if (_levelingModal) { _levelingModal.remove(); _levelingModal = null; }
+};
+
+window._subirNivel = async function(tipo) {
+  const resp = await fetch(`/api/leveling/${jugador}/subir`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({tipo}),
+  });
+  const data = await resp.json();
+  if (!data.ok) {
+    alert(data.msg);
+    return;
+  }
+  // Actualizar XP local y reabrir modal
+  if (window._playerXP !== null) window._playerXP = data.xp_restante;
+  window._abrirLeveling();  // recargar modal con datos frescos
+};
 
 export function cleanup(){
   if(ticker){clearInterval(ticker);ticker=null;}
@@ -597,6 +789,8 @@ export async function render(container, jug, ciu){
   }
   cityData=data.city||data;
   window._bonusHerreria=data.bonus_herreria||null;
+  window._playerXP=data.experiencia??null;
+  window._playerBatallas={ganadas:data.batallas_ganadas??0,perdidas:data.batallas_perdidas??0,dioses:data.dioses_abatidos??0,cuevas:data.cuevas_derrotadas??0};
   if(tasasRaw&&tasasRaw.tasas){
     const raw=tasasRaw.tasas;
     tasas={
@@ -643,6 +837,7 @@ export async function render(container, jug, ciu){
       if(!r1.ok)return;
       const d=await r1.json();
       cityData=d.city||d;
+      if(d.experiencia!==undefined){window._playerXP=d.experiencia;window._playerBatallas={ganadas:d.batallas_ganadas??0,perdidas:d.batallas_perdidas??0,dioses:d.dioses_abatidos??0,cuevas:d.cuevas_derrotadas??0};}
       if(r2.ok){
         const td=await r2.json();
         if(td&&td.tasas){
@@ -662,5 +857,5 @@ export async function render(container, jug, ciu){
       if(window._resetLocalOffset) window._resetLocalOffset();
       _updateLeft();_updateRight();_updateBar();
     }catch(_){}
-  },30000);
+  },10000);
 }

@@ -37,6 +37,7 @@ Saqueo:
 """
 
 import csv
+from backend.data.save_manager import safe_resource_float as _srf
 import math
 import unicodedata
 from pathlib import Path
@@ -1016,11 +1017,13 @@ def resolver_combate_entidad(
                             if _norm(k) not in {"ALDEANO"} and _norm(k) in UNIDADES_BASICAS | INVOCACIONES)
         pct_ald = (sobrev_ald / total_ald_ini) if total_ald_ini > 0 else 1.0
         pct_mil = (sobrev_mil / total_mil_ini) if total_mil_ini > 0 else 1.0
+        # Acreditar XP de la entidad en victorias por valor/resistencia (no hubo HP=0)
+        xp_atk += ent_xp
         if pct_ald >= 0.80 and pct_mil >= 0.90:
             tipo_victoria = "valor"
             victoria      = True
             mensaje       = f"Victoria por valor contra {nombre_ent} ({pct_ald*100:.1f}% ald, {pct_mil*100:.1f}% mil)"
-            xp_atk *= 2.0  # XP generosa por valor
+            xp_atk *= 2.0  # XP doble por valor
         else:
             tipo_victoria = "resistencia"
             victoria      = True
@@ -1077,7 +1080,11 @@ def aplicar_resultado_combate(
         if not city:
             continue
         for nombre, cnt in bajas.items():
-            city[nombre] = max(0, float(city.get(nombre, 0) or 0) - cnt)
+            actual = _srf(city.get(nombre, 0))
+            if actual >= 1e50:  # __INF__ — no modificar
+                continue
+            clave = nombre if nombre in city else nombre.replace("_", " ")
+            city[clave] = max(0.0, actual - cnt)
 
     # Bajas defensores
     for jug, bajas in resultado["bajas_def"].items():
@@ -1085,7 +1092,12 @@ def aplicar_resultado_combate(
         if not city:
             continue
         for nombre, cnt in bajas.items():
-            city[nombre] = max(0, float(city.get(nombre, 0) or 0) - cnt)
+            actual = _srf(city.get(nombre, 0))
+            if actual >= 1e50:  # __INF__ — no modificar
+                continue
+            # Intentar con guión bajo y con espacio (normalización de claves)
+            clave = nombre if nombre in city else nombre.replace("_", " ")
+            city[clave] = max(0.0, actual - cnt)
 
     # Saqueo — va a la ciudad del primer atacante (o repartido)
     if resultado["saqueo"] and ciudades_atk:

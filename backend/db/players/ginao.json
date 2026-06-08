@@ -12,7 +12,7 @@
     "MAGO": 40,
     "METAHUMANO": 40
   },
-  "experiencia": "9.293493178641565e+19",
+  "experiencia": 1.081476221989931e+28,
   "ng_plus": 0,
   "dioses_abatidos": [
     "DIOS-204",
@@ -448,7 +448,7 @@
       "FENIX": 1000000126116000.0,
       "DRAGON_DE_ORO": 1000000000215000.0,
       "CABALLERO_DE_LUZ": 100000000011800.0,
-      "ALALAIA": 87178388777800649399,
+      "ALALAIA": 43589194388900348500,
       "EON_SUPREMO": 24995001300,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -626,7 +626,7 @@
             "ID": 0.0,
             "X": 666.0,
             "Y": 666.0,
-            "NOMBRE": "Bogotá",
+            "NOMBRE": "Bogot\u00e1",
             "TIPO": 0.0,
             "CAT_KEY": "JIARITO",
             "OBRAS": [],
@@ -728,7 +728,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 56636,
+      "ALALAIA": 28318,
       "EON_SUPREMO": 250000000,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -846,7 +846,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 56142,
+      "ALALAIA": 28071,
       "EON_SUPREMO": 0,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -963,7 +963,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 56142,
+      "ALALAIA": 28071,
       "EON_SUPREMO": 0.0,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1080,7 +1080,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 56554,
+      "ALALAIA": 28277,
       "EON_SUPREMO": 0.0,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1197,7 +1197,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 56808,
+      "ALALAIA": 28404,
       "EON_SUPREMO": 66666666666666,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1314,7 +1314,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 56102,
+      "ALALAIA": 28051,
       "EON_SUPREMO": 666666666666666666,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1431,7 +1431,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 55332,
+      "ALALAIA": 27666,
       "EON_SUPREMO": 66666666666666666666,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1548,7 +1548,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 54996,
+      "ALALAIA": 27498,
       "EON_SUPREMO": 0.0,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1665,7 +1665,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0.0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 872866666666666666666666762154,
+      "ALALAIA": 436433333333333333333333381077,
       "EON_SUPREMO": 0.0,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1782,7 +1782,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0,
       "CABALLERO_DE_LUZ": 0.0,
-      "ALALAIA": 87226666666666666666666666666762074,
+      "ALALAIA": 43613333333333333333333333333381037,
       "EON_SUPREMO": 0.0,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1906,7 +1906,7 @@
       "FENIX": 0,
       "DRAGON_DE_ORO": 0,
       "CABALLERO_DE_LUZ": 0,
-      "ALALAIA": 87286666666666666666666666762154,
+      "ALALAIA": 43643333333333333333333333381077,
       "EON_SUPREMO": 0,
       "MADERA": "__INF__",
       "PIEDRA": "__INF__",
@@ -1995,6 +1995,911 @@
       "TIPO": "HUMANO",
       "TEMPLO_3": 9,
       "LAST_PROD": 1778959605.969573
+    }
+  ],
+  "informes": [
+    {
+      "id": "10cf9164-58c3-4a38-9a93-e16242dcddd9",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA13",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 331.0,
+      "y_dest": 691.0,
+      "inicio": 1780712820.1291513,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "GUERRERO": 2
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "763e2dde-38f0-4d4b-a93c-47fc7cf8beaf",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA08",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 326.0,
+      "y_dest": 686.0,
+      "inicio": 1780711928.6904376,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "MAGO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "27dab895-c9b4-4c45-a463-fd4734c84f18",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA15",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 333.0,
+      "y_dest": 693.0,
+      "inicio": 1780710972.1672297,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "MERCENARIO": 10
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "c8fa7f2a-0547-4220-83d6-173bfcd693ca",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780711148.7767339,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "695953b8-401b-4507-9f68-2ffaae0d6808",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780708691.612743,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "ALDEANO": 1,
+        "EXPLORADOR": 1,
+        "SACERDOTE": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "5934518a-40cb-4045-b68f-d66138251005",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780705625.5138717,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=1.646e+28 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 411546982300884963164160,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 5.487293097633556e+27,
+          "JIARITO": 5.487293097633556e+27,
+          "GINAO": 5.487293097633556e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 5.487293097633556e+27,
+          "JIARITO": 5.487293097633556e+27,
+          "GINAO": 5.487293097633556e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "GUERRERO": 1,
+        "COMANDO": 1,
+        "MERCENARIO": 1,
+        "CYBORG": 1,
+        "MAGO": 1,
+        "METAHUMANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "059b5a5a-b950-4254-bce0-49587ba69933",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780692311.0487175,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 3403009,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 2.884240037134533e+17,
+          "JIARITO": 2.884240037134533e+17,
+          "GINAO": 2.884240037134533e+17
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 2.884240037134533e+17,
+          "JIARITO": 2.884240037134533e+17,
+          "GINAO": 2.884240037134533e+17
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "b5b264d8-6dcf-4639-86fc-33bde11545cb",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA15",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 333.0,
+      "y_dest": 693.0,
+      "inicio": 1780686762.8483033,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 3000000,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 2.8842399834e+17,
+          "JIARITO": 2.8842399834e+17,
+          "GINAO": 2.8842399834e+17
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 2.8842399834e+17,
+          "JIARITO": 2.8842399834e+17,
+          "GINAO": 2.8842399834e+17
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "3544f1a5-00ae-4726-921b-fd5b7b4a6b5b",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780686732.6542234,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "GINAO": {},
+          "JIARITO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 721765
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 9623533333.333334,
+          "GINAO": 9623533333.333334,
+          "JIARITO": 9623533333.333334
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 9623533333.333334,
+          "GINAO": 9623533333.333334,
+          "JIARITO": 9623533333.333334
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "GUERRERO": 1,
+        "ALDEANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "c716bb6f-2eb3-40af-9a4a-52f625761bc6",
+      "tipo": "ESPIONAJE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780675912.8952703,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 200.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "AlalaiA02",
+          "jugador": 0.0,
+          "x": 320.0,
+          "y": 680.0,
+          "muralla": 50,
+          "recursos": {
+            "MADERA": 1e+300,
+            "PIEDRA": 1e+300,
+            "HIERRO": 1e+300,
+            "CARBON": 1e+300,
+            "ORO": 1e+300,
+            "MANA": 1e+300
+          },
+          "ejercito": {
+            "ALDEANO": 8333,
+            "EXPLORADOR": 0,
+            "SACERDOTE": 0,
+            "GUERRERO": 0,
+            "COMANDO": 0,
+            "MERCENARIO": 0,
+            "MARINE": 0,
+            "CYBORG": 0,
+            "MAGO": 0,
+            "METAHUMANO": 0
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 45,
+            "CASA": 50,
+            "MURALLA": 50,
+            "TORRE_DE_VIGILANCIA": 50,
+            "CENTRO_DE_VIAJES": 40,
+            "ESCONDITE": 40,
+            "ALMACEN": 50,
+            "SANTUARIO_ARCANO": 50,
+            "UNIVERSIDAD": 45,
+            "HERRERIA": 5,
+            "TEMPLO_1": 50,
+            "TEMPLO_2": 15,
+            "TEMPLO_3": 5,
+            "CUARTEL_1": 41,
+            "CUARTEL_2": 9
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades": {
+        "ALDEANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "2065ced2-17ee-4872-bdda-5a22dd48e4fe",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780675827.7979338,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 3172638,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 2.8842400064184e+17,
+          "JIARITO": 2.8842400064184e+17,
+          "GINAO": 2.8842400064184e+17
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 2.8842400064184e+17,
+          "JIARITO": 2.8842400064184e+17,
+          "GINAO": 2.8842400064184e+17
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "ALDEANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "5f27fc2f-4629-4bc0-bf97-05689b848c6d",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780673531.854439,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 89155
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1188733333.3333333,
+          "JIARITO": 1188733333.3333333,
+          "GINAO": 1188733333.3333333
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1188733333.3333333,
+          "JIARITO": 1188733333.3333333,
+          "GINAO": 1188733333.3333333
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "METAHUMANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {}
+    },
+    {
+      "id": "8cced97f-628b-49ff-81bc-78040ff27d22",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780672226.5730555,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "GINAO": {},
+          "JIARITO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 580446759,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "ALALAIA": 18
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.363436522012e+16,
+          "GINAO": 1.363436522012e+16,
+          "JIARITO": 1.363436522012e+16
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.363436522012e+16,
+          "GINAO": 1.363436522012e+16,
+          "JIARITO": 1.363436522012e+16
+        }
+      },
+      "botin": {}
     }
   ]
 }

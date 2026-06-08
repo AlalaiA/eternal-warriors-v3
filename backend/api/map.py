@@ -16,15 +16,26 @@ router = APIRouter()
 sm     = SaveManager()
 
 # Jugadores conocidos — en producción vendría de accounts.json
-JUGADORES_ACTIVOS = ["JIARITO", "GINAO", "JOTICALINDO", "ALALAIA"]
+JUGADORES_ACTIVOS = ["JIARITO", "GINAO", "JOTICALINDO", "ALALAIA", "ADMIN"]
 
 
 @router.get("/entities")
-def get_entities():
+def get_entities(jugador: str = ""):
     """
     Retorna todas las entidades del mundo visibles para el mapa.
     Cuevas ocultas (_oculta=True) no se exponen hasta ser descubiertas.
+    Si se pasa jugador, filtra los dioses que ya derrotó.
     """
+    # Cargar dioses abatidos por el jugador
+    dioses_abatidos_jugador = set()
+    if jugador:
+        try:
+            player = sm.load_player(jugador.upper())
+            da = player.get("dioses_abatidos", [])
+            if isinstance(da, list):
+                dioses_abatidos_jugador = set(str(x) for x in da)
+        except Exception:
+            pass
     inactivos_raw = sm.load_world("inactivos").get("cities", [])
     dioses_raw    = sm.load_world("dioses").get("entities", [])
     cuevas_raw    = sm.load_world("cuevas").get("entities", [])
@@ -44,6 +55,7 @@ def get_entities():
          "destreza": d.get("DESTREZA"), "cat": "DIOSES"}
         for d in dioses_raw
         if not d.get("_oculta", False)
+        and str(d.get("ID", "")) not in dioses_abatidos_jugador
     ]
 
     # Cuevas: solo visibles (no ocultas), capturadas incluyen quién las capturó
@@ -94,6 +106,8 @@ def get_players():
             if not player:
                 continue
             for city in player.get("cities", []):
+                # Categoría diferenciada para vitaminizados
+                es_vitaminizado = nombre in ("ALALAIA", "ADMIN")
                 resultado.append({
                     "jugador":  nombre,
                     "nombre":   city.get("NOMBRE"),
@@ -101,7 +115,7 @@ def get_players():
                     "y":        city.get("Y"),
                     "nivel_cc": city.get("CENTRO_DE_CIUDAD", 1),
                     "muralla":  city.get("MURALLA", 0),
-                    "cat":      "CIUDAD_JUGADOR",
+                    "cat":      "CIUDAD_VITAMINIZADA" if es_vitaminizado else "CIUDAD_JUGADOR",
                 })
         except Exception:
             continue

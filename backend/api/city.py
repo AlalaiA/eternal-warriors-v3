@@ -7,6 +7,7 @@ from fastapi import APIRouter
 from backend.data.save_manager import SaveManager
 from backend.systems.production import aplicar_produccion, calcular_tasas, init_last_prod
 from backend.systems.queues import procesar_colas
+from backend.systems.buildings import procesar_obras
 from backend.systems.herreria import calcular_bonus_herreria
 
 router = APIRouter()
@@ -27,6 +28,7 @@ def _procesar_ciudad(jugador: str, city_name: str):
                 init_last_prod(c)
                 tasas = aplicar_produccion(c, unit_levels)
                 procesar_colas(c, unit_levels)
+                procesar_obras(c)
                 player["cities"][i] = c
                 resultado["tasas"]       = tasas
                 resultado["city"]        = c
@@ -38,7 +40,14 @@ def _procesar_ciudad(jugador: str, city_name: str):
     if not resultado:
         return None
 
-    resultado["bonus_herreria"] = calcular_bonus_herreria(player)
+    resultado["bonus_herreria"]    = calcular_bonus_herreria(player)
+    resultado["experiencia"]        = float(player.get("experiencia", 0) or 0)
+    resultado["batallas_ganadas"]   = int(player.get("batallas_ganadas", 0) or 0)
+    resultado["batallas_perdidas"]  = int(player.get("batallas_perdidas", 0) or 0)
+    _da = player.get("dioses_abatidos", [])
+    resultado["dioses_abatidos"] = len(_da) if isinstance(_da, list) else int(_da or 0)
+    resultado["cuevas_derrotadas"]  = int(player.get("cuevas_derrotadas", 0) or 0)
+    resultado["misiones_espionaje"] = int(player.get("misiones_espionaje", 0) or 0)
     return resultado
 
 

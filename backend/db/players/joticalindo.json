@@ -1,39 +1,310 @@
 {
   "player": "JOTICALINDO",
   "unit_levels": {
-    "MAGO": 2,
-    "SACERDOTE": 10
+    "MAGO": 33,
+    "SACERDOTE": 33,
+    "ALDEANO": 33,
+    "EXPLORADOR": 33,
+    "GUERRERO": 33,
+    "COMANDO": 33,
+    "METAHUMANO": 33,
+    "CYBORG": 33,
+    "MARINE": 33,
+    "MERCENARIO": 33
   },
-  "experiencia": 10992236.0,
+  "experiencia": 1.08147621266698e+28,
   "ng_plus": 0,
-  "dioses_abatidos": [],
-  "batallas_ganadas": 7,
-  "batallas_perdidas": 1,
-  "cuevas_derrotadas": 0,
-  "misiones_espionaje": 26,
+  "dioses_abatidos": [
+    "Dios-001",
+    "Dios-002",
+    "Dios-003",
+    "Dios-004",
+    "Dios-005",
+    "Dios-006",
+    "Dios-007",
+    "Dios-008",
+    "Dios-009",
+    "Dios-010",
+    "Dios-011",
+    "Dios-012",
+    "Dios-013",
+    "Dios-014",
+    "Dios-015",
+    "Dios-016",
+    "Dios-017",
+    "Dios-018",
+    "Dios-019",
+    "Dios-020",
+    "Dios-021",
+    "Dios-022",
+    "Dios-023",
+    "Dios-024",
+    "Dios-025",
+    "Dios-026",
+    "Dios-027",
+    "Dios-028",
+    "Dios-029",
+    "Dios-030",
+    "Dios-031",
+    "Dios-032",
+    "Dios-033",
+    "Dios-034",
+    "Dios-035",
+    "Dios-036",
+    "Dios-037",
+    "Dios-038",
+    "Dios-039",
+    "Dios-040",
+    "Dios-041",
+    "Dios-042",
+    "Dios-043",
+    "Dios-044",
+    "Dios-045",
+    "Dios-046",
+    "Dios-047",
+    "Dios-048",
+    "Dios-049",
+    "Dios-050",
+    "Dios-051",
+    "Dios-052",
+    "Dios-053",
+    "Dios-054",
+    "Dios-055",
+    "Dios-056",
+    "Dios-057",
+    "Dios-058",
+    "Dios-059",
+    "Dios-060",
+    "Dios-061",
+    "Dios-062",
+    "Dios-063",
+    "Dios-064",
+    "Dios-065",
+    "Dios-066",
+    "Dios-067",
+    "Dios-068",
+    "Dios-069",
+    "Dios-070",
+    "Dios-071",
+    "Dios-072",
+    "Dios-073",
+    "Dios-074",
+    "Dios-075",
+    "Dios-076",
+    "Dios-077",
+    "Dios-078",
+    "Dios-079",
+    "Dios-080",
+    "Dios-081",
+    "Dios-082",
+    "Dios-083",
+    "Dios-084",
+    "Dios-085",
+    "Dios-086",
+    "Dios-087",
+    "Dios-088",
+    "Dios-089",
+    "Dios-090",
+    "Dios-091",
+    "Dios-092",
+    "Dios-093",
+    "Dios-094",
+    "Dios-095",
+    "Dios-096",
+    "Dios-097",
+    "Dios-098",
+    "Dios-099",
+    "Dios-100",
+    "Dios-101",
+    "Dios-102",
+    "Dios-103",
+    "Dios-104",
+    "Dios-105",
+    "Dios-106",
+    "Dios-107",
+    "Dios-108",
+    "Dios-109",
+    "Dios-110",
+    "Dios-111",
+    "Dios-112",
+    "Dios-113",
+    "Dios-114",
+    "Dios-115",
+    "Dios-116",
+    "Dios-117",
+    "Dios-118",
+    "Dios-119",
+    "Dios-120",
+    "Dios-121",
+    "Dios-122",
+    "Dios-123",
+    "Dios-124",
+    "Dios-125",
+    "Dios-126",
+    "Dios-127",
+    "Dios-128",
+    "Dios-129",
+    "Dios-130",
+    "Dios-131",
+    "Dios-132",
+    "Dios-133",
+    "Dios-134",
+    "Dios-135",
+    "Dios-136",
+    "Dios-137",
+    "Dios-138",
+    "Dios-139",
+    "Dios-140",
+    "Dios-141",
+    "Dios-142",
+    "Dios-143",
+    "Dios-144",
+    "Dios-145",
+    "Dios-146",
+    "Dios-147",
+    "Dios-148",
+    "Dios-149",
+    "Dios-150",
+    "Dios-151",
+    "Dios-152",
+    "Dios-153",
+    "Dios-154",
+    "Dios-155",
+    "Dios-156",
+    "Dios-157",
+    "Dios-158",
+    "Dios-159",
+    "Dios-160",
+    "Dios-161",
+    "Dios-162",
+    "Dios-163",
+    "Dios-164",
+    "Dios-165",
+    "Dios-166",
+    "Dios-167",
+    "Dios-168",
+    "Dios-169",
+    "Dios-170",
+    "Dios-171",
+    "Dios-172",
+    "Dios-173",
+    "Dios-174",
+    "Dios-175",
+    "Dios-176",
+    "Dios-177",
+    "Dios-178",
+    "Dios-179",
+    "Dios-180",
+    "Dios-320",
+    "Dios-321",
+    "Dios-322",
+    "Dios-323",
+    "Dios-324",
+    "Dios-325",
+    "Dios-326",
+    "Dios-327",
+    "Dios-328",
+    "Dios-329",
+    "Dios-330",
+    "Dios-331",
+    "Dios-332",
+    "Dios-333",
+    "Dios-334",
+    "Dios-335",
+    "Dios-336",
+    "Dios-337",
+    "Dios-338",
+    "Dios-339",
+    "Dios-340",
+    "Dios-341",
+    "Dios-342",
+    "Dios-343",
+    "Dios-344",
+    "Dios-345",
+    "Dios-346",
+    "Dios-347",
+    "Dios-348",
+    "Dios-349",
+    "Dios-350",
+    "Dios-351",
+    "Dios-352",
+    "Dios-353",
+    "Dios-354",
+    "Dios-355",
+    "Dios-356",
+    "Dios-357",
+    "Dios-358",
+    "Dios-359",
+    "Dios-360",
+    "Dios-361",
+    "Dios-362",
+    "Dios-363",
+    "Dios-364",
+    "Dios-365",
+    "Dios-366",
+    "Dios-367",
+    "Dios-368",
+    "Dios-369",
+    "Dios-370",
+    "Dios-371",
+    "Dios-372",
+    "Dios-373",
+    "Dios-374",
+    "Dios-375",
+    "Dios-376",
+    "Dios-377",
+    "Dios-378",
+    "Dios-379",
+    "Dios-380",
+    "Dios-381",
+    "Dios-382",
+    "Dios-383",
+    "Dios-384",
+    "Dios-385",
+    "Dios-386",
+    "Dios-387",
+    "Dios-388",
+    "Dios-389",
+    "Dios-390",
+    "Dios-391",
+    "Dios-392",
+    "Dios-393",
+    "Dios-394",
+    "Dios-395",
+    "Dios-396",
+    "Dios-397",
+    "Dios-398",
+    "Dios-399",
+    "Dios-400",
+    "Dios-228"
+  ],
+  "batallas_ganadas": 25,
+  "batallas_perdidas": 2,
+  "cuevas_derrotadas": 3,
+  "misiones_espionaje": 31,
   "cities": [
     {
       "JUGADOR": 0.0,
       "CIUDADES_MAXIMAS_POR_JUGADOR": 12.0,
       "ESPACIOS_MAXIMOS_POR_CIUDAD": 400.0,
       "NIVEL_DE_TROPAS": 1.0,
-      "ALDEANO": 153012859368.1293,
-      "EXPLORADOR": 99997,
-      "SACERDOTE": 10000000,
-      "GUERRERO": 1000,
-      "COMANDO": 1000,
-      "MERCENARIO": 1000,
-      "MARINE": 1000,
-      "CYBORG": 0,
-      "MAGO": 205013665.0,
-      "METAHUMANO": 10000,
-      "DEMONIO": 500000,
-      "ANIMA": 500127.0,
-      "ESPECTRO": 500000,
-      "GOLEM": 23500999,
-      "CENTAURO": 23500999,
-      "KRAKEN": 5000,
-      "ALONARDO": 53188769,
+      "ALDEANO": 153000023000000310123907,
+      "EXPLORADOR": 9999999999999997575525,
+      "SACERDOTE": 1000000000000000042420637374017961984,
+      "GUERRERO": 9999999999999999998858010,
+      "COMANDO": 99999999999999998693314,
+      "MERCENARIO": 999999999998475433,
+      "MARINE": 0,
+      "CYBORG": 99999999999999999999045218,
+      "MAGO": 2.04998e+40,
+      "METAHUMANO": 9999999999999999999911980,
+      "DEMONIO": 50000000009999999999000000451803861,
+      "ANIMA": 497525999999999999999999999996020371,
+      "ESPECTRO": 3.4005756e+42,
+      "GOLEM": 497525999999999999999996020371,
+      "CENTAURO": 497525999999999999999996020371,
+      "KRAKEN": 497525999999999999999996020371,
+      "ALONARDO": 0.0,
       "MADRESELVA": 0,
       "COLOSO": 0.0,
       "FENIX": 0.0,
@@ -41,12 +312,12 @@
       "CABALLERO_DE_LUZ": 0.0,
       "ALALAIA": 0.0,
       "EON_SUPREMO": 0.0,
-      "MADERA": 5.580929e+35,
-      "PIEDRA": 5.038964e+35,
-      "HIERRO": 3.82914e+35,
-      "CARBON": 3.41298e+35,
-      "ORO": 2.736877e+35,
-      "MANA": 227985163361545.22,
+      "MADERA": "__INF__",
+      "PIEDRA": "__INF__",
+      "HIERRO": "__INF__",
+      "CARBON": "__INF__",
+      "ORO": "__INF__",
+      "MANA": "__INF__",
       "CENTRO_DE_CIUDAD": 38,
       "CASA": 50,
       "MURALLA": 40,
@@ -55,12 +326,12 @@
       "ESCONDITE": 0.0,
       "ALMACEN": 50,
       "SANTUARIO_ARCANO": 50,
-      "UNIVERSIDAD": 9,
-      "HERRERIA": 5,
-      "TEMPLO_1": 3,
-      "CUARTEL_1": 7,
-      "TEMPLO_2": 4,
-      "CUARTEL_2": 4,
+      "UNIVERSIDAD": 10,
+      "HERRERIA": 6,
+      "TEMPLO_1": 6,
+      "CUARTEL_1": 8,
+      "TEMPLO_2": 6,
+      "CUARTEL_2": 5,
       "EXPERIENCIA": 0.0,
       "NOMBRE": "jL01",
       "X": 242.0,
@@ -70,48 +341,28 @@
       "_jugador": "JOTICALINDO",
       "OBRAS": [
         {
-          "KEY": "ALMACEN",
-          "TIEMPO": 3958905.2569146464,
-          "TOTAL": 4416000.0
-        },
-        {
-          "KEY": "SANTUARIO_ARCANO",
-          "TIEMPO": 3479443.3039107514,
-          "TOTAL": 3936000.0000000005
-        },
-        {
-          "KEY": "MURALLA",
-          "TIEMPO": 3479448.3129107393,
-          "TOTAL": 3936000.0000000005
-        },
-        {
-          "KEY": "UNIVERSIDAD",
-          "TIEMPO": 21772431.38346616,
-          "TOTAL": 22140000.0
-        },
-        {
-          "edificio": "MURALLA",
-          "nivel_dest": 41,
-          "inicio": 1779417126.4958038,
-          "duracion_seg": 28080000
-        },
-        {
-          "edificio": "CENTRO_DE_CIUDAD",
-          "nivel_dest": 39,
-          "inicio": 1779417144.5188882,
-          "duracion_seg": 243360000
-        },
-        {
           "edificio": "UNIVERSIDAD",
-          "nivel_dest": 10,
-          "inicio": 1779748281.7475653,
-          "duracion_seg": 21060000
+          "nivel_dest": 11,
+          "inicio": 1780704578.283074,
+          "duracion_seg": 90880
         },
         {
-          "edificio": "CUARTEL_1",
-          "nivel_dest": 8,
-          "inicio": 1779748299.7943244,
-          "duracion_seg": 702000
+          "edificio": "TEMPLO_3",
+          "nivel_dest": 6,
+          "inicio": 1780704588.7063892,
+          "duracion_seg": 21842
+        },
+        {
+          "edificio": "TEMPLO_2",
+          "nivel_dest": 7,
+          "inicio": 1780704591.5265727,
+          "duracion_seg": 26174
+        },
+        {
+          "edificio": "TEMPLO_1",
+          "nivel_dest": 7,
+          "inicio": 1780704594.6417658,
+          "duracion_seg": 26174
         }
       ],
       "_ALDEANO_BUF": 0.5719554481074605,
@@ -138,33 +389,207 @@
       },
       "_RESTITUCION_TTL": 0.0,
       "TEMPLO_3": 5,
-      "LAST_PROD": 1780345511.4893403,
+      "LAST_PROD": 1780713426.3388176,
       "COLAS": [
         {
-          "tipo": "TEMPLO_3",
-          "unidad": "ANIMA",
+          "tipo": "CUARTEL_1",
+          "unidad": "MAGO",
           "cantidad_total": 1000000,
-          "cantidad_hecha": 28,
-          "tiempo_por_unidad_seg": 9240.0,
-          "inicio": 1779855743.198716,
-          "mana_gastado": 12000000000000.0
+          "cantidad_hecha": 68,
+          "tiempo_por_unidad_seg": 1776.0,
+          "inicio": 1780591046.48133
+        },
+        {
+          "tipo": "CUARTEL_1",
+          "unidad": "MAGO",
+          "cantidad_total": 10000000,
+          "cantidad_hecha": 68,
+          "tiempo_por_unidad_seg": 1776.0,
+          "inicio": 1780591050.8790305
+        },
+        {
+          "tipo": "TEMPLO_1",
+          "unidad": "CENTAURO",
+          "cantidad_total": 10000000000,
+          "cantidad_hecha": 0,
+          "tiempo_por_unidad_seg": 110880.0,
+          "inicio": 1780627734.0085657,
+          "mana_gastado": 2.5e+18
+        },
+        {
+          "tipo": "CUARTEL_2",
+          "unidad": "MAGO",
+          "cantidad_total": 10000000,
+          "cantidad_hecha": 46,
+          "tiempo_por_unidad_seg": 1848.0,
+          "inicio": 1780627827.5132127
+        },
+        {
+          "tipo": "TEMPLO_2",
+          "unidad": "CENTAURO",
+          "cantidad_total": 1000000,
+          "cantidad_hecha": 0,
+          "tiempo_por_unidad_seg": 110880.0,
+          "inicio": 1780631831.1398287,
+          "mana_gastado": 250000000000000.0
+        },
+        {
+          "tipo": "TEMPLO_2",
+          "unidad": "CENTAURO",
+          "cantidad_total": 100000000,
+          "cantidad_hecha": 0,
+          "tiempo_por_unidad_seg": 110880.0,
+          "inicio": 1780631835.1699624,
+          "mana_gastado": 2.5e+16
+        },
+        {
+          "tipo": "TEMPLO_1",
+          "unidad": "CENTAURO",
+          "cantidad_total": 100000,
+          "cantidad_hecha": 0,
+          "tiempo_por_unidad_seg": 110880.0,
+          "inicio": 1780631845.6245754,
+          "mana_gastado": 25000000000000.0
+        },
+        {
+          "tipo": "TEMPLO_3",
+          "unidad": "CENTAURO",
+          "cantidad_total": 1000000,
+          "cantidad_hecha": 0,
+          "tiempo_por_unidad_seg": 110880.0,
+          "inicio": 1780631855.6231668,
+          "mana_gastado": 250000000000000.0
+        },
+        {
+          "tipo": "CUARTEL_2",
+          "unidad": "MAGO",
+          "cantidad_total": 100000000,
+          "cantidad_hecha": 44,
+          "tiempo_por_unidad_seg": 1848.0,
+          "inicio": 1780631897.2595818
+        },
+        {
+          "tipo": "TEMPLO_3",
+          "unidad": "CENTAURO",
+          "cantidad_total": 10000,
+          "cantidad_hecha": 0,
+          "tiempo_por_unidad_seg": 110880.0,
+          "inicio": 1780632969.8391328,
+          "mana_gastado": 2500000000000.0
         }
       ],
       "TROPAS_PRESTADAS": [
         {
           "jugador": "JIARITO",
           "unidad": "EXPLORADOR",
-          "cantidad": 9960,
+          "cantidad": 7774,
+          "ciudad_origen": "Bogot\u00e1"
+        },
+        {
+          "jugador": "JIARITO",
+          "unidad": "ALALAIA",
+          "cantidad": 33333333333333333333333333333249333,
+          "ciudad_origen": "JIARITO1"
+        },
+        {
+          "jugador": "JIARITO",
+          "unidad": "ALALAIA",
+          "cantidad": 3333333333333333333333333333333333333,
+          "ciudad_origen": "JIARITO2"
+        },
+        {
+          "jugador": "JIARITO",
+          "unidad": "ALALAIA",
+          "cantidad": 33333333333333333333333333,
+          "ciudad_origen": "JIARITO 3"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 43589194388900273099,
+          "ciudad_origen": "01"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 28318,
+          "ciudad_origen": "02"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 28071,
+          "ciudad_origen": "03"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 28071,
+          "ciudad_origen": "04"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 28277,
+          "ciudad_origen": "05"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 28404,
+          "ciudad_origen": "06"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 28051,
+          "ciudad_origen": "07"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 27666,
+          "ciudad_origen": "08"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 27498,
+          "ciudad_origen": "09"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 436433333333333333333333381077,
+          "ciudad_origen": "10"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 43613333333333333333333333333381037,
+          "ciudad_origen": "11"
+        },
+        {
+          "jugador": "GINAO",
+          "unidad": "ALALAIA",
+          "cantidad": 43643333333333333333333333381077,
+          "ciudad_origen": "12"
+        },
+        {
+          "jugador": "JIARITO",
+          "unidad": "ALALAIA",
+          "cantidad": 35463,
           "ciudad_origen": "Bogot\u00e1"
         }
-      ]
+      ],
+      "DRAGON": 3
     },
     {
       "JUGADOR": 0.0,
       "CIUDADES_MAXIMAS_POR_JUGADOR": 12.0,
       "ESPACIOS_MAXIMOS_POR_CIUDAD": 400.0,
       "NIVEL_DE_TROPAS": 1.0,
-      "ALDEANO": 148205133.59808138,
+      "ALDEANO": 148400618.06451523,
       "EXPLORADOR": 1000,
       "SACERDOTE": 1000.0,
       "GUERRERO": 1000.0,
@@ -175,7 +600,7 @@
       "MAGO": 1000001.0,
       "METAHUMANO": 1000.0,
       "DEMONIO": 333.0,
-      "ANIMA": 0,
+      "ANIMA": 1.0,
       "ESPECTRO": 0,
       "GOLEM": 0,
       "CENTAURO": 0,
@@ -188,26 +613,26 @@
       "CABALLERO_DE_LUZ": 0.0,
       "ALALAIA": 0.0,
       "EON_SUPREMO": 0.0,
-      "MADERA": 254175862578807.75,
-      "PIEDRA": 243473823229641.22,
-      "HIERRO": 187287476064182.53,
-      "CARBON": 61537390961526.984,
-      "ORO": 37457595736391.5,
-      "MANA": 16784771246.541729,
-      "CENTRO_DE_CIUDAD": 10.0,
+      "MADERA": 492602614238327.06,
+      "PIEDRA": 472349666968944.75,
+      "HIERRO": 363913291667008.06,
+      "CARBON": 119616753835784.12,
+      "ORO": 72993535012490.92,
+      "MANA": 104340710046.69302,
+      "CENTRO_DE_CIUDAD": 11,
       "CASA": 50,
-      "MURALLA": 6,
-      "TORRE_DE_VIGILANCIA": 6,
+      "MURALLA": 7,
+      "TORRE_DE_VIGILANCIA": 7,
       "CENTRO_DE_VIAJES": 10.0,
       "ESCONDITE": 0,
       "ALMACEN": 50,
       "SANTUARIO_ARCANO": 50,
       "UNIVERSIDAD": 0.0,
       "HERRERIA": 0.0,
-      "TEMPLO_1": 1,
+      "TEMPLO_1": 3,
       "CUARTEL_1": 2,
-      "TEMPLO_2": 2,
-      "CUARTEL_2": 2,
+      "TEMPLO_2": 4,
+      "CUARTEL_2": 3,
       "EXPERIENCIA": 0.0,
       "NOMBRE": "JL2",
       "X": 243.0,
@@ -215,42 +640,7 @@
       "CAT_KEY": "HUMANO",
       "STATUS": "COLONIA",
       "_jugador": "JOTICALINDO",
-      "OBRAS": [
-        {
-          "KEY": "ALMACEN",
-          "TIEMPO": 262209.4934021793,
-          "TOTAL": 442800.00000000006
-        },
-        {
-          "KEY": "SANTUARIO_ARCANO",
-          "TIEMPO": 414854.3566050427,
-          "TOTAL": 442800.00000000006
-        },
-        {
-          "edificio": "MURALLA",
-          "nivel_dest": 7,
-          "inicio": 1779748407.8845377,
-          "duracion_seg": 36000
-        },
-        {
-          "edificio": "TORRE_DE_VIGILANCIA",
-          "nivel_dest": 7,
-          "inicio": 1779748411.9158857,
-          "duracion_seg": 36000
-        },
-        {
-          "edificio": "CENTRO_DE_CIUDAD",
-          "nivel_dest": 11,
-          "inicio": 1779748419.3924541,
-          "duracion_seg": 360000
-        },
-        {
-          "edificio": "TEMPLO_2",
-          "nivel_dest": 3,
-          "inicio": 1779748445.0985587,
-          "duracion_seg": 12000
-        }
-      ],
+      "OBRAS": [],
       "_ALDEANO_BUF": 0.4104326478911604,
       "MIL_QUEUES": {
         "C1": [],
@@ -263,18 +653,9 @@
       },
       "TIPO_JUGADOR": 0.0,
       "NIVEL_DE_TROPA": 0.0,
-      "LAST_PROD": 1779750307.5049932,
-      "COLAS": [
-        {
-          "tipo": "TEMPLO_1",
-          "unidad": "ANIMA",
-          "cantidad_total": 1,
-          "cantidad_hecha": 0,
-          "tiempo_por_unidad_seg": 11880.0,
-          "inicio": 1779748457.6682386,
-          "mana_gastado": 12000000.0
-        }
-      ]
+      "LAST_PROD": 1780620436.798421,
+      "COLAS": [],
+      "TEMPLO_3": 3
     },
     {
       "JUGADOR": 0.0,
@@ -404,18 +785,7 @@
       "CAT_KEY": "HUMANO",
       "STATUS": "COLONIA",
       "_jugador": "JOTICALINDO",
-      "OBRAS": [
-        {
-          "KEY": "ALMACEN",
-          "TIEMPO": 79773.33270672077,
-          "TOTAL": 442800.00000000006
-        },
-        {
-          "KEY": "SANTUARIO_ARCANO",
-          "TIEMPO": 79774.49570672063,
-          "TOTAL": 442800.00000000006
-        }
-      ],
+      "OBRAS": [],
       "_ALDEANO_BUF": 0.9912659812245089,
       "MIL_QUEUES": {
         "C1": [],
@@ -558,13 +928,7 @@
       "CAT_KEY": "HUMANO",
       "STATUS": "COLONIA",
       "_jugador": "JOTICALINDO",
-      "OBRAS": [
-        {
-          "KEY": "CUARTEL_1",
-          "TIEMPO": 49799.19889053363,
-          "TOTAL": 147600.0
-        }
-      ],
+      "OBRAS": [],
       "_ALDEANO_BUF": 0.41382206936049526,
       "MIL_QUEUES": {
         "C1": [],
@@ -707,28 +1071,7 @@
       "CAT_KEY": "HUMANO",
       "STATUS": "COLONIA",
       "_jugador": "JOTICALINDO",
-      "OBRAS": [
-        {
-          "KEY": "ALMACEN",
-          "TIEMPO": 197428.31990296303,
-          "TOTAL": 295200.0
-        },
-        {
-          "KEY": "SANTUARIO_ARCANO",
-          "TIEMPO": 197429.640902963,
-          "TOTAL": 295200.0
-        },
-        {
-          "KEY": "CENTRO_DE_CIUDAD",
-          "TIEMPO": 197488.98190296182,
-          "TOTAL": 295200.0
-        },
-        {
-          "KEY": "CASA",
-          "TIEMPO": 4822290.390125611,
-          "TOTAL": 4920000.0
-        }
-      ],
+      "OBRAS": [],
       "_ALDEANO_BUF": 0.8471238319326453,
       "MIL_QUEUES": {
         "C1": [],
@@ -799,18 +1142,7 @@
       "CAT_KEY": "HUMANO",
       "STATUS": "COLONIA",
       "_jugador": "JOTICALINDO",
-      "OBRAS": [
-        {
-          "KEY": "CASA",
-          "TIEMPO": 4822305.37912555,
-          "TOTAL": 4920000.0
-        },
-        {
-          "KEY": "CUARTEL_2",
-          "TIEMPO": 49913.75589053061,
-          "TOTAL": 147600.0
-        }
-      ],
+      "OBRAS": [],
       "_ALDEANO_BUF": 0.08254049859998824,
       "MIL_QUEUES": {
         "C1": [],
@@ -883,18 +1215,7 @@
       "CAT_KEY": "HUMANO",
       "STATUS": "COLONIA",
       "_jugador": "JOTICALINDO",
-      "OBRAS": [
-        {
-          "KEY": "CASA",
-          "TIEMPO": 4822329.678125464,
-          "TOTAL": 4920000.0
-        },
-        {
-          "KEY": "CENTRO_DE_CIUDAD",
-          "TIEMPO": 197530.85390296052,
-          "TOTAL": 295200.0
-        }
-      ],
+      "OBRAS": [],
       "_ALDEANO_BUF": 0.2821238319331538,
       "MIL_QUEUES": {
         "C1": [],
@@ -1056,6 +1377,5476 @@
     }
   ],
   "informes": [
+    {
+      "id": "10cf9164-58c3-4a38-9a93-e16242dcddd9",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA13",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 331.0,
+      "y_dest": 691.0,
+      "inicio": 1780712820.1291513,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "GUERRERO": 2
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "b624cd41-2b7e-414b-8ebe-7ced5a1968e4",
+      "tipo": "ESPIONAJE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA10",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 328.0,
+      "y_dest": 688.0,
+      "inicio": 1780711972.1822455,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 107.0,
+        "nivel_espionaje": 2,
+        "inteligencia": {
+          "nivel": 2,
+          "nombre": "AlalaiA10",
+          "jugador": 0.0,
+          "x": 328.0,
+          "y": 688.0,
+          "muralla": 50,
+          "recursos": {
+            "MADERA": 1e+300,
+            "PIEDRA": 1e+300,
+            "HIERRO": 1e+300,
+            "CARBON": 1e+300,
+            "ORO": 1e+300,
+            "MANA": 1e+300
+          }
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades": {},
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "763e2dde-38f0-4d4b-a93c-47fc7cf8beaf",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA08",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 326.0,
+      "y_dest": 686.0,
+      "inicio": 1780711928.6904376,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "MAGO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "27dab895-c9b4-4c45-a463-fd4734c84f18",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA15",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 333.0,
+      "y_dest": 693.0,
+      "inicio": 1780710972.1672297,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "MERCENARIO": 10
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "c8fa7f2a-0547-4220-83d6-173bfcd693ca",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780711148.7767339,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "695953b8-401b-4507-9f68-2ffaae0d6808",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780708691.612743,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=3.196e+27 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 79912035398230097264640,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.0654938055981586e+27,
+          "JIARITO": 1.0654938055981586e+27,
+          "GINAO": 1.0654938055981586e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "ALDEANO": 1,
+        "EXPLORADOR": 1,
+        "SACERDOTE": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "567d4183-21cb-4975-b3e4-8f926526c980",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-228",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 274.0,
+      "y_dest": 274.0,
+      "inicio": 1780708803.9846427,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 228 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 186759
+          }
+        },
+        "bajas_def": {
+          "Dios 228": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 181846710.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 456,000 | militares 0 < m\u00ednimo 5,700"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 50000000009999996840785075599572992
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "4b77d27e-04ef-4147-b540-0f9150340320",
+      "tipo": "ESPIONAJE",
+      "jugador_atk": "ALALAIA",
+      "jugador_def": "JOTICALINDO",
+      "ciudad_origen": "AlalaiA02",
+      "ciudad_dest": "jL01",
+      "x_orig": 320.0,
+      "y_orig": 680.0,
+      "x_dest": 242.0,
+      "y_dest": 522.0,
+      "inicio": 1780708615.0489368,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 107.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "jL01",
+          "jugador": 0.0,
+          "x": 242.0,
+          "y": 522.0,
+          "muralla": 40,
+          "recursos": {
+            "MADERA": 1e+300,
+            "PIEDRA": 1e+300,
+            "HIERRO": 1e+300,
+            "CARBON": 1e+300,
+            "ORO": 1e+300,
+            "MANA": 1e+300
+          },
+          "ejercito": {
+            "ALDEANO": 153000023000000310123907,
+            "EXPLORADOR": 9999999999999997575525,
+            "SACERDOTE": 1000000000000000042420637374017961984,
+            "GUERRERO": 9999999999999999998858010,
+            "COMANDO": 99999999999999998693314,
+            "MERCENARIO": 999999999998475433,
+            "MARINE": 0,
+            "CYBORG": 99999999999999999999045218,
+            "MAGO": 20499799999999999118295457077167554297856,
+            "METAHUMANO": 9999999999999999999911980
+          },
+          "invocaciones": {
+            "DEMONIO": 50000000009999999999000000451990620,
+            "ANIMA": 497525999999999999999999999996020371,
+            "ESPECTRO": 3400575599999999998437529221227758187708416,
+            "GOLEM": 497525999999999999999996020371,
+            "CENTAURO": 497525999999999999999996020371,
+            "KRAKEN": 497525999999999999999996020371,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 38,
+            "CASA": 50,
+            "MURALLA": 40,
+            "TORRE_DE_VIGILANCIA": 13,
+            "CENTRO_DE_VIAJES": 11,
+            "ESCONDITE": 0,
+            "ALMACEN": 50,
+            "SANTUARIO_ARCANO": 50,
+            "UNIVERSIDAD": 10,
+            "HERRERIA": 6,
+            "TEMPLO_1": 6,
+            "TEMPLO_2": 6,
+            "TEMPLO_3": 5,
+            "CUARTEL_1": 8,
+            "CUARTEL_2": 5
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null,
+        "victoria_atacante": false,
+        "mensaje": "Tu ciudad fue atacada \u2014 el atacante venci\u00f3"
+      },
+      "botin": {},
+      "unidades": {
+        "EXPLORADOR": 4
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "DEFENSOR"
+    },
+    {
+      "id": "5934518a-40cb-4045-b68f-d66138251005",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780705625.5138717,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria por puntos (XP atk=1.646e+28 vs def=0.000e+00)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 411546982300884963164160,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 5.487293097633556e+27,
+          "JIARITO": 5.487293097633556e+27,
+          "GINAO": 5.487293097633556e+27
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 5.487293097633556e+27,
+          "JIARITO": 5.487293097633556e+27,
+          "GINAO": 5.487293097633556e+27
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "GUERRERO": 1,
+        "COMANDO": 1,
+        "MERCENARIO": 1,
+        "CYBORG": 1,
+        "MAGO": 1,
+        "METAHUMANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "488e349b-b02d-4560-814a-3b7807ef2c5b",
+      "tipo": "ESPIONAJE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780705460.1769705,
+      "resultado": {
+        "detectado": true,
+        "sigilo": 101.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv50 HP=1.2210e+12 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 2 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 2
+            }
+          },
+          "iniciales_def": {
+            "ALALAIA": {
+              "ALDEANO": 15000000000000001060141952447820087689216,
+              "EXPLORADOR": 3000000,
+              "SACERDOTE": 3000000,
+              "GUERRERO": 3000000,
+              "COMANDO": 3000000,
+              "MERCENARIO": 3000000,
+              "MARINE": 3000000,
+              "CYBORG": 3000000,
+              "MAGO": 3000000,
+              "METAHUMANO": 3000000,
+              "DEMONIO": 3000000,
+              "ANIMA": 3000000,
+              "ESPECTRO": 3000000,
+              "GOLEM": 3000000,
+              "CENTAURO": 3000000,
+              "KRAKEN": 3000000,
+              "ALONARDO": 3000000,
+              "MADRESELVA": 3000000,
+              "COLOSO": 3000000,
+              "FENIX": 3000000,
+              "DRAGON_DE_ORO": 3000000,
+              "CABALLERO_DE_LUZ": 3000000,
+              "ALALAIA": 18,
+              "EON_SUPREMO": 3
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "ALALAIA": {
+              "ALDEANO": 15000000000000001060141952447820087689216,
+              "EXPLORADOR": 3000000,
+              "SACERDOTE": 3000000,
+              "GUERRERO": 3000000,
+              "COMANDO": 3000000,
+              "MERCENARIO": 3000000,
+              "MARINE": 3000000,
+              "CYBORG": 3000000,
+              "MAGO": 3000000,
+              "METAHUMANO": 3000000,
+              "DEMONIO": 3000000,
+              "ANIMA": 3000000,
+              "ESPECTRO": 3000000,
+              "GOLEM": 3000000,
+              "CENTAURO": 3000000,
+              "KRAKEN": 3000000,
+              "ALONARDO": 3000000,
+              "MADRESELVA": 3000000,
+              "COLOSO": 3000000,
+              "FENIX": 3000000,
+              "DRAGON_DE_ORO": 3000000,
+              "CABALLERO_DE_LUZ": 3000000,
+              "ALALAIA": 18,
+              "EON_SUPREMO": 3
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 2
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "ALALAIA": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {},
+      "unidades": {},
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "57802f1e-381e-4e68-82c9-94833dcefc4a",
+      "tipo": "ATAQUE",
+      "jugador_atk": "ALALAIA",
+      "jugador_def": "JOTICALINDO",
+      "ciudad_origen": "AlalaiA02",
+      "ciudad_dest": "jL01",
+      "x_orig": 320.0,
+      "y_orig": 680.0,
+      "x_dest": 242.0,
+      "y_dest": 522.0,
+      "inicio": 1780689519.4599981,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Tu ciudad fue atacada \u2014 el atacante venci\u00f3",
+        "rondas": 9,
+        "bajas_atk": {
+          "ALALAIA": {
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "EON_SUPREMO": 3
+          }
+        },
+        "bajas_def": {
+          "JOTICALINDO": {
+            "ESPECTRO": 13161244051821861975654,
+            "GOLEM": 20591077,
+            "CENTAURO": 23500999,
+            "KRAKEN": 5000,
+            "ALONARDO": 53188767
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "ALALAIA": 3.818076899434117e+26
+        },
+        "victoria_atacante": false,
+        "xp_por_jugador_atk": {
+          "ALALAIA": 3.818076899434117e+26
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "ALDEANO": 3211903,
+        "EXPLORADOR": 3000000,
+        "SACERDOTE": 3000000,
+        "GUERRERO": 3000000,
+        "COMANDO": 3000000,
+        "MERCENARIO": 3000000,
+        "MARINE": 3000000,
+        "CYBORG": 3000000,
+        "MAGO": 3000000,
+        "METAHUMANO": 3000000,
+        "ANIMA": 3000000,
+        "DEMONIO": 3000000,
+        "ESPECTRO": 3000000,
+        "GOLEM": 3000000,
+        "CENTAURO": 3000000,
+        "KRAKEN": 3000000,
+        "ALONARDO": 3000000,
+        "COLOSO": 3000000,
+        "MADRESELVA": 3000000,
+        "FENIX": 3000000,
+        "DRAGON_DE_ORO": 3000000,
+        "CABALLERO_DE_LUZ": 3000000,
+        "ALALAIA": 18,
+        "EON_SUPREMO": 3
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "DEFENSOR"
+    },
+    {
+      "id": "4cf78ea3-3250-42af-8cfc-165400220a39",
+      "tipo": "ESPIONAJE",
+      "jugador_atk": "ALALAIA",
+      "jugador_def": "JOTICALINDO",
+      "ciudad_origen": "AlalaiA02",
+      "ciudad_dest": "jL01",
+      "x_orig": 320.0,
+      "y_orig": 680.0,
+      "x_dest": 242.0,
+      "y_dest": 522.0,
+      "inicio": 1780689424.8344302,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 98.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "jL01",
+          "jugador": 0.0,
+          "x": 242.0,
+          "y": 522.0,
+          "muralla": 40,
+          "recursos": {
+            "MADERA": 5.5809391572235446e+35,
+            "PIEDRA": 5.0389737529112376e+35,
+            "HIERRO": 3.8291475426706515e+35,
+            "CARBON": 3.412982515721e+35,
+            "ORO": 2.7368784908085572e+35,
+            "MANA": 2.7385514839030726e+23
+          },
+          "ejercito": {
+            "ALDEANO": 153000023000000310123907,
+            "EXPLORADOR": 999999997575525,
+            "SACERDOTE": 10000000000000000,
+            "GUERRERO": 99999999999998858010,
+            "COMANDO": 9999999999998693314,
+            "MERCENARIO": 999999999998475433,
+            "MARINE": 0,
+            "CYBORG": 999999999999999045218,
+            "MAGO": 204997999999999279104,
+            "METAHUMANO": 9999999999999999911980
+          },
+          "invocaciones": {
+            "DEMONIO": 5000000000000000451990620,
+            "ANIMA": 49752599999999999996020371,
+            "ESPECTRO": 47167000000070000742091,
+            "GOLEM": 20591077,
+            "CENTAURO": 23500999,
+            "KRAKEN": 5000,
+            "ALONARDO": 53188767,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 38,
+            "CASA": 50,
+            "MURALLA": 40,
+            "TORRE_DE_VIGILANCIA": 13,
+            "CENTRO_DE_VIAJES": 11,
+            "ESCONDITE": 0,
+            "ALMACEN": 50,
+            "SANTUARIO_ARCANO": 50,
+            "UNIVERSIDAD": 9,
+            "HERRERIA": 5,
+            "TEMPLO_1": 5,
+            "TEMPLO_2": 5,
+            "TEMPLO_3": 5,
+            "CUARTEL_1": 8,
+            "CUARTEL_2": 5
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null,
+        "victoria_atacante": false,
+        "mensaje": "Tu ciudad fue atacada \u2014 el atacante venci\u00f3"
+      },
+      "botin": {},
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "DEFENSOR"
+    },
+    {
+      "id": "e326011a-9d78-4332-b886-77123a99d517",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-394",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 850.0,
+      "y_dest": 850.0,
+      "inicio": 1780689328.6102977,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 394 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 356661
+          }
+        },
+        "bajas_def": {
+          "Dios 394": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 948535300.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 788,000 | militares 0 < m\u00ednimo 9,850"
+      },
+      "botin": {},
+      "unidades": {
+        "ESPECTRO": 47167000000070001098752
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "be89488b-a19f-4402-ad12-8c05b3f187f3",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-395",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 725.0,
+      "y_dest": 941.0,
+      "inicio": 1780689313.10185,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 395 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 396045
+          }
+        },
+        "bajas_def": {
+          "Dios 395": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 958020652.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 790,000 | militares 0 < m\u00ednimo 9,875"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "e6ab53fb-fd09-47f9-bcfe-25d9e6c97a57",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-396",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 577.0,
+      "y_dest": 989.0,
+      "inicio": 1780689303.4260514,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 396 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 994212
+          }
+        },
+        "bajas_def": {
+          "Dios 396": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 967600858.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 792,000 | militares 0 < m\u00ednimo 9,900"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "0fa164bb-d334-4fa2-af05-695e688bbe26",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-397",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 423.0,
+      "y_dest": 989.0,
+      "inicio": 1780689291.432011,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 397 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 404010
+          }
+        },
+        "bajas_def": {
+          "Dios 397": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 977276868.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 794,000 | militares 0 < m\u00ednimo 9,925"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "fd60373b-0634-4cb1-9c05-b867c9f1a98b",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-398",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 275.0,
+      "y_dest": 941.0,
+      "inicio": 1780689281.726516,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 398 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 1014201
+          }
+        },
+        "bajas_def": {
+          "Dios 398": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 987049636.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 796,000 | militares 0 < m\u00ednimo 9,950"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "7e18428b-c5fc-4e2d-b8dd-d0ce6786cb12",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-399",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 150.0,
+      "y_dest": 850.0,
+      "inicio": 1780689273.3848836,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 399 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 412128
+          }
+        },
+        "bajas_def": {
+          "Dios 399": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 996920132.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 798,000 | militares 0 < m\u00ednimo 9,975"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "4620c54c-7ce1-4580-b860-1e4b28e37efb",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-187",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 457.0,
+      "inicio": 1780689261.6489058,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 187 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 49986
+          }
+        },
+        "bajas_def": {
+          "Dios 187": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 120928628.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 374,000 | militares 0 < m\u00ednimo 4,675"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "05eec6a3-5206-4896-aeea-f83892988dee",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-168",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 258.0,
+      "y_dest": 421.0,
+      "inicio": 1780689253.3277001,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 168 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 102843
+          }
+        },
+        "bajas_def": {
+          "Dios 168": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 100097452.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 336,000 | militares 0 < m\u00ednimo 4,200"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "5607e5a1-2645-4ae1-a219-720ca33fbfee",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-149",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 292.0,
+      "y_dest": 394.0,
+      "inicio": 1780689244.6967528,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 149 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 34245
+          }
+        },
+        "bajas_def": {
+          "Dios 149": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 82854656.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 298,000 | militares 0 < m\u00ednimo 3,725"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "5833205f-088c-4c54-8af5-fec5c0058462",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-130",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 324.0,
+      "y_dest": 384.0,
+      "inicio": 1780689232.0981438,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 130 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 70461
+          }
+        },
+        "bajas_def": {
+          "Dios 130": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 68582106.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 260,000 | militares 0 < m\u00ednimo 3,250"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "5128de51-645a-4d3d-8eea-6ce74055233d",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": null,
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Cueva-075",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 203.0,
+      "y_dest": 462.0,
+      "inicio": 1780688871.5399418,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Cueva-075 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 1658988
+          }
+        },
+        "bajas_def": {
+          "Cueva-075": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 3000000.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 500,000 | militares 0 < m\u00ednimo 5,000"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "07696e02-95cf-4f2b-9af1-8cba11465bcc",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-129",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 299.0,
+      "y_dest": 435.0,
+      "inicio": 1780688820.8201194,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 129 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 28071
+          }
+        },
+        "bajas_def": {
+          "Dios 129": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 67903076.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 258,000 | militares 0 < m\u00ednimo 3,225"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "11508e66-f467-4aa6-86dc-1402acd46445",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-148",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 270.0,
+      "y_dest": 464.0,
+      "inicio": 1780688810.500461,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 148 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 84285
+          }
+        },
+        "bajas_def": {
+          "Dios 148": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 82034314.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 296,000 | militares 0 < m\u00ednimo 3,700"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "9d5662ba-eae4-4aed-83a4-b5dd85b1e021",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-206",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 202.0,
+      "y_dest": 500.0,
+      "inicio": 1780688785.0057862,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 206 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 150111
+          }
+        },
+        "bajas_def": {
+          "Dios 206": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 146094958.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 412,000 | militares 0 < m\u00ednimo 5,150"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "47ddcbb8-b1cc-4733-8948-80ad2f45af0b",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-167",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 245.0,
+      "y_dest": 500.0,
+      "inicio": 1780688773.0981505,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 167 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 40968
+          }
+        },
+        "bajas_def": {
+          "Dios 167": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 99106388.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 334,000 | militares 0 < m\u00ednimo 4,175"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "cff837dd-9354-408b-a598-ba49236e4b6a",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-186",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 227.0,
+      "y_dest": 543.0,
+      "inicio": 1780688763.8425436,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 186 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 123021
+          }
+        },
+        "bajas_def": {
+          "Dios 186": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 119731314.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 372,000 | militares 0 < m\u00ednimo 4,650"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "fad2194f-dc99-431d-99ad-f6f219b72db0",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-147",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 270.0,
+      "y_dest": 536.0,
+      "inicio": 1780688753.3739357,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 147 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 33570
+          }
+        },
+        "bajas_def": {
+          "Dios 147": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 81222092.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 294,000 | militares 0 < m\u00ednimo 3,675"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "b9a95a84-0166-480f-9dbe-2d6a0eee7953",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-127",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 299.0,
+      "y_dest": 565.0,
+      "inicio": 1780688745.1371083,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 127 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 68391
+          }
+        },
+        "bajas_def": {
+          "Dios 127": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 66565116.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 254,000 | militares 0 < m\u00ednimo 3,175"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "1be7b82f-f3b4-422c-bb04-9746966a30dc",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-400",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 59.0,
+      "y_dest": 725.0,
+      "inicio": 1780688725.3195698,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 400 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 1034586
+          }
+        },
+        "bajas_def": {
+          "Dios 400": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1006889334.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 800,000 | militares 0 < m\u00ednimo 10,000"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "d0359ab7-0335-46f1-94e0-a3664dd42a97",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-275",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 859.0,
+      "y_dest": 557.0,
+      "inicio": 1780688702.4450634,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 275 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 119997
+          }
+        },
+        "bajas_def": {
+          "Dios 275": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 290275256.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 550,000 | militares 0 < m\u00ednimo 6,875"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "36bca983-c085-46b4-8c8c-f94c06d9c551",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-314",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 903.0,
+      "y_dest": 564.0,
+      "inicio": 1780688671.26522,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 314 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 439668
+          }
+        },
+        "bajas_def": {
+          "Dios 314": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 427901290.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 628,000 | militares 0 < m\u00ednimo 7,850"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "ca663e41-ca73-4da4-b948-107e5669a5d9",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-353",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 946.0,
+      "y_dest": 571.0,
+      "inicio": 1780688645.4976711,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 353 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 260766
+          }
+        },
+        "bajas_def": {
+          "Dios 353": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 630778922.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 706,000 | militares 0 < m\u00ednimo 8,825"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "ba55ca90-28a5-472d-a9c6-c8b55061843e",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-116",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 634.0,
+      "y_dest": 366.0,
+      "inicio": 1780688056.9829469,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 116 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MERCENARIO": 235467
+          }
+        },
+        "bajas_def": {
+          "Dios 116": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 59663892.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 232,000 | invocaciones 0 < m\u00ednimo 2,900"
+      },
+      "botin": {},
+      "unidades": {
+        "MERCENARIO": 999999999998710900
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "5c8b5494-c29a-4898-bdee-2c247ea41d86",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-392",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 989.0,
+      "y_dest": 577.0,
+      "inicio": 1780688620.1910014,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 392 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 384399
+          }
+        },
+        "bajas_def": {
+          "Dios 392": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 929845406.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 784,000 | militares 0 < m\u00ednimo 9,800"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "0de63f09-ec74-4e5c-8dba-1f669e153fda",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-096",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 598.0,
+      "y_dest": 365.0,
+      "inicio": 1780688044.372045,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 096 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "COMANDO": 238590
+          }
+        },
+        "bajas_def": {
+          "Dios 096": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 48897214.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 192,000 | invocaciones 0 < m\u00ednimo 2,400"
+      },
+      "botin": {},
+      "unidades": {
+        "COMANDO": 9999999999998930000
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "61ca714e-3094-4315-b7eb-f213f6aab315",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-095",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 552.0,
+      "y_dest": 341.0,
+      "inicio": 1780688033.8007178,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 095 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "GUERRERO": 261990
+          }
+        },
+        "bajas_def": {
+          "Dios 095": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 48413082.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 190,000 | invocaciones 0 < m\u00ednimo 2,375"
+      },
+      "botin": {},
+      "unidades": {
+        "GUERRERO": 99999999999999120000
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "315bd79b-f50c-4820-8c88-f9c830edec4c",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-112",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 414.0,
+      "y_dest": 331.0,
+      "inicio": 1780688277.2165487,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 112 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 58905
+          }
+        },
+        "bajas_def": {
+          "Dios 112": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 57335828.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 224,000 | militares 0 < m\u00ednimo 2,800"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "d402bdea-6536-4cb5-8574-f1059b24aaee",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-110",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 331.0,
+      "y_dest": 414.0,
+      "inicio": 1780688263.9842129,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 110 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 23229
+          }
+        },
+        "bajas_def": {
+          "Dios 110": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 56206086.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 220,000 | militares 0 < m\u00ednimo 2,750"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "b0803194-d7ac-4e5a-85eb-87ff09de11e6",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-111",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 384.0,
+      "y_dest": 351.0,
+      "inicio": 1780688255.0472898,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 111 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 58329
+          }
+        },
+        "bajas_def": {
+          "Dios 111": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 56768146.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 222,000 | militares 0 < m\u00ednimo 2,775"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "365f3d6f-b15a-47f0-8415-e47f6628484d",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-107",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 331.0,
+      "y_dest": 586.0,
+      "inicio": 1780688110.9343028,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 107 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "EXPLORADOR": 597375
+          }
+        },
+        "bajas_def": {
+          "Dios 107": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 54553074.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 10% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 214,000 | invocaciones 0 < m\u00ednimo 2,675"
+      },
+      "botin": {},
+      "unidades": {
+        "EXPLORADOR": 999999998172900
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "a4ac9b7f-e109-4cf8-a7fc-ce2e060a1139",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-122",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 565.0,
+      "y_dest": 701.0,
+      "inicio": 1780688221.2968504,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 122 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 65070
+          }
+        },
+        "bajas_def": {
+          "Dios 122": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 63334424.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 244,000 | militares 0 < m\u00ednimo 3,050"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "6f1fd9fe-82cf-4660-81f8-48b2c547e2a6",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-120",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 669.0,
+      "y_dest": 586.0,
+      "inicio": 1780688096.2253995,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 120 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 128367
+          }
+        },
+        "bajas_def": {
+          "Dios 120": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 62086486.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 240,000 | invocaciones 0 < m\u00ednimo 3,000"
+      },
+      "botin": {},
+      "unidades": {
+        "MAGO": 204997999999999400000
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "496791da-db8f-462b-9a39-f819b96d14fa",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-117",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 669.0,
+      "y_dest": 414.0,
+      "inicio": 1780688067.5813296,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 117 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 154782
+          }
+        },
+        "bajas_def": {
+          "Dios 117": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 60260532.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 234,000 | invocaciones 0 < m\u00ednimo 2,925"
+      },
+      "botin": {},
+      "unidades": {
+        "CYBORG": 999999999999999200000
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "318e1baf-5dd3-4204-a0a0-f1e4d05e6fe0",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-121",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 615.0,
+      "y_dest": 677.0,
+      "inicio": 1780688206.2986479,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 121 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 23571
+          }
+        },
+        "bajas_def": {
+          "Dios 121": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 62707352.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 242,000 | militares 0 < m\u00ednimo 3,025"
+      },
+      "botin": {},
+      "unidades": {
+        "ESPECTRO": 47167000000070001098752
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "e7dc85b6-a82e-49c0-8d31-0253f4913b6c",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-101",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 615.0,
+      "y_dest": 650.0,
+      "inicio": 1780688189.5398412,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 101 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 21240
+          }
+        },
+        "bajas_def": {
+          "Dios 101": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 51391462.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 202,000 | militares 0 < m\u00ednimo 2,525"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "512ba3ad-f26b-4331-a553-d661f72ffbe4",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-104",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 470.0,
+      "y_dest": 687.0,
+      "inicio": 1780688153.0075166,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 104 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 88020
+          }
+        },
+        "bajas_def": {
+          "Dios 104": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 52948676.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 208,000 | invocaciones 0 < m\u00ednimo 2,600"
+      },
+      "botin": {},
+      "unidades": {
+        "METAHUMANO": 10000000000000000000000
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "6725b867-a1b9-4703-aab7-ed9d8bebc9e2",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-102",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 586.0,
+      "y_dest": 669.0,
+      "inicio": 1780688176.7000935,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 102 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 19512
+          }
+        },
+        "bajas_def": {
+          "Dios 102": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 51905378.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 204,000 | militares 0 < m\u00ednimo 2,550"
+      },
+      "botin": {},
+      "unidades": {
+        "ESPECTRO": 47167000000070001098752
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "3a7c20ed-c774-44f0-8005-81bca95b2106",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-103",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 530.0,
+      "y_dest": 687.0,
+      "inicio": 1780688164.1224008,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 103 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 21672
+          }
+        },
+        "bajas_def": {
+          "Dios 103": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 52424432.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 206,000 | militares 0 < m\u00ednimo 2,575"
+      },
+      "botin": {},
+      "unidades": {
+        "ANIMA": 49752599999999999574278144
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "cee51c1f-94ee-447f-a33d-75aa0814884d",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-105",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 414.0,
+      "y_dest": 669.0,
+      "inicio": 1780688140.588726,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 105 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 20106
+          }
+        },
+        "bajas_def": {
+          "Dios 105": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 53478162.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 210,000 | militares 0 < m\u00ednimo 2,625"
+      },
+      "botin": {},
+      "unidades": {
+        "ESPECTRO": 47167000000070001098752
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "d5e2b5c1-29cc-4aca-a7a3-bcac2f9f44d1",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-106",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 366.0,
+      "y_dest": 634.0,
+      "inicio": 1780688129.0437825,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 106 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 20304
+          }
+        },
+        "bajas_def": {
+          "Dios 106": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 54012944.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 212,000 | militares 0 < m\u00ednimo 2,650"
+      },
+      "botin": {},
+      "unidades": {
+        "ESPECTRO": 47167000000070001098752
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "9e84c864-ec98-4cde-bc56-48093704cb34",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-094",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 500.0,
+      "y_dest": 333.0,
+      "inicio": 1780688023.0256476,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 094 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 79686
+          }
+        },
+        "bajas_def": {
+          "Dios 094": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 47933746.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 188,000 | invocaciones 0 < m\u00ednimo 2,350"
+      },
+      "botin": {},
+      "unidades": {
+        "METAHUMANO": 10000000000000000000000
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "e71ce59f-de90-4957-ba2e-f45e8c9c736e",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-093",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 448.0,
+      "y_dest": 341.0,
+      "inicio": 1780688013.001118,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 093 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 48762
+          }
+        },
+        "bajas_def": {
+          "Dios 093": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 47459154.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 186,000 | militares 0 < m\u00ednimo 2,325"
+      },
+      "botin": {},
+      "unidades": {
+        "DEMONIO": 5000000000000000452984832
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "b5b264d8-6dcf-4639-86fc-33bde11545cb",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA15",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 333.0,
+      "y_dest": 693.0,
+      "inicio": 1780686762.8483033,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 3000000,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 2.8842399834e+17,
+          "JIARITO": 2.8842399834e+17,
+          "GINAO": 2.8842399834e+17
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 2.8842399834e+17,
+          "JIARITO": 2.8842399834e+17,
+          "GINAO": 2.8842399834e+17
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "EXPLORADOR": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "3544f1a5-00ae-4726-921b-fd5b7b4a6b5b",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780686732.6542234,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "GINAO": {},
+          "JIARITO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 721765
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 9623533333.333334,
+          "GINAO": 9623533333.333334,
+          "JIARITO": 9623533333.333334
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 9623533333.333334,
+          "GINAO": 9623533333.333334,
+          "JIARITO": 9623533333.333334
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "GUERRERO": 1,
+        "ALDEANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "c716bb6f-2eb3-40af-9a4a-52f625761bc6",
+      "tipo": "ESPIONAJE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780675912.8952703,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 200.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "AlalaiA02",
+          "jugador": 0.0,
+          "x": 320.0,
+          "y": 680.0,
+          "muralla": 50,
+          "recursos": {
+            "MADERA": 1e+300,
+            "PIEDRA": 1e+300,
+            "HIERRO": 1e+300,
+            "CARBON": 1e+300,
+            "ORO": 1e+300,
+            "MANA": 1e+300
+          },
+          "ejercito": {
+            "ALDEANO": 8333,
+            "EXPLORADOR": 0,
+            "SACERDOTE": 0,
+            "GUERRERO": 0,
+            "COMANDO": 0,
+            "MERCENARIO": 0,
+            "MARINE": 0,
+            "CYBORG": 0,
+            "MAGO": 0,
+            "METAHUMANO": 0
+          },
+          "invocaciones": {
+            "DEMONIO": 0,
+            "ANIMA": 0,
+            "ESPECTRO": 0,
+            "GOLEM": 0,
+            "CENTAURO": 0,
+            "KRAKEN": 0,
+            "ALONARDO": 0,
+            "MADRESELVA": 0,
+            "COLOSO": 0,
+            "FENIX": 0,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 0,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 45,
+            "CASA": 50,
+            "MURALLA": 50,
+            "TORRE_DE_VIGILANCIA": 50,
+            "CENTRO_DE_VIAJES": 40,
+            "ESCONDITE": 40,
+            "ALMACEN": 50,
+            "SANTUARIO_ARCANO": 50,
+            "UNIVERSIDAD": 45,
+            "HERRERIA": 5,
+            "TEMPLO_1": 50,
+            "TEMPLO_2": 15,
+            "TEMPLO_3": 5,
+            "CUARTEL_1": 41,
+            "CUARTEL_2": 9
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {},
+      "unidades": {
+        "ALDEANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "2065ced2-17ee-4872-bdda-5a22dd48e4fe",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780675827.7979338,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 3172638,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "DRAGON_DE_ORO": 3000000,
+            "CABALLERO_DE_LUZ": 3000000,
+            "ALALAIA": 18,
+            "EON_SUPREMO": 3
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 2.8842400064184e+17,
+          "JIARITO": 2.8842400064184e+17,
+          "GINAO": 2.8842400064184e+17
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 2.8842400064184e+17,
+          "JIARITO": 2.8842400064184e+17,
+          "GINAO": 2.8842400064184e+17
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "ALDEANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {},
+      "rol": "ATACANTE"
+    },
+    {
+      "id": "5f27fc2f-4629-4bc0-bf97-05689b848c6d",
+      "tipo": "ATAQUE",
+      "jugador_atk": "JOTICALINDO",
+      "jugador_def": "ALALAIA",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780673531.854439,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "JIARITO": {},
+          "GINAO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 89155
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1188733333.3333333,
+          "JIARITO": 1188733333.3333333,
+          "GINAO": 1188733333.3333333
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1188733333.3333333,
+          "JIARITO": 1188733333.3333333,
+          "GINAO": 1188733333.3333333
+        }
+      },
+      "botin": {},
+      "unidades": {
+        "METAHUMANO": 1
+      },
+      "bajas_atk": {},
+      "bajas_def": {}
+    },
+    {
+      "id": "bce01778-880a-4367-8dc2-9e2fa8fa9db2",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780672168.457591,
+      "resultado": {
+        "detectado": true,
+        "sigilo": 33.0,
+        "nivel_espionaje": 0,
+        "inteligencia": null,
+        "combate": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+        "combate_completo": {
+          "victoria_atacante": false,
+          "mensaje": "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3",
+          "rondas": 0,
+          "log": [
+            "Muralla Nv50 HP=1.2210e+12 \u2014 insertada al frente del DEF",
+            "  --- Ronda 1 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 2 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 3 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 4 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 5 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 6 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 7 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 8 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "  --- Ronda 9 ---",
+            "  DEF golpea (DST=inf \u00d7 1 unidades):",
+            "  ATK golpea (DST=15 \u00d7 1 unidades):",
+            "El atacante no consigui\u00f3 traspasar la muralla y muri\u00f3"
+          ],
+          "iniciales_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "iniciales_def": {
+            "ALALAIA": {
+              "ALDEANO": 4226
+            }
+          },
+          "sobrevivientes_atk": {},
+          "sobrevivientes_def": {
+            "ALALAIA": {
+              "ALDEANO": 4226
+            }
+          },
+          "bajas_atk": {
+            "JOTICALINDO": {
+              "EXPLORADOR": 1
+            }
+          },
+          "bajas_def": {},
+          "xp_por_jugador_atk": {
+            "JOTICALINDO": 0.0
+          },
+          "xp_por_jugador_def": {
+            "ALALAIA": 0.0
+          },
+          "saqueo": {},
+          "muralla_atravesada": false,
+          "deteccion_garantizada": true
+        }
+      },
+      "botin": {}
+    },
+    {
+      "id": "8cced97f-628b-49ff-81bc-78040ff27d22",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA02",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 320.0,
+      "y_dest": 680.0,
+      "inicio": 1780672226.5730555,
+      "resultado": {
+        "victoria": true,
+        "victoria_por": "combate",
+        "muralla_atravesada": true,
+        "mensaje": "Victoria del atacante",
+        "rondas": 1,
+        "bajas_atk": {
+          "JOTICALINDO": {},
+          "GINAO": {},
+          "JIARITO": {}
+        },
+        "bajas_def": {
+          "ALALAIA": {
+            "ALDEANO": 580446759,
+            "EXPLORADOR": 3000000,
+            "SACERDOTE": 3000000,
+            "GUERRERO": 3000000,
+            "COMANDO": 3000000,
+            "MERCENARIO": 3000000,
+            "MARINE": 3000000,
+            "CYBORG": 3000000,
+            "MAGO": 3000000,
+            "METAHUMANO": 3000000,
+            "DEMONIO": 3000000,
+            "ANIMA": 3000000,
+            "ESPECTRO": 3000000,
+            "GOLEM": 3000000,
+            "CENTAURO": 3000000,
+            "KRAKEN": 3000000,
+            "ALONARDO": 3000000,
+            "MADRESELVA": 3000000,
+            "COLOSO": 3000000,
+            "FENIX": 3000000,
+            "ALALAIA": 18
+          }
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 1.363436522012e+16,
+          "GINAO": 1.363436522012e+16,
+          "JIARITO": 1.363436522012e+16
+        },
+        "victoria_atacante": true,
+        "xp_por_jugador_atk": {
+          "JOTICALINDO": 1.363436522012e+16,
+          "GINAO": 1.363436522012e+16,
+          "JIARITO": 1.363436522012e+16
+        }
+      },
+      "botin": {}
+    },
+    {
+      "id": "5ba53080-b073-4c30-bf0e-1204d9305189",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-083",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 552.0,
+      "y_dest": 659.0,
+      "inicio": 1780634203.580803,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 083 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 17757
+          }
+        },
+        "bajas_def": {
+          "Dios 083": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 42964152.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 166,000 | militares 0 < m\u00ednimo 2,075"
+      },
+      "botin": {}
+    },
+    {
+      "id": "a06e73ac-dfd7-4406-9291-932b59c5ea0b",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-084",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 500.0,
+      "y_dest": 667.0,
+      "inicio": 1780634193.314037,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 084 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 44586
+          }
+        },
+        "bajas_def": {
+          "Dios 084": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 43393794.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 168,000 | militares 0 < m\u00ednimo 2,100"
+      },
+      "botin": {}
+    },
+    {
+      "id": "b22f70cb-055c-4cd8-9015-ff54d711b099",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-082",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 598.0,
+      "y_dest": 635.0,
+      "inicio": 1780634183.539101,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 082 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 15993
+          }
+        },
+        "bajas_def": {
+          "Dios 082": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 42538766.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 164,000 | militares 0 < m\u00ednimo 2,050"
+      },
+      "botin": {}
+    },
+    {
+      "id": "57ea863d-9fe0-4b58-b9b8-d8856ee17ebc",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-081",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 635.0,
+      "y_dest": 598.0,
+      "inicio": 1780634169.0400724,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 081 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 17406
+          }
+        },
+        "bajas_def": {
+          "Dios 081": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 42117590.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 162,000 | militares 0 < m\u00ednimo 2,025"
+      },
+      "botin": {}
+    },
+    {
+      "id": "35ad76e8-c23e-45ac-b7e6-9337ed2090d7",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-118",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 687.0,
+      "y_dest": 470.0,
+      "inicio": 1780634153.0692933,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 118 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 62532
+          }
+        },
+        "bajas_def": {
+          "Dios 118": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 60863138.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 236,000 | militares 0 < m\u00ednimo 2,950"
+      },
+      "botin": {}
+    },
+    {
+      "id": "a3190317-21db-4100-aae2-476144059328",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-097",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 635.0,
+      "y_dest": 402.0,
+      "inicio": 1780634140.561481,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 097 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 20412
+          }
+        },
+        "bajas_def": {
+          "Dios 097": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 49386186.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 194,000 | militares 0 < m\u00ednimo 2,425"
+      },
+      "botin": {}
+    },
+    {
+      "id": "8d32a8b7-a809-48a0-b11d-01d73fefaa9e",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-091",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 365.0,
+      "y_dest": 402.0,
+      "inicio": 1780634039.369956,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 091 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MARINE": 170073
+          }
+        },
+        "bajas_def": {
+          "Dios 091": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 46524020.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 182,000 | invocaciones 0 < m\u00ednimo 2,275"
+      },
+      "botin": {}
+    },
+    {
+      "id": "e7eb0adb-d779-4338-a670-8aefbb6d3d4b",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-098",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 659.0,
+      "y_dest": 448.0,
+      "inicio": 1780634091.6478908,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 098 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 20619
+          }
+        },
+        "bajas_def": {
+          "Dios 098": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 49880048.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 196,000 | militares 0 < m\u00ednimo 2,450"
+      },
+      "botin": {}
+    },
+    {
+      "id": "9be963df-02c7-4e8a-aacd-8f17a00ffcf3",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-099",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 667.0,
+      "y_dest": 500.0,
+      "inicio": 1780634082.9024239,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 099 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 51759
+          }
+        },
+        "bajas_def": {
+          "Dios 099": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 50378848.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 198,000 | militares 0 < m\u00ednimo 2,475"
+      },
+      "botin": {}
+    },
+    {
+      "id": "70b12ea2-fd7c-467a-90d0-1b070c536f0f",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-128",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 289.0,
+      "y_dest": 500.0,
+      "inicio": 1780634070.1506588,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 128 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 198234
+          }
+        },
+        "bajas_def": {
+          "Dios 128": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 67230768.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 10% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 256,000 | invocaciones 0 < m\u00ednimo 3,200"
+      },
+      "botin": {}
+    },
+    {
+      "id": "435d4869-3417-4aff-94b6-3306abeee4d6",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-109",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 313.0,
+      "y_dest": 470.0,
+      "inicio": 1780634060.7730598,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 109 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 132156
+          }
+        },
+        "bajas_def": {
+          "Dios 109": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 55649590.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 2% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 218,000 | invocaciones 0 < m\u00ednimo 2,725"
+      },
+      "botin": {}
+    },
+    {
+      "id": "e45ce610-46a0-45b7-a5c5-1a58ced9accb",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-090",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 341.0,
+      "y_dest": 448.0,
+      "inicio": 1780634050.2553146,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 090 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 87993
+          }
+        },
+        "bajas_def": {
+          "Dios 090": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 46063386.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 180,000 | invocaciones 0 < m\u00ednimo 2,250"
+      },
+      "botin": {}
+    },
+    {
+      "id": "344f2789-b53b-4a54-95e4-a79409b324cb",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-085",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 448.0,
+      "y_dest": 659.0,
+      "inicio": 1780633734.678479,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 085 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "EXPLORADOR": 521550
+          }
+        },
+        "bajas_def": {
+          "Dios 085": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 43827732.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 170,000 | invocaciones 0 < m\u00ednimo 2,125"
+      },
+      "botin": {}
+    },
+    {
+      "id": "0d404a4c-f41d-4eee-aa9c-251be5412dcc",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-086",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 402.0,
+      "y_dest": 635.0,
+      "inicio": 1780633744.196588,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 086 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "GUERRERO": 262044
+          }
+        },
+        "bajas_def": {
+          "Dios 086": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 44266010.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 172,000 | invocaciones 0 < m\u00ednimo 2,150"
+      },
+      "botin": {}
+    },
+    {
+      "id": "a686a969-8409-4d9d-bede-57c2baeada95",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-087",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 365.0,
+      "y_dest": 598.0,
+      "inicio": 1780633757.4804542,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 087 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "COMANDO": 249471
+          }
+        },
+        "bajas_def": {
+          "Dios 087": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 44708670.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 174,000 | invocaciones 0 < m\u00ednimo 2,175"
+      },
+      "botin": {}
+    },
+    {
+      "id": "4a7fc4c5-9ddf-4b76-a564-34a42fab1485",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-088",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 341.0,
+      "y_dest": 552.0,
+      "inicio": 1780633772.6755307,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 088 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MERCENARIO": 204111
+          }
+        },
+        "bajas_def": {
+          "Dios 088": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 45155756.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 176,000 | invocaciones 0 < m\u00ednimo 2,200"
+      },
+      "botin": {}
+    },
+    {
+      "id": "7042d92d-7124-442e-b7d4-ef16d54e84c5",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-100",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 659.0,
+      "y_dest": 552.0,
+      "inicio": 1780633722.568747,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 100 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 120834
+          }
+        },
+        "bajas_def": {
+          "Dios 100": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 50882636.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 200,000 | invocaciones 0 < m\u00ednimo 2,500"
+      },
+      "botin": {}
+    },
+    {
+      "id": "1c2e538f-767d-4a13-a58c-b9ec748d047d",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-108",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 313.0,
+      "y_dest": 530.0,
+      "inicio": 1780633782.7103188,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 108 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MARINE": 201429
+          }
+        },
+        "bajas_def": {
+          "Dios 108": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 55098604.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 216,000 | invocaciones 0 < m\u00ednimo 2,700"
+      },
+      "botin": {}
+    },
+    {
+      "id": "9ba704c0-ffe1-4ad1-a23f-69fec408e14f",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-089",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 333.0,
+      "y_dest": 500.0,
+      "inicio": 1780633792.1150327,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 089 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 134469
+          }
+        },
+        "bajas_def": {
+          "Dios 089": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 45607314.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 178,000 | invocaciones 0 < m\u00ednimo 2,225"
+      },
+      "botin": {}
+    },
+    {
+      "id": "fd94fdf1-8807-40a8-883a-b0d6fd2094ab",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-236",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 816.0,
+      "y_dest": 550.0,
+      "inicio": 1780633709.582197,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 236 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 376155
+          }
+        },
+        "bajas_def": {
+          "Dios 236": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 196913930.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 472,000 | invocaciones 0 < m\u00ednimo 5,900"
+      },
+      "botin": {}
+    },
+    {
+      "id": "57af680a-92c2-4638-9641-e0d8ec3f1110",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-197",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 773.0,
+      "y_dest": 543.0,
+      "inicio": 1780625112.6352973,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 197 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MERCENARIO": 603810
+          }
+        },
+        "bajas_def": {
+          "Dios 197": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 133580438.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 394,000 | invocaciones 0 < m\u00ednimo 4,925"
+      },
+      "botin": {}
+    },
+    {
+      "id": "67fa0c45-210a-4c80-81bd-09d1a52e8862",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-119",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 687.0,
+      "y_dest": 530.0,
+      "inicio": 1780625141.4946265,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 119 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 181251
+          }
+        },
+        "bajas_def": {
+          "Dios 119": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 61471768.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 11% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 238,000 | invocaciones 0 < m\u00ednimo 2,975"
+      },
+      "botin": {}
+    },
+    {
+      "id": "91f55b4a-7a0d-45de-8244-65f2e5f819dc",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-158",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 730.0,
+      "y_dest": 536.0,
+      "inicio": 1780625097.735323,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 158 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 173097
+          }
+        },
+        "bajas_def": {
+          "Dios 158": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 90616918.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 316,000 | invocaciones 0 < m\u00ednimo 3,950"
+      },
+      "botin": {}
+    },
+    {
+      "id": "7c149e89-82d5-47b0-b441-fd13f880a29a",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-075",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 523.0,
+      "y_dest": 356.0,
+      "inicio": 1780624019.9361327,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 075 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "GUERRERO": 234873
+          }
+        },
+        "bajas_def": {
+          "Dios 075": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 39676674.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 150,000 | invocaciones 0 < m\u00ednimo 1,875"
+      },
+      "botin": {}
+    },
+    {
+      "id": "c5b66c6f-de5f-4428-afe5-9da9ee5c9266",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-073",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 434.0,
+      "y_dest": 370.0,
+      "inicio": 1780624038.7929657,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 073 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MERCENARIO": 175806
+          }
+        },
+        "bajas_def": {
+          "Dios 073": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 38894886.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 146,000 | invocaciones 0 < m\u00ednimo 1,825"
+      },
+      "botin": {}
+    },
+    {
+      "id": "a99f31cc-831a-48f2-8c0a-84a7c8145513",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-074",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 477.0,
+      "y_dest": 356.0,
+      "inicio": 1780624029.784411,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 074 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "EXPLORADOR": 467478
+          }
+        },
+        "bajas_def": {
+          "Dios 074": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 39283836.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 148,000 | invocaciones 0 < m\u00ednimo 1,850"
+      },
+      "botin": {}
+    },
+    {
+      "id": "4b992540-5727-46f2-9195-9fa433486374",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-092",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 402.0,
+      "y_dest": 365.0,
+      "inicio": 1780624055.2953854,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 092 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "COMANDO": 262197
+          }
+        },
+        "bajas_def": {
+          "Dios 092": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 46989262.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 184,000 | invocaciones 0 < m\u00ednimo 2,300"
+      },
+      "botin": {}
+    },
+    {
+      "id": "09df2a94-ef1c-476f-ad94-c165123ae0ec",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-076",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 566.0,
+      "y_dest": 370.0,
+      "inicio": 1780624008.5764773,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 076 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MARINE": 146493
+          }
+        },
+        "bajas_def": {
+          "Dios 076": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 40073440.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 152,000 | invocaciones 0 < m\u00ednimo 1,900"
+      },
+      "botin": {}
+    },
+    {
+      "id": "242b8b50-3564-42e5-9b56-0844662ee3d4",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-077",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 603.0,
+      "y_dest": 397.0,
+      "inicio": 1780623996.2656927,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 077 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 119331
+          }
+        },
+        "bajas_def": {
+          "Dios 077": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 40474176.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 10% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 154,000 | invocaciones 0 < m\u00ednimo 1,925"
+      },
+      "botin": {}
+    },
+    {
+      "id": "c6b7a63b-c917-47d7-b7a0-f5a72320c482",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-078",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 630.0,
+      "y_dest": 434.0,
+      "inicio": 1780623986.9833198,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 078 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 97074
+          }
+        },
+        "bajas_def": {
+          "Dios 078": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 40878918.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 2% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 156,000 | invocaciones 0 < m\u00ednimo 1,950"
+      },
+      "botin": {}
+    },
+    {
+      "id": "db5f498e-c87b-4a92-acb2-0164eecb4662",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-079",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 644.0,
+      "y_dest": 477.0,
+      "inicio": 1780623975.8218884,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 079 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 78867
+          }
+        },
+        "bajas_def": {
+          "Dios 079": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 41287706.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 158,000 | invocaciones 0 < m\u00ednimo 1,975"
+      },
+      "botin": {}
+    },
+    {
+      "id": "0d9727f9-a269-4b30-aeb0-c98267af4c2d",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-080",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 644.0,
+      "y_dest": 523.0,
+      "inicio": 1780622385.9019568,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 080 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ALDEANO": 944307
+          }
+        },
+        "bajas_def": {
+          "Dios 080": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 41700584.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "militares 0% < 90% | invocaciones 0% < 90% | militares 0 < m\u00ednimo 2,000 | invocaciones 0 < m\u00ednimo 2,000"
+      },
+      "botin": {}
+    },
+    {
+      "id": "9d91e5c5-e30c-43dd-a7ea-0e1c8649b6f7",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-072",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 397.0,
+      "y_dest": 397.0,
+      "inicio": 1780621499.6208372,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 072 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ALDEANO": 872046
+          }
+        },
+        "bajas_def": {
+          "Dios 072": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 38509790.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "militares 0% < 90% | invocaciones 0% < 90% | militares 0 < m\u00ednimo 1,800 | invocaciones 0 < m\u00ednimo 1,800"
+      },
+      "botin": {}
+    },
+    {
+      "id": "c620f978-0127-46bd-9ae3-def7e81fc49b",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-071",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 370.0,
+      "y_dest": 434.0,
+      "inicio": 1780621488.009779,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 071 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 72828
+          }
+        },
+        "bajas_def": {
+          "Dios 071": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 38128504.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 142,000 | invocaciones 0 < m\u00ednimo 1,775"
+      },
+      "botin": {}
+    },
+    {
+      "id": "f9eb4bee-b2a5-4609-8997-a7ba1eba6adf",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-065",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 478.0,
+      "y_dest": 644.0,
+      "inicio": 1780620531.7121687,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 065 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "GUERRERO": 212634
+          }
+        },
+        "bajas_def": {
+          "Dios 065": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 35918776.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 130,000 | invocaciones 0 < m\u00ednimo 1,625"
+      },
+      "botin": {}
+    },
+    {
+      "id": "c840e40a-edcf-4b9a-a9b1-0e2245d77784",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-064",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 523.0,
+      "y_dest": 644.0,
+      "inicio": 1780620517.2852702,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 064 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "EXPLORADOR": 423207
+          }
+        },
+        "bajas_def": {
+          "Dios 064": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 35563144.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 128,000 | invocaciones 0 < m\u00ednimo 1,600"
+      },
+      "botin": {}
+    },
+    {
+      "id": "6c5a0276-412e-435a-8515-05212b5034e7",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-066",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 434.0,
+      "y_dest": 630.0,
+      "inicio": 1780620542.7023182,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 066 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "COMANDO": 202428
+          }
+        },
+        "bajas_def": {
+          "Dios 066": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 36277964.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 132,000 | invocaciones 0 < m\u00ednimo 1,650"
+      },
+      "botin": {}
+    },
+    {
+      "id": "de1ab7ff-811a-4c67-99ee-fe5bd303b742",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-067",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 397.0,
+      "y_dest": 603.0,
+      "inicio": 1780620553.603877,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 067 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MERCENARIO": 165618
+          }
+        },
+        "bajas_def": {
+          "Dios 067": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 36640742.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 134,000 | invocaciones 0 < m\u00ednimo 1,675"
+      },
+      "botin": {}
+    },
+    {
+      "id": "1362aaa0-2612-4815-aa56-09447ac36207",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-068",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 370.0,
+      "y_dest": 566.0,
+      "inicio": 1780620572.466299,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 068 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MARINE": 135288
+          }
+        },
+        "bajas_def": {
+          "Dios 068": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 37007150.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 136,000 | invocaciones 0 < m\u00ednimo 1,700"
+      },
+      "botin": {}
+    },
+    {
+      "id": "353b787c-8fc6-4bb8-a7b8-9f1441844eb9",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-070",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 356.0,
+      "y_dest": 477.0,
+      "inicio": 1780620599.6434224,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 070 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 89649
+          }
+        },
+        "bajas_def": {
+          "Dios 070": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 37750994.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 2% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 140,000 | invocaciones 0 < m\u00ednimo 1,750"
+      },
+      "botin": {}
+    },
+    {
+      "id": "1589d28f-671d-42d9-b00c-9b70a2ac68e9",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-069",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 356.0,
+      "y_dest": 523.0,
+      "inicio": 1780620587.6580741,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 069 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 110196
+          }
+        },
+        "bajas_def": {
+          "Dios 069": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 37377222.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 10% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 138,000 | invocaciones 0 < m\u00ednimo 1,725"
+      },
+      "botin": {}
+    },
+    {
+      "id": "282eee21-2491-4db9-94b3-085933b758f1",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-063",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 566.0,
+      "y_dest": 630.0,
+      "inicio": 1780620503.8349614,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 063 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 67257
+          }
+        },
+        "bajas_def": {
+          "Dios 063": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 35211034.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 126,000 | invocaciones 0 < m\u00ednimo 1,575"
+      },
+      "botin": {}
+    },
+    {
+      "id": "01571628-6061-40a8-b147-27639fa0849c",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-061",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 630.0,
+      "y_dest": 566.0,
+      "inicio": 1780613946.4601288,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 061 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ALDEANO": 781641
+          }
+        },
+        "bajas_def": {
+          "Dios 061": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 34517238.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "militares 0% < 90% | invocaciones 0% < 90% | militares 0 < m\u00ednimo 1,525 | invocaciones 0 < m\u00ednimo 1,525"
+      },
+      "botin": {}
+    },
+    {
+      "id": "665bf43e-3c27-4ba9-ad76-2ff3f903c45a",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-062",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 603.0,
+      "y_dest": 603.0,
+      "inicio": 1780613963.7470315,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 062 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "EXPLORADOR": 414864
+          }
+        },
+        "bajas_def": {
+          "Dios 062": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 34862410.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 124,000 | invocaciones 0 < m\u00ednimo 1,550"
+      },
+      "botin": {}
+    },
+    {
+      "id": "8f986912-a60f-40d4-ad68-3ead153aabfd",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-057",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 573.0,
+      "y_dest": 400.0,
+      "inicio": 1780613881.8808699,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 057 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "COMANDO": 185085
+          }
+        },
+        "bajas_def": {
+          "Dios 057": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 33170386.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 114,000 | invocaciones 0 < m\u00ednimo 1,425"
+      },
+      "botin": {}
+    },
+    {
+      "id": "9c7bef41-5b2d-401b-9d60-c7c1933c14d5",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-056",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 538.0,
+      "y_dest": 382.0,
+      "inicio": 1780613871.8853438,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 056 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MARINE": 120060
+          }
+        },
+        "bajas_def": {
+          "Dios 056": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 32841966.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 112,000 | invocaciones 0 < m\u00ednimo 1,400"
+      },
+      "botin": {}
+    },
+    {
+      "id": "2e4908e1-ad37-4584-918a-670b444df462",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-058",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 600.0,
+      "y_dest": 427.0,
+      "inicio": 1780613893.1413069,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 058 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 98775
+          }
+        },
+        "bajas_def": {
+          "Dios 058": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 33502090.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 10% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 116,000 | invocaciones 0 < m\u00ednimo 1,450"
+      },
+      "botin": {}
+    },
+    {
+      "id": "14b90b07-b319-49a8-83f2-5f733e050500",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-055",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 500.0,
+      "y_dest": 376.0,
+      "inicio": 1780613860.3444848,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 055 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 77211
+          }
+        },
+        "bajas_def": {
+          "Dios 055": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 32516798.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 2% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 110,000 | invocaciones 0 < m\u00ednimo 1,375"
+      },
+      "botin": {}
+    },
+    {
+      "id": "08e95169-a6a4-46aa-baeb-26e90b4c0a9f",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-060",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 624.0,
+      "y_dest": 500.0,
+      "inicio": 1780613913.0673337,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 060 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 14121
+          }
+        },
+        "bajas_def": {
+          "Dios 060": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 34175482.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | aldeanos 0 < m\u00ednimo 120,000 | militares 0 < m\u00ednimo 1,500"
+      },
+      "botin": {}
+    },
+    {
+      "id": "236c75ef-9f92-4a0b-ad22-ed646bbef2a9",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-059",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 618.0,
+      "y_dest": 462.0,
+      "inicio": 1780613902.4954004,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 059 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 34767
+          }
+        },
+        "bajas_def": {
+          "Dios 059": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 33837112.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 118,000 | militares 0 < m\u00ednimo 1,475"
+      },
+      "botin": {}
+    },
+    {
+      "id": "1b666ce7-7198-4247-8cfa-a53f8db85d95",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-054",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 462.0,
+      "y_dest": 382.0,
+      "inicio": 1780613850.4224043,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 054 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 61497
+          }
+        },
+        "bajas_def": {
+          "Dios 054": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 32194850.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 108,000 | invocaciones 0 < m\u00ednimo 1,350"
+      },
+      "botin": {}
+    },
+    {
+      "id": "f0d3e527-3b74-452f-8c73-825f20822118",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-048",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 400.0,
+      "y_dest": 573.0,
+      "inicio": 1780613449.1076608,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 048 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "GUERRERO": 179541
+          }
+        },
+        "bajas_def": {
+          "Dios 048": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 30329006.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 1% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 96,000 | invocaciones 0 < m\u00ednimo 1,200"
+      },
+      "botin": {}
+    },
+    {
+      "id": "cc59c0de-a341-471e-8b3a-a652902ec5ab",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-050",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 376.0,
+      "y_dest": 500.0,
+      "inicio": 1780613474.6960356,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 050 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MERCENARIO": 139842
+          }
+        },
+        "bajas_def": {
+          "Dios 050": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 30938618.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 100,000 | invocaciones 0 < m\u00ednimo 1,250"
+      },
+      "botin": {}
+    },
+    {
+      "id": "4723e8f6-3097-4298-8aa0-2ab23dc6d89a",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-049",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 382.0,
+      "y_dest": 538.0,
+      "inicio": 1780613460.716906,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 049 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "COMANDO": 170919
+          }
+        },
+        "bajas_def": {
+          "Dios 049": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 30632296.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 98,000 | invocaciones 0 < m\u00ednimo 1,225"
+      },
+      "botin": {}
+    },
+    {
+      "id": "7cbdc5df-d446-443e-b5d6-aaa58fe5be06",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-052",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 400.0,
+      "y_dest": 427.0,
+      "inicio": 1780613497.310241,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 052 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 74943
+          }
+        },
+        "bajas_def": {
+          "Dios 052": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 31560484.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 104,000 | invocaciones 0 < m\u00ednimo 1,300"
+      },
+      "botin": {}
+    },
+    {
+      "id": "a100755c-19cc-4b50-b915-8166ca25209d",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-053",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 427.0,
+      "y_dest": 400.0,
+      "inicio": 1780613511.0265803,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 053 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "METAHUMANO": 60885
+          }
+        },
+        "bajas_def": {
+          "Dios 053": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 31876090.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 106,000 | invocaciones 0 < m\u00ednimo 1,325"
+      },
+      "botin": {}
+    },
+    {
+      "id": "c2d5edf8-4162-4970-880f-c3d8f63ed73c",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-051",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 382.0,
+      "y_dest": 462.0,
+      "inicio": 1780613486.5819938,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 051 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "CYBORG": 92124
+          }
+        },
+        "bajas_def": {
+          "Dios 051": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 31248004.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 102,000 | invocaciones 0 < m\u00ednimo 1,275"
+      },
+      "botin": {}
+    },
+    {
+      "id": "24e39ab2-5ac8-48da-9772-54652688340b",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-047",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 427.0,
+      "y_dest": 600.0,
+      "inicio": 1780613409.1438715,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 047 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MARINE": 109773
+          }
+        },
+        "bajas_def": {
+          "Dios 047": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 30028718.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 94,000 | invocaciones 0 < m\u00ednimo 1,175"
+      },
+      "botin": {}
+    },
+    {
+      "id": "9f9a4933-7f82-4746-b121-17f10d0c13cc",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-046",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 462.0,
+      "y_dest": 618.0,
+      "inicio": 1780613397.959011,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 046 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "DEMONIO": 30546
+          }
+        },
+        "bajas_def": {
+          "Dios 046": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 29731404.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 10% < 90% | aldeanos 0 < m\u00ednimo 92,000 | militares 0 < m\u00ednimo 1,150"
+      },
+      "botin": {}
+    },
+    {
+      "id": "3778b9e1-1a08-4ea0-9154-f1d6c5637f16",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-023",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 572.0,
+      "y_dest": 572.0,
+      "inicio": 1780591491.8783789,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 023 (100.0% ald, 99.5% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ANIMA": 2574
+          }
+        },
+        "bajas_def": {
+          "Dios 023": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 23649602.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 46,000 | militares 0 < m\u00ednimo 575"
+      },
+      "botin": {}
+    },
+    {
+      "id": "bc025d9f-32c3-4d10-adb2-362bd3649117",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-041",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 618.0,
+      "y_dest": 538.0,
+      "inicio": 1780591447.6438155,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 041 (100.0% ald, 97.8% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 10629
+          }
+        },
+        "bajas_def": {
+          "Dios 041": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 28288410.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 82,000 | militares 0 < m\u00ednimo 1,025"
+      },
+      "botin": {}
+    },
+    {
+      "id": "251a8950-a410-480d-ac85-fbbe46544f8d",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-022",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 591.0,
+      "y_dest": 546.0,
+      "inicio": 1780591175.4678838,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 022 (100.0% ald, 100.0% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "MAGO": 14679
+          }
+        },
+        "bajas_def": {
+          "Dios 022": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 23415446.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 44,000 | invocaciones 0 < m\u00ednimo 550"
+      },
+      "botin": {}
+    },
+    {
+      "id": "974d55db-16d7-4ba3-b546-38c751e1f315",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-021",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 601.0,
+      "y_dest": 516.0,
+      "inicio": 1780591145.4797742,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 021 (100.0% ald, 99.5% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 2295
+          }
+        },
+        "bajas_def": {
+          "Dios 021": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 23183610.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 42,000 | militares 0 < m\u00ednimo 525"
+      },
+      "botin": {}
+    },
+    {
+      "id": "03289448-db4b-485d-af5b-8e9a229c5497",
+      "tipo": "ATAQUE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Dios-020",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 576.0,
+      "y_dest": 475.0,
+      "inicio": 1780591125.620683,
+      "resultado": {
+        "victoria": true,
+        "victoria_combate": true,
+        "victoria_por": "combate",
+        "mensaje": "Victoria por valor contra Dios 020 (100.0% ald, 99.5% mil)",
+        "rondas": 9,
+        "bajas_atk": {
+          "JOTICALINDO": {
+            "ESPECTRO": 2277
+          }
+        },
+        "bajas_def": {
+          "Dios 020": 1
+        },
+        "saqueo": {},
+        "xp": {
+          "JOTICALINDO": 22954070.0
+        },
+        "valor_cumplido": false,
+        "valor_razon": "aldeanos 0% < 80% | militares 0% < 90% | invocaciones 0% < 90% | aldeanos 0 < m\u00ednimo 40,000 | militares 0 < m\u00ednimo 500"
+      },
+      "botin": {}
+    },
+    {
+      "id": "16351b9f-fed3-42cc-87ec-423001f70e33",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Admin05",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 326.0,
+      "y_dest": 484.0,
+      "inicio": 1780379474.32501,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 155.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "Admin05",
+          "jugador": 0.0,
+          "x": 326.0,
+          "y": 484.0,
+          "muralla": 50,
+          "recursos": {
+            "MADERA": 1e+300,
+            "PIEDRA": 1e+300,
+            "HIERRO": 1e+300,
+            "CARBON": 1e+300,
+            "ORO": 1e+300,
+            "MANA": 1e+300
+          },
+          "ejercito": {
+            "ALDEANO": 187430632,
+            "EXPLORADOR": 1000000,
+            "SACERDOTE": 1000000,
+            "GUERRERO": 1000000,
+            "COMANDO": 1000000,
+            "MERCENARIO": 1000000,
+            "MARINE": 1000000,
+            "CYBORG": 1000000,
+            "MAGO": 1000000,
+            "METAHUMANO": 1000000
+          },
+          "invocaciones": {
+            "DEMONIO": 1000000,
+            "ANIMA": 1000000,
+            "ESPECTRO": 1000000,
+            "GOLEM": 1000000,
+            "CENTAURO": 1000000,
+            "KRAKEN": 1000000,
+            "ALONARDO": 1000000,
+            "MADRESELVA": 1000000,
+            "COLOSO": 1000000,
+            "FENIX": 1000000,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 6,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 45,
+            "CASA": 50,
+            "MURALLA": 50,
+            "TORRE_DE_VIGILANCIA": 50,
+            "CENTRO_DE_VIAJES": 40,
+            "ESCONDITE": 40,
+            "ALMACEN": 50,
+            "SANTUARIO_ARCANO": 50,
+            "UNIVERSIDAD": 45,
+            "HERRERIA": 5,
+            "TEMPLO_1": 50,
+            "TEMPLO_2": 15,
+            "TEMPLO_3": 5,
+            "CUARTEL_1": 41,
+            "CUARTEL_2": 9
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {}
+    },
+    {
+      "id": "ff5cb7fe-294e-477b-a542-297480672390",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "Admin05",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 326.0,
+      "y_dest": 484.0,
+      "inicio": 1780377415.5138974,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 155.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "Admin05",
+          "jugador": 0.0,
+          "x": 326.0,
+          "y": 484.0,
+          "muralla": 50,
+          "recursos": {
+            "MADERA": 1e+300,
+            "PIEDRA": 1e+300,
+            "HIERRO": 1e+300,
+            "CARBON": 1e+300,
+            "ORO": 1e+300,
+            "MANA": 1e+300
+          },
+          "ejercito": {
+            "ALDEANO": 187430632,
+            "EXPLORADOR": 1000000,
+            "SACERDOTE": 1000000,
+            "GUERRERO": 1000000,
+            "COMANDO": 1000000,
+            "MERCENARIO": 1000000,
+            "MARINE": 1000000,
+            "CYBORG": 1000000,
+            "MAGO": 1000000,
+            "METAHUMANO": 1000000
+          },
+          "invocaciones": {
+            "DEMONIO": 1000000,
+            "ANIMA": 1000000,
+            "ESPECTRO": 1000000,
+            "GOLEM": 1000000,
+            "CENTAURO": 1000000,
+            "KRAKEN": 1000000,
+            "ALONARDO": 1000000,
+            "MADRESELVA": 1000000,
+            "COLOSO": 1000000,
+            "FENIX": 1000000,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 6,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 45,
+            "CASA": 50,
+            "MURALLA": 50,
+            "TORRE_DE_VIGILANCIA": 50,
+            "CENTRO_DE_VIAJES": 40,
+            "ESCONDITE": 40,
+            "ALMACEN": 50,
+            "SANTUARIO_ARCANO": 50,
+            "UNIVERSIDAD": 45,
+            "HERRERIA": 5,
+            "TEMPLO_1": 50,
+            "TEMPLO_2": 15,
+            "TEMPLO_3": 5,
+            "CUARTEL_1": 41,
+            "CUARTEL_2": 9
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {}
+    },
+    {
+      "id": "6a1fb193-8ee9-401b-a7f9-95bfde7165c1",
+      "tipo": "ESPIONAJE",
+      "ciudad_origen": "jL01",
+      "ciudad_dest": "AlalaiA09",
+      "x_orig": 242.0,
+      "y_orig": 522.0,
+      "x_dest": 98.0,
+      "y_dest": 360.0,
+      "inicio": 1780356049.513957,
+      "resultado": {
+        "detectado": false,
+        "sigilo": 155.0,
+        "nivel_espionaje": 5,
+        "inteligencia": {
+          "nivel": 5,
+          "nombre": "AlalaiA09",
+          "jugador": 0.0,
+          "x": 98.0,
+          "y": 360.0,
+          "muralla": 50,
+          "recursos": {
+            "MADERA": "__INF__",
+            "PIEDRA": "__INF__",
+            "HIERRO": "__INF__",
+            "CARBON": "__INF__",
+            "ORO": "__INF__",
+            "MANA": "__INF__"
+          },
+          "ejercito": {
+            "ALDEANO": 172121991,
+            "EXPLORADOR": 15000000,
+            "SACERDOTE": 15000000,
+            "GUERRERO": 15000000,
+            "COMANDO": 15000000,
+            "MERCENARIO": 15000000,
+            "MARINE": 15000000,
+            "CYBORG": 15000000,
+            "MAGO": 15000000,
+            "METAHUMANO": 15000000
+          },
+          "invocaciones": {
+            "DEMONIO": 15000000,
+            "ANIMA": 15000000,
+            "ESPECTRO": 15000000,
+            "GOLEM": 15000000,
+            "CENTAURO": 15000000,
+            "KRAKEN": 15000000,
+            "ALONARDO": 15000000,
+            "MADRESELVA": 15000000,
+            "COLOSO": 15000000,
+            "FENIX": 15000000,
+            "DRAGON DE ORO": 0,
+            "CABALLERO DE LUZ": 0,
+            "ALALAIA": 150,
+            "EON SUPREMO": 0
+          },
+          "edificios": {
+            "CENTRO_DE_CIUDAD": 45,
+            "CASA": 50,
+            "MURALLA": 50,
+            "TORRE_DE_VIGILANCIA": 50,
+            "CENTRO_DE_VIAJES": 40,
+            "ESCONDITE": 40,
+            "ALMACEN": 50,
+            "SANTUARIO_ARCANO": 50,
+            "UNIVERSIDAD": 45,
+            "HERRERIA": 5,
+            "TEMPLO_1": 50,
+            "TEMPLO_2": 15,
+            "TEMPLO_3": 5,
+            "CUARTEL_1": 41,
+            "CUARTEL_2": 9
+          },
+          "escondite": {}
+        },
+        "combate": null,
+        "combate_completo": null
+      },
+      "botin": {}
+    },
     {
       "id": "e416f686-6212-4106-b760-1541c26346b5",
       "tipo": "ESPIONAJE",
@@ -1499,6 +7290,24 @@
         }
       },
       "botin": {}
+    }
+  ],
+  "alertas": [
+    {
+      "id": "alerta_57802f1e-381e-4e68-82c9-94833dcefc4a",
+      "orden_id": "57802f1e-381e-4e68-82c9-94833dcefc4a",
+      "ciudad": "jL01",
+      "nivel": 3,
+      "tipo_orden": "ATAQUE",
+      "info": {
+        "x_orig": 320.0,
+        "y_orig": 680.0,
+        "jugador_atk": "ALALAIA",
+        "tipo_orden": "ATAQUE"
+      },
+      "ts": 1780689553.729711,
+      "activa": false,
+      "vista": true
     }
   ]
 }

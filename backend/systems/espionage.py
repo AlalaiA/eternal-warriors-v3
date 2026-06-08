@@ -182,7 +182,8 @@ def _recopilar_inteligencia(city: dict, nivel: int) -> dict:
 
     if nivel >= 2:
         REC = ["MADERA","PIEDRA","HIERRO","CARBON","ORO","MANA"]
-        info["recursos"] = {r: float(city.get(r, 0) or 0) for r in REC}
+        from backend.data.save_manager import safe_resource_float as _srf
+        info["recursos"] = {r: _srf(city.get(r, 0)) for r in REC}
 
     if nivel >= 3:
         UB = ["ALDEANO","EXPLORADOR","SACERDOTE","GUERRERO","COMANDO",
@@ -191,17 +192,29 @@ def _recopilar_inteligencia(city: dict, nivel: int) -> dict:
 
     if nivel >= 4:
         INV = ["DEMONIO","ANIMA","ESPECTRO","GOLEM","CENTAURO","KRAKEN",
-               "ALONARDO","MADRESELVA","COLOSO","FENIX","DRAGON DE ORO",
-               "CABALLERO DE LUZ","ALALAIA","EON SUPREMO"]
+               "ALONARDO","MADRESELVA","COLOSO","FENIX","DRAGON_DE_ORO",
+               "CABALLERO_DE_LUZ","ALALAIA","EON_SUPREMO"]
         EDI = ["CENTRO_DE_CIUDAD","CASA","MURALLA","TORRE_DE_VIGILANCIA",
                "CENTRO_DE_VIAJES","ESCONDITE","ALMACEN","SANTUARIO_ARCANO",
                "UNIVERSIDAD","HERRERIA","TEMPLO_1","TEMPLO_2","TEMPLO_3",
                "CUARTEL_1","CUARTEL_2"]
-        info["invocaciones"] = {i: int(city.get(i, 0) or 0) for i in INV}
+        # Buscar invocaciones con guión bajo y con espacio (normalización)
+        def _get_inv(city, key):
+            return int(city.get(key, city.get(key.replace("_"," "), 0)) or 0)
+        info["invocaciones"] = {i: _get_inv(city, i) for i in INV}
         info["edificios"]    = {e: int(city.get(e, 0) or 0) for e in EDI}
 
     if nivel >= 5:
         info["escondite"] = city.get("ESCONDITE_DATA", {})
+        # Tropas prestadas en la ciudad (quién está de refuerzo)
+        info["tropas_prestadas"] = city.get("TROPAS_PRESTADAS", [])
+        # Criaturas de cueva capturadas
+        CUEVAS_K = ["BEHEMOT","CHUPACABRAS","DRAGON","LEVIATAN","PATOTAS","SIMURGH"]
+        info["criaturas_cueva"] = {
+            c: int(city.get(c, city.get(c.capitalize(), 0)) or 0)
+            for c in CUEVAS_K
+            if int(city.get(c, city.get(c.capitalize(), 0)) or 0) > 0
+        }
 
     return info
 

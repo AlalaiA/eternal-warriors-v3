@@ -21,6 +21,7 @@ Retroactividad:
 
 import csv, time
 from pathlib import Path
+from backend.data.save_manager import safe_resource_float as _srf
 import pathlib
 
 CSV_DIR = Path(__file__).parent.parent.parent / "csv"
@@ -76,6 +77,7 @@ def _load_invocaciones():
                 "nivel_min_sacerdote": int(row[7].strip()),    # índice 7 ← CORRECTO
                 "tiempo_base_min":     float(row[8].strip()),  # índice 8
                 "costo_mana":          float(row[9].strip()),  # índice 9
+                "cantidad_min":        int(row[10].strip()) if len(row) > 10 and row[10].strip().isdigit() else 0,
             }
         except (ValueError, IndexError):
             pass
@@ -242,6 +244,12 @@ def costo_mana_invocacion(invocacion: str) -> float:
     invs = get_invocaciones()
     return invs.get(invocacion.upper(), {}).get("costo_mana", 0)
 
+def cantidad_min_sacerdote(invocacion: str) -> int:
+    """Cantidad mínima de sacerdotes para mantener activa la cola de esta invocación."""
+    invs = get_invocaciones()
+    return invs.get(invocacion.upper(), {}).get("cantidad_min", 0)
+
+
 def nivel_min_sacerdote(invocacion: str) -> int:
     """Nivel mínimo de sacerdote requerido."""
     invs = get_invocaciones()
@@ -263,9 +271,11 @@ def procesar_colas(city: dict, unit_levels: dict = None) -> dict:
     colas = city.get("COLAS", [])
     completadas = {}
 
+    sacerdotes_ciudad = int(float(_srf(city.get("SACERDOTE", 0)) or 0))
+
     colas_activas = []
     for cola in colas:
-        tipo       = cola.get("tipo", "")          # CUARTEL_1, TEMPLO_2, etc.
+        tipo       = cola.get("tipo", "")
         unidad     = cola.get("unidad", "")
         cant_total = int(cola.get("cantidad_total", 0))
         cant_hecha = int(cola.get("cantidad_hecha", 0))
@@ -273,7 +283,19 @@ def procesar_colas(city: dict, unit_levels: dict = None) -> dict:
         t_por_unit = float(cola.get("tiempo_por_unidad_seg", 3600))
 
         if cant_hecha >= cant_total:
-            continue  # cola ya terminada
+            continue
+
+        # Cancelar cola de templo si sacerdotes < cantidad_min requerida
+        if tipo.upper().startswith("TEMPLO"):
+            cant_min = cantidad_min_sacerdote(unidad)
+            if cant_min > 0 and sacerdotes_ciudad < cant_min:
+                pendientes = cant_total - cant_hecha
+                mana_devuelto = pendientes * costo_mana_invocacion(unidad)
+                mana_act = _srf(city.get("MANA", 0))
+                if mana_act < 1e50:
+                    city["MANA"] = mana_act + mana_devuelto
+                print(f"[queues] Cola {tipo}/{unidad} cancelada — sacerdotes insuficientes ({sacerdotes_ciudad} < {cant_min})")
+                continue
 
         # Calcular cuántas unidades se han completado desde el inicio
         # con retroactividad máxima de 3 días
@@ -400,6 +422,14 @@ def iniciar_cola_templo(city: dict, templo_key: str, invocacion: str,
             "msg": f"Se requiere Sacerdote nivel {nivel_min}. Tienes nivel {nivel_sac}."
         }
 
+    cant_min = cantidad_min_sacerdote(invocacion)
+    sacerdotes_ciudad = int(float(_srf(city.get("SACERDOTE", 0)) or 0))
+    if cant_min > 0 and sacerdotes_ciudad < cant_min:
+        return {
+            "ok": False,
+            "msg": f"Se requieren {cant_min:,} sacerdotes para invocar {invocacion}. Tienes {sacerdotes_ciudad:,}."
+        }
+
     # Verificar que no hay más de 2 colas activas en ese templo
     colas = city.get("COLAS", [])
     colas_activas_templo = [
@@ -413,7 +443,7 @@ def iniciar_cola_templo(city: dict, templo_key: str, invocacion: str,
     # Calcular costo maná total
     mana_por_unit = costo_mana_invocacion(invocacion)
     mana_total = mana_por_unit * cantidad
-    mana_actual = float(city.get("MANA", 0) or 0)
+    mana_actual = _srf(city.get("MANA", 0))
 
     if mana_actual < mana_total:
         return {
@@ -460,7 +490,9 @@ def cancelar_cola(city: dict, tipo: str, idx: int = 0) -> dict:
     if tipo.startswith("TEMPLO"):
         pendientes = cola["cantidad_total"] - cola["cantidad_hecha"]
         mana_devuelto = pendientes * costo_mana_invocacion(cola["unidad"])
-        city["MANA"] = float(city.get("MANA", 0) or 0) + mana_devuelto
+        mana_act = _srf(city.get("MANA", 0))
+        if mana_act < 1e50:
+            city["MANA"] = mana_act + mana_devuelto
     colas.pop(i)
     city["COLAS"] = colas
     return {"ok": True, "msg": f"Cola {idx+1} de {tipo} cancelada"}

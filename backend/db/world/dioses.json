@@ -6,7 +6,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 001",
       "TIPO": "Dioses",
-      "HP": 3171400.0,
+      "HP": 0,
       "PA": 1301000.0,
       "CA": 264880.0,
       "DESTREZA": 400.0,
@@ -23,7 +23,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-002",
@@ -31,7 +32,7 @@
       "Y": 525.0,
       "NOMBRE": "Dios 002",
       "TIPO": "Dioses",
-      "HP": 3203114.0,
+      "HP": 0,
       "PA": 1314010.0,
       "CA": 267529.0,
       "DESTREZA": 400.0,
@@ -48,7 +49,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-003",
@@ -56,7 +58,7 @@
       "Y": 547.0,
       "NOMBRE": "Dios 003",
       "TIPO": "Dioses",
-      "HP": 3235145.0,
+      "HP": 0,
       "PA": 1327150.0,
       "CA": 270204.0,
       "DESTREZA": 400.0,
@@ -73,7 +75,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-004",
@@ -81,7 +84,7 @@
       "Y": 565.0,
       "NOMBRE": "Dios 004",
       "TIPO": "Dioses",
-      "HP": 3267497.0,
+      "HP": 0,
       "PA": 1340422.0,
       "CA": 272906.0,
       "DESTREZA": 400.0,
@@ -98,7 +101,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-005",
@@ -106,7 +110,7 @@
       "Y": 576.0,
       "NOMBRE": "Dios 005",
       "TIPO": "Dioses",
-      "HP": 3300172.0,
+      "HP": 0,
       "PA": 1353826.0,
       "CA": 275635.0,
       "DESTREZA": 400.0,
@@ -123,7 +127,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-006",
@@ -131,7 +136,7 @@
       "Y": 580.0,
       "NOMBRE": "Dios 006",
       "TIPO": "Dioses",
-      "HP": 3333173.0,
+      "HP": 0,
       "PA": 1367364.0,
       "CA": 278392.0,
       "DESTREZA": 400.0,
@@ -148,7 +153,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-007",
@@ -156,7 +162,7 @@
       "Y": 576.0,
       "NOMBRE": "Dios 007",
       "TIPO": "Dioses",
-      "HP": 3366505.0,
+      "HP": 0,
       "PA": 1381038.0,
       "CA": 281175.0,
       "DESTREZA": 400.0,
@@ -173,7 +179,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-008",
@@ -181,7 +188,7 @@
       "Y": 565.0,
       "NOMBRE": "Dios 008",
       "TIPO": "Dioses",
-      "HP": 3400170.0,
+      "HP": 0,
       "PA": 1394848.0,
       "CA": 283987.0,
       "DESTREZA": 400.0,
@@ -198,7 +205,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-009",
@@ -206,7 +214,7 @@
       "Y": 547.0,
       "NOMBRE": "Dios 009",
       "TIPO": "Dioses",
-      "HP": 3434172.0,
+      "HP": 0,
       "PA": 1408797.0,
       "CA": 286827.0,
       "DESTREZA": 400.0,
@@ -223,7 +231,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-010",
@@ -231,7 +240,7 @@
       "Y": 525.0,
       "NOMBRE": "Dios 010",
       "TIPO": "Dioses",
-      "HP": 3468513.0,
+      "HP": 0,
       "PA": 1422885.0,
       "CA": 289695.0,
       "DESTREZA": 400.0,
@@ -248,7 +257,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-011",
@@ -256,7 +266,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 011",
       "TIPO": "Dioses",
-      "HP": 3503199.0,
+      "HP": 0,
       "PA": 1437113.0,
       "CA": 292592.0,
       "DESTREZA": 400.0,
@@ -273,7 +283,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-012",
@@ -281,7 +292,7 @@
       "Y": 475.0,
       "NOMBRE": "Dios 012",
       "TIPO": "Dioses",
-      "HP": 3538231.0,
+      "HP": 0,
       "PA": 1451485.0,
       "CA": 295518.0,
       "DESTREZA": 400.0,
@@ -298,7 +309,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-013",
@@ -306,7 +318,7 @@
       "Y": 453.0,
       "NOMBRE": "Dios 013",
       "TIPO": "Dioses",
-      "HP": 3573613.0,
+      "HP": 0,
       "PA": 1465999.0,
       "CA": 298473.0,
       "DESTREZA": 400.0,
@@ -323,7 +335,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-014",
@@ -331,7 +344,7 @@
       "Y": 435.0,
       "NOMBRE": "Dios 014",
       "TIPO": "Dioses",
-      "HP": 3609349.0,
+      "HP": 0,
       "PA": 1480659.0,
       "CA": 301458.0,
       "DESTREZA": 400.0,
@@ -348,7 +361,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-015",
@@ -356,7 +370,7 @@
       "Y": 424.0,
       "NOMBRE": "Dios 015",
       "TIPO": "Dioses",
-      "HP": 3645443.0,
+      "HP": 0,
       "PA": 1495466.0,
       "CA": 304473.0,
       "DESTREZA": 400.0,
@@ -373,7 +387,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-016",
@@ -381,7 +396,7 @@
       "Y": 420.0,
       "NOMBRE": "Dios 016",
       "TIPO": "Dioses",
-      "HP": 3681897.0,
+      "HP": 0,
       "PA": 1510421.0,
       "CA": 307517.0,
       "DESTREZA": 400.0,
@@ -398,7 +413,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-017",
@@ -406,7 +422,7 @@
       "Y": 424.0,
       "NOMBRE": "Dios 017",
       "TIPO": "Dioses",
-      "HP": 3718716.0,
+      "HP": 0,
       "PA": 1525525.0,
       "CA": 310593.0,
       "DESTREZA": 400.0,
@@ -423,7 +439,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-018",
@@ -431,7 +448,7 @@
       "Y": 435.0,
       "NOMBRE": "Dios 018",
       "TIPO": "Dioses",
-      "HP": 3755903.0,
+      "HP": 0,
       "PA": 1540780.0,
       "CA": 313699.0,
       "DESTREZA": 400.0,
@@ -448,7 +465,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-019",
@@ -456,7 +474,7 @@
       "Y": 453.0,
       "NOMBRE": "Dios 019",
       "TIPO": "Dioses",
-      "HP": 3793462.0,
+      "HP": 0,
       "PA": 1556188.0,
       "CA": 316836.0,
       "DESTREZA": 400.0,
@@ -473,7 +491,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-020",
@@ -481,7 +500,7 @@
       "Y": 475.0,
       "NOMBRE": "Dios 020",
       "TIPO": "Dioses",
-      "HP": 3831397.0,
+      "HP": 0,
       "PA": 1571750.0,
       "CA": 320004.0,
       "DESTREZA": 400.0,
@@ -498,7 +517,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-021",
@@ -506,7 +526,7 @@
       "Y": 516.0,
       "NOMBRE": "Dios 021",
       "TIPO": "Dioses",
-      "HP": 3869711.0,
+      "HP": 0,
       "PA": 1587467.0,
       "CA": 323204.0,
       "DESTREZA": 400.0,
@@ -523,7 +543,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-022",
@@ -531,7 +552,7 @@
       "Y": 546.0,
       "NOMBRE": "Dios 022",
       "TIPO": "Dioses",
-      "HP": 3908408.0,
+      "HP": 0,
       "PA": 1603342.0,
       "CA": 326436.0,
       "DESTREZA": 400.0,
@@ -548,7 +569,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-023",
@@ -556,7 +578,7 @@
       "Y": 572.0,
       "NOMBRE": "Dios 023",
       "TIPO": "Dioses",
-      "HP": 3947492.0,
+      "HP": 0,
       "PA": 1619375.0,
       "CA": 329700.0,
       "DESTREZA": 400.0,
@@ -573,7 +595,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-024",
@@ -581,7 +604,7 @@
       "Y": 591.0,
       "NOMBRE": "Dios 024",
       "TIPO": "Dioses",
-      "HP": 3986967.0,
+      "HP": 0,
       "PA": 1635569.0,
       "CA": 332997.0,
       "DESTREZA": 400.0,
@@ -598,7 +621,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-025",
@@ -606,7 +630,7 @@
       "Y": 601.0,
       "NOMBRE": "Dios 025",
       "TIPO": "Dioses",
-      "HP": 4026836.0,
+      "HP": 0,
       "PA": 1651925.0,
       "CA": 336327.0,
       "DESTREZA": 400.0,
@@ -623,7 +647,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-026",
@@ -631,7 +656,7 @@
       "Y": 601.0,
       "NOMBRE": "Dios 026",
       "TIPO": "Dioses",
-      "HP": 8564800.0,
+      "HP": 0,
       "PA": 3037100.0,
       "CA": 2581535.0,
       "DESTREZA": 400.0,
@@ -648,7 +673,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-027",
@@ -656,7 +682,7 @@
       "Y": 591.0,
       "NOMBRE": "Dios 027",
       "TIPO": "Dioses",
-      "HP": 8650448.0,
+      "HP": 0,
       "PA": 6377910.0,
       "CA": 2607350.0,
       "DESTREZA": 400.0,
@@ -673,7 +699,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-028",
@@ -681,7 +708,7 @@
       "Y": 572.0,
       "NOMBRE": "Dios 028",
       "TIPO": "Dioses",
-      "HP": 8736952.0,
+      "HP": 0,
       "PA": 6441689.0,
       "CA": 2633424.0,
       "DESTREZA": 400.0,
@@ -698,7 +725,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-029",
@@ -706,7 +734,7 @@
       "Y": 546.0,
       "NOMBRE": "Dios 029",
       "TIPO": "Dioses",
-      "HP": 8824322.0,
+      "HP": 0,
       "PA": 6506106.0,
       "CA": 2659758.0,
       "DESTREZA": 400.0,
@@ -723,7 +751,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-030",
@@ -731,7 +760,7 @@
       "Y": 516.0,
       "NOMBRE": "Dios 030",
       "TIPO": "Dioses",
-      "HP": 8912565.0,
+      "HP": 0,
       "PA": 6571167.0,
       "CA": 2686356.0,
       "DESTREZA": 400.0,
@@ -748,7 +777,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-031",
@@ -756,7 +786,7 @@
       "Y": 484.0,
       "NOMBRE": "Dios 031",
       "TIPO": "Dioses",
-      "HP": 9001691.0,
+      "HP": 0,
       "PA": 6636879.0,
       "CA": 2713219.0,
       "DESTREZA": 400.0,
@@ -773,7 +803,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-032",
@@ -781,7 +812,7 @@
       "Y": 454.0,
       "NOMBRE": "Dios 032",
       "TIPO": "Dioses",
-      "HP": 9091708.0,
+      "HP": 0,
       "PA": 6703248.0,
       "CA": 2740351.0,
       "DESTREZA": 400.0,
@@ -798,7 +829,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-033",
@@ -806,7 +838,7 @@
       "Y": 428.0,
       "NOMBRE": "Dios 033",
       "TIPO": "Dioses",
-      "HP": 9182625.0,
+      "HP": 0,
       "PA": 6770280.0,
       "CA": 2767755.0,
       "DESTREZA": 400.0,
@@ -823,7 +855,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-034",
@@ -831,7 +864,7 @@
       "Y": 409.0,
       "NOMBRE": "Dios 034",
       "TIPO": "Dioses",
-      "HP": 9274451.0,
+      "HP": 0,
       "PA": 6837983.0,
       "CA": 2795432.0,
       "DESTREZA": 400.0,
@@ -848,7 +881,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-035",
@@ -856,7 +890,7 @@
       "Y": 399.0,
       "NOMBRE": "Dios 035",
       "TIPO": "Dioses",
-      "HP": 9367196.0,
+      "HP": 0,
       "PA": 6906363.0,
       "CA": 2823387.0,
       "DESTREZA": 400.0,
@@ -873,7 +907,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-036",
@@ -981,7 +1016,7 @@
       "Y": 484.0,
       "NOMBRE": "Dios 040",
       "TIPO": "Dioses",
-      "HP": 9845017.0,
+      "HP": 0,
       "PA": 7258657.0,
       "CA": 2967408.0,
       "DESTREZA": 400.0,
@@ -998,7 +1033,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-041",
@@ -1006,7 +1042,7 @@
       "Y": 538.0,
       "NOMBRE": "Dios 041",
       "TIPO": "Dioses",
-      "HP": 9943467.0,
+      "HP": 0,
       "PA": 7331243.0,
       "CA": 2997082.0,
       "DESTREZA": 400.0,
@@ -1023,7 +1059,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-042",
@@ -1131,7 +1168,7 @@
       "Y": 618.0,
       "NOMBRE": "Dios 046",
       "TIPO": "Dioses",
-      "HP": 10450684.0,
+      "HP": 0,
       "PA": 7705210.0,
       "CA": 3149963.0,
       "DESTREZA": 400.0,
@@ -1148,7 +1185,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-047",
@@ -1156,7 +1194,7 @@
       "Y": 600.0,
       "NOMBRE": "Dios 047",
       "TIPO": "Dioses",
-      "HP": 10555190.0,
+      "HP": 0,
       "PA": 7782262.0,
       "CA": 3181463.0,
       "DESTREZA": 400.0,
@@ -1173,7 +1211,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-048",
@@ -1181,7 +1220,7 @@
       "Y": 573.0,
       "NOMBRE": "Dios 048",
       "TIPO": "Dioses",
-      "HP": 10660742.0,
+      "HP": 0,
       "PA": 7860085.0,
       "CA": 3213278.0,
       "DESTREZA": 400.0,
@@ -1198,7 +1237,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-049",
@@ -1206,7 +1246,7 @@
       "Y": 538.0,
       "NOMBRE": "Dios 049",
       "TIPO": "Dioses",
-      "HP": 10767350.0,
+      "HP": 0,
       "PA": 7938686.0,
       "CA": 3245410.0,
       "DESTREZA": 400.0,
@@ -1223,7 +1263,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-050",
@@ -1231,7 +1272,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 050",
       "TIPO": "Dioses",
-      "HP": 10875023.0,
+      "HP": 0,
       "PA": 8018073.0,
       "CA": 3277864.0,
       "DESTREZA": 400.0,
@@ -1248,7 +1289,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-051",
@@ -1256,7 +1298,7 @@
       "Y": 462.0,
       "NOMBRE": "Dios 051",
       "TIPO": "Dioses",
-      "HP": 10983774.0,
+      "HP": 0,
       "PA": 8098253.0,
       "CA": 3310643.0,
       "DESTREZA": 400.0,
@@ -1273,7 +1315,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-052",
@@ -1281,7 +1324,7 @@
       "Y": 427.0,
       "NOMBRE": "Dios 052",
       "TIPO": "Dioses",
-      "HP": 11093611.0,
+      "HP": 0,
       "PA": 8179236.0,
       "CA": 3343750.0,
       "DESTREZA": 400.0,
@@ -1298,7 +1341,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-053",
@@ -1306,7 +1350,7 @@
       "Y": 400.0,
       "NOMBRE": "Dios 053",
       "TIPO": "Dioses",
-      "HP": 11204547.0,
+      "HP": 0,
       "PA": 8261028.0,
       "CA": 3377187.0,
       "DESTREZA": 400.0,
@@ -1323,7 +1367,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-054",
@@ -1331,7 +1376,7 @@
       "Y": 382.0,
       "NOMBRE": "Dios 054",
       "TIPO": "Dioses",
-      "HP": 11316593.0,
+      "HP": 0,
       "PA": 8343638.0,
       "CA": 3410959.0,
       "DESTREZA": 400.0,
@@ -1348,7 +1393,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-055",
@@ -1356,7 +1402,7 @@
       "Y": 376.0,
       "NOMBRE": "Dios 055",
       "TIPO": "Dioses",
-      "HP": 11429759.0,
+      "HP": 0,
       "PA": 8427075.0,
       "CA": 3445068.0,
       "DESTREZA": 400.0,
@@ -1373,7 +1419,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-056",
@@ -1381,7 +1428,7 @@
       "Y": 382.0,
       "NOMBRE": "Dios 056",
       "TIPO": "Dioses",
-      "HP": 11544056.0,
+      "HP": 0,
       "PA": 8511346.0,
       "CA": 3479519.0,
       "DESTREZA": 400.0,
@@ -1398,7 +1445,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-057",
@@ -1406,7 +1454,7 @@
       "Y": 400.0,
       "NOMBRE": "Dios 057",
       "TIPO": "Dioses",
-      "HP": 11659497.0,
+      "HP": 0,
       "PA": 8596459.0,
       "CA": 3514314.0,
       "DESTREZA": 400.0,
@@ -1423,7 +1471,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-058",
@@ -1431,7 +1480,7 @@
       "Y": 427.0,
       "NOMBRE": "Dios 058",
       "TIPO": "Dioses",
-      "HP": 11776092.0,
+      "HP": 0,
       "PA": 8682424.0,
       "CA": 3549457.0,
       "DESTREZA": 400.0,
@@ -1448,7 +1497,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-059",
@@ -1456,7 +1506,7 @@
       "Y": 462.0,
       "NOMBRE": "Dios 059",
       "TIPO": "Dioses",
-      "HP": 11893853.0,
+      "HP": 0,
       "PA": 8769248.0,
       "CA": 3584952.0,
       "DESTREZA": 400.0,
@@ -1473,7 +1523,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-060",
@@ -1481,7 +1532,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 060",
       "TIPO": "Dioses",
-      "HP": 12012791.0,
+      "HP": 0,
       "PA": 8856940.0,
       "CA": 3620802.0,
       "DESTREZA": 400.0,
@@ -1498,7 +1549,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-061",
@@ -1506,7 +1558,7 @@
       "Y": 566.0,
       "NOMBRE": "Dios 061",
       "TIPO": "Dioses",
-      "HP": 12132919.0,
+      "HP": 0,
       "PA": 8945510.0,
       "CA": 3657010.0,
       "DESTREZA": 400.0,
@@ -1523,7 +1575,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-062",
@@ -1531,7 +1584,7 @@
       "Y": 603.0,
       "NOMBRE": "Dios 062",
       "TIPO": "Dioses",
-      "HP": 12254248.0,
+      "HP": 0,
       "PA": 9034965.0,
       "CA": 3693580.0,
       "DESTREZA": 400.0,
@@ -1548,7 +1601,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-063",
@@ -1556,7 +1610,7 @@
       "Y": 630.0,
       "NOMBRE": "Dios 063",
       "TIPO": "Dioses",
-      "HP": 12376791.0,
+      "HP": 0,
       "PA": 9125315.0,
       "CA": 3730515.0,
       "DESTREZA": 400.0,
@@ -1573,7 +1627,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-064",
@@ -1581,7 +1636,7 @@
       "Y": 644.0,
       "NOMBRE": "Dios 064",
       "TIPO": "Dioses",
-      "HP": 12500559.0,
+      "HP": 0,
       "PA": 9216568.0,
       "CA": 3767821.0,
       "DESTREZA": 400.0,
@@ -1598,7 +1653,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-065",
@@ -1606,7 +1662,7 @@
       "Y": 644.0,
       "NOMBRE": "Dios 065",
       "TIPO": "Dioses",
-      "HP": 12625564.0,
+      "HP": 0,
       "PA": 9308733.0,
       "CA": 3805499.0,
       "DESTREZA": 400.0,
@@ -1623,7 +1679,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-066",
@@ -1631,7 +1688,7 @@
       "Y": 630.0,
       "NOMBRE": "Dios 066",
       "TIPO": "Dioses",
-      "HP": 12751820.0,
+      "HP": 0,
       "PA": 9401821.0,
       "CA": 3843554.0,
       "DESTREZA": 400.0,
@@ -1648,7 +1705,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-067",
@@ -1656,7 +1714,7 @@
       "Y": 603.0,
       "NOMBRE": "Dios 067",
       "TIPO": "Dioses",
-      "HP": 12879338.0,
+      "HP": 0,
       "PA": 9495839.0,
       "CA": 3881989.0,
       "DESTREZA": 400.0,
@@ -1673,7 +1731,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-068",
@@ -1681,7 +1740,7 @@
       "Y": 566.0,
       "NOMBRE": "Dios 068",
       "TIPO": "Dioses",
-      "HP": 13008132.0,
+      "HP": 0,
       "PA": 9590797.0,
       "CA": 3920809.0,
       "DESTREZA": 400.0,
@@ -1698,7 +1757,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-069",
@@ -1706,7 +1766,7 @@
       "Y": 523.0,
       "NOMBRE": "Dios 069",
       "TIPO": "Dioses",
-      "HP": 13138213.0,
+      "HP": 0,
       "PA": 9686705.0,
       "CA": 3960017.0,
       "DESTREZA": 400.0,
@@ -1723,7 +1783,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-070",
@@ -1731,7 +1792,7 @@
       "Y": 477.0,
       "NOMBRE": "Dios 070",
       "TIPO": "Dioses",
-      "HP": 13269595.0,
+      "HP": 0,
       "PA": 9783572.0,
       "CA": 3999618.0,
       "DESTREZA": 400.0,
@@ -1748,7 +1809,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-071",
@@ -1756,7 +1818,7 @@
       "Y": 434.0,
       "NOMBRE": "Dios 071",
       "TIPO": "Dioses",
-      "HP": 13402291.0,
+      "HP": 0,
       "PA": 9881408.0,
       "CA": 4039614.0,
       "DESTREZA": 400.0,
@@ -1773,7 +1835,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-072",
@@ -1781,7 +1844,7 @@
       "Y": 397.0,
       "NOMBRE": "Dios 072",
       "TIPO": "Dioses",
-      "HP": 13536314.0,
+      "HP": 0,
       "PA": 9980222.0,
       "CA": 4080010.0,
       "DESTREZA": 400.0,
@@ -1798,7 +1861,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-073",
@@ -1806,7 +1870,7 @@
       "Y": 370.0,
       "NOMBRE": "Dios 073",
       "TIPO": "Dioses",
-      "HP": 13671677.0,
+      "HP": 0,
       "PA": 10080024.0,
       "CA": 4120810.0,
       "DESTREZA": 400.0,
@@ -1823,7 +1887,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-074",
@@ -1831,7 +1896,7 @@
       "Y": 356.0,
       "NOMBRE": "Dios 074",
       "TIPO": "Dioses",
-      "HP": 13808394.0,
+      "HP": 0,
       "PA": 10180825.0,
       "CA": 4162018.0,
       "DESTREZA": 400.0,
@@ -1848,7 +1913,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-075",
@@ -1856,7 +1922,7 @@
       "Y": 356.0,
       "NOMBRE": "Dios 075",
       "TIPO": "Dioses",
-      "HP": 13946478.0,
+      "HP": 0,
       "PA": 10282633.0,
       "CA": 4203638.0,
       "DESTREZA": 400.0,
@@ -1873,7 +1939,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-076",
@@ -1881,7 +1948,7 @@
       "Y": 370.0,
       "NOMBRE": "Dios 076",
       "TIPO": "Dioses",
-      "HP": 14085943.0,
+      "HP": 0,
       "PA": 10385459.0,
       "CA": 4245675.0,
       "DESTREZA": 400.0,
@@ -1898,7 +1965,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-077",
@@ -1906,7 +1974,7 @@
       "Y": 397.0,
       "NOMBRE": "Dios 077",
       "TIPO": "Dioses",
-      "HP": 14226802.0,
+      "HP": 0,
       "PA": 10489314.0,
       "CA": 4288131.0,
       "DESTREZA": 400.0,
@@ -1923,7 +1991,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-078",
@@ -1931,7 +2000,7 @@
       "Y": 434.0,
       "NOMBRE": "Dios 078",
       "TIPO": "Dioses",
-      "HP": 14369070.0,
+      "HP": 0,
       "PA": 10594207.0,
       "CA": 4331013.0,
       "DESTREZA": 400.0,
@@ -1948,7 +2017,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-079",
@@ -1956,7 +2026,7 @@
       "Y": 477.0,
       "NOMBRE": "Dios 079",
       "TIPO": "Dioses",
-      "HP": 14512761.0,
+      "HP": 0,
       "PA": 10700149.0,
       "CA": 4374323.0,
       "DESTREZA": 400.0,
@@ -1973,7 +2043,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-080",
@@ -1981,7 +2052,7 @@
       "Y": 523.0,
       "NOMBRE": "Dios 080",
       "TIPO": "Dioses",
-      "HP": 14657888.0,
+      "HP": 0,
       "PA": 10807150.0,
       "CA": 4418066.0,
       "DESTREZA": 400.0,
@@ -1998,7 +2069,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-081",
@@ -2006,7 +2078,7 @@
       "Y": 598.0,
       "NOMBRE": "Dios 081",
       "TIPO": "Dioses",
-      "HP": 14804467.0,
+      "HP": 0,
       "PA": 10915222.0,
       "CA": 4462247.0,
       "DESTREZA": 500.0,
@@ -2023,7 +2095,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-082",
@@ -2031,7 +2104,7 @@
       "Y": 635.0,
       "NOMBRE": "Dios 082",
       "TIPO": "Dioses",
-      "HP": 14952512.0,
+      "HP": 0,
       "PA": 11024374.0,
       "CA": 4506869.0,
       "DESTREZA": 500.0,
@@ -2048,7 +2121,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-083",
@@ -2056,7 +2130,7 @@
       "Y": 659.0,
       "NOMBRE": "Dios 083",
       "TIPO": "Dioses",
-      "HP": 15102037.0,
+      "HP": 0,
       "PA": 11134618.0,
       "CA": 4551938.0,
       "DESTREZA": 500.0,
@@ -2073,7 +2147,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-084",
@@ -2081,7 +2156,7 @@
       "Y": 667.0,
       "NOMBRE": "Dios 084",
       "TIPO": "Dioses",
-      "HP": 15253057.0,
+      "HP": 0,
       "PA": 11245964.0,
       "CA": 4597457.0,
       "DESTREZA": 500.0,
@@ -2098,7 +2173,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-085",
@@ -2106,7 +2182,7 @@
       "Y": 659.0,
       "NOMBRE": "Dios 085",
       "TIPO": "Dioses",
-      "HP": 15405588.0,
+      "HP": 0,
       "PA": 11358424.0,
       "CA": 4643432.0,
       "DESTREZA": 500.0,
@@ -2123,7 +2199,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-086",
@@ -2131,7 +2208,7 @@
       "Y": 635.0,
       "NOMBRE": "Dios 086",
       "TIPO": "Dioses",
-      "HP": 15559644.0,
+      "HP": 0,
       "PA": 11472008.0,
       "CA": 4689866.0,
       "DESTREZA": 500.0,
@@ -2148,7 +2225,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-087",
@@ -2156,7 +2234,7 @@
       "Y": 598.0,
       "NOMBRE": "Dios 087",
       "TIPO": "Dioses",
-      "HP": 15715240.0,
+      "HP": 0,
       "PA": 11586728.0,
       "CA": 4736765.0,
       "DESTREZA": 500.0,
@@ -2173,7 +2251,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-088",
@@ -2181,7 +2260,7 @@
       "Y": 552.0,
       "NOMBRE": "Dios 088",
       "TIPO": "Dioses",
-      "HP": 15872393.0,
+      "HP": 0,
       "PA": 11702595.0,
       "CA": 4784132.0,
       "DESTREZA": 500.0,
@@ -2198,7 +2277,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-089",
@@ -2206,7 +2286,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 089",
       "TIPO": "Dioses",
-      "HP": 16031117.0,
+      "HP": 0,
       "PA": 11819621.0,
       "CA": 4831974.0,
       "DESTREZA": 500.0,
@@ -2223,7 +2303,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-090",
@@ -2231,7 +2312,7 @@
       "Y": 448.0,
       "NOMBRE": "Dios 090",
       "TIPO": "Dioses",
-      "HP": 16191428.0,
+      "HP": 0,
       "PA": 11937817.0,
       "CA": 4880293.0,
       "DESTREZA": 500.0,
@@ -2248,7 +2329,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-091",
@@ -2256,7 +2338,7 @@
       "Y": 402.0,
       "NOMBRE": "Dios 091",
       "TIPO": "Dioses",
-      "HP": 16353342.0,
+      "HP": 0,
       "PA": 12057196.0,
       "CA": 4929096.0,
       "DESTREZA": 500.0,
@@ -2273,7 +2355,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-092",
@@ -2281,7 +2364,7 @@
       "Y": 365.0,
       "NOMBRE": "Dios 092",
       "TIPO": "Dioses",
-      "HP": 16516876.0,
+      "HP": 0,
       "PA": 12177768.0,
       "CA": 4978387.0,
       "DESTREZA": 500.0,
@@ -2298,7 +2381,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-093",
@@ -2306,7 +2390,7 @@
       "Y": 341.0,
       "NOMBRE": "Dios 093",
       "TIPO": "Dioses",
-      "HP": 16682044.0,
+      "HP": 0,
       "PA": 12299545.0,
       "CA": 5028171.0,
       "DESTREZA": 500.0,
@@ -2323,7 +2407,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-094",
@@ -2331,7 +2416,7 @@
       "Y": 333.0,
       "NOMBRE": "Dios 094",
       "TIPO": "Dioses",
-      "HP": 16848865.0,
+      "HP": 0,
       "PA": 12422541.0,
       "CA": 5078453.0,
       "DESTREZA": 500.0,
@@ -2348,7 +2433,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-095",
@@ -2356,7 +2442,7 @@
       "Y": 341.0,
       "NOMBRE": "Dios 095",
       "TIPO": "Dioses",
-      "HP": 17017353.0,
+      "HP": 0,
       "PA": 12546766.0,
       "CA": 5129237.0,
       "DESTREZA": 500.0,
@@ -2373,7 +2459,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-096",
@@ -2381,7 +2468,7 @@
       "Y": 365.0,
       "NOMBRE": "Dios 096",
       "TIPO": "Dioses",
-      "HP": 17187527.0,
+      "HP": 0,
       "PA": 12672234.0,
       "CA": 5180530.0,
       "DESTREZA": 500.0,
@@ -2398,7 +2485,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-097",
@@ -2406,7 +2494,7 @@
       "Y": 402.0,
       "NOMBRE": "Dios 097",
       "TIPO": "Dioses",
-      "HP": 17359402.0,
+      "HP": 0,
       "PA": 12798956.0,
       "CA": 5232335.0,
       "DESTREZA": 500.0,
@@ -2423,7 +2511,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-098",
@@ -2431,7 +2520,7 @@
       "Y": 448.0,
       "NOMBRE": "Dios 098",
       "TIPO": "Dioses",
-      "HP": 17532996.0,
+      "HP": 0,
       "PA": 12926946.0,
       "CA": 5284659.0,
       "DESTREZA": 500.0,
@@ -2448,7 +2537,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-099",
@@ -2456,7 +2546,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 099",
       "TIPO": "Dioses",
-      "HP": 17708326.0,
+      "HP": 0,
       "PA": 13056215.0,
       "CA": 5337505.0,
       "DESTREZA": 500.0,
@@ -2473,7 +2563,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-100",
@@ -2481,7 +2572,7 @@
       "Y": 552.0,
       "NOMBRE": "Dios 100",
       "TIPO": "Dioses",
-      "HP": 17885409.0,
+      "HP": 0,
       "PA": 13186777.0,
       "CA": 5390880.0,
       "DESTREZA": 500.0,
@@ -2498,7 +2589,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-101",
@@ -2506,7 +2598,7 @@
       "Y": 650.0,
       "NOMBRE": "Dios 101",
       "TIPO": "Dioses",
-      "HP": 18064264.0,
+      "HP": 0,
       "PA": 13318645.0,
       "CA": 5444789.0,
       "DESTREZA": 500.0,
@@ -2523,7 +2615,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-102",
@@ -2531,7 +2624,7 @@
       "Y": 669.0,
       "NOMBRE": "Dios 102",
       "TIPO": "Dioses",
-      "HP": 18244906.0,
+      "HP": 0,
       "PA": 13451832.0,
       "CA": 5499237.0,
       "DESTREZA": 500.0,
@@ -2548,7 +2641,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-103",
@@ -2556,7 +2650,7 @@
       "Y": 687.0,
       "NOMBRE": "Dios 103",
       "TIPO": "Dioses",
-      "HP": 18427355.0,
+      "HP": 0,
       "PA": 13586350.0,
       "CA": 5554229.0,
       "DESTREZA": 500.0,
@@ -2573,7 +2667,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-104",
@@ -2581,7 +2676,7 @@
       "Y": 687.0,
       "NOMBRE": "Dios 104",
       "TIPO": "Dioses",
-      "HP": 18611629.0,
+      "HP": 0,
       "PA": 13722213.0,
       "CA": 5609772.0,
       "DESTREZA": 500.0,
@@ -2598,7 +2693,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-105",
@@ -2606,7 +2702,7 @@
       "Y": 669.0,
       "NOMBRE": "Dios 105",
       "TIPO": "Dioses",
-      "HP": 18797745.0,
+      "HP": 0,
       "PA": 13859436.0,
       "CA": 5665869.0,
       "DESTREZA": 500.0,
@@ -2623,7 +2719,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-106",
@@ -2631,7 +2728,7 @@
       "Y": 634.0,
       "NOMBRE": "Dios 106",
       "TIPO": "Dioses",
-      "HP": 18985722.0,
+      "HP": 0,
       "PA": 13998030.0,
       "CA": 5722528.0,
       "DESTREZA": 500.0,
@@ -2648,7 +2745,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-107",
@@ -2656,7 +2754,7 @@
       "Y": 586.0,
       "NOMBRE": "Dios 107",
       "TIPO": "Dioses",
-      "HP": 19175580.0,
+      "HP": 0,
       "PA": 14138010.0,
       "CA": 5779753.0,
       "DESTREZA": 500.0,
@@ -2673,7 +2771,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-108",
@@ -2681,7 +2780,7 @@
       "Y": 530.0,
       "NOMBRE": "Dios 108",
       "TIPO": "Dioses",
-      "HP": 19367336.0,
+      "HP": 0,
       "PA": 14279390.0,
       "CA": 5837551.0,
       "DESTREZA": 500.0,
@@ -2698,7 +2797,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-109",
@@ -2706,7 +2806,7 @@
       "Y": 470.0,
       "NOMBRE": "Dios 109",
       "TIPO": "Dioses",
-      "HP": 19561009.0,
+      "HP": 0,
       "PA": 14422184.0,
       "CA": 5895926.0,
       "DESTREZA": 500.0,
@@ -2723,7 +2823,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-110",
@@ -2731,7 +2832,7 @@
       "Y": 414.0,
       "NOMBRE": "Dios 110",
       "TIPO": "Dioses",
-      "HP": 19756619.0,
+      "HP": 0,
       "PA": 14566406.0,
       "CA": 5954885.0,
       "DESTREZA": 500.0,
@@ -2748,7 +2849,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-111",
@@ -2756,7 +2858,7 @@
       "Y": 351.0,
       "NOMBRE": "Dios 111",
       "TIPO": "Dioses",
-      "HP": 19954185.0,
+      "HP": 0,
       "PA": 14712070.0,
       "CA": 6014434.0,
       "DESTREZA": 500.0,
@@ -2773,7 +2875,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-112",
@@ -2781,7 +2884,7 @@
       "Y": 331.0,
       "NOMBRE": "Dios 112",
       "TIPO": "Dioses",
-      "HP": 20153727.0,
+      "HP": 0,
       "PA": 14859191.0,
       "CA": 6074579.0,
       "DESTREZA": 500.0,
@@ -2798,7 +2901,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-113",
@@ -2806,7 +2910,7 @@
       "Y": 313.0,
       "NOMBRE": "Dios 113",
       "TIPO": "Dioses",
-      "HP": 20355264.0,
+      "HP": 0,
       "PA": 15007783.0,
       "CA": 6135324.0,
       "DESTREZA": 500.0,
@@ -2823,7 +2927,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-114",
@@ -2831,7 +2936,7 @@
       "Y": 313.0,
       "NOMBRE": "Dios 114",
       "TIPO": "Dioses",
-      "HP": 20558817.0,
+      "HP": 0,
       "PA": 15157860.0,
       "CA": 6196678.0,
       "DESTREZA": 500.0,
@@ -2848,7 +2953,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-115",
@@ -2856,7 +2962,7 @@
       "Y": 331.0,
       "NOMBRE": "Dios 115",
       "TIPO": "Dioses",
-      "HP": 20764405.0,
+      "HP": 0,
       "PA": 15309439.0,
       "CA": 6258645.0,
       "DESTREZA": 500.0,
@@ -2873,7 +2979,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-116",
@@ -2881,7 +2988,7 @@
       "Y": 366.0,
       "NOMBRE": "Dios 116",
       "TIPO": "Dioses",
-      "HP": 20972049.0,
+      "HP": 0,
       "PA": 15462533.0,
       "CA": 6321231.0,
       "DESTREZA": 500.0,
@@ -2898,7 +3005,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-117",
@@ -2906,7 +3014,7 @@
       "Y": 414.0,
       "NOMBRE": "Dios 117",
       "TIPO": "Dioses",
-      "HP": 21181770.0,
+      "HP": 0,
       "PA": 15617159.0,
       "CA": 6384443.0,
       "DESTREZA": 500.0,
@@ -2923,7 +3031,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-118",
@@ -2931,7 +3040,7 @@
       "Y": 470.0,
       "NOMBRE": "Dios 118",
       "TIPO": "Dioses",
-      "HP": 21393587.0,
+      "HP": 0,
       "PA": 15773330.0,
       "CA": 6448288.0,
       "DESTREZA": 500.0,
@@ -2948,7 +3057,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-119",
@@ -2956,7 +3066,7 @@
       "Y": 530.0,
       "NOMBRE": "Dios 119",
       "TIPO": "Dioses",
-      "HP": 21607523.0,
+      "HP": 0,
       "PA": 15931064.0,
       "CA": 6512771.0,
       "DESTREZA": 500.0,
@@ -2973,7 +3083,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-120",
@@ -2981,7 +3092,7 @@
       "Y": 586.0,
       "NOMBRE": "Dios 120",
       "TIPO": "Dioses",
-      "HP": 21823598.0,
+      "HP": 0,
       "PA": 16090374.0,
       "CA": 6577898.0,
       "DESTREZA": 500.0,
@@ -2998,7 +3109,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-121",
@@ -3006,7 +3118,7 @@
       "Y": 677.0,
       "NOMBRE": "Dios 121",
       "TIPO": "Dioses",
-      "HP": 22041834.0,
+      "HP": 0,
       "PA": 16251278.0,
       "CA": 6643677.0,
       "DESTREZA": 500.0,
@@ -3023,7 +3135,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-122",
@@ -3031,7 +3144,7 @@
       "Y": 701.0,
       "NOMBRE": "Dios 122",
       "TIPO": "Dioses",
-      "HP": 22262253.0,
+      "HP": 0,
       "PA": 16413791.0,
       "CA": 6710114.0,
       "DESTREZA": 500.0,
@@ -3048,7 +3161,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-123",
@@ -3106,7 +3220,7 @@
       "Y": 671.0,
       "NOMBRE": "Dios 125",
       "TIPO": "Dioses",
-      "HP": 22936821.0,
+      "HP": 0,
       "PA": 16911145.0,
       "CA": 6913437.0,
       "DESTREZA": 500.0,
@@ -3123,7 +3237,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-126",
@@ -3131,7 +3246,7 @@
       "Y": 624.0,
       "NOMBRE": "Dios 126",
       "TIPO": "Dioses",
-      "HP": 23166189.0,
+      "HP": 0,
       "PA": 17080257.0,
       "CA": 6982572.0,
       "DESTREZA": 500.0,
@@ -3148,7 +3263,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-127",
@@ -3156,7 +3272,7 @@
       "Y": 565.0,
       "NOMBRE": "Dios 127",
       "TIPO": "Dioses",
-      "HP": 23397851.0,
+      "HP": 0,
       "PA": 17251059.0,
       "CA": 7052397.0,
       "DESTREZA": 500.0,
@@ -3173,7 +3289,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-128",
@@ -3181,7 +3298,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 128",
       "TIPO": "Dioses",
-      "HP": 23631830.0,
+      "HP": 0,
       "PA": 17423570.0,
       "CA": 7122921.0,
       "DESTREZA": 500.0,
@@ -3198,7 +3315,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-129",
@@ -3206,7 +3324,7 @@
       "Y": 435.0,
       "NOMBRE": "Dios 129",
       "TIPO": "Dioses",
-      "HP": 23868148.0,
+      "HP": 0,
       "PA": 17597805.0,
       "CA": 7194150.0,
       "DESTREZA": 500.0,
@@ -3223,7 +3341,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-130",
@@ -3231,7 +3350,7 @@
       "Y": 384.0,
       "NOMBRE": "Dios 130",
       "TIPO": "Dioses",
-      "HP": 24106830.0,
+      "HP": 0,
       "PA": 17773784.0,
       "CA": 7266092.0,
       "DESTREZA": 500.0,
@@ -3248,7 +3367,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-131",
@@ -3256,7 +3376,7 @@
       "Y": 324.0,
       "NOMBRE": "Dios 131",
       "TIPO": "Dioses",
-      "HP": 24347898.0,
+      "HP": 0,
       "PA": 17951521.0,
       "CA": 7338753.0,
       "DESTREZA": 500.0,
@@ -3273,7 +3393,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-132",
@@ -3281,7 +3402,7 @@
       "Y": 299.0,
       "NOMBRE": "Dios 132",
       "TIPO": "Dioses",
-      "HP": 24591377.0,
+      "HP": 0,
       "PA": 18131037.0,
       "CA": 7412140.0,
       "DESTREZA": 500.0,
@@ -3298,7 +3419,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-133",
@@ -3306,7 +3428,7 @@
       "Y": 289.0,
       "NOMBRE": "Dios 133",
       "TIPO": "Dioses",
-      "HP": 24837291.0,
+      "HP": 0,
       "PA": 18312347.0,
       "CA": 7486262.0,
       "DESTREZA": 500.0,
@@ -3323,7 +3445,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-134",
@@ -3631,7 +3754,7 @@
       "Y": 606.0,
       "NOMBRE": "Dios 146",
       "TIPO": "Dioses",
-      "HP": 28267154.0,
+      "HP": 0,
       "PA": 20841159.0,
       "CA": 8520064.0,
       "DESTREZA": 500.0,
@@ -3648,7 +3771,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-147",
@@ -3656,7 +3780,7 @@
       "Y": 536.0,
       "NOMBRE": "Dios 147",
       "TIPO": "Dioses",
-      "HP": 28549825.0,
+      "HP": 0,
       "PA": 21049571.0,
       "CA": 8605265.0,
       "DESTREZA": 500.0,
@@ -3673,7 +3797,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-148",
@@ -3681,7 +3806,7 @@
       "Y": 464.0,
       "NOMBRE": "Dios 148",
       "TIPO": "Dioses",
-      "HP": 28835323.0,
+      "HP": 0,
       "PA": 21260066.0,
       "CA": 8691318.0,
       "DESTREZA": 500.0,
@@ -3698,7 +3823,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-149",
@@ -3706,7 +3832,7 @@
       "Y": 394.0,
       "NOMBRE": "Dios 149",
       "TIPO": "Dioses",
-      "HP": 29123677.0,
+      "HP": 0,
       "PA": 21472667.0,
       "CA": 8778231.0,
       "DESTREZA": 500.0,
@@ -3723,7 +3849,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-150",
@@ -3731,7 +3858,7 @@
       "Y": 298.0,
       "NOMBRE": "Dios 150",
       "TIPO": "Dioses",
-      "HP": 29414913.0,
+      "HP": 0,
       "PA": 21687394.0,
       "CA": 8866013.0,
       "DESTREZA": 500.0,
@@ -3748,7 +3875,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-151",
@@ -3931,7 +4059,7 @@
       "Y": 536.0,
       "NOMBRE": "Dios 158",
       "TIPO": "Dioses",
-      "HP": 31852136.0,
+      "HP": 0,
       "PA": 23484340.0,
       "CA": 9600622.0,
       "DESTREZA": 500.0,
@@ -3948,7 +4076,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-159",
@@ -4131,7 +4260,7 @@
       "Y": 579.0,
       "NOMBRE": "Dios 166",
       "TIPO": "Dioses",
-      "HP": 34491299.0,
+      "HP": 0,
       "PA": 25430175.0,
       "CA": 10396098.0,
       "DESTREZA": 600.0,
@@ -4148,7 +4277,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-167",
@@ -4156,7 +4286,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 167",
       "TIPO": "Dioses",
-      "HP": 34836212.0,
+      "HP": 0,
       "PA": 25684476.0,
       "CA": 10500059.0,
       "DESTREZA": 600.0,
@@ -4173,7 +4303,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-168",
@@ -4181,7 +4312,7 @@
       "Y": 421.0,
       "NOMBRE": "Dios 168",
       "TIPO": "Dioses",
-      "HP": 35184574.0,
+      "HP": 0,
       "PA": 25941321.0,
       "CA": 10605059.0,
       "DESTREZA": 600.0,
@@ -4198,7 +4329,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-169",
@@ -4206,7 +4338,7 @@
       "Y": 368.0,
       "NOMBRE": "Dios 169",
       "TIPO": "Dioses",
-      "HP": 35536420.0,
+      "HP": 0,
       "PA": 26200734.0,
       "CA": 10711110.0,
       "DESTREZA": 600.0,
@@ -4223,7 +4355,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-170",
@@ -4531,7 +4664,7 @@
       "Y": 773.0,
       "NOMBRE": "Dios 182",
       "TIPO": "Dioses",
-      "HP": 40443761.0,
+      "HP": 0,
       "PA": 29818880.0,
       "CA": 12190242.0,
       "DESTREZA": 600.0,
@@ -4548,7 +4681,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-183",
@@ -4556,7 +4690,7 @@
       "Y": 746.0,
       "NOMBRE": "Dios 183",
       "TIPO": "Dioses",
-      "HP": 40848199.0,
+      "HP": 0,
       "PA": 30117068.0,
       "CA": 12312144.0,
       "DESTREZA": 600.0,
@@ -4573,7 +4707,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-184",
@@ -4631,7 +4766,7 @@
       "Y": 543.0,
       "NOMBRE": "Dios 186",
       "TIPO": "Dioses",
-      "HP": 42085940.0,
+      "HP": 0,
       "PA": 31029646.0,
       "CA": 12685215.0,
       "DESTREZA": 600.0,
@@ -4648,7 +4783,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-187",
@@ -4656,7 +4792,7 @@
       "Y": 457.0,
       "NOMBRE": "Dios 187",
       "TIPO": "Dioses",
-      "HP": 42506799.0,
+      "HP": 0,
       "PA": 31339942.0,
       "CA": 12812067.0,
       "DESTREZA": 600.0,
@@ -4673,7 +4809,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-188",
@@ -4681,7 +4818,7 @@
       "Y": 374.0,
       "NOMBRE": "Dios 188",
       "TIPO": "Dioses",
-      "HP": 42931867.0,
+      "HP": 0,
       "PA": 31653342.0,
       "CA": 12940188.0,
       "DESTREZA": 600.0,
@@ -4698,7 +4835,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-189",
@@ -4906,7 +5044,7 @@
       "Y": 543.0,
       "NOMBRE": "Dios 197",
       "TIPO": "Dioses",
-      "HP": 46953951.0,
+      "HP": 0,
       "PA": 34618794.0,
       "CA": 14152493.0,
       "DESTREZA": 600.0,
@@ -4923,7 +5061,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-198",
@@ -5131,7 +5270,7 @@
       "Y": 500.0,
       "NOMBRE": "Dios 206",
       "TIPO": "Dioses",
-      "HP": 51352845.0,
+      "HP": 0,
       "PA": 37862065.0,
       "CA": 15478373.0,
       "DESTREZA": 700.0,
@@ -5148,7 +5287,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-207",
@@ -5506,7 +5646,7 @@
       "Y": 816.0,
       "NOMBRE": "Dios 221",
       "TIPO": "Dioses",
-      "HP": 59619059.0,
+      "HP": 0,
       "PA": 43956682.0,
       "CA": 17969910.0,
       "DESTREZA": 700.0,
@@ -5523,7 +5663,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-222",
@@ -5681,7 +5822,7 @@
       "Y": 274.0,
       "NOMBRE": "Dios 228",
       "TIPO": "Dioses",
-      "HP": 63919700.0,
+      "HP": 0,
       "PA": 47127512.0,
       "CA": 19266176.0,
       "DESTREZA": 700.0,
@@ -5698,7 +5839,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-229",
@@ -5881,7 +6023,7 @@
       "Y": 550.0,
       "NOMBRE": "Dios 236",
       "TIPO": "Dioses",
-      "HP": 69215876.0,
+      "HP": 0,
       "PA": 51032343.0,
       "CA": 20862508.0,
       "DESTREZA": 700.0,
@@ -5898,7 +6040,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-237",
@@ -6856,7 +6999,7 @@
       "Y": 557.0,
       "NOMBRE": "Dios 275",
       "TIPO": "Dioses",
-      "HP": 102032681.0,
+      "HP": 0,
       "PA": 75227925.0,
       "CA": 30753892.0,
       "DESTREZA": 700.0,
@@ -6873,7 +7016,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-276",
@@ -6981,7 +7125,7 @@
       "Y": 859.0,
       "NOMBRE": "Dios 280",
       "TIPO": "Dioses",
-      "HP": 107237373.0,
+      "HP": 0,
       "PA": 79065306.0,
       "CA": 32322650.0,
       "DESTREZA": 700.0,
@@ -6998,7 +7142,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-281",
@@ -7556,7 +7701,7 @@
       "Y": 564.0,
       "NOMBRE": "Dios 303",
       "TIPO": "Dioses",
-      "HP": 134814860.0,
+      "HP": 0,
       "PA": 99397978.0,
       "CA": 40634840.0,
       "DESTREZA": 750.0,
@@ -7573,7 +7718,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-304",
@@ -7831,7 +7977,7 @@
       "Y": 564.0,
       "NOMBRE": "Dios 314",
       "TIPO": "Dioses",
-      "HP": 150408672.0,
+      "HP": 0,
       "PA": 110895178.0,
       "CA": 45335005.0,
       "DESTREZA": 750.0,
@@ -7848,7 +7994,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-315",
@@ -7931,7 +8078,7 @@
       "Y": 903.0,
       "NOMBRE": "Dios 318",
       "TIPO": "Dioses",
-      "HP": 156515867.0,
+      "HP": 0,
       "PA": 115397967.0,
       "CA": 47175788.0,
       "DESTREZA": 750.0,
@@ -7948,7 +8095,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-319",
@@ -7956,7 +8104,7 @@
       "Y": 903.0,
       "NOMBRE": "Dios 319",
       "TIPO": "Dioses",
-      "HP": 158081025.0,
+      "HP": 0,
       "PA": 116551947.0,
       "CA": 47647546.0,
       "DESTREZA": 750.0,
@@ -7973,7 +8121,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-320",
@@ -8806,7 +8955,7 @@
       "Y": 571.0,
       "NOMBRE": "Dios 353",
       "TIPO": "Dioses",
-      "HP": 221720808.0,
+      "HP": 0,
       "PA": 163473078.0,
       "CA": 66829351.0,
       "DESTREZA": 750.0,
@@ -8823,7 +8972,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-354",
@@ -9431,7 +9581,7 @@
       "Y": 950.0,
       "NOMBRE": "Dios 378",
       "TIPO": "Dioses",
-      "HP": 284341858.0,
+      "HP": 0,
       "PA": 209643105.0,
       "CA": 85704098.0,
       "DESTREZA": 950.0,
@@ -9448,7 +9598,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-379",
@@ -9781,7 +9932,7 @@
       "Y": 577.0,
       "NOMBRE": "Dios 392",
       "TIPO": "Dioses",
-      "HP": 326843634.0,
+      "HP": 0,
       "PA": 240979344.0,
       "CA": 98514651.0,
       "DESTREZA": 950.0,
@@ -9798,7 +9949,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-393",
@@ -9831,7 +9983,7 @@
       "Y": 850.0,
       "NOMBRE": "Dios 394",
       "TIPO": "Dioses",
-      "HP": 333413191.0,
+      "HP": 0,
       "PA": 245823029.0,
       "CA": 100494795.0,
       "DESTREZA": 950.0,
@@ -9848,7 +10000,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-395",
@@ -9856,7 +10009,7 @@
       "Y": 941.0,
       "NOMBRE": "Dios 395",
       "TIPO": "Dioses",
-      "HP": 336747323.0,
+      "HP": 0,
       "PA": 248281259.0,
       "CA": 101499743.0,
       "DESTREZA": 950.0,
@@ -9873,7 +10026,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-396",
@@ -9881,7 +10035,7 @@
       "Y": 989.0,
       "NOMBRE": "Dios 396",
       "TIPO": "Dioses",
-      "HP": 340114796.0,
+      "HP": 0,
       "PA": 250764071.0,
       "CA": 102514741.0,
       "DESTREZA": 950.0,
@@ -9898,7 +10052,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-397",
@@ -9906,7 +10061,7 @@
       "Y": 989.0,
       "NOMBRE": "Dios 397",
       "TIPO": "Dioses",
-      "HP": 343515944.0,
+      "HP": 0,
       "PA": 253271712.0,
       "CA": 103539888.0,
       "DESTREZA": 950.0,
@@ -9923,7 +10078,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-398",
@@ -9931,7 +10087,7 @@
       "Y": 941.0,
       "NOMBRE": "Dios 398",
       "TIPO": "Dioses",
-      "HP": 346951104.0,
+      "HP": 0,
       "PA": 255804429.0,
       "CA": 104575287.0,
       "DESTREZA": 950.0,
@@ -9948,7 +10104,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-399",
@@ -9956,7 +10113,7 @@
       "Y": 850.0,
       "NOMBRE": "Dios 399",
       "TIPO": "Dioses",
-      "HP": 350420615.0,
+      "HP": 0,
       "PA": 258362474.0,
       "CA": 105621040.0,
       "DESTREZA": 950.0,
@@ -9973,7 +10130,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     },
     {
       "ID": "Dios-400",
@@ -9981,7 +10139,7 @@
       "Y": 725.0,
       "NOMBRE": "Dios 400",
       "TIPO": "Dioses",
-      "HP": 353924821.0,
+      "HP": 0,
       "PA": 260946098.0,
       "CA": 106677250.0,
       "DESTREZA": 950.0,
@@ -9998,7 +10156,8 @@
         "T2": [],
         "T3": []
       },
-      "_oculta": false
+      "_oculta": false,
+      "_derrotado": true
     }
   ]
 }

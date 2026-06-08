@@ -66,6 +66,15 @@ const INV = [
   ['Éon Supremo',      'EON_SUPREMO'],
 ];
 
+const CUEVAS = [
+  ['Behemot',      'BEHEMOT'],
+  ['Chupacabras',  'CHUPACABRAS'],
+  ['Dragón (C)',   'DRAGON'],
+  ['Leviatán',     'LEVIATAN'],
+  ['Patotas',      'PATOTAS'],
+  ['Simurgh',      'SIMURGH'],
+];
+
 const TIPO_ICONS = {
   ATAQUE:          '⚔️',
   ESPIONAJE:       '🕵️',
@@ -121,7 +130,7 @@ function _resetSeleccion() { _seleccion = {}; }
 function _selGet(jug, key) { return (_seleccion[jug] || {})[key] || 0; }
 function _selSet(jug, key, val, max) {
   if (!_seleccion[jug]) _seleccion[jug] = {};
-  _seleccion[jug][key] = Math.max(0, Math.min(max, parseInt(val) || 0));
+  _seleccion[jug][key] = Math.max(0, Math.min(max, Math.floor(Number(val)) || 0));
   if (_seleccion[jug][key] === 0) delete _seleccion[jug][key];
   if (Object.keys(_seleccion[jug]).length === 0) delete _seleccion[jug];
 }
@@ -161,6 +170,14 @@ function _setupMapListener() {
 }
 
 // ── Render principal ──────────────────────────────────────────────────────────
+
+
+// Parsear valor de recurso incluyendo __INF__
+function _parseRecurso(v) {
+  if (v === '__INF__' || v === Infinity) return Infinity;
+  const n = parseFloat(v);
+  return isNaN(n) ? 0 : n;
+}
 
 export async function render(container, jugador, ciudad) {
   _jugador = jugador;
@@ -280,8 +297,16 @@ function _renderLeft() {
     return makeRow(lbl, key, '#a080c0', cnt, _jugador);
   }).join('');
 
-  const hayArmy = ARMY.some(([,k]) => (_cityData[k]||0) > 0);
-  const hayInv  = INV.some(([,k])  => (_cityData[k]||0) > 0);
+  // Criaturas de cueva capturadas
+  const cuevaRows = CUEVAS.map(([lbl, key]) => {
+    const cnt = Math.floor(_parseRecurso(_cityData[key]) || 0);
+    if (cnt <= 0) return '';
+    return makeRow(lbl, key, '#e08840', cnt, _jugador);
+  }).join('');
+
+  const hayArmy  = ARMY.some(([,k]) => (_cityData[k]||0) > 0);
+  const hayInv   = INV.some(([,k])  => (_cityData[k]||0) > 0);
+  const hayCueva = CUEVAS.some(([,k]) => Math.floor(_parseRecurso(_cityData[k])||0) > 0);
 
   // ── Tropas aliadas prestadas ───────────────────────────────────────────────
   const prestadas = _cityData.TROPAS_PRESTADAS || [];
@@ -295,12 +320,15 @@ function _renderLeft() {
   let aliadosHtml = '';
   for (const [jug, entradas] of Object.entries(porJugador)) {
     const rows = entradas.map(p => {
-      // Buscar label legible
-      const lblArmy = ARMY.find(([,k]) => k === p.unidad);
-      const lblInv  = INV.find(([,k])  => k === p.unidad);
-      const lbl     = lblArmy?.[0] || lblInv?.[0] || p.unidad;
-      const color   = lblInv ? '#a080c0' : '#7099bb';
-      return makeRow(lbl, p.unidad, color, p.cantidad, jug);
+      // Clave compuesta para distinguir múltiples entradas del mismo jugador+unidad
+      const compKey  = p.ciudad_origen ? `${p.unidad}|${p.ciudad_origen}` : p.unidad;
+      const lblArmy  = ARMY.find(([,k]) => k === p.unidad);
+      const lblInv   = INV.find(([,k])  => k === p.unidad);
+      const lblCueva = CUEVAS.find(([,k]) => k === p.unidad);
+      const lbl      = (lblArmy?.[0] || lblInv?.[0] || lblCueva?.[0] || p.unidad)
+                     + (p.ciudad_origen ? ` (${p.ciudad_origen})` : '');
+      const color    = lblCueva ? '#e08840' : lblInv ? '#a080c0' : '#7099bb';
+      return makeRow(lbl, compKey, color, p.cantidad, jug);
     }).join('');
 
     aliadosHtml += `
@@ -316,7 +344,8 @@ function _renderLeft() {
     <div style="${CSS_PANEL}">
       <div style="${CSS_TITLE}">⚔ Ejército — ${_ciudad}</div>
       ${hayArmy ? armyRows : '<div style="color:#666;font-size:11px">Sin tropas básicas</div>'}
-      ${hayInv  ? `<div style="${CSS_TITLE} margin-top:10px;">✨ Invocaciones</div>${invRows}` : ''}
+      ${hayInv   ? `<div style="${CSS_TITLE} margin-top:10px;">✨ Invocaciones</div>${invRows}` : ''}
+      ${hayCueva ? `<div style="${CSS_TITLE} margin-top:10px;color:#e08840;">🦎 Criaturas de Cueva</div>${cuevaRows}` : ''}
       ${aliadosHtml}
       ${totalSel > 0 ? `
         <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;">
@@ -327,8 +356,11 @@ function _renderLeft() {
 
   // Exponer handlers globales
   window._armyAdj = (jug, key, delta) => {
-    const max = jug === _jugador ? (_cityData[key] || 0)
-      : ((_cityData.TROPAS_PRESTADAS||[]).find(p=>p.jugador===jug&&p.unidad===key)?.cantidad || 0);
+    const [unidad, origen] = key.includes('|') ? key.split('|') : [key, null];
+    const max = jug === _jugador ? (_parseRecurso(_cityData[key]) || 0)
+      : ((_cityData.TROPAS_PRESTADAS||[]).find(p =>
+          p.jugador===jug && p.unidad===unidad && (!origen || p.ciudad_origen===origen)
+        )?.cantidad || 0);
     _selSet(jug, key, (_selGet(jug, key) || 0) + delta, max);
     _renderLeft(); _renderCenter();
     if (window._armyEstimar) window._armyEstimar();
@@ -554,7 +586,7 @@ function _setupFormHandlers() {
       }
     }
     const oroC    = cantBasicas > 0 ? Math.ceil(dist * 10 * cantBasicas) : 0;
-    const oroDisp = parseFloat(_cityData.ORO || 0);
+    const oroDisp = _parseRecurso(_cityData.ORO);
     const suficiente = oroC === 0 || oroDisp >= oroC;
     if (!isFinite(velMin)) velMin = 10;
 
@@ -570,7 +602,7 @@ function _setupFormHandlers() {
     const costoStr = oroC === 0
       ? '<b style="color:#6ba3e0">Gratis</b> <span style="color:#666">(solo invocaciones)</span>'
       : `<b style="color:${suficiente ? '#c9a84c' : '#e05050'}">${_fmt(oroC)} oro</b>
-         <span style="color:#666">/ disponible: <b style="color:${suficiente?'#c9a84c':'#e05050'}">${_fmt(oroDisp)}</b></span>
+         <span style="color:#666">/ disponible: <b style="color:${suficiente?'#c9a84c':'#e05050'}">${oroDisp === Infinity ? '∞' : _fmt(oroDisp)}</b></span>
          ${suficiente ? '✓' : ' ⚠ <b style="color:#e05050">ORO INSUFICIENTE</b>'}`;
 
     el.innerHTML = `
@@ -607,8 +639,8 @@ function _setupFormHandlers() {
         const ox   = _cityData.X || 0, oy = _cityData.Y || 0;
         const dist = Math.sqrt((x - ox) ** 2 + (y - oy) ** 2);
         const oroC = Math.ceil(dist * 10 * cantBasicas);
-        const oroDisp = parseFloat(_cityData.ORO || 0);
-        if (oroDisp < oroC) {
+        const oroDisp = _parseRecurso(_cityData.ORO);
+        if (isFinite(oroDisp) && oroDisp < oroC) {
           msg.innerHTML = `<span style="color:#e05050">⚠ Oro insuficiente: necesitas ${_fmt(oroC)}, tienes ${_fmt(oroDisp)}</span>`;
           return;
         }
@@ -618,14 +650,16 @@ function _setupFormHandlers() {
     // Aplanar selección: {jugador: {key: cant}} → {key: cant} para propias
     // y separar prestadas por propietario
     const propias = {};
-    const prestadas_sel = {};  // {jugador: {key: cant}}
+    // Descomponer claves compuestas (UNIDAD|ciudad_origen) de vuelta a unidad real
+    const prestadas_sel = {};  // {jugador: {unidad: cant}} — suma múltiples entradas
     for (const [jug, unids] of Object.entries(_seleccion)) {
       for (const [key, cnt] of Object.entries(unids)) {
         if (cnt <= 0) continue;
         if (jug === _jugador) propias[key] = (propias[key]||0) + cnt;
         else {
           if (!prestadas_sel[jug]) prestadas_sel[jug] = {};
-          prestadas_sel[jug][key] = cnt;
+          const unidadReal = key.includes('|') ? key.split('|')[0] : key;
+          prestadas_sel[jug][unidadReal] = (prestadas_sel[jug][unidadReal] || 0) + cnt;
         }
       }
     }
