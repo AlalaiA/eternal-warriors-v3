@@ -188,10 +188,24 @@ async function _checkAlertas() {
   if (!JUGADOR) return;
   try {
     const r = await fetch(`/api/alerts/${JUGADOR}`).then(r => r.json());
-    const alertas = (r.alertas || []).filter(a => a.activa && !a.vista);
-    for (const alerta of alertas) {
+    const todasActivas = (r.alertas || []).filter(a => a.activa);
+    const sinVer = todasActivas.filter(a => !a.vista);
+
+    // Banner: persiste mientras haya alertas activas (aunque ya se hayan visto)
+    if (todasActivas.length === 0) {
+      _limpiarAmenazas();
+    } else {
+      const masReciente = todasActivas[todasActivas.length - 1];
+      if (!document.getElementById('ew-threat-banner')) {
+        _mostrarAmenazaPersistente(masReciente);
+      }
+    }
+
+    // Overlay: solo para alertas no vistas
+    for (const alerta of sinVer) {
       if (!_alertasMostradas.has(alerta.id)) {
         _alertasMostradas.add(alerta.id);
+        _mostrarAmenazaPersistente(alerta);
         _mostrarOverlay(alerta);
         // Marcar como vista en backend para no repetir en próximos polls
         fetch('/api/alerts/dismiss', {
@@ -202,6 +216,108 @@ async function _checkAlertas() {
       }
     }
   } catch {}
+}
+
+// ── Texto parpadeante persistente de amenaza ─────────────────────────────────
+
+function _mostrarAmenazaPersistente(alerta) {
+  // Crear o actualizar el banner parpadeante en el header
+  let banner = document.getElementById('ew-threat-banner');
+  if (!banner) {
+    banner = document.createElement('div');
+    banner.id = 'ew-threat-banner';
+    // Insertar en el body, fijo arriba
+    document.body.appendChild(banner);
+    // Añadir animación de parpadeo
+    if (!document.getElementById('_threatStyle')) {
+      const s = document.createElement('style');
+      s.id = '_threatStyle';
+      s.textContent = `
+        @keyframes _threatBlink {
+          0%,49% { opacity: 1; }
+          50%,100% { opacity: 0.3; }
+        }
+        #ew-threat-banner {
+          position: fixed;
+          top: 40px; left: 0; right: 0;
+          z-index: 9998;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+          padding: 4px 16px;
+          background: rgba(0,0,0,0.85);
+          border-bottom: 1px solid rgba(200,50,50,0.5);
+          font-family: 'Cinzel', serif;
+          font-size: 11px;
+          letter-spacing: 1px;
+          animation: _threatBlink 1s ease-in-out infinite;
+        }
+      `;
+      document.head.appendChild(s);
+    }
+  }
+
+  const info     = alerta.info || {};
+  const esAtaque = alerta.tipo_orden === 'ATAQUE';
+  const color    = esAtaque ? '#ff6666' : '#ffaa44';
+  const icono    = esAtaque ? '⚔' : '👁';
+  const jugAtk   = info.jugador_atk || '???';
+
+  // Calcular tiempo restante
+  const _calcTiempo = () => {
+    if (!alerta.t_llegada) return '';
+    const s = Math.max(0, Math.floor(alerta.t_llegada - Date.now() / 1000));
+    if (s <= 0) return '¡LLEGANDO!';
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    const sg = s % 60;
+    return h > 0 ? `${h}h ${String(m).padStart(2,'0')}m`
+         : m > 0 ? `${m}m ${String(sg).padStart(2,'0')}s`
+         : `${sg}s`;
+  };
+
+  banner.innerHTML = `
+    <span style="color:${color};">${icono}</span>
+    <span style="color:${color};">${esAtaque ? 'ATAQUE' : 'ESPIONAJE'} DETECTADO</span>
+    <span style="color:#aaa;">·</span>
+    <span style="color:#e8d080;">${jugAtk}</span>
+    ${info.x_orig != null ? `<span style="color:#aaa;">·</span><span style="color:#88aacc;">📍 (${info.x_orig}, ${info.y_orig})</span>` : ''}
+    <span style="color:#aaa;">·</span>
+    <span id="ew-threat-timer" style="color:${color};font-weight:bold;">${_calcTiempo()}</span>
+    <span style="color:#555;font-size:10px;">[${alerta.ciudad}]</span>
+    <span style="color:#666;font-size:9px;margin-left:8px;">▶ click para detalles</span>
+  `;
+
+  // Banner clickeable — abre el overlay de detalle
+  banner.style.cursor = 'pointer';
+  banner.style.pointerEvents = 'auto';
+  banner.onclick = () => {
+    if (!document.getElementById('ew-alert-overlay')) {
+      _mostrarOverlay(alerta);
+    }
+  };
+
+  // Actualizar timer cada segundo
+  const existingIv = banner._timerIv;
+  if (existingIv) clearInterval(existingIv);
+  banner._timerIv = setInterval(() => {
+    const el = document.getElementById('ew-threat-timer');
+    if (!el) { clearInterval(banner._timerIv); return; }
+    const t = _calcTiempo();
+    el.textContent = t;
+    if (t === '¡LLEGANDO!') el.style.color = '#ff4444';
+  }, 1000);
+}
+
+function _limpiarAmenazas() {
+  // Eliminar banner si no hay alertas activas
+  const banner = document.getElementById('ew-threat-banner');
+  if (banner) {
+    if (banner._timerIv) clearInterval(banner._timerIv);
+    banner.remove();
+  }
 }
 
 function _mostrarOverlay(alerta) {
@@ -283,6 +399,30 @@ function _mostrarOverlay(alerta) {
 
   const overlay = document.createElement('div');
   overlay.id = 'ew-alert-overlay';
+
+  // Calcular tiempo restante
+  let tiempoHtml = '';
+  if (alerta.t_llegada) {
+    const segsRest = Math.max(0, Math.floor(alerta.t_llegada - Date.now() / 1000));
+    if (segsRest > 0) {
+      const h = Math.floor(segsRest / 3600);
+      const m = Math.floor((segsRest % 3600) / 60);
+      const s = segsRest % 60;
+      const tStr = h > 0
+        ? `${h}h ${String(m).padStart(2,'0')}m`
+        : m > 0 ? `${m}m ${String(s).padStart(2,'0')}s`
+        : `${s}s`;
+      tiempoHtml = `<div style="
+        background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);
+        border-radius:4px;padding:6px 12px;margin-bottom:12px;
+        display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:11px;color:#a09060;">⏱ Llegada estimada</span>
+        <span style="font-size:14px;color:#e8d080;font-family:'Cinzel',serif;" id="ew-alert-timer">${tStr}</span>
+      </div>`;
+    } else {
+      tiempoHtml = `<div style="font-size:11px;color:#c05050;margin-bottom:8px;">⚠ Llegando ahora</div>`;
+    }
+  }
   overlay.style.cssText = `
     position:fixed;top:0;left:0;width:100%;height:100%;
     background:rgba(0,0,0,0.72);z-index:99999;
@@ -327,6 +467,9 @@ function _mostrarOverlay(alerta) {
 
       <div style="height:1px;background:${color}33;margin:14px 0;"></div>
 
+      <!-- Tiempo restante -->
+      ${tiempoHtml}
+
       <!-- Detalle -->
       <div style="margin-bottom:16px;">${detalleHtml || '<div style="color:#556;font-size:12px;">Señal detectada — información insuficiente</div>'}</div>
 
@@ -352,6 +495,29 @@ function _mostrarOverlay(alerta) {
     </div>`;
 
   document.body.appendChild(overlay);
+
+  // Countdown en vivo
+  if (alerta.t_llegada) {
+    const timerEl = () => document.getElementById('ew-alert-timer');
+    const iv = setInterval(() => {
+      const el = timerEl();
+      if (!el) { clearInterval(iv); return; }
+      const segsRest = Math.max(0, Math.floor(alerta.t_llegada - Date.now() / 1000));
+      if (segsRest <= 0) {
+        el.textContent = '¡Llegando!';
+        el.style.color = '#c05050';
+        clearInterval(iv);
+        return;
+      }
+      const h = Math.floor(segsRest / 3600);
+      const m = Math.floor((segsRest % 3600) / 60);
+      const s = segsRest % 60;
+      el.textContent = h > 0
+        ? `${h}h ${String(m).padStart(2,'0')}m`
+        : m > 0 ? `${m}m ${String(s).padStart(2,'0')}s`
+        : `${s}s`;
+    }, 1000);
+  }
 
   // Click fuera cierra
   overlay.addEventListener('click', e => {

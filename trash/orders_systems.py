@@ -579,9 +579,6 @@ def _evaluar_y_registrar_deteccion(orden: dict, sm, ahora: float) -> None:
             "tipo_orden": resultado["tipo_orden"],
             "info":       resultado["info"],
             "ts":         _time.time(),
-            "t_llegada":  orden.get("t_llegada"),
-            "x_dest":     orden.get("x_dest"),
-            "y_dest":     orden.get("y_dest"),
             "activa":     True,
             "vista":      False,
         })
@@ -639,7 +636,6 @@ def procesar_ordenes(
 
         if orden.get("estado") == "EN_VIAJE":
             # Evaluar detección por Torre de Vigilancia del defensor
-            # Se hace SIEMPRE, incluso si la orden llega en este mismo tick
             _evaluar_y_registrar_deteccion(orden, save_manager, ahora)
 
         if orden.get("estado") == "EN_VIAJE" and ahora >= orden.get("t_llegada", ahora + 1):
@@ -1659,10 +1655,6 @@ def _ejecutar_retorno(orden: dict, sm, jugador_atk: dict = None) -> dict:
                 from backend.data.save_manager import safe_resource_float as _srf
                 ciudad[rec] = _srf(ciudad.get(rec, 0)) + cant
                 print(f"[retorno] botín +{cant:,.0f} {rec}")
-
-        # Reposición garantizada para cuentas vitaminizadas — aplicada in-place
-        if orden["jugador"].upper() in _VITAMINIZADOS:
-            _reponer_vitaminizadas(orden["jugador"], ciudad, None)
 
     sm.update_player(orden["jugador"], _fn)
     orden["estado"] = "COMPLETADA"

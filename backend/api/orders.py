@@ -53,12 +53,13 @@ def get_historial(jugador: str):
     """
     jugador = jugador.upper()
 
-    # Fuente 1: órdenes propias completadas
+    # Fuente 1: órdenes propias con resultado ya disponible
+    # — COMPLETADAS + REGRESANDO (combate ya ocurrió, tropas en camino de vuelta)
     orders = sm.load_orders()
     propias = [
         o for o in orders
         if o.get("jugador") == jugador
-        and o.get("estado") == "COMPLETADA"
+        and o.get("estado") in ("COMPLETADA", "REGRESANDO")
         and o.get("resultado") is not None
     ]
 

@@ -27,6 +27,24 @@ def _es_vitaminizado(jugador: str) -> bool:
     return jugador.upper() in VITAMINIZADOS
 
 
+def _migrar_alianza(alianza: dict) -> None:
+    """Migra formato viejo {lider: str} al nuevo {lideres: [str]}."""
+    if "lider" in alianza and "lideres" not in alianza:
+        alianza["lideres"] = [alianza["lider"]]
+    if "lideres" not in alianza:
+        alianza["lideres"] = []
+    if "solicitudes" not in alianza:
+        alianza["solicitudes"] = []
+    if "miembros" not in alianza:
+        alianza["miembros"] = []
+
+
+def _migrar_todas(alianzas: dict) -> None:
+    """Migra todas las alianzas al formato multi-líder."""
+    for alianza in alianzas.values():
+        _migrar_alianza(alianza)
+
+
 def _compatibles(j1: str, j2: str) -> bool:
     """
     True si dos jugadores pueden estar en la misma alianza.
@@ -56,7 +74,7 @@ def crear_alianza(nombre: str, jugador: str, alianzas: dict) -> dict:
     alianzas[nombre] = {
         "nombre":      nombre,
         "tipo":        "vitaminizado" if _es_vitaminizado(jugador) else "normal",
-        "lider":       jugador,
+        "lideres":     [jugador],
         "miembros":    [jugador],
         "solicitudes": [],
         "creada":      int(time.time()),
@@ -75,7 +93,8 @@ def solicitar_union(nombre: str, jugador: str, alianzas: dict) -> dict:
         return {"ok": False, "msg": f"Alianza {nombre} no existe"}
 
     alianza = alianzas[nombre]
-    if not _compatibles(jugador, alianza["lider"]):
+    _migrar_alianza(alianza)
+    if not _compatibles(jugador, alianza["lideres"][0] if alianza["lideres"] else jugador):
         return {"ok": False, "msg": "IA y humanos no pueden aliarse"}
     if len(alianza["miembros"]) >= MAX_MIEMBROS:
         return {"ok": False, "msg": "La alianza está llena (50 miembros)"}
@@ -87,25 +106,87 @@ def solicitar_union(nombre: str, jugador: str, alianzas: dict) -> dict:
 
 
 def aceptar_solicitud(nombre: str, solicitante: str, lider: str, alianzas: dict) -> dict:
-    """El líder acepta una solicitud de unión."""
-    lider      = lider.upper()
+    """Un líder acepta una solicitud de unión (modelo multi-líder)."""
+    lider       = lider.upper()
     solicitante = solicitante.upper()
-    nombre     = nombre.upper().replace(" ", "_")
+    nombre      = nombre.upper().replace(" ", "_")
 
     if nombre not in alianzas:
         return {"ok": False, "msg": "Alianza no encontrada"}
     alianza = alianzas[nombre]
-    if alianza["lider"] != lider:
-        return {"ok": False, "msg": "Solo el líder puede aceptar solicitudes"}
-    if solicitante not in alianza["solicitudes"]:
+    _migrar_alianza(alianza)
+    if lider not in alianza["lideres"]:
+        return {"ok": False, "msg": "Solo un líder puede aceptar solicitudes"}
+    if solicitante not in alianza.get("solicitudes", []):
         return {"ok": False, "msg": "Solicitud no encontrada"}
     if len(alianza["miembros"]) >= MAX_MIEMBROS:
         return {"ok": False, "msg": "La alianza está llena"}
 
     alianza["solicitudes"].remove(solicitante)
-    alianza["miembros"].append(solicitante)
+    if solicitante not in alianza["miembros"]:
+        alianza["miembros"].append(solicitante)
     return {"ok": True, "msg": f"{solicitante} se unió a {nombre}"}
 
+
+def rechazar_solicitud(nombre: str, solicitante: str, ejecutor: str, alianzas: dict) -> dict:
+    """Un líder rechaza una solicitud de unión."""
+    ejecutor    = ejecutor.upper()
+    solicitante = solicitante.upper()
+    nombre      = nombre.upper().replace(" ", "_")
+
+    if nombre not in alianzas:
+        return {"ok": False, "msg": "Alianza no encontrada"}
+    alianza = alianzas[nombre]
+    _migrar_alianza(alianza)
+    if ejecutor not in alianza["lideres"]:
+        return {"ok": False, "msg": "Solo un líder puede rechazar solicitudes"}
+    if solicitante not in alianza.get("solicitudes", []):
+        return {"ok": False, "msg": "Solicitud no encontrada"}
+
+    alianza["solicitudes"].remove(solicitante)
+    return {"ok": True, "msg": f"Solicitud de {solicitante} rechazada"}
+
+
+def promover_lider(nombre: str, ejecutor: str, miembro: str, alianzas: dict) -> dict:
+    """Un líder promueve a un miembro como co-líder."""
+    ejecutor = ejecutor.upper()
+    miembro  = miembro.upper()
+    nombre   = nombre.upper().replace(" ", "_")
+
+    if nombre not in alianzas:
+        return {"ok": False, "msg": "Alianza no encontrada"}
+    alianza = alianzas[nombre]
+    _migrar_alianza(alianza)
+    if ejecutor not in alianza["lideres"]:
+        return {"ok": False, "msg": "Solo un líder puede promover miembros"}
+    if miembro not in alianza["miembros"]:
+        return {"ok": False, "msg": f"{miembro} no es miembro de la alianza"}
+    if miembro in alianza["lideres"]:
+        return {"ok": False, "msg": f"{miembro} ya es líder"}
+
+    alianza["lideres"].append(miembro)
+    return {"ok": True, "msg": f"{miembro} promovido a líder de {nombre}"}
+
+
+def degradar_lider(nombre: str, ejecutor: str, lider_objetivo: str, alianzas: dict) -> dict:
+    """Un líder degrada a otro líder (o a sí mismo) a miembro."""
+    ejecutor       = ejecutor.upper()
+    lider_objetivo = lider_objetivo.upper()
+    nombre         = nombre.upper().replace(" ", "_")
+
+    if nombre not in alianzas:
+        return {"ok": False, "msg": "Alianza no encontrada"}
+    alianza = alianzas[nombre]
+    _migrar_alianza(alianza)
+    if ejecutor not in alianza["lideres"]:
+        return {"ok": False, "msg": "Solo un líder puede degradar a otros líderes"}
+    if lider_objetivo not in alianza["lideres"]:
+        return {"ok": False, "msg": f"{lider_objetivo} no es líder"}
+    if len(alianza["lideres"]) <= 1:
+        return {"ok": False, "msg": "La alianza debe tener al menos un líder"}
+
+    alianza["lideres"].remove(lider_objetivo)
+    return {"ok": True, "msg": f"{lider_objetivo} degradado a miembro en {nombre}"}
 
 
 def transferir_liderazgo(nombre: str, lider_actual: str, nuevo_lider: str, alianzas: dict) -> dict:
@@ -117,14 +198,18 @@ def transferir_liderazgo(nombre: str, lider_actual: str, nuevo_lider: str, alian
     if nombre not in alianzas:
         return {"ok": False, "msg": "Alianza no encontrada"}
     alianza = alianzas[nombre]
-    if alianza["lider"] != lider_actual:
+    _migrar_alianza(alianza)
+    if lider_actual not in alianza["lideres"]:
         return {"ok": False, "msg": "Solo el líder actual puede transferir el liderazgo"}
     if nuevo_lider not in alianza["miembros"]:
         return {"ok": False, "msg": f"{nuevo_lider} no es miembro de la alianza"}
     if nuevo_lider == lider_actual:
         return {"ok": False, "msg": "Ya eres el líder"}
 
-    alianza["lider"] = nuevo_lider
+    if lider_actual in alianza["lideres"]:
+        alianza["lideres"].remove(lider_actual)
+    if nuevo_lider not in alianza["lideres"]:
+        alianza["lideres"].append(nuevo_lider)
     return {"ok": True, "msg": f"Liderazgo transferido a {nuevo_lider}"}
 
 
@@ -140,21 +225,27 @@ def expulsar_o_salir(nombre: str, jugador: str, ejecutor: str, alianzas: dict, s
     if nombre not in alianzas:
         return {"ok": False, "msg": "Alianza no encontrada"}
     alianza = alianzas[nombre]
+    _migrar_alianza(alianza)
 
-    if ejecutor != jugador and alianza["lider"] != ejecutor:
-        return {"ok": False, "msg": "Solo el líder puede expulsar miembros"}
+    es_lider_ejecutor = ejecutor in alianza["lideres"]
+    if ejecutor != jugador and not es_lider_ejecutor:
+        return {"ok": False, "msg": "Solo un líder puede expulsar miembros"}
     if jugador not in alianza["miembros"]:
         return {"ok": False, "msg": f"{jugador} no es miembro de {nombre}"}
-    if jugador == alianza["lider"] and len(alianza["miembros"]) > 1:
-        return {"ok": False, "msg": "El líder debe transferir el liderazgo antes de salir"}
+    # Si el jugador es el único líder y hay más miembros, debe transferir primero
+    if jugador in alianza["lideres"] and alianza["lideres"] == [jugador] and len(alianza["miembros"]) > 1:
+        return {"ok": False, "msg": "Eres el único líder — transfiere el liderazgo antes de salir"}
 
     alianza["miembros"].remove(jugador)
+    if jugador in alianza["lideres"]:
+        alianza["lideres"].remove(jugador)
 
     # Si queda vacía, eliminar alianza
     if not alianza["miembros"]:
         del alianzas[nombre]
-    elif jugador == alianza["lider"]:
-        alianza["lider"] = alianza["miembros"][0]
+    elif not alianza["lideres"]:
+        # Asignar el primer miembro como líder de emergencia
+        alianza["lideres"] = [alianza["miembros"][0]]
 
     # Devolver tropas prestadas del jugador que sale
     _devolver_tropas_de(jugador, alianza["miembros"] if nombre in alianzas else [], sm)

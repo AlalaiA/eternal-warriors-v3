@@ -87,11 +87,12 @@ async function _cargar() {
       fetch(`/api/orders/historial/${_jugador}`).then(r => r.json()).catch(() => ({ordenes:[]})),
     ]);
 
-    const ids = new Set((r1.ordenes || []).map(o => o.id));
-    let todas = [...(r1.ordenes || [])];
-    (r2.ordenes || []).forEach(o => { if (!ids.has(o.id)) { ids.add(o.id); todas.push(o); } });
-
-    _ordenes = todas;
+    // Combinar: r2 (historial completo) tiene prioridad sobre r1 (resumen activas)
+    const idMap = new Map();
+    (r1.ordenes || []).forEach(o => idMap.set(o.id, o));
+    // r2 sobreescribe siempre — tiene los campos completos de batalla
+    (r2.ordenes || []).forEach(o => idMap.set(o.id, o));
+    _ordenes = [...idMap.values()];
   } catch (e) {
     console.error('reports._cargar:', e);
   }

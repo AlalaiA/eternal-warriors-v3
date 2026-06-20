@@ -135,6 +135,7 @@ const DEFS = [
 // Estado
 let canvas, ctx, cW, cH, oX, oY;
 let cityData=null, tasas=null, jugador='', ciudad='';
+let _espaciosUsados=null, _espaciosMax=null;
 let hits=[], hoverK=null, selK=null, stars=[];
 let ticker=null, sync=null;
 
@@ -604,8 +605,16 @@ function _updateBar(){
   if(sb('inv'))  sb('inv').textContent  = _fmt(totalInv);
   if(sb('edif')) sb('edif').textContent = totalEdif;
   if(sb('mur'))  sb('mur').textContent  = 'Nv.'+( c.MURALLA||0);
+  if(sb('esp')) {
+    const eu = _espaciosUsados;
+    const em = _espaciosMax;
+    if(eu !== null && em !== null) {
+      const sbEsp = sb('esp');
+      sbEsp.textContent = `${eu}/${em}`;
+      sbEsp.style.color = eu >= em ? '#e05050' : '#c9a84c';
+    }
+  }
 }
-
 function _startTick(){
   if(ticker)clearInterval(ticker);
   let _off={};
@@ -639,13 +648,7 @@ function _startTick(){
 // ── Modal de Leveling ────────────────────────────────────────────────────────
 let _levelingModal = null;
 
-window._abrirLeveling = async function() {
-  if (_levelingModal) { _levelingModal.remove(); _levelingModal = null; }
-
-  const resp = await fetch(`/api/leveling/${jugador}`);
-  const data = await resp.json();
-  if (!data.ok) return;
-
+async function _renderLevelingContent(data) {
   const LABELS = {
     ALDEANO:'Aldeano', EXPLORADOR:'Explorador', SACERDOTE:'Sacerdote',
     GUERRERO:'Guerrero', COMANDO:'Comando', MERCENARIO:'Mercenario',
@@ -678,6 +681,22 @@ window._abrirLeveling = async function() {
     </div>`;
   }).join('');
 
+  return { filas, xp_pool: data.xp_pool };
+}
+
+window._abrirLeveling = async function() {
+  // Si ya está abierto, solo refrescar contenido
+  if (_levelingModal) {
+    await _refrescarLeveling();
+    return;
+  }
+
+  const resp = await fetch(`/api/leveling/${jugador}`);
+  const data = await resp.json();
+  if (!data.ok) return;
+
+  const { filas, xp_pool } = await _renderLevelingContent(data);
+
   const modal = document.createElement('div');
   modal.id = 'leveling-modal';
   modal.style.cssText = `position:fixed;top:0;left:0;width:100%;height:100%;
@@ -691,8 +710,8 @@ window._abrirLeveling = async function() {
         <button onclick="window._cerrarLeveling()"
           style="background:none;border:none;color:#666;cursor:pointer;font-size:18px;">✕</button>
       </div>
-      <div style="color:#888;font-size:11px;font-family:'Cinzel',serif;margin-bottom:12px;">
-        ⭐ XP disponible: <b style="color:#c9a84c;">${_fmt(data.xp_pool)}</b>
+      <div id="leveling-xp" style="color:#888;font-size:11px;font-family:'Cinzel',serif;margin-bottom:12px;">
+        ⭐ XP disponible: <b style="color:#c9a84c;">${_fmt(xp_pool)}</b>
       </div>
       <div id="leveling-filas">${filas}</div>
     </div>`;
@@ -700,6 +719,18 @@ window._abrirLeveling = async function() {
   _levelingModal = modal;
   modal.addEventListener('click', e => { if (e.target === modal) window._cerrarLeveling(); });
 };
+
+async function _refrescarLeveling() {
+  // Actualiza XP y filas sin destruir el modal — sin parpadeo
+  const resp = await fetch(`/api/leveling/${jugador}`);
+  const data = await resp.json();
+  if (!data.ok) return;
+  const { filas, xp_pool } = await _renderLevelingContent(data);
+  const xpEl   = document.getElementById('leveling-xp');
+  const filasEl = document.getElementById('leveling-filas');
+  if (xpEl)    xpEl.innerHTML   = `⭐ XP disponible: <b style="color:#c9a84c;">${_fmt(xp_pool)}</b>`;
+  if (filasEl) filasEl.innerHTML = filas;
+}
 
 window._cerrarLeveling = function() {
   if (_levelingModal) { _levelingModal.remove(); _levelingModal = null; }
@@ -716,9 +747,9 @@ window._subirNivel = async function(tipo) {
     alert(data.msg);
     return;
   }
-  // Actualizar XP local y reabrir modal
+  // Actualizar XP local y refrescar modal in-place (sin parpadeo)
   if (window._playerXP !== null) window._playerXP = data.xp_restante;
-  window._abrirLeveling();  // recargar modal con datos frescos
+  await _refrescarLeveling();
 };
 
 export function cleanup(){
@@ -770,6 +801,7 @@ export async function render(container, jug, ciu){
           <div class="stat-bar-item"><span class="stat-bar-icon">✨</span><span class="stat-bar-label">INVOC.</span><span class="stat-bar-val" id="sb-inv">—</span></div>
           <div class="stat-bar-item"><span class="stat-bar-icon">🏛️</span><span class="stat-bar-label">EDIFICIOS</span><span class="stat-bar-val" id="sb-edif">—</span></div>
           <div class="stat-bar-item"><span class="stat-bar-icon">🛡️</span><span class="stat-bar-label">MURALLA</span><span class="stat-bar-val" id="sb-mur">—</span></div>
+          <div class="stat-bar-item"><span class="stat-bar-icon">📐</span><span class="stat-bar-label">ESPACIOS</span><span class="stat-bar-val" id="sb-esp">—</span></div>
         </div>
       </div>
       <div class="city-right" id="city-right"></div>
@@ -788,6 +820,8 @@ export async function render(container, jug, ciu){
     container.innerHTML=`<div class="screen-loading"><span>Error: ${e.message}</span></div>`;return;
   }
   cityData=data.city||data;
+  _espaciosUsados = data.espacios_usados ?? null;
+  _espaciosMax    = data.espacios_max    ?? null;
   window._bonusHerreria=data.bonus_herreria||null;
   window._playerXP=data.experiencia??null;
   window._playerBatallas={ganadas:data.batallas_ganadas??0,perdidas:data.batallas_perdidas??0,dioses:data.dioses_abatidos??0,cuevas:data.cuevas_derrotadas??0};
@@ -837,6 +871,7 @@ export async function render(container, jug, ciu){
       if(!r1.ok)return;
       const d=await r1.json();
       cityData=d.city||d;
+      if(d.espacios_usados !== undefined){ _espaciosUsados=d.espacios_usados; _espaciosMax=d.espacios_max; }
       if(d.experiencia!==undefined){window._playerXP=d.experiencia;window._playerBatallas={ganadas:d.batallas_ganadas??0,perdidas:d.batallas_perdidas??0,dioses:d.dioses_abatidos??0,cuevas:d.cuevas_derrotadas??0};}
       if(r2.ok){
         const td=await r2.json();

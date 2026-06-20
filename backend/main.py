@@ -24,7 +24,33 @@ from backend.api.alerts  import router as alerts_router
 
 # ── Ticker de órdenes ─────────────────────────────────────────────────────────
 
-ORDERS_TICK_SEG = 5   # procesar órdenes cada 5 segundos
+ORDERS_TICK_SEG = 5    # procesar órdenes cada 5 segundos
+IA_TICK_SEG     = 120  # tick de jugadores IA cada 2 minutos
+
+async def _ia_ticker():
+    """Tarea de fondo: procesa el comportamiento autónomo de los jugadores IA."""
+    from backend.data.save_manager import SaveManager
+    from backend.systems.ia_behavior import procesar_tick_ia
+    sm = SaveManager()
+    while True:
+        try:
+            ordenes = sm.load_orders()
+            nuevas  = procesar_tick_ia(sm, ordenes)
+            if nuevas:
+                ordenes_actuales = sm.load_orders()
+                activas     = [o for o in ordenes_actuales if o.get("estado") != "COMPLETADA"]
+                completadas = sorted(
+                    [o for o in ordenes_actuales if o.get("estado") == "COMPLETADA"],
+                    key=lambda o: o.get("inicio", 0), reverse=True
+                )[:200]
+                sm.save_orders(activas + completadas + nuevas)
+                print(f"[ia_ticker] {len(nuevas)} nuevas órdenes IA encoladas")
+        except Exception as e:
+            import traceback
+            print(f"[ia_ticker] Error: {e}")
+            traceback.print_exc()
+        await asyncio.sleep(IA_TICK_SEG)
+
 
 async def _orders_ticker():
     """Tarea de fondo: procesa órdenes activas cada ORDERS_TICK_SEG segundos."""
@@ -53,11 +79,17 @@ async def _orders_ticker():
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Arrancar tareas de fondo al iniciar el servidor."""
-    task = asyncio.create_task(_orders_ticker())
+    task_orders = asyncio.create_task(_orders_ticker())
+    task_ia     = asyncio.create_task(_ia_ticker())
     yield
-    task.cancel()
+    task_orders.cancel()
+    task_ia.cancel()
     try:
-        await task
+        await task_orders
+    except asyncio.CancelledError:
+        pass
+    try:
+        await task_ia
     except asyncio.CancelledError:
         pass
 
@@ -81,6 +113,11 @@ app.include_router(alerts_router,    prefix="/api/alerts")
 
 app.mount("/static", StaticFiles(directory="frontend", html=True), name="static")
 
+
+@app.get("/favicon.ico")
+def favicon():
+    from fastapi.responses import Response
+    return Response(status_code=204)
 
 @app.get("/")
 def index():

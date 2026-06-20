@@ -1,0 +1,70 @@
+{
+  "ia-001": {
+    "batallas_ganadas": 0,
+    "dioses_derrotados": [],
+    "cuevas_derrotadas": 0,
+    "experiencia": 0,
+    "ciclo_ng": 0,
+    "ultimo_tick": 0.0,
+    "ultimo_tick_alianza": 0.0,
+    "objetivos_marcados": {},
+    "ataque_registrado": {}
+  },
+  "ia-002": {
+    "batallas_ganadas": 0,
+    "dioses_derrotados": [],
+    "cuevas_derrotadas": 0,
+    "experiencia": 0,
+    "ciclo_ng": 0,
+    "ultimo_tick": 0.0,
+    "ultimo_tick_alianza": 0.0,
+    "objetivos_marcados": {},
+    "ataque_registrado": {}
+  },
+  "ia-003": {
+    "batallas_ganadas": 0,
+    "dioses_derrotados": [],
+    "cuevas_derrotadas": 0,
+    "experiencia": 0,
+    "ciclo_ng": 0,
+    "ultimo_tick": 0.0,
+    "ultimo_tick_alianza": 0.0,
+    "objetivos_marcados": {},
+    "ataque_registrado": {}
+  },
+  "ia-004": {
+    "batallas_ganadas": 0,
+    "dioses_derrotados": [],
+    "cuevas_derrotadas": 0,
+    "experiencia": 0,
+    "ciclo_ng": 0,
+    "ultimo_tick": 0.0,
+    "ultimo_tick_alianza": 0.0,
+    "objetivos_marcados": {},
+    "ataque_registrado": {}
+  },
+  "ia-005": {
+    "batallas_ganadas": 0,
+    "dioses_derrotados": [],
+    "cuevas_derrotadas": 0,
+    "experiencia": 0,
+    "ciclo_ng": 0,
+    "ultimo_tick": 0.0,
+    "ultimo_tick_alianza": 0.0,
+    "objetivos_marcados": {},
+    "ataque_registrado": {}
+  },
+  "ia-006": {
+    "batallas_ganadas": 0,
+    "dioses_derrotados": [],
+    "cuevas_derrotadas": 0,
+    "experiencia": 0,
+    "ciclo_ng": 0,
+    "ultimo_tick": 0.0,
+    "ultimo_tick_alianza": 0.0,
+    "objetivos_marcados": {},
+    "ataque_registrado": {}
+  },
+  "_ultimo_tick_global": 1781978991.446575,
+  "_ultimo_tick_alianza": 1781976227.923932
+}

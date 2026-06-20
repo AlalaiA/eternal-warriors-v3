@@ -13,7 +13,8 @@ let _jugador = '', _ciudad = '';
 // Datos del mundo
 let _entities   = null;   // {inactivos, dioses, cuevas, portales, karlaka}
 let _ciudades   = [];     // ciudades de jugadores activos
-let _ordenes    = [];     // trayectorias activas
+let _ordenes    = [];     // trayectorias activas propias
+let _detectadas = [];     // trayectorias enemigas detectadas por Torre
 
 // Viewport
 let _scale    = 0.85;     // zoom actual (tiles → px)
@@ -121,6 +122,7 @@ function _render() {
 
   // Trayectorias de órdenes
   _drawOrdenes();
+  _drawOrdenesDetectadas();
 
   // Entidades filtradas por capa
   if (_entities) {
@@ -249,6 +251,56 @@ function _dibujarPunto(px, py, col) {
   _ctx.stroke();
 }
 
+function _drawOrdenesDetectadas() {
+  if (!_detectadas.length) return;
+  const now = Date.now() / 1000;
+
+  _detectadas.forEach(o => {
+    if (o.x_orig == null || o.x_dest == null) return;
+    const {sx: x1, sy: y1} = _worldToScreen(o.x_orig, o.y_orig);
+    const {sx: x2, sy: y2} = _worldToScreen(o.x_dest, o.y_dest);
+
+    // Color según tipo — más oscuro/rojo para indicar amenaza enemiga
+    const colMap = { ATAQUE: '#ff4444', ESPIONAJE: '#ffaa00' };
+    const col = colMap[o.tipo] || '#ff4444';
+
+    // Línea punteada roja
+    _ctx.save();
+    _ctx.setLineDash([6 * _scale, 3 * _scale]);
+    _ctx.strokeStyle = col + 'aa';
+    _ctx.lineWidth   = 2;
+    _ctx.beginPath();
+    _ctx.moveTo(x1, y1);
+    _ctx.lineTo(x2, y2);
+    _ctx.stroke();
+    _ctx.restore();
+
+    // Punto animado enemigo
+    const dur = Math.max(1, (o.t_llegada || 0) - (o.inicio || 0));
+    const t   = Math.min(1, (now - (o.inicio || now)) / dur);
+    const px  = x1 + (x2 - x1) * t;
+    const py  = y1 + (y2 - y1) * t;
+
+    // Punto con halo pulsante
+    const pulse = 0.7 + 0.3 * Math.sin(now * 3);
+    _ctx.beginPath();
+    _ctx.arc(px, py, Math.max(4, _scale * 1.2) * pulse, 0, Math.PI * 2);
+    _ctx.fillStyle   = col + 'cc';
+    _ctx.fill();
+    _ctx.strokeStyle = '#fff8';
+    _ctx.lineWidth   = 1.5;
+    _ctx.stroke();
+
+    // Etiqueta con jugador atacante si hay zoom suficiente
+    if (_scale > 0.4 && o.jugador_atk) {
+      _ctx.font        = `${Math.max(9, 10 * _scale)}px Cinzel, serif`;
+      _ctx.fillStyle   = col;
+      _ctx.textAlign   = 'center';
+      _ctx.fillText(o.jugador_atk, px, py - Math.max(8, 12 * _scale));
+    }
+  });
+}
+
 function _dot(x, y, r, fill, stroke) {
   _ctx.beginPath();
   _ctx.arc(x, y, r, 0, Math.PI * 2);
@@ -266,6 +318,7 @@ function _drawLayer(arr, baseR, color, glow) {
   const W = _canvas.width, H = _canvas.height;
 
   arr.forEach(e => {
+    if (e._derrotado) return;                               // no dibujar derrotados
     const {sx, sy} = _worldToScreen(e.x, e.y);
     if (sx < -r || sx > W + r || sy < -r || sy > H + r) return;
 
@@ -531,6 +584,7 @@ function _hitTest(sx, sy) {
 
   const check = (arr, getCat) => {
     arr.forEach(e => {
+      if (e._derrotado) return;                             // ignorar derrotados
       const dx = e.x - wx, dy = e.y - wy;
       const d  = Math.sqrt(dx * dx + dy * dy);
       if (d < bestD) { bestD = d; best = { ...e, cat: getCat(e) }; }
@@ -662,7 +716,7 @@ function _renderInfoPanel(e) {
       ${acciones}
       <button onclick="window._mapUsarCoordsEnOrden(${Math.round(e.x)},${Math.round(e.y)})"
         style="${_btnStyle('#0a0a1a','#6ba3e0')}">
-        📌 Usar coordenadas en Ejército
+        📌 Usar coordenadas en Misiones
       </button>
     </div>`;
 }
@@ -773,14 +827,14 @@ function _onClick(e) {
 function _setupGlobals() {
   window._mapOrden = (tipo, coords, jugDest, ciudadDest) => {
     const [x, y] = coords.split(',').map(Number);
-    // Navegar a la pantalla de ejército con datos prellenados
+    // Navegar a la pantalla de Misiones con datos prellenados
     sessionStorage.setItem('map_orden_tipo',    tipo);
     sessionStorage.setItem('map_orden_x',       x);
     sessionStorage.setItem('map_orden_y',       y);
     sessionStorage.setItem('map_orden_jug_dest', jugDest);
     sessionStorage.setItem('map_orden_ciudad_dest', ciudadDest);
 
-    // Disparar evento para que app.js cargue la pantalla de ejército
+    // Disparar evento para que app.js cargue la pantalla de Misiones
     window.dispatchEvent(new CustomEvent('ew:irAEjercito', {
       detail: { tipo, x, y, jugDest, ciudadDest }
     }));
@@ -798,7 +852,7 @@ function _setupGlobals() {
 function _showCoordFeedback(x, y) {
   const fb = document.getElementById('map-coord-feedback');
   if (!fb) return;
-  fb.textContent = `📌 Coordenadas seleccionadas: (${x}, ${y}) — ve a Ejército para despachar`;
+  fb.textContent = `📌 Coordenadas seleccionadas: (${x}, ${y}) — ve a Misiones para despachar`;
   fb.style.opacity = '1';
   setTimeout(() => { fb.style.opacity = '0'; }, 3000);
 }
@@ -820,18 +874,21 @@ function _onKeyDown(e) {
 
 async function _loadData() {
   try {
-    const [r1, r2, r3] = await Promise.all([
+    const [r1, r2, r3, r4] = await Promise.all([
       fetch(`/api/map/entities?jugador=${_jugador}`),
-      fetch('/api/map/players'),
+      fetch(`/api/map/players?jugador=${_jugador}`),
       fetch(`/api/map/orders/${_jugador}`),
+      fetch(`/api/map/detected/${_jugador}`),
     ]);
     const d1 = await r1.json();
     const d2 = await r2.json();
     const d3 = await r3.json();
+    const d4 = await r4.json();
 
-    _entities = d1;
-    _ciudades = d2.ciudades || [];
-    _ordenes  = (d3.ordenes || []).filter(o => o.estado === 'EN_VIAJE' || o.estado === 'REGRESANDO');
+    _entities   = d1;
+    _ciudades   = d2.ciudades || [];
+    _ordenes    = (d3.ordenes || []).filter(o => o.estado === 'EN_VIAJE' || o.estado === 'REGRESANDO');
+    _detectadas = d4.detectadas || [];
   } catch (e) {
     console.error('map.js _loadData:', e);
   }
@@ -999,9 +1056,12 @@ export async function render(container, jugador, ciudad) {
   // Sync de entidades cada 15s (cambian poco)
   _syncTimer = setInterval(async () => {
     try {
-      const r = await fetch(`/api/map/orders/${_jugador}`);
-      const d = await r.json();
-      _ordenes = (d.ordenes || []).filter(o => o.estado === 'EN_VIAJE' || o.estado === 'REGRESANDO');
+      const [rOrd, rDet] = await Promise.all([
+        fetch(`/api/map/orders/${_jugador}`).then(r => r.json()),
+        fetch(`/api/map/detected/${_jugador}`).then(r => r.json()),
+      ]);
+      _ordenes    = (rOrd.ordenes   || []).filter(o => o.estado === 'EN_VIAJE' || o.estado === 'REGRESANDO');
+      _detectadas = (rDet.detectadas || []);
     } catch (_) {}
   }, 2000);
 
@@ -1010,7 +1070,7 @@ export async function render(container, jugador, ciudad) {
     try {
       const [r1, r2] = await Promise.all([
         fetch(`/api/map/entities?jugador=${_jugador}`),
-        fetch('/api/map/players'),
+        fetch(`/api/map/players?jugador=${_jugador}`),
       ]);
       const d1 = await r1.json();
       const d2 = await r2.json();

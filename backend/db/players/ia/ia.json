@@ -1,7 +1,5 @@
 {
   "player": "IA",
-  "unit_levels": {},
-  "experiencia": 0,
   "cities": [
     {
       "TIPO_JUGADOR": 0.0,

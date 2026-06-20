@@ -4,6 +4,8 @@ Endpoints de ciudad con sistema de producción integrado.
 Usa update_player atómico para evitar race conditions con el ticker de órdenes.
 """
 from fastapi import APIRouter
+from pathlib import Path
+import csv as _csv
 from backend.data.save_manager import SaveManager
 from backend.systems.production import aplicar_produccion, calcular_tasas, init_last_prod
 from backend.systems.queues import procesar_colas
@@ -12,6 +14,21 @@ from backend.systems.herreria import calcular_bonus_herreria
 
 router = APIRouter()
 sm     = SaveManager()
+
+# ── Espacios máximos por tipo de jugador ──────────────────────────────────────
+_ESPACIOS_MAX = {"ADMIN": 715, "ALALAIA": 715, "JIARITO": 715, "DEFAULT": 400}
+
+_EDIF_ESPACIOS = [
+    "CENTRO_DE_CIUDAD","CASA","MURALLA","TORRE_DE_VIGILANCIA",
+    "CENTRO_DE_VIAJES","ESCONDITE","ALMACEN","SANTUARIO_ARCANO",
+    "UNIVERSIDAD","HERRERIA","TEMPLO_1","CUARTEL_1","TEMPLO_2","CUARTEL_2","TEMPLO_3",
+]
+
+def _calcular_espacios(city: dict, jugador: str) -> tuple[int, int]:
+    """Retorna (espacios_usados, espacios_max)."""
+    usados = sum(int(city.get(e, 0) or 0) for e in _EDIF_ESPACIOS)
+    max_esp = _ESPACIOS_MAX.get(jugador.upper(), _ESPACIOS_MAX["DEFAULT"])
+    return usados, max_esp
 
 
 def _procesar_ciudad(jugador: str, city_name: str):
@@ -48,6 +65,9 @@ def _procesar_ciudad(jugador: str, city_name: str):
     resultado["dioses_abatidos"] = len(_da) if isinstance(_da, list) else int(_da or 0)
     resultado["cuevas_derrotadas"]  = int(player.get("cuevas_derrotadas", 0) or 0)
     resultado["misiones_espionaje"] = int(player.get("misiones_espionaje", 0) or 0)
+    esp_usados, esp_max = _calcular_espacios(resultado["city"], jugador)
+    resultado["espacios_usados"] = esp_usados
+    resultado["espacios_max"]    = esp_max
     return resultado
 
 

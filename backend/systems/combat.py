@@ -55,9 +55,40 @@ def _norm(s: str) -> str:
     )
 
 def _safe_float(v: str) -> float:
-    """Parser robusto: notación europea (coma decimal), typos como 5,,0167."""
-    v = str(v).strip().replace(",,", ".").replace(",", ".")
+    """
+    Parser robusto de números:
+    - Decimal europeo con coma: '76,8' → 76.8
+    - Miles con coma: '76,800,000' → 76800000
+    - Notación científica: '5,,0167E+023' → 5.0167e23
+    - Typos doble coma: '5,,0167' → 5.0167
+    """
+    v = str(v).strip()
+    if not v:
+        return 0.0
+    # Limpiar typos doble coma/punto
+    import re
+    v = re.sub(r'[,]{2,}', '.', v)
+    # Contar comas y puntos para distinguir separador decimal vs miles
+    n_comas  = v.count(',')
+    n_puntos = v.count('.')
+    if n_comas > 1:
+        # Múltiples comas → separador de miles: '76,800,000' → '76800000'
+        v = v.replace(',', '')
+    elif n_comas == 1 and n_puntos == 0:
+        # Una sola coma, sin punto → puede ser decimal europeo O miles
+        # Si hay exactamente 3 dígitos tras la coma → miles: '800,000'
+        partes = v.split(',')
+        if len(partes[1]) == 3 and partes[1].isdigit():
+            v = v.replace(',', '')  # separador de miles
+        else:
+            v = v.replace(',', '.')  # decimal europeo
+    elif n_comas == 1 and n_puntos >= 1:
+        # Mezcla: '1,234.56' → quitar comas de miles
+        v = v.replace(',', '')
     try:
+        return float(v)
+    except ValueError:
+        return 0.0
         return float(v)
     except ValueError:
         return 0.0
@@ -529,15 +560,20 @@ def _resolver_ronda(
 # ── Saqueo ────────────────────────────────────────────────────────────────────
 
 def _calcular_saqueo(atk_grupos_vivos: list[dict], defensor_city: dict) -> dict:
-    capacidad = sum(g["carga"] * g["cantidad"] for g in atk_grupos_vivos if g["cantidad"] > 0)
-    if capacidad <= 0:
-        return {}
-
-    # Solo sacerdotes pueden transportar maná
-    hay_sacerdotes = any(
-        g["nombre"] == "SACERDOTE" and g["cantidad"] > 0
+    # Dos bolsas separadas e independientes
+    capacidad_mat  = sum(
+        g["carga"] * g["cantidad"]
         for g in atk_grupos_vivos
+        if g["cantidad"] > 0 and g["nombre"] != "SACERDOTE"
     )
+    capacidad_mana = sum(
+        g["carga"] * g["cantidad"]
+        for g in atk_grupos_vivos
+        if g["cantidad"] > 0 and g["nombre"] == "SACERDOTE"
+    )
+
+    if capacidad_mat <= 0 and capacidad_mana <= 0:
+        return {}
 
     nivel_esc = int(defensor_city.get("ESCONDITE", 0) or 0)
     esc_caps  = _get_escondite_caps()
@@ -545,26 +581,44 @@ def _calcular_saqueo(atk_grupos_vivos: list[dict], defensor_city: dict) -> dict:
     cap_prot  = esc_caps.get(nivel_esc, esc_caps.get(max_esc, {})).get("cap_material", 0)
     mat_esc   = defensor_city.get("ESCONDITE_DATA", {}).get("materiales", {})
 
-    almacen_inf   = int(defensor_city.get("ALMACEN", 0) or 0) >= 50
-    santuario_inf = int(defensor_city.get("SANTUARIO_ARCANO", 0) or 0) >= 50
+    from backend.data.save_manager import safe_resource_float as _srf
+
+    # Cuántos recursos de material __INF__ hay (para repartir equitativamente)
+    MATERIALES = [r for r in ORDEN_SAQUEO if r != "MANA"]
+    n_inf_mat  = sum(1 for r in MATERIALES if str(defensor_city.get(r, 0)) == "__INF__")
+    cuota_mat  = capacidad_mat / n_inf_mat if n_inf_mat > 0 else capacidad_mat
 
     saqueo    = {}
-    restante  = capacidad
+    restante  = capacidad_mat
 
-    for recurso in ORDEN_SAQUEO:
+    # ── Materiales (sin maná) ─────────────────────────────────────────────────
+    for recurso in MATERIALES:
         if restante <= 0:
             break
-        if recurso == "MANA" and (santuario_inf or not hay_sacerdotes):
-            continue
-        if recurso != "MANA" and almacen_inf:
-            continue
-        total    = float(defensor_city.get(recurso, 0) or 0)
-        prot     = float(mat_esc.get(recurso, 0))
-        saqueble = max(0.0, total - prot)
-        tomado   = min(saqueble, restante)
+        total_raw = defensor_city.get(recurso, 0)
+        if str(total_raw) == "__INF__":
+            tomado = min(cuota_mat, restante)
+        else:
+            total    = _srf(total_raw)
+            prot     = float(mat_esc.get(recurso, 0))
+            saqueble = max(0.0, total - prot)
+            tomado   = min(saqueble, restante)
         if tomado > 0:
             saqueo[recurso] = tomado
             restante -= tomado
+
+    # ── Maná (solo sacerdotes, bolsa independiente) ───────────────────────────
+    if capacidad_mana > 0:
+        mana_raw = defensor_city.get("MANA", 0)
+        if str(mana_raw) == "__INF__":
+            mana_total = capacidad_mana
+        else:
+            mana_total = _srf(mana_raw)
+        prot_mana  = float(mat_esc.get("MANA", 0))
+        mana_saq   = max(0.0, mana_total - prot_mana)
+        tomado_mana = min(mana_saq, capacidad_mana)
+        if tomado_mana > 0:
+            saqueo["MANA"] = tomado_mana
 
     return saqueo
 
@@ -799,13 +853,18 @@ def _grupos_a_dict_por_jugador(grupos: list[dict]) -> dict:
 
 
 def _calcular_bajas(iniciales: dict, sobrevivientes: dict) -> dict:
-    """Calcula bajas = iniciales - sobrevivientes por jugador."""
+    """Calcula bajas = iniciales - sobrevivientes por jugador.
+    Normaliza nombres con _norm() para que coincidan independientemente
+    de si usan guiones bajos (EON_SUPREMO) o espacios (EON SUPREMO).
+    """
     bajas = {}
     for jug, unidades in iniciales.items():
         bajas[jug] = {}
-        sobrev = sobrevivientes.get(jug, {})
+        # Construir sobrev con claves normalizadas para búsqueda segura
+        sobrev_raw = sobrevivientes.get(jug, {})
+        sobrev = {_norm(k): v for k, v in sobrev_raw.items()}
         for nombre, cnt in unidades.items():
-            b = cnt - sobrev.get(nombre, 0)
+            b = cnt - sobrev.get(_norm(nombre), 0)
             if b > 0:
                 bajas[jug][nombre] = b
     return bajas
@@ -813,31 +872,55 @@ def _calcular_bajas(iniciales: dict, sobrevivientes: dict) -> dict:
 
 # ── Sigilo ────────────────────────────────────────────────────────────────────
 
-_SIGILO_FACTOR_APORTE = 3.0   # cada unidad que aporta suma este valor al sigilo del grupo
-_SIGILO_UMBRAL_PCT    = 0.5   # unidad aporta si su sigilo >= sigilo_max * este porcentaje
-_SIGILO_TOPE          = 200.0 # tope máximo de sigilo efectivo
+_SIGILO_FACTOR_APORTE = 3.0   # cada unidad con sigilo alto suma este valor
+_SIGILO_PENALIZACION  = 1.0   # cada unidad con sigilo bajo resta este valor
+_SIGILO_UMBRAL_PCT    = 0.5   # aporta si sigilo_unidad >= sigilo_max_pelotón * este %
+_SIGILO_UMBRAL_MIN    = 10.0  # umbral absoluto mínimo — sigilo < 10 siempre resta
+_SIGILO_TOPE          = 200.0 # tope máximo
 
 
 def _calcular_sigilo_efectivo(sigilos: list) -> float:
     """
-    Nueva fórmula de sigilo de grupo:
-      - Base: sigilo de la unidad con mayor sigilo (sigilo_max)
-      - Por cada unidad adicional:
-          si sigilo_unidad >= sigilo_max * 0.5 → +3.0 (aporta)
-          si sigilo_unidad <  sigilo_max * 0.5 → -1.0 (resta)
-      - Tope máximo: 200
-    sigilos: lista de valores de sigilo, una entrada por unidad (repetida por cantidad)
+    Fórmula canónica de sigilo de grupo:
+      - sigilo_max = máximo sigilo de cualquier unidad del pelotón completo
+      - umbral     = max(sigilo_max × 0.5, UMBRAL_MIN=10)
+      - Base: sigilo_max (la unidad líder)
+      - Cada unidad adicional:
+          si sigilo_unidad >= umbral → +3.0  (aporta)
+          si sigilo_unidad <  umbral → -1.0  (resta)
+      - Mínimo: 0.0  — Tope: 200.0
+
+    Referencia canónica: 20 exploradores nv40 (sigilo=98) vs Torre nv50
+      → umbral = max(49, 10) = 49
+      → sigilo_efectivo = 98 + 19×3 = 155
+      → diff = 155 - 101 = 54 → Nv5 ✓
+
+    1M invocaciones (sigilo=1):
+      → umbral = max(0.5, 10) = 10
+      → sigilo=1 < 10 → todas restan → cae a 0 → detectado ✓
+
+    sigilos: lista de (valor_sigilo, cantidad).
     """
     if not sigilos:
         return 0.0
-    sigilo_max = max(sigilos)
-    umbral     = sigilo_max * _SIGILO_UMBRAL_PCT
+
+    sigilo_max = max(s for s, _ in sigilos)
+    umbral     = max(sigilo_max * _SIGILO_UMBRAL_PCT, _SIGILO_UMBRAL_MIN)
     efectivo   = float(sigilo_max)
-    for s in sigilos[1:]:   # primera ya es el base (sigilo_max)
+
+    primera_contada = False
+    for s, cant in sigilos:
+        n = cant
+        if not primera_contada and s == sigilo_max:
+            n = cant - 1
+            primera_contada = True
+        if n <= 0:
+            continue
         if s >= umbral:
-            efectivo += _SIGILO_FACTOR_APORTE
+            efectivo += _SIGILO_FACTOR_APORTE * n
         else:
-            efectivo -= 1.0
+            efectivo -= _SIGILO_PENALIZACION * n
+
     return max(0.0, min(_SIGILO_TOPE, efectivo))
 
 
@@ -845,9 +928,9 @@ def calcular_sigilo(unidades_dict: dict, nivel_tropas: int) -> float:
     """
     Calcula sigilo efectivo de un pelotón de un solo propietario.
     """
-    sigilos = []
+    sigilos = []  # lista de (valor_sigilo, cantidad)
     for nombre_raw, cantidad in unidades_dict.items():
-        cantidad = int(cantidad or 0)
+        cantidad = int(float(str(cantidad or 0)))
         if cantidad <= 0:
             continue
         nombre = _norm(nombre_raw)
@@ -855,7 +938,7 @@ def calcular_sigilo(unidades_dict: dict, nivel_tropas: int) -> float:
             st = get_stats_invocacion(nombre)
         else:
             st = get_stats_unidad(nombre, nivel_tropas)
-        sigilos.extend([st["sigilo"]] * cantidad)
+        sigilos.append((st["sigilo"], cantidad))
     return _calcular_sigilo_efectivo(sigilos)
 
 
@@ -863,13 +946,12 @@ def calcular_sigilo_grupo(grupos: list) -> float:
     """
     Calcula sigilo efectivo de un pelotón con múltiples propietarios.
     grupos: [{"unidades": {nombre: cant}, "nivel_tropas": int}, ...]
-    Usa la nueva fórmula con factor de aporte por unidad.
     """
-    sigilos = []
+    sigilos = []  # lista de (valor_sigilo, cantidad)
     for grupo in grupos:
         nivel = grupo.get("nivel_tropas", 1)
         for nombre_raw, cantidad in grupo.get("unidades", {}).items():
-            cantidad = int(cantidad or 0)
+            cantidad = int(float(str(cantidad or 0)))
             if cantidad <= 0:
                 continue
             nombre = _norm(nombre_raw)
@@ -877,7 +959,7 @@ def calcular_sigilo_grupo(grupos: list) -> float:
                 st = get_stats_invocacion(nombre)
             else:
                 st = get_stats_unidad(nombre, nivel)
-            sigilos.extend([st["sigilo"]] * cantidad)
+            sigilos.append((st["sigilo"], cantidad))
     return _calcular_sigilo_efectivo(sigilos)
 
 
@@ -1074,6 +1156,8 @@ def aplicar_resultado_combate(
     jugadores_atk: {jugador: player_dict}
     jugadores_def: {jugador: player_dict}
     """
+    from backend.data.save_manager import safe_resource_float as _srf
+
     # Bajas atacantes
     for jug, bajas in resultado["bajas_atk"].items():
         city = ciudades_atk.get(jug)
@@ -1105,9 +1189,11 @@ def aplicar_resultado_combate(
         city_atk   = ciudades_atk[primer_jug]
         city_def   = next(iter(ciudades_def.values())) if ciudades_def else None
         for recurso, cantidad in resultado["saqueo"].items():
-            city_atk[recurso] = float(city_atk.get(recurso, 0) or 0) + cantidad
+            actual_atk = _srf(city_atk.get(recurso, 0))
+            city_atk[recurso] = actual_atk + cantidad
             if city_def:
-                city_def[recurso] = max(0.0, float(city_def.get(recurso, 0) or 0) - cantidad)
+                actual_def = _srf(city_def.get(recurso, 0))
+                city_def[recurso] = max(0.0, actual_def - cantidad)
 
     # XP atacantes
     for jug, xp in resultado["xp_por_jugador_atk"].items():

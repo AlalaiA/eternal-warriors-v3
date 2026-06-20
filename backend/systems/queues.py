@@ -48,6 +48,31 @@ def _load_tiempo_unidades():
         except ValueError:
             pass
     return result
+def _sf(v: str) -> float:
+    """Parser robusto: coma decimal europea, notación científica con coma, typos."""
+    import re as _re
+    v = str(v).strip()
+    if not v or v.lower() in ('no', 'n/a', '-', ''):
+        return 0.0
+    v = _re.sub(r'[,]{2,}', '.', v)
+    n_comas  = v.count(',')
+    n_puntos = v.count('.')
+    if n_comas > 1:
+        v = v.replace(',', '')
+    elif n_comas == 1 and n_puntos == 0:
+        partes = v.split(',')
+        if len(partes) == 2 and len(partes[1]) == 3 and partes[1].isdigit():
+            v = v.replace(',', '')
+        else:
+            v = v.replace(',', '.')
+    elif n_comas == 1 and n_puntos >= 1:
+        v = v.replace(',', '')
+    try:
+        return float(v)
+    except ValueError:
+        return 0.0
+
+
 def _load_invocaciones():
     """
     Carga características de invocaciones. CSV: utf-8-sig, sep=';', Row0=header.
@@ -68,15 +93,15 @@ def _load_invocaciones():
         nombre = ''.join(ch for ch in _ud.normalize('NFD', nombre) if _ud.category(ch) != 'Mn')
         try:
             result[nombre] = {
-                "hp":                  float(row[1].strip()),
-                "pa":                  float(row[2].strip()),
-                "ca":                  float(row[3].strip()),
-                "destreza":            float(row[4].strip()),
-                "sigilo":              float(row[5].strip()),
-                "velocidad":           float(row[6].strip()),
-                "nivel_min_sacerdote": int(row[7].strip()),    # índice 7 ← CORRECTO
-                "tiempo_base_min":     float(row[8].strip()),  # índice 8
-                "costo_mana":          float(row[9].strip()),  # índice 9
+                "hp":                  _sf(row[1]),
+                "pa":                  _sf(row[2]),
+                "ca":                  _sf(row[3]),
+                "destreza":            _sf(row[4]),
+                "sigilo":              _sf(row[5]),
+                "velocidad":           _sf(row[6]),
+                "nivel_min_sacerdote": int(row[7].strip()) if row[7].strip().isdigit() else 99,
+                "tiempo_base_min":     _sf(row[8]),
+                "costo_mana":          _sf(row[9]),
                 "cantidad_min":        int(row[10].strip()) if len(row) > 10 and row[10].strip().isdigit() else 0,
             }
         except (ValueError, IndexError):
@@ -243,6 +268,24 @@ def costo_mana_invocacion(invocacion: str) -> float:
     """Maná por unidad invocada."""
     invs = get_invocaciones()
     return invs.get(invocacion.upper(), {}).get("costo_mana", 0)
+
+def sacerdotes_reservados_ciudad(city: dict) -> int:
+    """
+    Calcula el total de sacerdotes reservados por las colas de templo activas.
+    Estos sacerdotes están congelados — no disponibles para misiones.
+    """
+    total = 0
+    for cola in city.get("COLAS", []):
+        tipo   = cola.get("tipo", "")
+        unidad = cola.get("unidad", "")
+        cant_hecha = int(cola.get("cantidad_hecha", 0))
+        cant_total = int(cola.get("cantidad_total", 0))
+        if cant_hecha >= cant_total:
+            continue
+        if tipo.upper().startswith("TEMPLO"):
+            total += cantidad_min_sacerdote(unidad)
+    return total
+
 
 def cantidad_min_sacerdote(invocacion: str) -> int:
     """Cantidad mínima de sacerdotes para mantener activa la cola de esta invocación."""

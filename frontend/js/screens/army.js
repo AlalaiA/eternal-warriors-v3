@@ -284,11 +284,50 @@ function _renderLeft() {
       </div>`;
   };
 
+  // ── Sacerdotes reservados por colas de templo activas ────────────────────
+  const _INV_CANT_MIN = {
+    DEMONIO:5000, ANIMA:7500, ESPECTRO:12000, GOLEM:18000, CENTAURO:20000,
+    KRAKEN:25000, ALONARDO:35000, MADRESELVA:45000, COLOSO:125000, FENIX:250000,
+    DRAGON_DE_ORO:350000, CABALLERO_DE_LUZ:1000000, ALALAIA:2000000, EON_SUPREMO:150000000,
+  };
+  let _sacReservados = 0;
+  for (const cola of (_cityData.COLAS || [])) {
+    const tipo  = (cola.tipo || '').toUpperCase();
+    const unid  = (cola.unidad || '').toUpperCase();
+    const hecha = Number(cola.cantidad_hecha || 0);
+    const total = Number(cola.cantidad_total || 0);
+    if (tipo.startsWith('TEMPLO') && hecha < total) {
+      _sacReservados += (_INV_CANT_MIN[unid] || 0);
+    }
+  }
+
   // ── Tropas propias ─────────────────────────────────────────────────────────
   const armyRows = ARMY.map(([lbl, key]) => {
-    const cnt = _cityData[key] || 0;
-    if (cnt <= 0) return '';
-    return makeRow(lbl, key, '#b0a080', cnt, _jugador);
+    let cnt = Math.floor(_parseRecurso(_cityData[key]) || 0);
+    let reservado = 0;
+    if (key === 'SACERDOTE' && _sacReservados > 0) {
+      reservado = Math.min(_sacReservados, cnt);
+      cnt = Math.max(0, cnt - reservado);
+    }
+    if (cnt <= 0 && reservado <= 0) return '';
+    const sel = _selGet(_jugador, key);
+    const idPfx = `sel-${_jugador}-${key}`;
+    const cntLabel = reservado > 0
+      ? `<span style="color:#888;font-size:11px;text-align:right;padding-right:4px" title="${_fmt(reservado)} reservados para invocación">
+           ${_fmt(cnt)} <span style="color:#e05050;font-size:9px">🔒</span>
+         </span>`
+      : `<span style="color:#888;font-size:11px;text-align:right;padding-right:4px">${_fmt(cnt)}</span>`;
+    return `
+      <div style="${CSS_GRID_ROW}">
+        <span style="color:#b0a080;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${lbl}</span>
+        ${cntLabel}
+        <button onclick="window._armyAdj('${_jugador}','${key}',-1)" style="${CSS_BTN_SM}">−</button>
+        <input id="${idPfx}" type="number" min="0" max="${cnt}" value="${sel}"
+          style="${CSS_INP_SM}"
+          onchange="window._armySet('${_jugador}','${key}',this.value,${cnt})">
+        <button onclick="window._armyAdj('${_jugador}','${key}',1)" style="${CSS_BTN_SM}">+</button>
+        <button onclick="window._armyAll('${_jugador}','${key}',${cnt})" style="${CSS_BTN_MAX}">MAX</button>
+      </div>`;
   }).join('');
 
   const invRows = INV.map(([lbl, key]) => {
@@ -618,7 +657,8 @@ function _setupFormHandlers() {
     const tipo = document.getElementById('orden-tipo')?.value;
     const xStr = document.getElementById('orden-x')?.value;
     const yStr = document.getElementById('orden-y')?.value;
-    const jugDest  = document.getElementById('orden-jugador-dest')?.value?.trim().toUpperCase();
+    const jugDest  = (document.getElementById('orden-jugador-dest')?.value?.trim().toUpperCase()) || _formState.jugDest?.toUpperCase() || '';
+    console.log('[orden] jugDest:', jugDest, '| _formState.jugDest:', _formState.jugDest);
     const ciudDest = document.getElementById('orden-ciudad-dest')?.value?.trim();
 
     if (!xStr || !yStr) { msg.innerHTML = '<span style="color:#e05050">Introduce coordenadas</span>'; return; }
